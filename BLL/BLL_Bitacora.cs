@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class BLLbitacora
+    public class BLL_Bitacora
     {
         public bool Insert(Bitacora bitacora)
         {

@@ -53,7 +53,7 @@ namespace BLL
                 bitacora.Detalle = "Login de usuario";
                 bitacora.Responsable = user;
                 bitacora.Fecha = DateTime.Now;
-                new BLLbitacora().Insert(bitacora);
+                new BLL_Bitacora().Insert(bitacora);
             }
 
             return user;

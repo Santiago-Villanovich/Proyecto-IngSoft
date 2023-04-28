@@ -22,7 +22,7 @@ namespace UI
         private void GestUsuarios_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            //dataGridView1.DataSource = new BLLuser().GetAll();
+            dataGridView1.DataSource = new BLLuser().GetAll();
         }
 
         private void btnDarPermisos_Click(object sender, EventArgs e)
@@ -33,6 +33,11 @@ namespace UI
         private void btnSacarPermisos_Click(object sender, EventArgs e)
         {
             checkBox1.Checked = false;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
