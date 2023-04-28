@@ -26,7 +26,7 @@ namespace UI
         {
             try
             {
-                new BLLuser().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
+                new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
                 var session = Session.GetInstance;
                 if (session.Usuario != null)
                 {
@@ -81,17 +81,18 @@ namespace UI
                     usuario.Apellido = txtApellidoSign.Text;
                     usuario.DNI = Convert.ToInt32(txtDniSign.Text);
                     usuario.Clave = txtClaveSign.Text;
+                    usuario.isAdmin = false;
                 }
                 else
                 {
                     MessageBox.Show("Error");
                 }
 
-                BLLuser _User = new BLLuser();
-                _User.Insert(usuario);
+                BLL_User _User = new BLL_User();
+                _User.Register(usuario);
 
                 //genero el login
-                new BLLuser().Login(Convert.ToInt32(txtDniSign.Text), txtClaveSign.Text);
+                new BLL_User().Login(Convert.ToInt32(txtDniSign.Text), txtClaveSign.Text);
                 var session = Session.GetInstance;
                 if (session.Usuario != null)
                 {

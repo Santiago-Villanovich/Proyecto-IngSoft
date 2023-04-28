@@ -9,3 +9,14 @@ G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\DAL\obj\Debu
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\DAL\obj\Debug\DAL.dll
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\DAL\obj\Debug\DAL.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\bin\Debug\DAL.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\bin\Debug\DAL.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\bin\Debug\BE.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\bin\Debug\BE.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\obj\Debug\DAL.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\obj\Debug\DAL.pdb

@@ -22,7 +22,7 @@ namespace Services
         {
             get
             {
-                if (_session == null) throw new Exception("La sesion no esta iniciada");
+                if (_session == null) throw new Exception("Ocurrio un error con la sesion");
                 return _session;
             }
         }

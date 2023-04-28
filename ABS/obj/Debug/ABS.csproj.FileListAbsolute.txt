@@ -4,3 +4,9 @@ G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\ABS\obj\Debu
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\ABS\obj\Debug\ABS.csproj.CoreCompileInputs.cache
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\ABS\obj\Debug\ABS.dll
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\ABS\obj\Debug\ABS.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\obj\Debug\ABS.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\obj\Debug\ABS.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\obj\Debug\ABS.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\obj\Debug\ABS.pdb

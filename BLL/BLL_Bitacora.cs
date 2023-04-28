@@ -12,7 +12,7 @@ namespace BLL
     {
         public bool Insert(Bitacora bitacora)
         {
-            return new DALbitacora().Insert(bitacora);
+            return new DAL_Bitacora().Insert(bitacora);
         }
     }
 }

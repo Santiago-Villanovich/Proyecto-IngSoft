@@ -18,7 +18,7 @@ namespace BE
 
         public string Clave { get; set; } = null;
 
-        public bool isAdmin { get; set; }
+        public bool isAdmin { get; set; } = false;
 
         public User() { }
     }

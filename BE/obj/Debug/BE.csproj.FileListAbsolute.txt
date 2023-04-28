@@ -7,3 +7,12 @@ G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\BE\obj\Debug
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\BE\obj\Debug\BE.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\BE\obj\Debug\BE.dll
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\BE\obj\Debug\BE.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BE\bin\Debug\BE.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BE\bin\Debug\BE.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BE\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BE\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BE\obj\Debug\BE.csproj.CopyComplete
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BE\obj\Debug\BE.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BE\obj\Debug\BE.pdb

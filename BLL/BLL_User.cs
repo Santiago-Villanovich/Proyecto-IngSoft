@@ -9,14 +9,16 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Collections.Specialized.BitVector32;
+using System.Net;
+using System.Security.Claims;
 
 namespace BLL
 {
-    public class BLLuser : IMetodosGenericos<User>
+    public class BLL_User : IMetodosGenericos<User>
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return new DAL_User().Delete(id);
         }
 
         public User Get(int id)
@@ -26,7 +28,7 @@ namespace BLL
 
         public List<User> GetAll()
         {
-            return new DALuser().GetAll();
+            return new DAL_User().GetAll();
         }
 
         public bool Insert(User obj)
@@ -34,7 +36,28 @@ namespace BLL
             HashCrypto hash = new HashCrypto();
             var user = obj;
             user.Clave = hash.GenerarMD5(obj.Clave);
-            var dal = new DALuser().Insert(user);
+            var dal = new DAL_User().Insert(user);
+            return true;
+        }
+
+        public bool Register(User obj)
+        {
+            HashCrypto hash = new HashCrypto();
+            var user = obj;
+            user.Clave = hash.GenerarMD5(obj.Clave);
+            var dal = new DAL_User().Insert(user);
+            var loggedUser = new DAL_User().Login(user.DNI, user.Clave);
+            if (loggedUser != null)
+            {
+
+                Session.Login(user);
+                var bitacora = new Bitacora();
+                bitacora.Detalle = "Login de usuario";
+                bitacora.Responsable = user;
+                bitacora.Fecha = DateTime.Now;
+                new BLL_Bitacora().Insert(bitacora);
+            }
+
             return true;
         }
 
@@ -45,9 +68,10 @@ namespace BLL
 
         public User Login(int dni, string clave)
         {
-            var user = new DALuser().Login(dni, clave);
+            var user = new DAL_User().Login(dni, clave);
             if (user != null)
             {
+                
                 Session.Login(user);
                 var bitacora = new Bitacora();
                 bitacora.Detalle = "Login de usuario";
