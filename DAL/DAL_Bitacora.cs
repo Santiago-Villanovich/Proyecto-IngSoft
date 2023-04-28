@@ -1,6 +1,7 @@
 ﻿using BE;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,51 @@ namespace DAL
                 _conn.Close();
             }
 
+        }
+
+        public List<Bitacora> GetAll()
+        {
+            List<Bitacora> list = new List<Bitacora>();
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("select * from Bitacora", conn);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var bit = new Bitacora()
+                            {
+                                Id = Convert.ToInt32(reader["Id"]),
+                                Detalle = reader["Detalle"].ToString(),
+                                Fecha = Convert.ToDateTime(reader["Apellido"])
+
+                            };
+
+                            list.Add(bit);
+                        }
+                    }
+
+                    return list;
+                }
+                catch (SqlException ex)
+                {
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
         }
     }
 }

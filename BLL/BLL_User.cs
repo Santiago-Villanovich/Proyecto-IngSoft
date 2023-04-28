@@ -68,19 +68,29 @@ namespace BLL
 
         public User Login(int dni, string clave)
         {
-            var user = new DAL_User().Login(dni, clave);
-            if (user != null)
+            try
             {
-                
-                Session.Login(user);
-                var bitacora = new Bitacora();
-                bitacora.Detalle = "Login de usuario";
-                bitacora.Responsable = user;
-                bitacora.Fecha = DateTime.Now;
-                new BLL_Bitacora().Insert(bitacora);
-            }
+                HashCrypto hash = new HashCrypto();
+                string claveHash = hash.GenerarMD5(clave);
 
-            return user;
+                var user = new DAL_User().Login(dni, claveHash);
+                if (user != null)
+                {
+                    Session.Login(user);
+                    var bitacora = new Bitacora();
+                    bitacora.Detalle = "Login de usuario";
+                    bitacora.Responsable = user;
+                    bitacora.Fecha = DateTime.Now;
+                    new BLL_Bitacora().Insert(bitacora);
+                }
+
+                return user;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
     }
