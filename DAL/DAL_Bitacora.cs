@@ -11,7 +11,7 @@ namespace DAL
 {
     public class DAL_Bitacora
     {
-        private SqlConnection _conn = new SqlConnection("Data Source=RUBEN\\SQLEXPRESS;Initial Catalog=ingenieria-software;Integrated Security=True");
+        private SqlConnection _conn = new SqlConnection("Data Source=50LAB3-24-71293;Initial Catalog=IS-EV;Integrated Security=True");
         public bool Insert(Bitacora bitacora)
         {
             _conn.Open();
@@ -44,15 +44,20 @@ namespace DAL
 
         }
 
-        public List<Bitacora> GetAll()
+        public List<Bitacora> GetAll() 
         {
-            List<Bitacora> list = new List<Bitacora>();
+            throw new NotImplementedException();
+        }
+
+        public List<BitacoraUser> GetAllBU()
+        {
+            List<BitacoraUser> list = new List<BitacoraUser>();
             using (SqlConnection conn = _conn)
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("select * from Bitacora", conn);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand("sp_ListarBitacoras", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = conn;
                     conn.Open();
 
@@ -60,11 +65,13 @@ namespace DAL
                     {
                         while (reader.Read())
                         {
-                            var bit = new Bitacora()
+                            var bit = new BitacoraUser()
                             {
-                                Id = Convert.ToInt32(reader["Id"]),
                                 Detalle = reader["Detalle"].ToString(),
-                                Fecha = Convert.ToDateTime(reader["Apellido"])
+                                Fecha = Convert.ToDateTime(reader["Fecha"]),
+                                Nombre = reader["Nombre"].ToString(),
+                                Apellido = reader["Apellido"].ToString(),
+                                DNI = Convert.ToInt32(reader["DNI"]),
 
                             };
 

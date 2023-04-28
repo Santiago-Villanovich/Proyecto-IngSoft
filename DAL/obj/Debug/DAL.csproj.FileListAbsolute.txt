@@ -20,3 +20,14 @@ C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\obj\Debug\DAL.cs
 C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\obj\Debug\DAL.dll
 C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\DAL\obj\Debug\DAL.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\DAL.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\DAL.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\ABS.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\BE.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\ABS.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\BE.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.pdb

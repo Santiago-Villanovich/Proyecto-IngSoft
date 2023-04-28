@@ -20,3 +20,14 @@ C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\Services\obj\Debug\S
 C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\Services\obj\Debug\Services.csproj.CopyComplete
 C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\Services\obj\Debug\Services.dll
 C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\Services\obj\Debug\Services.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\bin\Debug\Services.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\bin\Debug\Services.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\bin\Debug\ABS.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\bin\Debug\BE.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\bin\Debug\ABS.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\bin\Debug\BE.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\obj\Debug\Services.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\obj\Debug\Services.pdb

@@ -30,10 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verBitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,20 @@
             this.administrarToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.administrarToolStripMenuItem.Text = "Administrar";
             // 
+            // gestionarUsuariosToolStripMenuItem
+            // 
+            this.gestionarUsuariosToolStripMenuItem.Name = "gestionarUsuariosToolStripMenuItem";
+            this.gestionarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.gestionarUsuariosToolStripMenuItem.Text = "Gestionar Usuarios";
+            this.gestionarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionarUsuariosToolStripMenuItem_Click);
+            // 
+            // verBitacoraToolStripMenuItem
+            // 
+            this.verBitacoraToolStripMenuItem.Name = "verBitacoraToolStripMenuItem";
+            this.verBitacoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verBitacoraToolStripMenuItem.Text = "Ver Bitacora";
+            this.verBitacoraToolStripMenuItem.Click += new System.EventHandler(this.verBitacoraToolStripMenuItem_Click);
+            // 
             // opcionesToolStripMenuItem
             // 
             this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -70,19 +84,7 @@
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
             this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
-            // 
-            // gestionarUsuariosToolStripMenuItem
-            // 
-            this.gestionarUsuariosToolStripMenuItem.Name = "gestionarUsuariosToolStripMenuItem";
-            this.gestionarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarUsuariosToolStripMenuItem.Text = "Gestionar Usuarios";
-            this.gestionarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionarUsuariosToolStripMenuItem_Click);
-            // 
-            // verBitacoraToolStripMenuItem
-            // 
-            this.verBitacoraToolStripMenuItem.Name = "verBitacoraToolStripMenuItem";
-            this.verBitacoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verBitacoraToolStripMenuItem.Text = "Ver Bitacora";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // MenuAdmin
             // 

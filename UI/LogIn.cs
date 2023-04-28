@@ -29,9 +29,15 @@ namespace UI
                 new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
 
                 var session = Session.GetInstance;
-                if (session.Usuario != null)
+                if (session.Usuario.isAdmin)
                 {
                     MenuAdmin menu = new MenuAdmin();
+                    this.Hide();
+                    menu.Show();
+                }
+                else if (!session.Usuario.isAdmin) 
+                {
+                    Menu menu = new Menu();
                     this.Hide();
                     menu.Show();
                 }
@@ -93,7 +99,7 @@ namespace UI
                 _User.Register(usuario);
 
                 //genero el login
-                new BLL_User().Login(Convert.ToInt32(txtDniSign.Text), txtClaveSign.Text);
+                
                 var session = Session.GetInstance;
                 if (session.Usuario != null)
                 {

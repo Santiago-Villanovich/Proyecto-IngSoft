@@ -95,7 +95,7 @@
             this.label4.ForeColor = System.Drawing.Color.LemonChiffon;
             this.label4.Location = new System.Drawing.Point(106, 357);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 32);
+            this.label4.Size = new System.Drawing.Size(116, 32);
             this.label4.TabIndex = 3;
             this.label4.Text = "No se encuentra \r\nregistrado?";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,6 +169,7 @@
             // txtDniSign
             // 
             this.txtDniSign.Location = new System.Drawing.Point(93, 248);
+            this.txtDniSign.MaxLength = 8;
             this.txtDniSign.Name = "txtDniSign";
             this.txtDniSign.Size = new System.Drawing.Size(187, 20);
             this.txtDniSign.TabIndex = 8;
@@ -240,6 +241,7 @@
             // txtDniLog
             // 
             this.txtDniLog.Location = new System.Drawing.Point(75, 137);
+            this.txtDniLog.MaxLength = 8;
             this.txtDniLog.Name = "txtDniLog";
             this.txtDniLog.Size = new System.Drawing.Size(179, 20);
             this.txtDniLog.TabIndex = 6;

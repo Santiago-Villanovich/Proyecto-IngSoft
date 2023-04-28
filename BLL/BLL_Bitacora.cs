@@ -19,5 +19,9 @@ namespace BLL
         {
             return new DAL_Bitacora().GetAll();
         }
+        public List<BitacoraUser> GetAllBU()
+        {
+            return new DAL_Bitacora().GetAllBU();
+        }
     }
 }

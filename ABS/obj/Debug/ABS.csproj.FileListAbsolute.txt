@@ -10,3 +10,9 @@ C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\obj\Debug\ABS.cs
 C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\obj\Debug\ABS.csproj.CoreCompileInputs.cache
 C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\obj\Debug\ABS.dll
 C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\ABS\obj\Debug\ABS.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\bin\Debug\ABS.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\bin\Debug\ABS.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\obj\Debug\ABS.csproj.AssemblyReference.cache
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\obj\Debug\ABS.csproj.CoreCompileInputs.cache
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\obj\Debug\ABS.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\obj\Debug\ABS.pdb
