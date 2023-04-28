@@ -14,5 +14,10 @@ namespace BLL
         {
             return new DALbitacora().Insert(bitacora);
         }
+
+        public List<Bitacora> GetAll()
+        {
+            return new DALbitacora().GetAll();
+        }
     }
 }

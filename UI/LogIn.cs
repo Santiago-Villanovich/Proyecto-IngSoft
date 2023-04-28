@@ -26,6 +26,8 @@ namespace UI
         {
             try
             {
+
+
                 new BLLuser().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
                 var session = Session.GetInstance;
                 if (session.Usuario != null)
