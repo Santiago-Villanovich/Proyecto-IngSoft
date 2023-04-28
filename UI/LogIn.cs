@@ -28,7 +28,7 @@ namespace UI
             {
 
 
-                new BLLuser().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
+                new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
                 var session = Session.GetInstance;
                 if (session.Usuario != null)
                 {
@@ -89,11 +89,11 @@ namespace UI
                     MessageBox.Show("Error");
                 }
 
-                BLLuser _User = new BLLuser();
+                BLL_User _User = new BLL_User();
                 _User.Insert(usuario);
 
                 //genero el login
-                new BLLuser().Login(Convert.ToInt32(txtDniSign.Text), txtClaveSign.Text);
+                new BLL_User().Login(Convert.ToInt32(txtDniSign.Text), txtClaveSign.Text);
                 var session = Session.GetInstance;
                 if (session.Usuario != null)
                 {

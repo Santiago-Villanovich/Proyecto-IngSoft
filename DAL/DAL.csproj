@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DALbitacora.cs" />
-    <Compile Include="DALuser.cs" />
+    <Compile Include="DAL_Bitacora.cs" />
+    <Compile Include="DAL_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

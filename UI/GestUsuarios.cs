@@ -22,7 +22,7 @@ namespace UI
         private void GestUsuarios_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = new BLLuser().GetAll();
+            dataGridView1.DataSource = new BLL_User().GetAll();
         }
 
         private void btnDarPermisos_Click(object sender, EventArgs e)

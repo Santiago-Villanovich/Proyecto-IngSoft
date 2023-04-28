@@ -12,7 +12,7 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace BLL
 {
-    public class BLLuser : IMetodosGenericos<User>
+    public class BLL_User : IMetodosGenericos<User>
     {
         public bool Delete(int id)
         {
@@ -26,7 +26,7 @@ namespace BLL
 
         public List<User> GetAll()
         {
-            return new DALuser().GetAll();
+            return new DAL_User().GetAll();
         }
 
         public bool Insert(User obj)
@@ -34,7 +34,7 @@ namespace BLL
             HashCrypto hash = new HashCrypto();
             var user = obj;
             user.Clave = hash.GenerarMD5(obj.Clave);
-            var dal = new DALuser().Insert(user);
+            var dal = new DAL_User().Insert(user);
             return true;
         }
 
@@ -50,7 +50,7 @@ namespace BLL
                 HashCrypto hash = new HashCrypto();
                 string claveHash = hash.GenerarMD5(clave);
 
-                var user = new DALuser().Login(dni, claveHash);
+                var user = new DAL_User().Login(dni, claveHash);
                 if (user != null)
                 {
                     Session.Login(user);

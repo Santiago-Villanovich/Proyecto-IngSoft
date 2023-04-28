@@ -10,7 +10,7 @@ using BE;
 
 namespace DAL
 {
-    public class DALuser : IMetodosGenericos<User>
+    public class DAL_User : IMetodosGenericos<User>
     {
 
         private SqlConnection _conn = new SqlConnection("Data Source=RUBEN\\SQLEXPRESS;Initial Catalog=ingenieria-software;Integrated Security=True");
