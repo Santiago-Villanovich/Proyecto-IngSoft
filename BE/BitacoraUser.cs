@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class BitacoraUser
+    public class DTO_BitacoraUser
     {
         public string Detalle { get; set; }
 

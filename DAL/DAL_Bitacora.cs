@@ -21,7 +21,7 @@ namespace DAL
             cmd.CommandText = "sp_InsertBitacora";
             cmd.Parameters.AddWithValue("@Detalle", bitacora.Detalle);
             cmd.Parameters.AddWithValue("@Responsable", bitacora.Responsable.Id);
-            cmd.Parameters.AddWithValue("@Fecha", bitacora.Fecha);
+            //cmd.Parameters.AddWithValue("@Fecha", bitacora.Fecha);
 
 
             try
@@ -49,9 +49,9 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public List<BitacoraUser> GetAllBU()
+        public List<DTO_BitacoraUser> GetAllBU()
         {
-            List<BitacoraUser> list = new List<BitacoraUser>();
+            List<DTO_BitacoraUser> list = new List<DTO_BitacoraUser>();
             using (SqlConnection conn = _conn)
             {
                 try
@@ -65,7 +65,7 @@ namespace DAL
                     {
                         while (reader.Read())
                         {
-                            var bit = new BitacoraUser()
+                            var bit = new DTO_BitacoraUser()
                             {
                                 Detalle = reader["Detalle"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["Fecha"]),

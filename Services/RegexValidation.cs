@@ -64,7 +64,8 @@ namespace Services
                 }
                 else
                 {
-                    throw new Exception("El dni ingresado contiene caracteres invalidos");
+                    return false;
+                    //throw new Exception("El dni ingresado contiene caracteres invalidos");
                 }
             }
         }

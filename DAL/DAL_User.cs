@@ -97,7 +97,7 @@ namespace DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("@Apellido", obj.Apellido);
-                    cmd.Parameters.AddWithValue("@Dni", obj.DNI);
+                    cmd.Parameters.AddWithValue("@DNI", obj.DNI);
                     cmd.Parameters.AddWithValue("@Clave", obj.Clave);
                     cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
                     conn.Open();
