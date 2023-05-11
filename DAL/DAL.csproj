@@ -55,5 +55,8 @@
       <Name>BE</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="StoredProcedures\TextFile1.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
