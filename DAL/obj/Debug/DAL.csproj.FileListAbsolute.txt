@@ -31,3 +31,14 @@ C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\De
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.dll
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\DAL.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\DAL.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\BE.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\BE.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.pdb

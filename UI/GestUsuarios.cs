@@ -13,8 +13,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class GestUsuarios : Form
+    public partial class GestUsuarios : Form, IObserver
     {
+        private string IdiomaActual;
         public GestUsuarios()
         {
             InitializeComponent();
@@ -23,8 +24,11 @@ namespace UI
 
         private void GestUsuarios_Load(object sender, EventArgs e)
         {
+            IdiomaActual = Session.IdiomaActual;
+            Session._publisherIdioma.Subscribe(this);
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = new BLL_User().GetAll();
+            
         }
 
         private void btnDarPermisos_Click(object sender, EventArgs e)
@@ -61,6 +65,9 @@ namespace UI
             }
         }
 
-       
+        public void Notify(string idioma)
+        {
+            IdiomaActual = idioma;
+        }
     }
 }

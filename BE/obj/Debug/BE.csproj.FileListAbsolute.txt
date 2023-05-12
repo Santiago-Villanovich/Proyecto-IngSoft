@@ -25,3 +25,12 @@ C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Deb
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.csproj.CopyComplete
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.dll
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\BE\bin\Debug\BE.dll
+C:\Users\Matias\Documents\Ingenieria-Software\BE\bin\Debug\BE.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\BE\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\Ingenieria-Software\BE\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\Ingenieria-Software\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\Ingenieria-Software\BE\obj\Debug\BE.csproj.CopyComplete
+C:\Users\Matias\Documents\Ingenieria-Software\BE\obj\Debug\BE.dll
+C:\Users\Matias\Documents\Ingenieria-Software\BE\obj\Debug\BE.pdb
