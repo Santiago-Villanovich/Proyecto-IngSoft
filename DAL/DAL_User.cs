@@ -13,10 +13,26 @@ namespace DAL
     public class DAL_User : IMetodosGenericos<User>
     {
 
-        private SqlConnection _conn = new SqlConnection("Data Source=RUBEN\\SQLEXPRESS;Initial Catalog=ingenieria-software;Integrated Security=True");
+        private SqlConnection _conn = new SqlConnection("Data Source=50LAB3-24-71293;Initial Catalog=IS-EV;Integrated Security=True");
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = _conn) 
+            {
+                try 
+                {
+                    string query = String.Format("DELETE * FROM Users where Id = {0}",  id);
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = conn;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }catch(Exception ex) 
+                {
+                    return false;
+                }
+            
+            }
         }
 
         public User Get(int id)
@@ -77,12 +93,13 @@ namespace DAL
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("InsertUser", conn);
+                    SqlCommand cmd = new SqlCommand("sp_RegisterUser", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("@Apellido", obj.Apellido);
-                    cmd.Parameters.AddWithValue("@Dni", obj.DNI);
+                    cmd.Parameters.AddWithValue("@DNI", obj.DNI);
                     cmd.Parameters.AddWithValue("@Clave", obj.Clave);
+                    cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
@@ -159,26 +176,7 @@ namespace DAL
 
         }
 
-        public bool Delete(User user)
-        {
-            using (SqlConnection conn = _conn)
-            {
-                try
-                {
-                    string query = String.Format("DELETE * FROM Users where Users.Id = {0}", user.Id);
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = conn;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    return true;
-                }
-                catch (SqlException ex)
-                {
-                    return false;
-                }
-            }
-        }
+        
 
 
 

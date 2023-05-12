@@ -11,7 +11,7 @@ namespace DAL
 {
     public class DAL_Bitacora
     {
-        private SqlConnection _conn = new SqlConnection("Data Source=RUBEN\\SQLEXPRESS;Initial Catalog=ingenieria-software;Integrated Security=True");
+        private SqlConnection _conn = new SqlConnection("Data Source=50LAB3-24-71293;Initial Catalog=IS-EV;Integrated Security=True");
         public bool Insert(Bitacora bitacora)
         {
             _conn.Open();
@@ -21,7 +21,7 @@ namespace DAL
             cmd.CommandText = "sp_InsertBitacora";
             cmd.Parameters.AddWithValue("@Detalle", bitacora.Detalle);
             cmd.Parameters.AddWithValue("@Responsable", bitacora.Responsable.Id);
-            cmd.Parameters.AddWithValue("@Fecha", bitacora.Fecha);
+            //cmd.Parameters.AddWithValue("@Fecha", bitacora.Fecha);
 
 
             try
@@ -44,15 +44,20 @@ namespace DAL
 
         }
 
-        public List<Bitacora> GetAll()
+        public List<Bitacora> GetAll() 
         {
-            List<Bitacora> list = new List<Bitacora>();
+            throw new NotImplementedException();
+        }
+
+        public List<DTO_BitacoraUser> GetAllBU()
+        {
+            List<DTO_BitacoraUser> list = new List<DTO_BitacoraUser>();
             using (SqlConnection conn = _conn)
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("select * from Bitacora", conn);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand("sp_ListarBitacoras", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = conn;
                     conn.Open();
 
@@ -60,11 +65,13 @@ namespace DAL
                     {
                         while (reader.Read())
                         {
-                            var bit = new Bitacora()
+                            var bit = new DTO_BitacoraUser()
                             {
-                                Id = Convert.ToInt32(reader["Id"]),
                                 Detalle = reader["Detalle"].ToString(),
-                                Fecha = Convert.ToDateTime(reader["Apellido"])
+                                Fecha = Convert.ToDateTime(reader["Fecha"]),
+                                Nombre = reader["Nombre"].ToString(),
+                                Apellido = reader["Apellido"].ToString(),
+                                DNI = Convert.ToInt32(reader["DNI"]),
 
                             };
 
@@ -87,5 +94,6 @@ namespace DAL
                     conn.Close();
                 }
             }
+        }
     }
 }

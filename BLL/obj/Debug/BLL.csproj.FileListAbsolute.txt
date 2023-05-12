@@ -13,3 +13,33 @@ G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\BLL\obj\Debu
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\BLL\obj\Debug\BLL.dll
 G:\Universidad\Ingenieria de software\Proyecto 4.7\Proyecto-IngSoft\BLL\obj\Debug\BLL.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\BLL.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\BLL.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\BE.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\DAL.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\Services.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\BE.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\DAL.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\bin\Debug\Services.pdb
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\obj\Debug\BLL.dll
+C:\Users\Matias\Documents\FACULTAD\IngenieriaDeSoftware-4.7\BLL\obj\Debug\BLL.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\BLL.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\BLL.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\ABS.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\BE.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\DAL.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Services.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\ABS.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\BE.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\DAL.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Services.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.dll
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.pdb

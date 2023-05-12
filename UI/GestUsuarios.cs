@@ -1,4 +1,6 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,17 +29,38 @@ namespace UI
 
         private void btnDarPermisos_Click(object sender, EventArgs e)
         {
-            checkBox1.Checked = true;
+            checkAdmin.Checked = true;
         }
 
         private void btnSacarPermisos_Click(object sender, EventArgs e)
         {
-            checkBox1.Checked = false;
+            checkAdmin.Checked = false;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+      
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            var user = (User)dataGridView1.CurrentRow.DataBoundItem;
+            txtNombre.Text = user.Nombre.ToString();
+            txtApellido.Text = user.Apellido.ToString();
+            txtDNI.Text = user.DNI.ToString();
+            checkAdmin.Checked = Convert.ToBoolean(user.isAdmin);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var user = (User)dataGridView1.CurrentRow.DataBoundItem;
+           
+            if (new BLL_User().Delete(user.Id))
+            {
+                MessageBox.Show("El usuario se elimino correctamente");
+            }
+            else {
+                MessageBox.Show("Ocurrio un error al eliminar el usuario");
+            }
+        }
+
+       
     }
 }

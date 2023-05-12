@@ -22,24 +22,57 @@ namespace UI
             Size = new Size(354, 472);
         }
 
+        public RegexValidation re = new RegexValidation();
+
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             try
             {
+                #region(ErrorProvider)
+                errorProvider1.Clear();
+                errorProvider1.SetError(txtDniLog, "");
+                errorProvider1.SetError(txtDniLog, "");
+                bool errorFlag = false;
 
+                if (!re.validarDni(txtDniLog.Text))
+                {
+                    errorFlag = true;
+                    errorProvider1.SetError(txtDniLog, "Valor ingresado incorrecto");
+                }
+                if (!re.validarPassword(txtClaveLog.Text))
+                {
+                    errorFlag = true;
+                    errorProvider1.SetError(txtClaveLog, "Valor ingresado incorrecto");
+                }
+                #endregion
 
                 new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
                 var session = Session.GetInstance;
                 if (session.Usuario != null)
+                if (!errorFlag)
+
                 {
-                    MenuAdmin menu = new MenuAdmin();
-                    this.Hide();
-                    menu.Show();
+                    new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
+
+                    if (session.Usuario.isAdmin)
+                    {
+                        MenuAdmin menu = new MenuAdmin();
+                        this.Hide();
+                        menu.Show();
+                    }
+                    else if (!session.Usuario.isAdmin)
+                    {
+                        Menu menu = new Menu();
+                        this.Hide();
+                        menu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error al iniciar sesion");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Ocurrio un error al iniciar sesion");
-                }
+
+                
             }
             catch (Exception ex)
             {
@@ -72,22 +105,50 @@ namespace UI
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             User usuario = new User();
-            RegexValidation re = new RegexValidation();
+            
 
             try
             {
-                //registro al usuario
-                if (re.validarNombre(txtNombreSign.Text) && re.validarNombre(txtApellidoSign.Text) && re.validarDni(txtDniSign.Text) && re.validarPassword(txtClaveSign.Text))
+                #region(ErrorProvider)
+                errorProvider1.Clear();
+                errorProvider1.SetError(txtNombreSign, "");
+                errorProvider1.SetError(txtApellidoSign, "");
+                errorProvider1.SetError(txtDniSign, "");
+                errorProvider1.SetError(txtClaveSign, "");
+
+                bool errorFlag = false;
+                if (re.validarNombre(txtNombreSign.Text))
                 {
+                    errorFlag = true;
+                    errorProvider1.SetError(txtNombreSign, "El campo es obligatorio");
+                }
+                if (re.validarNombre(txtApellidoSign.Text))
+                {
+                    errorFlag = true;
+                    errorProvider1.SetError(txtApellidoSign, "El campo es obligatorio");
+                }
+                if (re.validarDni(txtDniSign.Text))
+                {
+                    errorFlag = true;
+                    errorProvider1.SetError(txtDniSign, "El campo es obligatorio");
+                }
+                if (re.validarPassword(txtClaveSign.Text))
+                {
+                    errorFlag = true;
+                    errorProvider1.SetError(txtClaveSign, "El campo es obligatorio");
+                }
+                #endregion
+
+                if (errorFlag)
+                {
+                    //registro al usuario
+
                     usuario.Nombre = txtNombreSign.Text;
                     usuario.Apellido = txtApellidoSign.Text;
                     usuario.DNI = Convert.ToInt32(txtDniSign.Text);
                     usuario.Clave = txtClaveSign.Text;
-                }
-                else
-                {
-                    MessageBox.Show("Error");
-                }
+                    usuario.isAdmin = false;
+
 
                 BLL_User _User = new BLL_User();
                 _User.Insert(usuario);
@@ -106,6 +167,20 @@ namespace UI
                     MessageBox.Show("Ocurrio un error al iniciar sesion");
                 }
 
+
+                    //genero el login
+
+                    if (session.Usuario != null)
+                    {
+                        Menu menu = new Menu();
+                        this.Hide();
+                        menu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error al iniciar sesion");
+                    }
+                }
 
             }
             catch (Exception ex)

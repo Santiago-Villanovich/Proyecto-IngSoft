@@ -36,7 +36,10 @@
             this.btnSacarPermisos = new System.Windows.Forms.Button();
             this.labelDni = new System.Windows.Forms.Label();
             this.labelAdmin = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkAdmin = new System.Windows.Forms.CheckBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,12 +50,12 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(587, 115);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(66, 194);
+            this.labelNombre.Location = new System.Drawing.Point(41, 190);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(44, 13);
             this.labelNombre.TabIndex = 1;
@@ -61,7 +64,7 @@
             // labelApellido
             // 
             this.labelApellido.AutoSize = true;
-            this.labelApellido.Location = new System.Drawing.Point(66, 231);
+            this.labelApellido.Location = new System.Drawing.Point(41, 230);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(44, 13);
             this.labelApellido.TabIndex = 2;
@@ -75,6 +78,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnDarPermisos
             // 
@@ -99,7 +103,7 @@
             // labelDni
             // 
             this.labelDni.AutoSize = true;
-            this.labelDni.Location = new System.Drawing.Point(230, 194);
+            this.labelDni.Location = new System.Drawing.Point(243, 190);
             this.labelDni.Name = "labelDni";
             this.labelDni.Size = new System.Drawing.Size(23, 13);
             this.labelDni.TabIndex = 6;
@@ -108,27 +112,51 @@
             // labelAdmin
             // 
             this.labelAdmin.AutoSize = true;
-            this.labelAdmin.Location = new System.Drawing.Point(230, 231);
+            this.labelAdmin.Location = new System.Drawing.Point(243, 230);
             this.labelAdmin.Name = "labelAdmin";
             this.labelAdmin.Size = new System.Drawing.Size(36, 13);
             this.labelAdmin.TabIndex = 7;
             this.labelAdmin.Text = "Admin";
             // 
-            // checkBox1
+            // checkAdmin
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(272, 230);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkAdmin.AutoSize = true;
+            this.checkAdmin.Location = new System.Drawing.Point(285, 231);
+            this.checkAdmin.Name = "checkAdmin";
+            this.checkAdmin.Size = new System.Drawing.Size(15, 14);
+            this.checkAdmin.TabIndex = 8;
+            this.checkAdmin.UseVisualStyleBackColor = true;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(91, 183);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(132, 20);
+            this.txtNombre.TabIndex = 9;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(91, 223);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(132, 20);
+            this.txtApellido.TabIndex = 10;
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(272, 183);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(132, 20);
+            this.txtDNI.TabIndex = 11;
             // 
             // GestUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 400);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.txtDNI);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.checkAdmin);
             this.Controls.Add(this.labelAdmin);
             this.Controls.Add(this.labelDni);
             this.Controls.Add(this.btnSacarPermisos);
@@ -156,6 +184,9 @@
         private System.Windows.Forms.Button btnSacarPermisos;
         private System.Windows.Forms.Label labelDni;
         private System.Windows.Forms.Label labelAdmin;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkAdmin;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtDNI;
     }
 }

@@ -1,4 +1,4 @@
-﻿using Services;
+﻿using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,20 +11,17 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Menu : Form
+    public partial class FormBitacoras : Form
     {
-        public Menu()
+        public FormBitacoras()
         {
             InitializeComponent();
         }
 
-        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FormBitacoras_Load(object sender, EventArgs e)
         {
-            Session.Logout();
-            LogIn form = new LogIn();
-            this.Close();
-            form.Show();
-
+            var bitacoras = new BLL_Bitacora().GetAllBU();
+            dataGridView1.DataSource = bitacoras;
         }
     }
 }

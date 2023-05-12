@@ -9,6 +9,8 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Collections.Specialized.BitVector32;
+using System.Net;
+using System.Security.Claims;
 
 namespace BLL
 {
@@ -16,7 +18,7 @@ namespace BLL
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return new DAL_User().Delete(id);
         }
 
         public User Get(int id)
@@ -35,6 +37,30 @@ namespace BLL
             var user = obj;
             user.Clave = hash.GenerarMD5(obj.Clave);
             var dal = new DAL_User().Insert(user);
+<<<<<<< HEAD
+=======
+            return true;
+        }
+
+        public bool Register(User obj)
+        {
+            HashCrypto hash = new HashCrypto();
+            var user = obj;
+            user.Clave = hash.GenerarMD5(obj.Clave);
+            var dal = new DAL_User().Insert(user);
+            var loggedUser = new DAL_User().Login(user.DNI, user.Clave);
+            if (loggedUser != null)
+            {
+
+                Session.Login(user);
+                var bitacora = new Bitacora();
+                bitacora.Detalle = "Login de usuario";
+                bitacora.Responsable = user;
+                bitacora.Fecha = DateTime.Now;
+                new BLL_Bitacora().Insert(bitacora);
+            }
+
+>>>>>>> dab8ece2fd644bb8e4d51d45b8d22e27eebfbbc7
             return true;
         }
 

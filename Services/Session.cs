@@ -22,7 +22,7 @@ namespace Services
         {
             get
             {
-                if (_session == null) throw new Exception("La sesion no esta iniciada");
+                if (_session == null) new Session();
                 return _session;
             }
         }
@@ -34,7 +34,6 @@ namespace Services
             {
                 if (_session == null)
                 {
-                    _session = new Session();
                     _session.Usuario = user;
                     _session.FechaInicio = DateTime.Now;
 
