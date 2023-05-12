@@ -11,11 +11,18 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Menu : Form
+    public partial class Menu : Form, IObserver
     {
+        public string IdiomaActual { get; set; }
         public Menu()
         {
             InitializeComponent();
+        }
+
+        public void Notify(string idioma)
+        {
+            IdiomaActual = idioma;
+            label1.Text = idioma;
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -25,6 +32,11 @@ namespace UI
             this.Close();
             form.Show();
 
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            Session._publisherIdioma.Subscribe(this);
         }
     }
 }

@@ -135,6 +135,7 @@
             this.groupBox1.Size = new System.Drawing.Size(369, 409);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox2
             // 

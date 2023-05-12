@@ -17,6 +17,10 @@ namespace Services
 
         private static object _lock = new object();
 
+        public static PublisherIdioma _publisherIdioma = new PublisherIdioma();
+
+        public static string IdiomaActual { get; set; } = "ES";
+
 
         public static Session GetInstance
         {
@@ -61,6 +65,12 @@ namespace Services
                 }
             }
 
+        }
+
+        public static void CambiarIdioma(string idioma)
+        {
+            IdiomaActual = idioma;
+            _publisherIdioma.Notify(idioma);
         }
 
     }

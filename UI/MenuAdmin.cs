@@ -11,8 +11,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class MenuAdmin : Form
+    public partial class MenuAdmin : Form, IObserver
     {
+        public string IdiomaActual {get; set;}
         public MenuAdmin()
         {
             InitializeComponent();
@@ -36,8 +37,21 @@ namespace UI
         private void verBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormBitacoras form = new FormBitacoras();
-            this.Close();
+            form.MdiParent = this;
             form.Show();
+        }
+
+        private void MenuAdmin_Load(object sender, EventArgs e)
+        {
+            Session._publisherIdioma.Subscribe(this);
+            IdiomaActual = Session.IdiomaActual;
+            label1.Text = IdiomaActual;
+        }
+
+        public void Notify(string idioma)
+        {
+            IdiomaActual = idioma;
+            label1.Text = IdiomaActual;
         }
     }
 }

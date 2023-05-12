@@ -37,8 +37,6 @@ namespace BLL
             var user = obj;
             user.Clave = hash.GenerarMD5(obj.Clave);
             var dal = new DAL_User().Insert(user);
-<<<<<<< HEAD
-=======
             return true;
         }
 
@@ -60,7 +58,6 @@ namespace BLL
                 new BLL_Bitacora().Insert(bitacora);
             }
 
->>>>>>> dab8ece2fd644bb8e4d51d45b8d22e27eebfbbc7
             return true;
         }
 

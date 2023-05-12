@@ -31,3 +31,25 @@ C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\o
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\obj\Debug\Services.csproj.CopyComplete
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\obj\Debug\Services.dll
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\Services\obj\Debug\Services.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\Services\bin\Debug\Services.dll
+C:\Users\Matias\Documents\Ingenieria-Software\Services\bin\Debug\Services.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\Services\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\Ingenieria-Software\Services\bin\Debug\BE.dll
+C:\Users\Matias\Documents\Ingenieria-Software\Services\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\Services\bin\Debug\BE.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\Ingenieria-Software\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\Ingenieria-Software\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\Matias\Documents\Ingenieria-Software\Services\obj\Debug\Services.dll
+C:\Users\Matias\Documents\Ingenieria-Software\Services\obj\Debug\Services.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\bin\Debug\Services.dll
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\bin\Debug\Services.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\bin\Debug\ABS.dll
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\bin\Debug\BE.dll
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\bin\Debug\ABS.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\bin\Debug\BE.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\obj\Debug\Services.csproj.CopyComplete
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\obj\Debug\Services.dll
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\Services\obj\Debug\Services.pdb

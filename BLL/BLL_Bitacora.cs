@@ -18,13 +18,10 @@ namespace BLL
         public List<Bitacora> GetAll()
         {
             return new DAL_Bitacora().GetAll();
-<<<<<<< HEAD
-=======
         }
         public List<DTO_BitacoraUser> GetAllBU()
         {
             return new DAL_Bitacora().GetAllBU();
->>>>>>> dab8ece2fd644bb8e4d51d45b8d22e27eebfbbc7
         }
     }
 }
