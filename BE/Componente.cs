@@ -8,6 +8,7 @@ namespace BE
 {
     public abstract class Componente
     {
+<<<<<<< HEAD
         int _id;
 
         string _nombre;
@@ -32,6 +33,17 @@ namespace BE
         public abstract void AgregarHijo(Componente permiso);
 
         public abstract IList<Componente> ObtenerHijos();
+=======
+        public int Id { get; set; }
+
+        public string Nombre { get; set; }
+
+        public bool es_patente { get; set; }
+
+        public  abstract IList<Componente> Hijos { get; }
+
+        public abstract void AgregarHijo(Componente c);
+>>>>>>> mati
 
 
     }

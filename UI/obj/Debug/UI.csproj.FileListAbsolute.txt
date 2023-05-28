@@ -99,3 +99,4 @@ C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.csproj.CoreCompile
 C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.csproj.CopyComplete
 C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.exe
 C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.FormPermisos.resources
