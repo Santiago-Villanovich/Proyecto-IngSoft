@@ -68,6 +68,7 @@ namespace UI
         public void Notify(string idioma)
         {
             IdiomaActual = idioma;
+            label1.Text = idioma;
         }
     }
 }

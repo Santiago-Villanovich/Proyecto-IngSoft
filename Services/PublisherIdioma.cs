@@ -8,7 +8,7 @@ namespace Services
 {
     public class PublisherIdioma : IPublisherIdioma
     {
-        private List<IObserver> _forms;
+        private List<IObserver> _forms = new List<IObserver>();
 
         public void Notify(string idioma)
         {

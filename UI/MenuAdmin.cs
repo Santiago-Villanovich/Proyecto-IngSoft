@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UI
 {
@@ -35,9 +36,16 @@ namespace UI
 
         private void verBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormBitacoras form = new FormBitacoras();
-            this.Close();
-            form.Show();
+            FormBitacoras menu = new FormBitacoras();
+            menu.MdiParent = this;
+            menu.Show();
+        }
+
+        private void permisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPermisos menu = new FormPermisos();
+            menu.MdiParent = this;
+            menu.Show();
         }
     }
 }

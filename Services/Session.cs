@@ -17,14 +17,14 @@ namespace Services
 
         private static object _lock = new object();
 
-        public static PublisherIdioma _publisherIdioma;
+        public static PublisherIdioma _publisherIdioma = new PublisherIdioma();
 
         public static string IdiomaActual { get; set; } = "ES";
 
 
         public static Session GetInstance
         {
-            get
+            get 
             {
                 if (_session == null) new Session();
                 return _session;
@@ -38,6 +38,8 @@ namespace Services
             {
                 if (_session == null)
                 {
+                    
+                    _session = new Session();
                     _session.Usuario = user;
                     _session.FechaInicio = DateTime.Now;
 

@@ -27,6 +27,7 @@ namespace UI
 
         private void FormBitacoras_Load(object sender, EventArgs e)
         {
+            var _session = Session.GetInstance;
             Session._publisherIdioma.Subscribe(this);
             IdiomaActual = Session.IdiomaActual;
             var bitacoras = new BLL_Bitacora().GetAllBU();
