@@ -125,6 +125,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ABS\ABS.csproj">
+      <Project>{aa3ecc28-43cb-4342-9bca-d1733d35d2f5}</Project>
+      <Name>ABS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{62f6adaa-5606-4842-adca-16f4cac2ae61}</Project>
       <Name>BE</Name>
@@ -132,6 +136,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{2301ce5f-9d95-41a0-9b71-1a177970134c}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{80a0be0e-5aa0-4f28-8524-5a9309b83b3f}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{23446718-e9c6-46b2-bc16-286f18dbf061}</Project>
