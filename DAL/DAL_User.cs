@@ -13,7 +13,7 @@ namespace DAL
     public class DAL_User : IMetodosGenericos<User>
     {
 
-        private SqlConnection _conn = new SqlConnection("Data Source=50LAB3-24-71293;Initial Catalog=IS-EV;Integrated Security=True");
+        private SqlConnection _conn = new SqlConnection("Data Source=W10LAPTOPMATIAS\\SQLEXPRESS;Initial Catalog=DB_IngSoft;Integrated Security=True");
         public bool Delete(int id)
         {
             using (SqlConnection conn = _conn) 
