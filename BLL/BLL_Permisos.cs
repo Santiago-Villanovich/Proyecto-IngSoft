@@ -36,9 +36,47 @@ namespace BLL
             return new DAL_Permisos().Update(obj);
         }
 
-        public List<Componente> GetFamilia(int familia)
+        public List<Componente> GetFamilias()
         {
-            return new DAL_Permisos().GetFamilia(familia);
+            return new DAL_Permisos().GetFamilias();
+        }
+
+        public List<Componente> GetPermisosFamilia(int familia)
+        {
+            return new DAL_Permisos().GetPermisosFamilia(familia);
+        }
+
+
+        public List<Componente> GetAllPermisos()
+        {
+            List<Componente> AllPermisos = new List<Componente>();
+            var familias = new DAL_Permisos().GetFamilias();
+
+            foreach (var familia in familias)
+            {
+                var permisosFamilia = LlenarFamilia(familia);
+                AllPermisos.Add(permisosFamilia);
+
+            }
+
+            return AllPermisos;
+
+        }
+
+
+        public Componente LlenarFamilia(Componente parent)
+        {
+            List<Componente> HijosFamilia = new DAL_Permisos().GetPermisosFamilia(parent.Id);
+
+
+            foreach (var item in HijosFamilia)
+            {
+                parent.AgregarHijo(item);
+            }
+
+            return parent;
+
+
         }
     }
 }

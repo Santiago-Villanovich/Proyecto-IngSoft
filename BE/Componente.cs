@@ -8,42 +8,15 @@ namespace BE
 {
     public abstract class Componente
     {
-<<<<<<< HEAD
-        int _id;
-
-        string _nombre;
-
-        public Componente  (string nombre)
-        {
-            _nombre = nombre;
-            
-        }
-
-        public Componente(string nombre, int id)
-        {
-            _nombre = nombre;
-            _id = id;
-
-        }
-
-        public string Nombre { get { return _nombre; } }
-
-        public int Id { get { return _id; } }
-
-        public abstract void AgregarHijo(Componente permiso);
-
-        public abstract IList<Componente> ObtenerHijos();
-=======
         public int Id { get; set; }
 
         public string Nombre { get; set; }
 
         public bool es_patente { get; set; }
 
-        public  abstract IList<Componente> Hijos { get; }
+        public abstract IList<Componente> Hijos { get; }
 
         public abstract void AgregarHijo(Componente c);
->>>>>>> mati
 
 
     }

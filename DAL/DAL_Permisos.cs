@@ -2,6 +2,7 @@
 using BE;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -89,14 +90,59 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public List<Componente> GetFamilia(int familia)
+        public List<Componente> GetFamilias()
+        {
+            List<Componente> list = new List<Componente>();
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetFamilias", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var permiso = new Familia()
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Nombre = reader["nombre"].ToString(),
+                                es_patente = Convert.ToBoolean(reader["es_patente"])
+
+                            };
+
+                            list.Add(permiso);
+                        }
+                    }
+
+                    return list;
+                }
+                catch (SqlException ex)
+                {
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public List<Componente> GetPermisosFamilia(int familia)
         {
             _conn.Open();
             var cmd = new SqlCommand();
             cmd.Connection = _conn;
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_GetAllPermisos";
-            cmd.Parameters.AddWithValue("@familia",familia);
+            cmd.Parameters.AddWithValue("@familia", familia);
 
             var reader = cmd.ExecuteReader();
 

@@ -1,5 +1,4 @@
-﻿using BE;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BE;
 
 namespace UI
 {
@@ -22,13 +22,17 @@ namespace UI
 
         private void Permisos_Load(object sender, EventArgs e)
         {
-           
-            _permisos = new BLL_Permisos().GetFamilia(1);
-            TreeNode padre = new TreeNode(_permisos[0].Nombre);
-            cargarTreeView(_permisos[0].Hijos, padre);
-            treeView1.Nodes.Add(padre);
-           
-        }  
+
+            List<Componente> _familias = new BLL_Permisos().GetFamilias();
+            foreach (var familia in _familias)
+            {
+                _permisos = new BLL_Permisos().GetPermisosFamilia(familia.Id);
+                TreeNode padre = new TreeNode(familia.Nombre);
+                cargarTreeView(_permisos, padre);
+                treeView1.Nodes.Add(padre);
+            }
+
+        }
 
         public void cargarTreeView(IList<Componente> list, TreeNode parent)
         {
@@ -38,6 +42,11 @@ namespace UI
                 parent.Nodes.Add(newNode);
                 if (item.Hijos != null && item.Hijos.Count != 0) cargarTreeView(item.Hijos, newNode);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new BLL_Permisos().GetAllPermisos();
         }
     }
 }
