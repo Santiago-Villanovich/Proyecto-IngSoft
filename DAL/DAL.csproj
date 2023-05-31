@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_Bitacora.cs" />
+    <Compile Include="DAL_Traductor.cs" />
     <Compile Include="DAL_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,6 +55,10 @@
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{62f6adaa-5606-4842-adca-16f4cac2ae61}</Project>
       <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{23446718-e9c6-46b2-bc16-286f18dbf061}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

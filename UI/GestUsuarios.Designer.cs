@@ -59,6 +59,7 @@
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(44, 13);
             this.labelNombre.TabIndex = 1;
+            this.labelNombre.Tag = "7";
             this.labelNombre.Text = "Nombre";
             // 
             // labelApellido
@@ -68,6 +69,7 @@
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(44, 13);
             this.labelApellido.TabIndex = 2;
+            this.labelApellido.Tag = "8";
             this.labelApellido.Text = "Apellido";
             // 
             // btnEliminar
@@ -76,6 +78,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(172, 23);
             this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Tag = "18";
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -86,6 +89,7 @@
             this.btnDarPermisos.Name = "btnDarPermisos";
             this.btnDarPermisos.Size = new System.Drawing.Size(83, 38);
             this.btnDarPermisos.TabIndex = 4;
+            this.btnDarPermisos.Tag = "16";
             this.btnDarPermisos.Text = "Dar permisos";
             this.btnDarPermisos.UseVisualStyleBackColor = true;
             this.btnDarPermisos.Click += new System.EventHandler(this.btnDarPermisos_Click);
@@ -96,6 +100,7 @@
             this.btnSacarPermisos.Name = "btnSacarPermisos";
             this.btnSacarPermisos.Size = new System.Drawing.Size(83, 38);
             this.btnSacarPermisos.TabIndex = 5;
+            this.btnSacarPermisos.Tag = "17";
             this.btnSacarPermisos.Text = "Quitar permisos";
             this.btnSacarPermisos.UseVisualStyleBackColor = true;
             this.btnSacarPermisos.Click += new System.EventHandler(this.btnSacarPermisos_Click);
@@ -107,6 +112,7 @@
             this.labelDni.Name = "labelDni";
             this.labelDni.Size = new System.Drawing.Size(23, 13);
             this.labelDni.TabIndex = 6;
+            this.labelDni.Tag = "2";
             this.labelDni.Text = "Dni";
             // 
             // labelAdmin
@@ -116,6 +122,7 @@
             this.labelAdmin.Name = "labelAdmin";
             this.labelAdmin.Size = new System.Drawing.Size(36, 13);
             this.labelAdmin.TabIndex = 7;
+            this.labelAdmin.Tag = "15";
             this.labelAdmin.Text = "Admin";
             // 
             // checkAdmin

@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAgregarIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarIdioma.Designer.cs">
+      <DependentUpon>FormAgregarIdioma.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBitacoras.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBitacoras.Designer.cs">
       <DependentUpon>FormBitacoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfiguracion.Designer.cs">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
     </Compile>
     <Compile Include="GestUsuarios.cs">
       <SubType>Form</SubType>
@@ -78,8 +90,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgregarIdioma.resx">
+      <DependentUpon>FormAgregarIdioma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBitacoras.resx">
       <DependentUpon>FormBitacoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfiguracion.resx">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestUsuarios.resx">
       <DependentUpon>GestUsuarios.cs</DependentUpon>
@@ -116,6 +134,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ABS\ABS.csproj">
+      <Project>{aa3ecc28-43cb-4342-9bca-d1733d35d2f5}</Project>
+      <Name>ABS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{62f6adaa-5606-4842-adca-16f4cac2ae61}</Project>
       <Name>BE</Name>

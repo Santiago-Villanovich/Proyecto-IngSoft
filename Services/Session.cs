@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using Services.Multilanguage;
 
 namespace Services
 {
@@ -17,9 +18,9 @@ namespace Services
 
         private static object _lock = new object();
 
-        public static PublisherIdioma _publisherIdioma;
+        public static PublisherIdioma _publisherIdioma = new PublisherIdioma();
 
-        public static string IdiomaActual { get; set; } = "ES";
+        public static Idioma IdiomaActual { get; set; } = null;
 
 
         public static Session GetInstance
@@ -38,6 +39,7 @@ namespace Services
             {
                 if (_session == null)
                 {
+                    _session = new Session();
                     _session.Usuario = user;
                     _session.FechaInicio = DateTime.Now;
 
@@ -67,7 +69,7 @@ namespace Services
 
         }
 
-        public static void CambiarIdioma(string idioma)
+        public static void CambiarIdioma(Idioma idioma)
         {
             IdiomaActual = idioma;
             _publisherIdioma.Notify(idioma);
