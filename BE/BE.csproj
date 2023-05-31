@@ -43,15 +43,11 @@
   <ItemGroup>
     <Compile Include="Bitacora.cs" />
     <Compile Include="BitacoraUser.cs" />
-<<<<<<< HEAD
-    <Compile Include="Patente.cs" />
     <Compile Include="Permiso.cs" />
-    <Compile Include="Componente.cs" />
-=======
     <Compile Include="Componente.cs" />
     <Compile Include="Familia.cs" />
     <Compile Include="Patente.cs" />
->>>>>>> mati
+
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
