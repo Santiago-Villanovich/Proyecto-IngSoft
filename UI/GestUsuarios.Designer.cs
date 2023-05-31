@@ -40,6 +40,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,11 +156,21 @@
             this.txtDNI.Size = new System.Drawing.Size(132, 20);
             this.txtDNI.TabIndex = 11;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 270);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "label1";
+            // 
             // GestUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 400);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDNI);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
@@ -195,5 +206,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.Label label1;
     }
 }

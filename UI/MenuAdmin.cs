@@ -1,4 +1,5 @@
 ﻿using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,8 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ABS;
-using Services.Multilanguage;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UI
 {
@@ -77,9 +77,17 @@ namespace UI
 
         private void verBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormBitacoras form = new FormBitacoras();
-            form.MdiParent = this;
-            form.Show();
+            FormBitacoras menu = new FormBitacoras();
+            menu.MdiParent = this;
+            menu.Show();
+        }
+
+        private void permisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPermisos menu = new FormPermisos();
+            menu.MdiParent = this;
+            menu.Show();
+
         }
 
         private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)

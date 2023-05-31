@@ -34,6 +34,7 @@
             this.verBitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,8 @@
             // 
             this.administrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionarUsuariosToolStripMenuItem,
-            this.verBitacoraToolStripMenuItem});
+            this.verBitacoraToolStripMenuItem,
+            this.permisosToolStripMenuItem});
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
             this.administrarToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.administrarToolStripMenuItem.Tag = "10";
@@ -63,6 +65,7 @@
             this.gestionarUsuariosToolStripMenuItem.Name = "gestionarUsuariosToolStripMenuItem";
             this.gestionarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionarUsuariosToolStripMenuItem.Tag = "11";
+
             this.gestionarUsuariosToolStripMenuItem.Text = "Gestionar Usuarios";
             this.gestionarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionarUsuariosToolStripMenuItem_Click);
             // 
@@ -85,11 +88,21 @@
             // 
             // configuracionToolStripMenuItem
             // 
+
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
             this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.configuracionToolStripMenuItem.Tag = "14";
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
+
+
+            // 
+            // permisosToolStripMenuItem
+            // 
+            this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.permisosToolStripMenuItem.Text = "Permisos";
+            this.permisosToolStripMenuItem.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click);
             // 
             // MenuAdmin
             // 
@@ -117,5 +130,8 @@
         private System.Windows.Forms.ToolStripMenuItem verBitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permisosToolStripMenuItem;
+
     }
 }

@@ -25,7 +25,7 @@ namespace Services
 
         public static Session GetInstance
         {
-            get
+            get 
             {
                 if (_session == null) new Session();
                 return _session;
@@ -42,7 +42,6 @@ namespace Services
                     _session = new Session();
                     _session.Usuario = user;
                     _session.FechaInicio = DateTime.Now;
-
                 }
                 else
                 {

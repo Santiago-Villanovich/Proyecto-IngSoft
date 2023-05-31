@@ -1,17 +1,17 @@
-﻿using BE;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE;
 
 namespace DAL
 {
     public class DAL_Bitacora
     {
-        private SqlConnection _conn = new SqlConnection("Data Source=50LAB3-24-71293;Initial Catalog=IS-EV;Integrated Security=True");
+        private SqlConnection _conn = new SqlConnection("Data Source = W10LAPTOPMATIAS\\SQLEXPRESS; Initial Catalog = DB_IngSoft; Integrated Security = True");
         public bool Insert(Bitacora bitacora)
         {
             _conn.Open();

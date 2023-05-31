@@ -28,11 +28,11 @@ namespace UI
 
         private void FormBitacoras_Load(object sender, EventArgs e)
         {
-            /*Session._publisherIdioma.Subscribe(this);
+            Session._publisherIdioma.Subscribe(this);
             IdiomaActual = Session.IdiomaActual;
-            label1.Text = IdiomaActual.nombre;*/
-            //var bitacoras = new BLL_Bitacora().GetAllBU();
-            //dataGridView1.DataSource = bitacoras;
+            label1.Text = IdiomaActual.nombre;
+            var bitacoras = new BLL_Bitacora().GetAllBU();
+            dataGridView1.DataSource = bitacoras;
         }
 
     }

@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Bitacora.cs" />
     <Compile Include="BitacoraUser.cs" />
+    <Compile Include="Componente.cs" />
+    <Compile Include="Familia.cs" />
+    <Compile Include="Patente.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

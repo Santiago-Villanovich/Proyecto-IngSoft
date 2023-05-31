@@ -79,14 +79,14 @@ namespace UI
                 {
                     new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
 
-                    var session = Session.GetInstance;
-                    if (session.Usuario.isAdmin)
+                    
+                    if (Session.GetInstance.Usuario.isAdmin)
                     {
                         MenuAdmin menu = new MenuAdmin();
                         this.Hide();
                         menu.Show();
                     }
-                    else if (!session.Usuario.isAdmin)
+                    else if (!Session.GetInstance.Usuario.isAdmin)
                     {
                         Menu menu = new Menu();
                         this.Hide();

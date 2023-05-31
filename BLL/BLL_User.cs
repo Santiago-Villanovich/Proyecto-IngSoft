@@ -77,11 +77,11 @@ namespace BLL
                 if (user != null)
                 {
                     Session.Login(user);
-                    /*var bitacora = new Bitacora();
+                    var bitacora = new Bitacora();
                     bitacora.Detalle = "Login de usuario";
                     bitacora.Responsable = user;
                     bitacora.Fecha = DateTime.Now;
-                    new BLL_Bitacora().Insert(bitacora);*/
+                    new BLL_Bitacora().Insert(bitacora);
                 }
 
                 return user;

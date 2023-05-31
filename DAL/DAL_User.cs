@@ -14,7 +14,8 @@ namespace DAL
     public class DAL_User : IMetodosGenericos<User>
     {
 
-        private SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString);
+        private SqlConnection _conn = new SqlConnection("Server=./sqlexpress;Database=DB_ProyectoIngSoft;Trusted_Connection=True;");
+
         public bool Delete(int id)
         {
             using (SqlConnection conn = _conn) 
