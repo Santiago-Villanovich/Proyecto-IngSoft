@@ -1,4 +1,5 @@
 ﻿using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +14,15 @@ namespace UI
 {
     public partial class Menu : Form, IObserver
     {
-        public string IdiomaActual { get; set; }
+        public Idioma IdiomaActual { get; set; }
         public Menu()
         {
             InitializeComponent();
         }
 
-        public void Notify(string idioma)
+        public void Notify(Idioma idioma)
         {
             IdiomaActual = idioma;
-            label1.Text = idioma;
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)

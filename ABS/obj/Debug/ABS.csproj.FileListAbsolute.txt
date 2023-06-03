@@ -16,3 +16,9 @@ C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\obj\De
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\obj\Debug\ABS.csproj.CoreCompileInputs.cache
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\obj\Debug\ABS.dll
 C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\ABS\obj\Debug\ABS.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\bin\Debug\ABS.dll
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\bin\Debug\ABS.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\obj\Debug\ABS.csproj.AssemblyReference.cache
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\obj\Debug\ABS.csproj.CoreCompileInputs.cache
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\obj\Debug\ABS.dll
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\obj\Debug\ABS.pdb

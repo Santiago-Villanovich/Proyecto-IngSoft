@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,30 +15,24 @@ namespace UI
 {
     public partial class FormBitacoras : Form, IObserver
     {
-        private string IdiomaActual;
+        private Idioma IdiomaActual;
         public FormBitacoras()
         {
             InitializeComponent();
         }
 
-        public void Notify(string idioma)
+        public void Notify(Idioma idioma)
         {
             IdiomaActual = idioma;
-            label1.Text = idioma;
         }
 
         private void FormBitacoras_Load(object sender, EventArgs e)
         {
             Session._publisherIdioma.Subscribe(this);
             IdiomaActual = Session.IdiomaActual;
-            label1.Text = IdiomaActual;
-            //var bitacoras = new BLL_Bitacora().GetAllBU();
-            //dataGridView1.DataSource = bitacoras;
+            var bitacoras = new BLL_Bitacora().GetAllBU();
+            dataGridView1.DataSource = bitacoras;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Session.CambiarIdioma(comboBox1.SelectedItem.ToString());
-        }
     }
 }

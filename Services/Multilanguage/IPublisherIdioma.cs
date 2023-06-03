@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services.Multilanguage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,6 @@ namespace Services
 
         void Unsuscribe(IObserver observer);
 
-        void Notify(string idioma);
+        void Notify(Idioma idioma);
     }
 }

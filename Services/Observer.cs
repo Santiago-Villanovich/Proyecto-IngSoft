@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services.Multilanguage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,9 @@ namespace Services
 {
     public class Observer : IObserver
     {
-        private string IidiomaActual { get; set; }
-        public void Notify(string idioma)
+        private Idioma IidiomaActual { get; set; }
+
+        public void Notify(Idioma idioma)
         {
             throw new NotImplementedException();
         }

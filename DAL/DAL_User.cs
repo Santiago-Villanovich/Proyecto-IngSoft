@@ -5,15 +5,18 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using ABS;
 using BE;
+using Services;
 
 namespace DAL
 {
     public class DAL_User : IMetodosGenericos<User>
     {
 
-        private SqlConnection _conn = new SqlConnection("Data Source=50LAB3-24-71293;Initial Catalog=IS-EV;Integrated Security=True");
+        private SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString);
+
         public bool Delete(int id)
         {
             using (SqlConnection conn = _conn) 
@@ -169,17 +172,9 @@ namespace DAL
                 }
 
 
-
-
             }
 
-
         }
-
-        
-
-
-
 
     }
 }

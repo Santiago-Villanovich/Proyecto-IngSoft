@@ -63,11 +63,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label1.Location = new System.Drawing.Point(101, 41);
+            this.label1.Location = new System.Drawing.Point(44, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 40);
+            this.label1.Size = new System.Drawing.Size(249, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "LogIn";
+            this.label1.Tag = "1";
+            this.label1.Text = "Iniciar Sesion";
             // 
             // label2
             // 
@@ -78,6 +79,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 20);
             this.label2.TabIndex = 1;
+            this.label2.Tag = "2";
             this.label2.Text = "Dni";
             // 
             // label3
@@ -89,6 +91,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 20);
             this.label3.TabIndex = 2;
+            this.label3.Tag = "3";
             this.label3.Text = "Clave";
             // 
             // label4
@@ -100,6 +103,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 32);
             this.label4.TabIndex = 3;
+            this.label4.Tag = "5";
             this.label4.Text = "No se encuentra \r\nregistrado?";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -109,11 +113,12 @@
             this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Khaki;
-            this.label5.Location = new System.Drawing.Point(136, 400);
+            this.label5.Location = new System.Drawing.Point(120, 397);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 15);
+            this.label5.Size = new System.Drawing.Size(83, 15);
             this.label5.TabIndex = 4;
-            this.label5.Text = "SignUp";
+            this.label5.Tag = "6";
+            this.label5.Text = "Registrarse";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // groupBox1
@@ -158,7 +163,8 @@
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(105, 41);
             this.btnRegistrar.TabIndex = 10;
-            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.Tag = "4";
+            this.btnRegistrar.Text = "Ingresar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
@@ -200,6 +206,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 20);
             this.label10.TabIndex = 5;
+            this.label10.Tag = "3";
             this.label10.Text = "Clave";
             // 
             // label9
@@ -210,6 +217,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 20);
             this.label9.TabIndex = 4;
+            this.label9.Tag = "2";
             this.label9.Text = "Dni";
             // 
             // label8
@@ -236,11 +244,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(119, 29);
+            this.label6.Location = new System.Drawing.Point(78, 29);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 40);
+            this.label6.Size = new System.Drawing.Size(211, 40);
             this.label6.TabIndex = 1;
-            this.label6.Text = "SignUp";
+            this.label6.Tag = "6";
+            this.label6.Text = "Registrarse";
             // 
             // txtDniLog
             // 
@@ -268,6 +277,7 @@
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(105, 41);
             this.btnIngresar.TabIndex = 8;
+            this.btnIngresar.Tag = "4";
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -306,6 +316,7 @@
             this.Controls.Add(this.label1);
             this.Name = "LogIn";
             this.Text = "LogIn";
+            this.Load += new System.EventHandler(this.LogIn_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

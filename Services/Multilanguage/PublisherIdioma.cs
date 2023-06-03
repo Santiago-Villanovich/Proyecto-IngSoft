@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services.Multilanguage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Services
             _forms = new List<IObserver>();
         }
 
-        public void Notify(string idioma)
+        public void Notify(Idioma idioma)
         {
             foreach(IObserver observer in _forms)
             {

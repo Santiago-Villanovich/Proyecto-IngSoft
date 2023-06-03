@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services
+namespace ABS
 {
-    public interface IObserver
+    public interface ITraduccion
     {
-         void Notify(string idioma);
+        ITermino termino { get; set; }
+        string texto { get; set; }
     }
 }

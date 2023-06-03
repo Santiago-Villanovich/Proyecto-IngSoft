@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using Services.Multilanguage;
 
 namespace Services
 {
     public class Session
     {
-        private static Session _session = null;
+        private static Session _session;
 
         public User Usuario { get; set; }
 
@@ -19,12 +20,12 @@ namespace Services
 
         public static PublisherIdioma _publisherIdioma = new PublisherIdioma();
 
-        public static string IdiomaActual { get; set; } = "ES";
+        public static Idioma IdiomaActual { get; set; } = null;
 
 
         public static Session GetInstance
         {
-            get
+            get 
             {
                 if (_session == null) new Session();
                 return _session;
@@ -38,9 +39,9 @@ namespace Services
             {
                 if (_session == null)
                 {
+                    _session = new Session();
                     _session.Usuario = user;
                     _session.FechaInicio = DateTime.Now;
-
                 }
                 else
                 {
@@ -67,7 +68,7 @@ namespace Services
 
         }
 
-        public static void CambiarIdioma(string idioma)
+        public static void CambiarIdioma(Idioma idioma)
         {
             IdiomaActual = idioma;
             _publisherIdioma.Notify(idioma);

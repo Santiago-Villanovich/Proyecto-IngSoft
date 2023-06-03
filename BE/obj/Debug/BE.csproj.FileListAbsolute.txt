@@ -34,3 +34,12 @@ C:\Users\Matias\Documents\Ingenieria-Software\BE\obj\Debug\BE.csproj.CoreCompile
 C:\Users\Matias\Documents\Ingenieria-Software\BE\obj\Debug\BE.csproj.CopyComplete
 C:\Users\Matias\Documents\Ingenieria-Software\BE\obj\Debug\BE.dll
 C:\Users\Matias\Documents\Ingenieria-Software\BE\obj\Debug\BE.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BE\bin\Debug\BE.dll
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BE\bin\Debug\BE.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BE\bin\Debug\ABS.dll
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BE\bin\Debug\ABS.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BE\obj\Debug\BE.csproj.CopyComplete
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BE\obj\Debug\BE.dll
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BE\obj\Debug\BE.pdb

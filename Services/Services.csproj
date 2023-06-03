@@ -43,9 +43,12 @@
   <ItemGroup>
     <Compile Include="HashCrypto.cs" />
     <Compile Include="Observer.cs" />
-    <Compile Include="PublisherIdioma.cs" />
-    <Compile Include="IObserver.cs" />
-    <Compile Include="IPublisherIdioma.cs" />
+    <Compile Include="Multilanguage\Idioma.cs" />
+    <Compile Include="Multilanguage\PublisherIdioma.cs" />
+    <Compile Include="Multilanguage\IObserver.cs" />
+    <Compile Include="Multilanguage\IPublisherIdioma.cs" />
+    <Compile Include="Multilanguage\Termino.cs" />
+    <Compile Include="Multilanguage\Traduccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegexValidation.cs" />
     <Compile Include="Session.cs" />

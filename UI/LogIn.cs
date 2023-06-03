@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,41 @@ namespace UI
 {
     public partial class LogIn : Form
     {
+        private void TraducirForm(IIdioma idioma = null)
+        {
+            var traducciones = traductor.ObtenerTraducciones(idioma);
+
+            foreach (Control control in this.Controls)
+            {
+
+                if (control is Button)
+                {
+                    Button boton = (Button)control;
+                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                        boton.Text = traducciones[boton.Tag.ToString()].texto;
+                }
+                else if (control is Label)
+                {
+                    Label label = (Label)control;
+                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                        label.Text = traducciones[label.Tag.ToString()].texto;
+
+                }
+
+            }
+        }
+
         public LogIn()
         {
             InitializeComponent();
             groupBox1.Enabled = false;
             Size = new Size(354, 472);
+
+            traductor = new BLL_Traductor();
+            //TraducirForm();
         }
 
+        BLL_Traductor traductor;
         public RegexValidation re = new RegexValidation();
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -46,21 +75,19 @@ namespace UI
                 }
                 #endregion
 
-                new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
-                var session = Session.GetInstance;
-                if (session.Usuario != null)
                 if (!errorFlag)
-
                 {
                     new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
 
-                    if (session.Usuario.isAdmin)
+                  
+                    
+                    if (Session.GetInstance.Usuario.isAdmin)
                     {
                         MenuAdmin menu = new MenuAdmin();
                         this.Hide();
                         menu.Show();
                     }
-                    else if (!session.Usuario.isAdmin)
+                    else if (!Session.GetInstance.Usuario.isAdmin)
                     {
                         Menu menu = new Menu();
                         this.Hide();
@@ -117,29 +144,29 @@ namespace UI
                 errorProvider1.SetError(txtClaveSign, "");
 
                 bool errorFlag = false;
-                if (re.validarNombre(txtNombreSign.Text))
+                if (!re.validarNombre(txtNombreSign.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtNombreSign, "El campo es obligatorio");
                 }
-                if (re.validarNombre(txtApellidoSign.Text))
+                if (!re.validarNombre(txtApellidoSign.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtApellidoSign, "El campo es obligatorio");
                 }
-                if (re.validarDni(txtDniSign.Text))
+                if (!re.validarDni(txtDniSign.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtDniSign, "El campo es obligatorio");
                 }
-                if (re.validarPassword(txtClaveSign.Text))
+                if (!re.validarPassword(txtClaveSign.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtClaveSign, "El campo es obligatorio");
                 }
                 #endregion
 
-                if (errorFlag)
+                if (!errorFlag)
                 {
                     //registro al usuario
 
@@ -151,6 +178,7 @@ namespace UI
 
 
                 BLL_User _User = new BLL_User();
+
                 _User.Insert(usuario);
 
                 //genero el login
@@ -195,17 +223,22 @@ namespace UI
         {
             if (ojoSign == true)
             {
-                txtClaveLog.UseSystemPasswordChar = true;
+                txtClaveSign.UseSystemPasswordChar = true;
                 ojoSign = false;
             }
             else if (ojoSign == false)
             {
-                txtClaveLog.UseSystemPasswordChar = false;
+                txtClaveSign.UseSystemPasswordChar = false;
                 ojoSign = true;
             }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
         {
 
         }

@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace UI
 {
     public partial class GestUsuarios : Form, IObserver
     {
-        private string IdiomaActual;
+        private Idioma IdiomaActual;
         public GestUsuarios()
         {
             InitializeComponent();
@@ -24,8 +25,8 @@ namespace UI
 
         private void GestUsuarios_Load(object sender, EventArgs e)
         {
-            IdiomaActual = Session.IdiomaActual;
-            Session._publisherIdioma.Subscribe(this);
+            /*IdiomaActual = Session.IdiomaActual;
+            Session._publisherIdioma.Subscribe(this);*/
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = new BLL_User().GetAll();
             
@@ -65,9 +66,10 @@ namespace UI
             }
         }
 
-        public void Notify(string idioma)
+        public void Notify(Idioma idioma)
         {
             IdiomaActual = idioma;
+            label1.Text = idioma.nombre;
         }
     }
 }

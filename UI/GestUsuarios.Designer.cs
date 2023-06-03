@@ -40,6 +40,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(44, 13);
             this.labelNombre.TabIndex = 1;
+            this.labelNombre.Tag = "7";
             this.labelNombre.Text = "Nombre";
             // 
             // labelApellido
@@ -68,6 +70,7 @@
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(44, 13);
             this.labelApellido.TabIndex = 2;
+            this.labelApellido.Tag = "8";
             this.labelApellido.Text = "Apellido";
             // 
             // btnEliminar
@@ -76,6 +79,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(172, 23);
             this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Tag = "18";
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -86,6 +90,7 @@
             this.btnDarPermisos.Name = "btnDarPermisos";
             this.btnDarPermisos.Size = new System.Drawing.Size(83, 38);
             this.btnDarPermisos.TabIndex = 4;
+            this.btnDarPermisos.Tag = "16";
             this.btnDarPermisos.Text = "Dar permisos";
             this.btnDarPermisos.UseVisualStyleBackColor = true;
             this.btnDarPermisos.Click += new System.EventHandler(this.btnDarPermisos_Click);
@@ -96,6 +101,7 @@
             this.btnSacarPermisos.Name = "btnSacarPermisos";
             this.btnSacarPermisos.Size = new System.Drawing.Size(83, 38);
             this.btnSacarPermisos.TabIndex = 5;
+            this.btnSacarPermisos.Tag = "17";
             this.btnSacarPermisos.Text = "Quitar permisos";
             this.btnSacarPermisos.UseVisualStyleBackColor = true;
             this.btnSacarPermisos.Click += new System.EventHandler(this.btnSacarPermisos_Click);
@@ -107,6 +113,7 @@
             this.labelDni.Name = "labelDni";
             this.labelDni.Size = new System.Drawing.Size(23, 13);
             this.labelDni.TabIndex = 6;
+            this.labelDni.Tag = "2";
             this.labelDni.Text = "Dni";
             // 
             // labelAdmin
@@ -116,6 +123,7 @@
             this.labelAdmin.Name = "labelAdmin";
             this.labelAdmin.Size = new System.Drawing.Size(36, 13);
             this.labelAdmin.TabIndex = 7;
+            this.labelAdmin.Tag = "15";
             this.labelAdmin.Text = "Admin";
             // 
             // checkAdmin
@@ -148,11 +156,21 @@
             this.txtDNI.Size = new System.Drawing.Size(132, 20);
             this.txtDNI.TabIndex = 11;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 270);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "label1";
+            // 
             // GestUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 400);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDNI);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
@@ -188,5 +206,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.Label label1;
     }
 }
