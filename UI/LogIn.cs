@@ -79,24 +79,30 @@ namespace UI
                 {
                     new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
 
-                  
-                    
-                    if (Session.GetInstance.Usuario.isAdmin)
+                    if (Session.GetInstance == null)
                     {
-                        MenuAdmin menu = new MenuAdmin();
-                        this.Hide();
-                        menu.Show();
-                    }
-                    else if (!Session.GetInstance.Usuario.isAdmin)
-                    {
-                        Menu menu = new Menu();
-                        this.Hide();
-                        menu.Show();
+                       MessageBox.Show(this, "Usuario no registrado, verifique los datos o registrese", "Usuario Invalido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrio un error al iniciar sesion");
+                        if (Session.GetInstance.Usuario.isAdmin)
+                        {
+                            MenuAdmin menu = new MenuAdmin();
+                            this.Hide();
+                            menu.Show();
+                        }
+                        else if (!Session.GetInstance.Usuario.isAdmin)
+                        {
+                            Menu menu = new Menu();
+                            this.Hide();
+                            menu.Show();
+                        }
+                        /*else
+                        {
+                            MessageBox.Show("Ocurrio un error al iniciar sesion");
+                        }*/
                     }
+                    
                 }
 
                 

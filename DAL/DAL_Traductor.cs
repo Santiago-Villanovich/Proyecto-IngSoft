@@ -238,6 +238,48 @@ namespace DAL
 
         }
 
+        public Idioma GetLastIdiomaAdded()
+        {
+            using (SqlConnection conn = _conn)
+            {
+                IDataReader reader = null;
+                Idioma _idioma = null;
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetLastIdiomaAdded", conn);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        _idioma =
+                         new Idioma()
+                         {
+                             Id = Convert.ToInt32(reader["ID"].ToString()),
+                             nombre = reader["NombreIdioma"].ToString(),
+                             isDefault = Convert.ToBoolean(reader["defaultIdioma"])
+
+                         };
+                    }
+                    return _idioma;
+                }
+                catch (Exception e)
+                {
+
+                    throw e;
+                }
+                finally
+                {
+                    if (reader != null)
+                        reader.Close();
+                    conn.Close();
+                }
+            }
+        }
+
         public bool InsertTraduccion(List<Traduccion> traduc, IIdioma idioma)
         {
             using (SqlConnection conn = _conn)

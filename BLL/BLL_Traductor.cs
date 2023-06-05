@@ -14,9 +14,18 @@ namespace Services.Multilanguage
 {
     public class BLL_Traductor
     {
+        public bool InsertIdioma(IIdioma idioma) 
+        {
+            return new DAL_Traductor().InsertIdioma(idioma);
+        }
         public IIdioma ObtenerIdiomaDefault()
         {
             return new DAL_Traductor().ObtenerIdiomaDefault();
+        }
+
+        public IIdioma GetIdiomaLastAdded()
+        {
+            return new DAL_Traductor().GetLastIdiomaAdded();
         }
 
         public IList<IIdioma> ObtenerIdiomas()
@@ -29,9 +38,31 @@ namespace Services.Multilanguage
             return new DAL_Traductor().ObtenerTraducciones(idioma);
         }
 
+        public bool InsertTraducciones(List<Traduccion> lista, Idioma idioma)
+        {
+            return new DAL_Traductor().InsertTraduccion(lista, idioma);
+        }
+
         public List<Traduccion> GetAllTerminos()
         {
+
             return new DAL_Traductor().GetAllTerminos(); 
+        }
+
+        public List<TraduccionDTO> GetAllTerminosDTO()
+        {
+            List<TraduccionDTO> traduccionDTOs = new List<TraduccionDTO>();
+            foreach (var item in new DAL_Traductor().GetAllTerminos())
+            {
+                traduccionDTOs.Add(new TraduccionDTO
+                    {
+                        id = item.termino.id,
+                        termino = item.termino.termino,
+                        traduccion = item.texto
+                    }
+                );
+            }
+            return traduccionDTOs;
         }
 
     }

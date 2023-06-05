@@ -24,7 +24,7 @@ namespace Services
                 }
                 else
                 {
-                    throw new Exception("Su contrasena debe contener:\nMinimo 8 caracteres\n1 Mayuscula\nMin 1 numero");
+                    throw new Exception("Su contraseña debe contener:\n\t•Minimo 8 caracteres\n\t•Minimo 1 Mayuscula\n\t•Minimo 1 numero");
                 }
             }
         }
@@ -45,6 +45,26 @@ namespace Services
                 else
                 {
                     throw new Exception("Su nombre o apellido no debe contener caracteres especiales");
+                }
+            }
+        }
+
+        public bool validarPalabra(string palabra)
+        {
+            if (string.IsNullOrEmpty(palabra))
+            {
+                return false;
+            }
+            else
+            {
+                Regex re = new Regex(@"^([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+)$");
+                if (re.IsMatch(palabra))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Palabra invalida, no se aceptan caracteres numericos ni especiales.\nIngrese una nueva palabra");
                 }
             }
         }
