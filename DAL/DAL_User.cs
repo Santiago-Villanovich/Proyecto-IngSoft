@@ -65,6 +65,7 @@ namespace DAL
                                 Nombre = reader["Nombre"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
                                 DNI = Convert.ToInt32(reader["DNI"]),
+                                DV = reader["DV"].ToString(),
                                 isAdmin = Convert.ToBoolean(reader["isAdmin"])
 
                             };
@@ -102,7 +103,8 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@Apellido", obj.Apellido);
                     cmd.Parameters.AddWithValue("@DNI", obj.DNI);
                     cmd.Parameters.AddWithValue("@Clave", obj.Clave);
-                    cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
+                    cmd.Parameters.AddWithValue("@DV", obj.DV);
+                    //cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
                     conn.Open();
 
                     cmd.ExecuteNonQuery();

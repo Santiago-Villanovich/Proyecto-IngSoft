@@ -11,6 +11,7 @@ using Services;
 using ABS;
 using BE;
 using DAL;
+using Services.SecurityAndValidation;
 
 namespace BLL
 {
@@ -36,6 +37,7 @@ namespace BLL
             HashCrypto hash = new HashCrypto();
             var user = obj;
             user.Clave = hash.GenerarMD5(obj.Clave);
+            user.DV = GestorDigitoVerificador.CalcularDV(user);
             var dal = new DAL_User().Insert(user);
             return true;
         }
@@ -45,7 +47,13 @@ namespace BLL
             HashCrypto hash = new HashCrypto();
             var user = obj;
             user.Clave = hash.GenerarMD5(obj.Clave);
+            user.DV = GestorDigitoVerificador.CalcularDV(user);
             var dal = new DAL_User().Insert(user);
+
+            //Actualizo DV de tabla Users
+            new BLL_DigitoVerificador().InsertDVTabla(this.GetAll(), "Users");
+
+            //Genero logIn del nuevo usuario
             var loggedUser = new DAL_User().Login(user.DNI, user.Clave);
             if (loggedUser != null)
             {
@@ -54,7 +62,6 @@ namespace BLL
                 var bitacora = new Bitacora();
                 bitacora.Detalle = "Login de usuario";
                 bitacora.Responsable = user;
-                bitacora.Fecha = DateTime.Now;
                 new BLL_Bitacora().Insert(bitacora);
             }
 
@@ -80,7 +87,6 @@ namespace BLL
                     var bitacora = new Bitacora();
                     bitacora.Detalle = "Login de usuario";
                     bitacora.Responsable = user;
-                    bitacora.Fecha = DateTime.Now;
                     new BLL_Bitacora().Insert(bitacora);
                 }
 

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CorruptedDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CorruptedDataBase.Designer.cs">
+      <DependentUpon>CorruptedDataBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAgregarIdioma.cs">
       <SubType>Form</SubType>
     </Compile>

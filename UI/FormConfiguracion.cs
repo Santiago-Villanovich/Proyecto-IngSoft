@@ -68,9 +68,10 @@ namespace UI
         private void button1_Click(object sender, EventArgs e)
         {
             Session.Logout();
-            LogIn form = new LogIn();
             this.Close();
-            form.Show();
+            this.ParentForm.Close();
+            this.ParentForm.Dispose();
+            Application.Run(new LogIn());
         }
 
 

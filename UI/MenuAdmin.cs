@@ -37,6 +37,18 @@ namespace UI
                 configuracionToolStripMenuItem.Text = traducciones[configuracionToolStripMenuItem.Tag.ToString()].texto;
         }
 
+        public static bool FormEstaAbierto(Type Form)
+        {
+            foreach (Form formulario in Application.OpenForms)
+            {
+                if (formulario.GetType() == Form)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public MenuAdmin()
         {
             InitializeComponent();

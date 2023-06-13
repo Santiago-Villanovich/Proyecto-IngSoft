@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace UI
 {
@@ -16,7 +17,16 @@ namespace UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogIn());
+            BLL_DigitoVerificador verificadorDV = new BLL_DigitoVerificador();
+            if (verificadorDV.VerificarEstadoTabla(new BLL_User().GetAll(),"Users"))
+            {
+                Application.Run(new LogIn());
+            }
+            else
+            {
+                Application.Run(new CorruptedDataBase());
+            }
+            
         }
     }
 }

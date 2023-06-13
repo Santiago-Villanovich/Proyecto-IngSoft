@@ -52,6 +52,8 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbIdiomas = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,7 +118,7 @@
             this.label5.Location = new System.Drawing.Point(120, 397);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 15);
-            this.label5.TabIndex = 4;
+            this.label5.TabIndex = 3;
             this.label5.Tag = "6";
             this.label5.Text = "Registrarse";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -162,7 +164,7 @@
             this.btnRegistrar.Location = new System.Drawing.Point(135, 345);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(105, 41);
-            this.btnRegistrar.TabIndex = 10;
+            this.btnRegistrar.TabIndex = 8;
             this.btnRegistrar.Tag = "4";
             this.btnRegistrar.Text = "Ingresar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -173,7 +175,7 @@
             this.txtClaveSign.Location = new System.Drawing.Point(93, 308);
             this.txtClaveSign.Name = "txtClaveSign";
             this.txtClaveSign.Size = new System.Drawing.Size(187, 20);
-            this.txtClaveSign.TabIndex = 9;
+            this.txtClaveSign.TabIndex = 7;
             this.txtClaveSign.UseSystemPasswordChar = true;
             // 
             // txtDniSign
@@ -182,21 +184,21 @@
             this.txtDniSign.MaxLength = 8;
             this.txtDniSign.Name = "txtDniSign";
             this.txtDniSign.Size = new System.Drawing.Size(187, 20);
-            this.txtDniSign.TabIndex = 8;
+            this.txtDniSign.TabIndex = 6;
             // 
             // txtApellidoSign
             // 
             this.txtApellidoSign.Location = new System.Drawing.Point(93, 187);
             this.txtApellidoSign.Name = "txtApellidoSign";
             this.txtApellidoSign.Size = new System.Drawing.Size(187, 20);
-            this.txtApellidoSign.TabIndex = 7;
+            this.txtApellidoSign.TabIndex = 5;
             // 
             // txtNombreSign
             // 
             this.txtNombreSign.Location = new System.Drawing.Point(93, 125);
             this.txtNombreSign.Name = "txtNombreSign";
             this.txtNombreSign.Size = new System.Drawing.Size(187, 20);
-            this.txtNombreSign.TabIndex = 6;
+            this.txtNombreSign.TabIndex = 4;
             // 
             // label10
             // 
@@ -257,14 +259,14 @@
             this.txtDniLog.MaxLength = 8;
             this.txtDniLog.Name = "txtDniLog";
             this.txtDniLog.Size = new System.Drawing.Size(179, 20);
-            this.txtDniLog.TabIndex = 6;
+            this.txtDniLog.TabIndex = 0;
             // 
             // txtClaveLog
             // 
             this.txtClaveLog.Location = new System.Drawing.Point(75, 199);
             this.txtClaveLog.Name = "txtClaveLog";
             this.txtClaveLog.Size = new System.Drawing.Size(179, 20);
-            this.txtClaveLog.TabIndex = 7;
+            this.txtClaveLog.TabIndex = 1;
             this.txtClaveLog.UseSystemPasswordChar = true;
             // 
             // btnIngresar
@@ -276,7 +278,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(108, 296);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(105, 41);
-            this.btnIngresar.TabIndex = 8;
+            this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Tag = "4";
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -298,12 +300,36 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cmbIdiomas
+            // 
+            this.cmbIdiomas.BackColor = System.Drawing.Color.DimGray;
+            this.cmbIdiomas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIdiomas.FormattingEnabled = true;
+            this.cmbIdiomas.Location = new System.Drawing.Point(250, 12);
+            this.cmbIdiomas.MaxDropDownItems = 15;
+            this.cmbIdiomas.Name = "cmbIdiomas";
+            this.cmbIdiomas.Size = new System.Drawing.Size(84, 21);
+            this.cmbIdiomas.TabIndex = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label11.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.label11.Location = new System.Drawing.Point(214, 13);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 16);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Lng";
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(723, 433);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cmbIdiomas);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtClaveLog);
@@ -351,6 +377,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cmbIdiomas;
     }
 }
 

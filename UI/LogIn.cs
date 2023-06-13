@@ -2,6 +2,7 @@
 using BLL;
 using Services;
 using Services.Multilanguage;
+using Services.SecurityAndValidation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace UI
             Size = new Size(354, 472);
 
             traductor = new BLL_Traductor();
-            //TraducirForm();
+            cmbIdiomas.DataSource = traductor.ObtenerIdiomas();
         }
 
         BLL_Traductor traductor;
@@ -182,28 +183,12 @@ namespace UI
                     usuario.Clave = txtClaveSign.Text;
                     usuario.isAdmin = false;
 
+                    BLL_User _User = new BLL_User();
 
-                BLL_User _User = new BLL_User();
+                    _User.Register(usuario);
 
-                _User.Insert(usuario);
-
-                //genero el login
-                new BLL_User().Login(Convert.ToInt32(txtDniSign.Text), txtClaveSign.Text);
-                var session = Session.GetInstance;
-                if (session.Usuario != null)
-                {
-                    Menu menu = new Menu();
-                    this.Hide();
-                    menu.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrio un error al iniciar sesion");
-                }
-
-
-                    //genero el login
-
+                    //verifico el login
+                    var session = Session.GetInstance;
                     if (session.Usuario != null)
                     {
                         Menu menu = new Menu();
@@ -214,6 +199,7 @@ namespace UI
                     {
                         MessageBox.Show("Ocurrio un error al iniciar sesion");
                     }
+
                 }
 
             }

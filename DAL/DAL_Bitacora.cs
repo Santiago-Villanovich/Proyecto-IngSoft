@@ -24,7 +24,6 @@ namespace DAL
             cmd.Parameters.AddWithValue("@Responsable", bitacora.Responsable.Id);
             //cmd.Parameters.AddWithValue("@Fecha", bitacora.Fecha);
 
-
             try
             {
                 cmd.ExecuteNonQuery();

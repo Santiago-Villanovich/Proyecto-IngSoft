@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HashCrypto.cs" />
+    <Compile Include="SecurityAndValidation\GestorDigitoVerificador.cs" />
+    <Compile Include="SecurityAndValidation\HashCrypto.cs" />
     <Compile Include="Multilanguage\TraduccionDTO.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="Multilanguage\Idioma.cs" />
@@ -51,7 +52,7 @@
     <Compile Include="Multilanguage\Termino.cs" />
     <Compile Include="Multilanguage\Traduccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegexValidation.cs" />
+    <Compile Include="SecurityAndValidation\RegexValidation.cs" />
     <Compile Include="Session.cs" />
   </ItemGroup>
   <ItemGroup>
