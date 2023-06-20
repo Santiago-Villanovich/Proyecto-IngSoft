@@ -54,9 +54,9 @@ namespace UI
             InitializeComponent();
             traductor = new BLL_Traductor();
 
-            Session.IdiomaActual = (Idioma)traductor.ObtenerIdiomaDefault();
-            IdiomaActual = Session.IdiomaActual;
-            TraducirForm(IdiomaActual);
+            //Session.IdiomaActual = (Idioma)traductor.ObtenerIdiomaDefault();
+            //IdiomaActual = Session.IdiomaActual;
+            TraducirForm(Session.IdiomaActual);
         }
 
         BLL_Traductor traductor;
@@ -76,8 +76,16 @@ namespace UI
         private void gestionarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestUsuarios menu = new GestUsuarios();
-            menu.MdiParent = this;
-            menu.Show();
+            if (!FormEstaAbierto(typeof(GestUsuarios)))
+            {
+                menu.MdiParent = this;
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
+            }
+            
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,30 +99,48 @@ namespace UI
         private void verBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormBitacoras form = new FormBitacoras();
-            form.MdiParent = this;
-            form.Show();
+            if (!FormEstaAbierto(typeof(FormBitacoras)))
+            {
+                form.MdiParent = this;
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
+            }
+
         }
 
-        private void bitacorasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormBitacoras menu = new FormBitacoras();
-            menu.MdiParent = this;
-            menu.Show();
-        }
 
         private void permisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormPermisos menu = new FormPermisos();
-            menu.MdiParent = this;
-            menu.Show();
+            if (!FormEstaAbierto(typeof(FormPermisos)))
+            {
+                menu.MdiParent = this;
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
+            }
+
 
         }
 
         private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormConfiguracion menu = new FormConfiguracion();
-            menu.MdiParent = this;
-            menu.Show();
+            if (!FormEstaAbierto(typeof(FormConfiguracion)))
+            {
+                menu.MdiParent = this;
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
+            }
+            
         }
 
     }

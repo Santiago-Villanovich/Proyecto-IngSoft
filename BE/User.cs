@@ -28,5 +28,10 @@ namespace BE
         public string DV { get; set; }
 
         public User() { }
+
+        public string NombreApellido
+        {
+            get { return Nombre + " " + Apellido; }
+        }
     }
 }

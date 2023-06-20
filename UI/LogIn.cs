@@ -49,7 +49,11 @@ namespace UI
 
             traductor = new BLL_Traductor();
             cmbIdiomas.DataSource = traductor.ObtenerIdiomas();
+            cmbIdiomas.DisplayMember = "nombre";
+            cmbIdiomas.ValueMember = "Id";
+            
         }
+
 
         BLL_Traductor traductor;
         public RegexValidation re = new RegexValidation();
@@ -86,6 +90,7 @@ namespace UI
                     }
                     else
                     {
+                        Session.IdiomaActual = (Idioma)cmbIdiomas.SelectedItem;
                         if (Session.GetInstance.Usuario.isAdmin)
                         {
                             MenuAdmin menu = new MenuAdmin();
@@ -233,6 +238,12 @@ namespace UI
         private void LogIn_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbIdiomas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Idioma idioma = (Idioma)cmbIdiomas.SelectedItem;
+            TraducirForm(idioma);
         }
     }
 }

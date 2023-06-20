@@ -69,9 +69,8 @@ namespace UI
         {
             Session.Logout();
             this.Close();
-            this.ParentForm.Close();
-            this.ParentForm.Dispose();
-            Application.Run(new LogIn());
+            Application.Restart();
+            //Application.Run(new LogIn());
         }
 
 

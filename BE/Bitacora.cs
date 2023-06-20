@@ -14,6 +14,8 @@ namespace BE
 
         public User Responsable { get; set; } = null;
 
+        public int Tipo { get; set; }
+
         public DateTime Fecha { get; set; }
 
 

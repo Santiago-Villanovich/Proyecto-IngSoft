@@ -19,9 +19,14 @@ namespace BLL
         {
             return new DAL_Bitacora().GetAll();
         }
-        public List<DTO_BitacoraUser> GetAllBU()
+        public List<DTO_BitacoraUser> GetAllBU(int? User, DateTime? from, DateTime? to, int? tipo, int page)
         {
-            return new DAL_Bitacora().GetAllBU();
+            return new DAL_Bitacora().GetAllBU(User, from, to, tipo, page);
+        }
+
+        public List<BitacoraTipo> GetAllBT()
+        {
+            return new DAL_Bitacora().GetAllBT();
         }
     }
 }

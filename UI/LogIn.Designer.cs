@@ -101,12 +101,12 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label4.Location = new System.Drawing.Point(106, 357);
+            this.label4.Location = new System.Drawing.Point(71, 357);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 32);
+            this.label4.Size = new System.Drawing.Size(187, 16);
             this.label4.TabIndex = 3;
             this.label4.Tag = "5";
-            this.label4.Text = "No se encuentra \r\nregistrado?";
+            this.label4.Text = "No se encuentra registrado?";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -115,7 +115,7 @@
             this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Khaki;
-            this.label5.Location = new System.Drawing.Point(120, 397);
+            this.label5.Location = new System.Drawing.Point(118, 383);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 15);
             this.label5.TabIndex = 3;
@@ -302,7 +302,7 @@
             // 
             // cmbIdiomas
             // 
-            this.cmbIdiomas.BackColor = System.Drawing.Color.DimGray;
+            this.cmbIdiomas.BackColor = System.Drawing.SystemColors.ControlLight;
             this.cmbIdiomas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdiomas.FormattingEnabled = true;
             this.cmbIdiomas.Location = new System.Drawing.Point(250, 12);
@@ -310,6 +310,7 @@
             this.cmbIdiomas.Name = "cmbIdiomas";
             this.cmbIdiomas.Size = new System.Drawing.Size(84, 21);
             this.cmbIdiomas.TabIndex = 10;
+            this.cmbIdiomas.SelectedIndexChanged += new System.EventHandler(this.cmbIdiomas_SelectedIndexChanged);
             // 
             // label11
             // 

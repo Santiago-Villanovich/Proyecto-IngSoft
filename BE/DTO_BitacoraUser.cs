@@ -8,14 +8,10 @@ namespace BE
 {
     public class DTO_BitacoraUser
     {
-        public string Detalle { get; set; }
-
-        public DateTime Fecha { get; set; }
-
         public string Nombre { get; set; }
-
         public string Apellido { get; set; }
-
-        public int DNI { get; set; }
+        public string Tipo { get; set; }
+        public string Detalle { get; set; }
+        public DateTime Fecha { get; set; }
     }
 }

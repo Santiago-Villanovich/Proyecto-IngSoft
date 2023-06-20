@@ -62,6 +62,7 @@ namespace BLL
                 var bitacora = new Bitacora();
                 bitacora.Detalle = "Login de usuario";
                 bitacora.Responsable = user;
+                bitacora.Tipo =Convert.ToInt32(BitacoraTipoEnum.Informacion);
                 new BLL_Bitacora().Insert(bitacora);
             }
 
@@ -87,6 +88,7 @@ namespace BLL
                     var bitacora = new Bitacora();
                     bitacora.Detalle = "Login de usuario";
                     bitacora.Responsable = user;
+                    bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Informacion);
                     new BLL_Bitacora().Insert(bitacora);
                 }
 
