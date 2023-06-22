@@ -57,7 +57,7 @@ namespace UI
         {
             var user = (User)dataGridView1.CurrentRow.DataBoundItem;
            
-            if (new BLL_User().Delete(user.Id))
+            if (new BLL_User().Delete(user))
             {
                 MessageBox.Show("El usuario se elimino correctamente");
             }
@@ -69,7 +69,6 @@ namespace UI
         public void Notify(Idioma idioma)
         {
             IdiomaActual = idioma;
-            label1.Text = idioma.nombre;
         }
     }
 }

@@ -17,9 +17,22 @@ namespace BLL
 {
     public class BLL_User : IMetodosGenericos<User>
     {
-        public bool Delete(int id)
+        public bool Delete(User user)
         {
-            return new DAL_User().Delete(id);
+            try
+            {
+                return new DAL_User().Delete(user);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = user;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw e;
+            }
+            
         }
 
         public User Get(int id)
@@ -29,44 +42,78 @@ namespace BLL
 
         public List<User> GetAll()
         {
-            return new DAL_User().GetAll();
+            try
+            {
+                return new DAL_User().GetAll();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
         }
 
         public bool Insert(User obj)
         {
-            HashCrypto hash = new HashCrypto();
-            var user = obj;
-            user.Clave = hash.GenerarMD5(obj.Clave);
-            user.DV = GestorDigitoVerificador.CalcularDV(user);
-            var dal = new DAL_User().Insert(user);
-            return true;
+            try
+            {
+                HashCrypto hash = new HashCrypto();
+                var user = obj;
+                user.Clave = hash.GenerarMD5(obj.Clave);
+                user.DV = GestorDigitoVerificador.CalcularDV(user);
+                var dal = new DAL_User().Insert(user);
+                return true;
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = obj;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw e;
+            }
+            
         }
 
         public bool Register(User obj)
         {
-            HashCrypto hash = new HashCrypto();
-            var user = obj;
-            user.Clave = hash.GenerarMD5(obj.Clave);
-            user.DV = GestorDigitoVerificador.CalcularDV(user);
-            var dal = new DAL_User().Insert(user);
-
-            //Actualizo DV de tabla Users
-            new BLL_DigitoVerificador().InsertDVTabla(this.GetAll(), "Users");
-
-            //Genero logIn del nuevo usuario
-            var loggedUser = new DAL_User().Login(user.DNI, user.Clave);
-            if (loggedUser != null)
+            try
             {
+                HashCrypto hash = new HashCrypto();
+                var user = obj;
+                user.Clave = hash.GenerarMD5(obj.Clave);
+                user.DV = GestorDigitoVerificador.CalcularDV(user);
+                var dal = new DAL_User().Insert(user);
 
-                Session.Login(user);
-                var bitacora = new Bitacora();
-                bitacora.Detalle = "Login de usuario";
-                bitacora.Responsable = user;
-                bitacora.Tipo =Convert.ToInt32(BitacoraTipoEnum.Informacion);
-                new BLL_Bitacora().Insert(bitacora);
+                //Actualizo DV de tabla Users
+                new BLL_DigitoVerificador().InsertDVTabla(this.GetAll(), "Users");
+
+                //Genero logIn del nuevo usuario
+                var loggedUser = new DAL_User().Login(user.DNI, user.Clave);
+                if (loggedUser != null)
+                {
+
+                    Session.Login(user);
+                    var bitacora = new Bitacora();
+                    bitacora.Detalle = "Login de usuario";
+                    bitacora.Responsable = user;
+                    bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Informacion);
+                    new BLL_Bitacora().Insert(bitacora);
+                }
+
+                return true;
             }
-
-            return true;
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = obj;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw e;
+            }
+            
         }
 
         public bool Update(User obj)
@@ -94,9 +141,14 @@ namespace BLL
 
                 return user;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw ex;
+               /* var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = obj;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);*/
+                throw e;
             }
             
         }

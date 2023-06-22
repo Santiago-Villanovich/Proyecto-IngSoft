@@ -139,5 +139,13 @@ namespace UI
             }
             
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            cboxUsuario.SelectedItem = null;
+            cboxTipo.SelectedItem = null;
+            dtDesde.Checked = false;
+            dtHasta.Checked = false;
+        }
     }
 }

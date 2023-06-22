@@ -21,6 +21,7 @@ namespace BE
         [VerificableProperty]
         public int DNI { get; set; }
 
+        [VerificableProperty]
         public string Clave { get; set; } = null;
 
         public bool isAdmin { get; set; } = false;

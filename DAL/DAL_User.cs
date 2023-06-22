@@ -17,13 +17,13 @@ namespace DAL
 
         private SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString);
 
-        public bool Delete(int id)
+        public bool Delete(User id)
         {
             using (SqlConnection conn = _conn) 
             {
                 try 
                 {
-                    string query = String.Format("DELETE * FROM Users where Id = {0}",  id);
+                    string query = String.Format("DELETE * FROM Users where Id = {0}",  id.Id);
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = conn;

@@ -16,7 +16,7 @@ namespace ABS
 
         bool Update(T obj);
 
-        bool Delete(int id);
+        bool Delete(T obj);
 
 
     }
