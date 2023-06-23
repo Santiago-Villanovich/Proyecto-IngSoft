@@ -24,6 +24,8 @@ namespace UI
         {
 
             List<Componente> _familias = new BLL_Permisos().GetFamilias();
+            comboBox1.DataSource= _familias;
+
             foreach (var familia in _familias)
             {
                 _permisos = new BLL_Permisos().GetPermisosFamilia(familia.Id);
@@ -49,6 +51,30 @@ namespace UI
             new BLL_Permisos().GetAllPermisos();
         }
 
-        
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Componente c;
+            Componente padre = new BLL_Permisos().GetFamiliaPorNombre(comboBox1.SelectedItem.ToString());
+            if (radioButton1.Checked)
+            {
+                c = new Patente();
+            }else
+            {
+                c = new Familia();
+            }
+
+            c.Nombre = textBox1.Text;
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var selectedPermiso = new BLL_Permisos().GetFamiliaPorNombre(treeView1.SelectedNode.Text);
+            var permisosFamilia = new BLL_Permisos().GetPermisosFamilia(selectedPermiso.Id);
+            if (permisosFamilia.Count > 0)
+            {
+                MessageBox.Show("No se puede eliminar este permiso porque tiene hijos");
+            }
+        }
     }
 }

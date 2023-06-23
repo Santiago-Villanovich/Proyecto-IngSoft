@@ -29,12 +29,31 @@ namespace UI
             Session._publisherIdioma.Subscribe(this);*/
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = new BLL_User().GetAll();
+            List<Componente> componentes = new BLL_Permisos().GetAllComponentes();
+            componentes.ForEach(componente =>
+            {
+                comboBox1.Items.Add(componente.Nombre);
+            });
             
         }
 
         private void btnDarPermisos_Click(object sender, EventArgs e)
         {
-            checkAdmin.Checked = true;
+            Componente seleccionado = new BLL_Permisos().GetFamiliaPorNombre(comboBox1.SelectedItem.ToString());
+            User user = (User)dataGridView1.CurrentRow.DataBoundItem;
+            try
+            {
+                if(new BLL_User().AgregarPermiso(seleccionado, user))
+                {
+                    MessageBox.Show("Se agrego permiso correctamente");
+                }else
+                {
+                    MessageBox.Show("Ocurrio un error al agregar permiso");
+                }
+            }catch(Exception ex)
+            {
+
+            }
         }
 
         private void btnSacarPermisos_Click(object sender, EventArgs e)

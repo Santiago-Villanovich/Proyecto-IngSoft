@@ -40,6 +40,8 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(459, 231);
+            this.btnEliminar.Location = new System.Drawing.Point(436, 183);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(172, 23);
             this.btnEliminar.TabIndex = 3;
@@ -85,23 +87,23 @@
             // 
             // btnDarPermisos
             // 
-            this.btnDarPermisos.Location = new System.Drawing.Point(459, 181);
+            this.btnDarPermisos.Location = new System.Drawing.Point(691, 101);
             this.btnDarPermisos.Name = "btnDarPermisos";
             this.btnDarPermisos.Size = new System.Drawing.Size(83, 38);
             this.btnDarPermisos.TabIndex = 4;
             this.btnDarPermisos.Tag = "16";
-            this.btnDarPermisos.Text = "Dar permisos";
+            this.btnDarPermisos.Text = "Dar permiso";
             this.btnDarPermisos.UseVisualStyleBackColor = true;
             this.btnDarPermisos.Click += new System.EventHandler(this.btnDarPermisos_Click);
             // 
             // btnSacarPermisos
             // 
-            this.btnSacarPermisos.Location = new System.Drawing.Point(548, 181);
+            this.btnSacarPermisos.Location = new System.Drawing.Point(795, 101);
             this.btnSacarPermisos.Name = "btnSacarPermisos";
             this.btnSacarPermisos.Size = new System.Drawing.Size(83, 38);
             this.btnSacarPermisos.TabIndex = 5;
             this.btnSacarPermisos.Tag = "17";
-            this.btnSacarPermisos.Text = "Quitar permisos";
+            this.btnSacarPermisos.Text = "Quitar permiso";
             this.btnSacarPermisos.UseVisualStyleBackColor = true;
             this.btnSacarPermisos.Click += new System.EventHandler(this.btnSacarPermisos_Click);
             // 
@@ -155,11 +157,31 @@
             this.txtDNI.Size = new System.Drawing.Size(132, 20);
             this.txtDNI.TabIndex = 11;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(691, 54);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(187, 21);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(688, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Tag = "7";
+            this.label1.Text = "Permisos";
+            // 
             // GestUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 400);
+            this.ClientSize = new System.Drawing.Size(1204, 699);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtDNI);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
@@ -195,5 +217,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -189,5 +189,9 @@ namespace BLL
             return new DAL_User().InsertUserHistory(user);
         }
 
+        public bool AgregarPermiso(Componente permiso, User user)
+        {
+            return new DAL_User().AgregarPermiso(permiso, user);
+        }
     }
 }
