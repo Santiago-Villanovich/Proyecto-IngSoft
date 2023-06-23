@@ -301,6 +301,7 @@ namespace DAL
                                 Nombre = reader["Nombre"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
                                 DNI = Convert.ToInt32(reader["DNI"]),
+                                Clave = reader["Clave"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["Fecha"])
 
                             };

@@ -45,9 +45,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 92);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(417, 212);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -82,6 +86,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 4;
+            this.label1.Tag = "7";
             this.label1.Text = "Nombre";
             // 
             // label2
@@ -100,6 +105,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 6;
+            this.label3.Tag = "8";
             this.label3.Text = "Apellido";
             // 
             // label4
@@ -109,6 +115,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 7;
+            this.label4.Tag = "31";
             this.label4.Text = "Desde";
             // 
             // label5
@@ -118,6 +125,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 8;
+            this.label5.Tag = "32";
             this.label5.Text = "Hasta";
             // 
             // btnBuscar
@@ -126,6 +134,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(420, 25);
             this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Tag = "34";
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -136,6 +145,7 @@
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(49, 37);
             this.btnLimpiar.TabIndex = 10;
+            this.btnLimpiar.Tag = "35";
             this.btnLimpiar.Text = "Limpiar filtros";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -146,6 +156,7 @@
             this.btnRestablecer.Name = "btnRestablecer";
             this.btnRestablecer.Size = new System.Drawing.Size(111, 33);
             this.btnRestablecer.TabIndex = 11;
+            this.btnRestablecer.Tag = "37";
             this.btnRestablecer.Text = "Restablecer version";
             this.btnRestablecer.UseVisualStyleBackColor = true;
             this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);

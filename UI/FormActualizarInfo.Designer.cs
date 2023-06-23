@@ -65,6 +65,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 3;
+            this.label1.Tag = "7";
             this.label1.Text = "Nombre";
             // 
             // label2
@@ -74,6 +75,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 4;
+            this.label2.Tag = "8";
             this.label2.Text = "Apellido";
             // 
             // label3
@@ -83,6 +85,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 5;
+            this.label3.Tag = "3";
             this.label3.Text = "Clave";
             // 
             // btnGuardar
@@ -91,6 +94,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.Tag = "30";
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);

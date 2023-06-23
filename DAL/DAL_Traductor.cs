@@ -213,7 +213,7 @@ namespace DAL
 
                 SqlCommand cmd = new SqlCommand("sp_InsertIdioma", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdIdioma",idioma.Id);
+                cmd.Parameters.AddWithValue("@Nom",idioma.nombre);
                 cmd.Connection = conn;
                 conn.Open();
 

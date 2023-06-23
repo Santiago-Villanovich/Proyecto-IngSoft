@@ -88,7 +88,7 @@ namespace BLL
 
         public void AgregarPermiso(Componente permiso, int idPadre)
         {
-            return new DAL_Permisos().AgregarPermiso(permiso, idPadre);
+             new DAL_Permisos().AgregarPermiso(permiso, idPadre);
         }
     }
 }

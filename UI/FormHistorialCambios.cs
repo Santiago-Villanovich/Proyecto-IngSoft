@@ -12,6 +12,7 @@ using ABS;
 using Services;
 using Services.Multilanguage;
 using BE;
+using Services.SecurityAndValidation;
 
 namespace UI
 {
@@ -127,12 +128,14 @@ namespace UI
             try
             {
                 DTO_UserHistory dtoUser = (DTO_UserHistory)dataGridView1.CurrentRow.DataBoundItem;
-                User user = new User();
+                User user = bllUsr.Get(Session.GetInstance.Usuario.Id);
+
                 user.Id = dtoUser.Id;
                 user.Nombre = dtoUser.Nombre;
                 user.Apellido = dtoUser.Apellido;
                 user.Clave = dtoUser.Clave;
                 user.DNI = dtoUser.DNI;
+                user.DV = GestorDigitoVerificador.CalcularDV(user);
 
                 bllUsr.Update(user);
 
