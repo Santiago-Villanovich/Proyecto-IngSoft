@@ -79,6 +79,7 @@ namespace UI
         private void button2_Click(object sender, EventArgs e)
         {
             var idioma1 = (Idioma)comboBox1.SelectedItem;
+
             Session.CambiarIdioma(idioma1);
             
         }

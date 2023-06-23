@@ -60,3 +60,34 @@ C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.csproj.CoreCompile
 C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.csproj.CopyComplete
 C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.exe
 C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\UI.exe.config
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\UI.exe
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\UI.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\ABS.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\BE.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\BLL.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\Services.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\DAL.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\ABS.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\BE.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\BLL.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\Services.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\DAL.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.SuggestedBindingRedirects.cache
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormActualizarInfo.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormAgregarIdioma.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormBitacoras.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormConfiguracion.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormHistorialCambios.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.GestUsuarios.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.LogIn.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.Menu.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.MenuAdmin.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormPermisos.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.Properties.Resources.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.GenerateResource.cache
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.CopyComplete
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.exe
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.pdb

@@ -104,7 +104,7 @@ namespace BLL
 
                     Session.Login(user);
                     var bitacora = new Bitacora();
-                    bitacora.Detalle = "Login de usuario";
+                    bitacora.Detalle = "Registro de usuario";
                     bitacora.Responsable = user;
                     bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Informacion);
                     new BLL_Bitacora().Insert(bitacora);

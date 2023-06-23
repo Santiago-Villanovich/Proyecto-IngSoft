@@ -230,6 +230,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 20);
             this.label8.TabIndex = 3;
+            this.label8.Tag = "8";
             this.label8.Text = "Apellido";
             // 
             // label7
@@ -240,6 +241,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 20);
             this.label7.TabIndex = 2;
+            this.label7.Tag = "7";
             this.label7.Text = "Nombre";
             // 
             // label6

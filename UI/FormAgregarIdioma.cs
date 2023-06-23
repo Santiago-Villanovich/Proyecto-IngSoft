@@ -22,7 +22,25 @@ namespace UI
 
             var traducciones = traductor.ObtenerTraducciones(idioma);
 
-            foreach (Control control in this.Controls)
+            foreach (Control control in this.groupBox1.Controls)
+            {
+
+                if (control is System.Windows.Forms.Button)
+                {
+                    System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                        boton.Text = traducciones[boton.Tag.ToString()].texto;
+                }
+                else if (control is Label)
+                {
+                    Label label = (Label)control;
+                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                        label.Text = traducciones[label.Tag.ToString()].texto;
+
+                }
+
+            }
+            foreach (Control control in this.groupBox2.Controls)
             {
 
                 if (control is System.Windows.Forms.Button)
