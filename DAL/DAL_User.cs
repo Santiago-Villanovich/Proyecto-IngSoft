@@ -164,6 +164,33 @@ namespace DAL
                 }
             }
         }
+        public bool AgregarPermiso(Componente permiso, User user)
+        {
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_InsertPermisoUser", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_permiso", permiso.Id);
+                    cmd.Parameters.AddWithValue("@id_user", user.Id);
+                    //cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+        }
 
         public bool Update(User obj)
         {

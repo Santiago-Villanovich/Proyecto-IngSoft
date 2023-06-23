@@ -28,7 +28,7 @@ namespace BLL
 
         public bool Insert(Componente obj)
         {
-            return new DAL_Permisos().Insert(obj);
+            throw new NotImplementedException();
         }
 
         public bool Update(Componente obj)
@@ -63,6 +63,15 @@ namespace BLL
 
         }
 
+        public Componente GetFamiliaPorNombre(string nombre)
+        {
+            return new DAL_Permisos().GetFamiliaPorNombre(nombre);
+        }
+
+        public List<Componente> GetAllComponentes()
+        {
+            return new DAL_Permisos().GetAllComponentes();
+        }
 
         public Componente LlenarFamilia(Componente parent)
         {
@@ -75,8 +84,11 @@ namespace BLL
             }
 
             return parent;
+        }
 
-
+        public void AgregarPermiso(Componente permiso, int idPadre)
+        {
+             new DAL_Permisos().AgregarPermiso(permiso, idPadre);
         }
     }
 }

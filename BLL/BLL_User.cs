@@ -104,7 +104,7 @@ namespace BLL
 
                     Session.Login(user);
                     var bitacora = new Bitacora();
-                    bitacora.Detalle = "Login de usuario";
+                    bitacora.Detalle = "Registro de usuario";
                     bitacora.Responsable = user;
                     bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Informacion);
                     new BLL_Bitacora().Insert(bitacora);
@@ -189,5 +189,9 @@ namespace BLL
             return new DAL_User().InsertUserHistory(user);
         }
 
+        public bool AgregarPermiso(Componente permiso, User user)
+        {
+            return new DAL_User().AgregarPermiso(permiso, user);
+        }
     }
 }
