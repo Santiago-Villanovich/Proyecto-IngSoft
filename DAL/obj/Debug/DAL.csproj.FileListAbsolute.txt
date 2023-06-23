@@ -11,3 +11,16 @@ G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\DAL\obj\Debug\DAL.csp
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\DAL\obj\Debug\DAL.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\DAL\obj\Debug\DAL.dll
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\DAL\obj\Debug\DAL.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\DAL.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\DAL.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\BE.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\Services.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\BE.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\Services.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.pdb

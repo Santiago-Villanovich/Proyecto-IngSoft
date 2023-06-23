@@ -81,6 +81,7 @@ namespace UI
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(182, 32);
             this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Tag = "34";
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -92,6 +93,7 @@ namespace UI
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 7;
+            this.label1.Tag = "31";
             this.label1.Text = "Desde";
             // 
             // label2
@@ -101,6 +103,7 @@ namespace UI
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 8;
+            this.label2.Tag = "32";
             this.label2.Text = "Hasta";
             // 
             // label5
@@ -110,6 +113,7 @@ namespace UI
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 11;
+            this.label5.Tag = "33";
             this.label5.Text = "Tipo de Historial";
             // 
             // cboxTipo
@@ -136,7 +140,7 @@ namespace UI
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 16;
-            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.Text = ">";
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
@@ -147,7 +151,7 @@ namespace UI
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(75, 23);
             this.btnAnterior.TabIndex = 17;
-            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.Text = "<";
             this.btnAnterior.UseVisualStyleBackColor = true;
             this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
@@ -158,6 +162,7 @@ namespace UI
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 18;
+            this.label4.Tag = "36";
             this.label4.Text = "Pagina";
             // 
             // lblPageNumber
@@ -175,6 +180,7 @@ namespace UI
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(82, 23);
             this.btnLimpiar.TabIndex = 20;
+            this.btnLimpiar.Tag = "35";
             this.btnLimpiar.Text = "Limpiar filtros";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -186,6 +192,7 @@ namespace UI
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 23;
+            this.label3.Tag = "8";
             this.label3.Text = "Apellido";
             // 
             // label6
@@ -204,6 +211,7 @@ namespace UI
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 21;
+            this.label7.Tag = "7";
             this.label7.Text = "Nombre";
             // 
             // FormBitacoras

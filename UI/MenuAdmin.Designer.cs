@@ -101,11 +101,12 @@
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.opcionesToolStripMenuItem.Tag = "13";
             this.opcionesToolStripMenuItem.Text = "Opciones";
+            this.opcionesToolStripMenuItem.Click += new System.EventHandler(this.opcionesToolStripMenuItem_Click);
             // 
             // configuracionToolStripMenuItem
             // 
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.configuracionToolStripMenuItem.Tag = "14";
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);

@@ -48,5 +48,7 @@ namespace UI
         {
             new BLL_Permisos().GetAllPermisos();
         }
+
+        
     }
 }
