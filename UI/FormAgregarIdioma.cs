@@ -100,6 +100,9 @@ namespace UI
 
                     Idioma IdiomaAux = (Idioma)traductor.GetIdiomaLastAdded();
                     traductor.InsertTraducciones(TraerListDGV(), IdiomaAux);
+
+                    MessageBox.Show("Idioma agregado con exito");
+                    this.Close();
                     
                 }
 
