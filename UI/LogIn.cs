@@ -39,6 +39,25 @@ namespace UI
                 }
 
             }
+
+            foreach (Control control in this.groupBox1.Controls)
+            {
+
+                if (control is Button)
+                {
+                    Button boton = (Button)control;
+                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                        boton.Text = traducciones[boton.Tag.ToString()].texto;
+                }
+                else if (control is Label)
+                {
+                    Label label = (Label)control;
+                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                        label.Text = traducciones[label.Tag.ToString()].texto;
+
+                }
+
+            }
         }
 
         public LogIn()

@@ -43,29 +43,56 @@ namespace UI
             dtHasta.MinDate = new DateTime(2023, 1, 1);
             dtHasta.Checked = false;
         }
+        private void TraducirForm(IIdioma idioma = null)/*IIdioma idioma = null*/
+        {
 
+            var traducciones = traductor.ObtenerTraducciones(idioma);
+
+            foreach (Control control in this.Controls)
+            {
+
+                if (control is System.Windows.Forms.Button)
+                {
+                    System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                        boton.Text = traducciones[boton.Tag.ToString()].texto;
+                }
+                else if (control is Label)
+                {
+                    Label label = (Label)control;
+                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                        label.Text = traducciones[label.Tag.ToString()].texto;
+
+                }
+
+            }
+        }
         public FormBitacoras()
         {
             InitializeComponent();
             bllBit = new BLL_Bitacora();
             bllUsr = new BLL_User();
+            traductor = new BLL_Traductor();
 
             InitializeComboBoxs();
             InitializeDTPicker();
 
             //dataGridView1.Columns["Fecha"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             pageNumber = 1;
+            TraducirForm(Session.IdiomaActual);
         }
 
         BLL_Bitacora bllBit;
         BLL_User bllUsr;
+        BLL_Traductor traductor;
+
         private Idioma IdiomaActual;
         private int pageNumber;
 
 
         public void Notify(Idioma idioma)
         {
-            IdiomaActual = idioma;
+            TraducirForm(idioma);
         }
 
         private void FormBitacoras_Load(object sender, EventArgs e)

@@ -15,8 +15,32 @@ using static System.Net.WebRequestMethods;
 
 namespace UI
 {
-    public partial class FormAgregarIdioma : Form
+    public partial class FormAgregarIdioma : Form,IObserver
     {
+        private void TraducirForm(IIdioma idioma = null)/*IIdioma idioma = null*/
+        {
+
+            var traducciones = traductor.ObtenerTraducciones(idioma);
+
+            foreach (Control control in this.Controls)
+            {
+
+                if (control is System.Windows.Forms.Button)
+                {
+                    System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                        boton.Text = traducciones[boton.Tag.ToString()].texto;
+                }
+                else if (control is Label)
+                {
+                    Label label = (Label)control;
+                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                        label.Text = traducciones[label.Tag.ToString()].texto;
+
+                }
+
+            }
+        }
         public List<Traduccion> TraerListDGV()
         {
             List<Traduccion> lista = new List<Traduccion>();
@@ -44,6 +68,8 @@ namespace UI
         {
             InitializeComponent();
             traductor = new BLL_Traductor();
+
+            TraducirForm(Session.IdiomaActual);
         }
 
         BLL_Traductor traductor;
@@ -112,6 +138,11 @@ namespace UI
 
                 throw;
             }
+        }
+
+        public void Notify(Idioma idioma)
+        {
+            TraducirForm(idioma);
         }
     }
 }

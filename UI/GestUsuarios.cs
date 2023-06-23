@@ -17,12 +17,41 @@ namespace UI
     public partial class GestUsuarios : Form, IObserver
     {
         private Idioma IdiomaActual;
+        private void TraducirForm(IIdioma idioma = null)/*IIdioma idioma = null*/
+        {
+
+            var traducciones = traductor.ObtenerTraducciones(idioma);
+
+            foreach (Control control in this.Controls)
+            {
+
+                if (control is System.Windows.Forms.Button)
+                {
+                    System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                        boton.Text = traducciones[boton.Tag.ToString()].texto;
+                }
+                else if (control is Label)
+                {
+                    Label label = (Label)control;
+                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                        label.Text = traducciones[label.Tag.ToString()].texto;
+
+                }
+
+            }
+        }
         public GestUsuarios()
         {
             InitializeComponent();
             dataGridView1.DataSource = null;
+            traductor = new BLL_Traductor();
+
+
+            TraducirForm(Session.IdiomaActual);
         }
 
+        BLL_Traductor traductor;
         private void GestUsuarios_Load(object sender, EventArgs e)
         {
             /*IdiomaActual = Session.IdiomaActual;
@@ -68,7 +97,7 @@ namespace UI
 
         public void Notify(Idioma idioma)
         {
-            IdiomaActual = idioma;
+            TraducirForm(idioma);
         }
     }
 }
