@@ -48,7 +48,6 @@ namespace DAL
                 var nombre = reader.GetString(reader.GetOrdinal("nombre"));
                 var patente = reader.GetBoolean(reader.GetOrdinal("es_patente"));
 
-
                 Componente c;
 
                 if (!patente)
@@ -89,6 +88,45 @@ namespace DAL
         public bool Update(Componente obj)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Componente> GetAllComponentes()
+        {
+            _conn.Open();
+            var cmd = new SqlCommand();
+            cmd.Connection = _conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_GetAllComponentes";
+
+            var reader = cmd.ExecuteReader();
+
+            var lista = new List<Componente>();
+
+            while (reader.Read())
+            { 
+                var id = reader.GetInt32(reader.GetOrdinal("id"));
+                var nombre = reader.GetString(reader.GetOrdinal("nombre"));
+                var patente = reader.GetBoolean(reader.GetOrdinal("es_patente"));
+
+                Componente c;
+
+                if (!patente)
+                    c = new Familia();
+                else
+                    c = new Patente();
+
+                c.Id = id;
+                c.Nombre = nombre;
+
+                lista.Add(c);
+
+            }
+            reader.Close();
+            _conn.Close();
+
+
+            return lista;
+        
         }
 
         public List<Componente> GetFamilias()
@@ -135,6 +173,8 @@ namespace DAL
                 }
             }
         }
+
+
 
         public List<Componente> GetPermisosFamilia(int familia)
         {
@@ -218,6 +258,56 @@ namespace DAL
 
         }
 
+        public Componente GetFamiliaPorNombre(string nombre)
+        {
+            using (SqlConnection conn = _conn)
+            {
+                Componente permiso = null;
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetFamiliaByName", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@nombre", nombre);
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (Convert.ToBoolean(reader["es_patente"]))
+                            {
+                                permiso = new Patente();
+                                
+                            }else
+                            {
+                                permiso = new Familia();
+                            }
+
+                            permiso.Id = Convert.ToInt32(reader["id"]);
+                            permiso.Nombre = Convert.ToString(reader["nombre"]);
+                        }
+                    }
+
+                    return permiso;
+                }
+                catch (SqlException ex)
+                {
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+
+
         public bool IsInRole(int id)
         {
             var lista = GetAll();
@@ -225,6 +315,33 @@ namespace DAL
             var c = GetComponent(id, lista);
 
             return c != null;
+        }
+
+        public void AgregarPermiso(Componente permiso, int IdPadre)
+        {
+            using(SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_InsertPermiso", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_permiso", permiso.Id);
+                    cmd.Parameters.AddWithValue("@id_user", IdPadre);
+                    //cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
         }
     }
 }
