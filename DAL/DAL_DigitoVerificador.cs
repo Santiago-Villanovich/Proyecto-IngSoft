@@ -64,7 +64,7 @@ namespace DAL
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Connection = conn;
-                    cmd.CommandText = "sp_InsertTablesDV";
+                    cmd.CommandText = "sp_UpdateTablesDV";
                     cmd.Parameters.AddWithValue("@Nom", Nom);
                     cmd.Parameters.AddWithValue("@DV", DVT);
 

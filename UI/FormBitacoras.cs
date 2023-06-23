@@ -122,6 +122,7 @@ namespace UI
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
+            btnAnterior.Enabled = true;
             pageNumber++;
             lblPageNumber.Text = pageNumber.ToString();
             dataGridView1.DataSource = null;
@@ -136,6 +137,10 @@ namespace UI
                 lblPageNumber.Text = pageNumber.ToString();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = bllBit.GetAllBU(usr, fromDate, toDate, type, pageNumber);
+            }
+            else
+            {
+                btnAnterior.Enabled = false;
             }
             
         }

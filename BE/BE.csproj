@@ -45,6 +45,7 @@
     <Compile Include="BitacoraTipo.cs" />
     <Compile Include="DTO_BitacoraUser.cs" />
     <Compile Include="Componente.cs" />
+    <Compile Include="DTO_UserHistory.cs" />
     <Compile Include="Familia.cs" />
     <Compile Include="Patente.cs" />
     <Compile Include="User.cs" />

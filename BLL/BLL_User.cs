@@ -37,7 +37,15 @@ namespace BLL
 
         public User Get(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return new DAL_User().Get(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public List<User> GetAll()
@@ -118,7 +126,16 @@ namespace BLL
 
         public bool Update(User obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return new DAL_User().Update(obj);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         public User Login(int dni, string clave)
@@ -151,6 +168,25 @@ namespace BLL
                 throw e;
             }
             
+        }
+
+        public List<DTO_UserHistory> GetAllUserHistory(int? User, DateTime? from, DateTime? to, int page)
+        {
+            try
+            {
+                return new DAL_User().GetAllUserHistory(User, from, to, page);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
+
+        public bool InsertUserHistory(DTO_UserHistory user)
+        {
+            return new DAL_User().InsertUserHistory(user);
         }
 
     }

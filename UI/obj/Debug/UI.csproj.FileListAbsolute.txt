@@ -27,3 +27,5 @@ G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.cspro
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.exe
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.FormHistorialCambios.resources
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.FormActualizarInfo.resources

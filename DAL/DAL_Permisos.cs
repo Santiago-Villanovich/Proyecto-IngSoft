@@ -14,7 +14,7 @@ namespace DAL
     public class DAL_Permisos : IMetodosGenericos<Componente>
     {
         private SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString);
-        public bool Delete(int id)
+        public bool Delete(Componente id)
         {
             throw new NotImplementedException();
         }

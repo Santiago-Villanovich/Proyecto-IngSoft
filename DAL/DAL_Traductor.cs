@@ -25,8 +25,8 @@ namespace DAL
                 Idioma _idioma = null;
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("select * from Idiomas where defaultIdioma = 'True'", conn);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand("sp_GetIdiomaDefault", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = conn;
                     conn.Open();
 
@@ -67,8 +67,8 @@ namespace DAL
                 IList<IIdioma> _idiomas = new List<IIdioma>();
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("select * from Idiomas", conn);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand("sp_GetAllIdiomas", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = conn;
                     conn.Open();
 
@@ -119,10 +119,9 @@ namespace DAL
                 try
                 {
                     
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandText = "select t.ID_Idiomas,t.Traduccion as traduccion, e.ID,e.Termino as termino from Traducciones t inner join Terminos e on t.ID_Terminos = e.ID where t.ID_Idiomas = @id_idioma";
-                    cmd.Parameters.AddWithValue("id_idioma", idioma.Id);
+                    SqlCommand cmd = new SqlCommand("sp_GetAllTraducciones",conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdIdioma", idioma.Id);
                     conn.Open();
 
                     reader = cmd.ExecuteReader();
@@ -169,8 +168,8 @@ namespace DAL
                 List<Traduccion> _lista = new List<Traduccion>();
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Terminos", conn);
-                    cmd.CommandType = CommandType.Text;
+                    SqlCommand cmd = new SqlCommand("sp_GetAllTerminos", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = conn;
                     conn.Open();
 
@@ -212,8 +211,9 @@ namespace DAL
             using (SqlConnection conn = _conn)
             {
 
-                SqlCommand cmd = new SqlCommand($"INSERT into Idiomas(NombreIdioma,defaultIdioma) values ('{idioma.nombre}','False')", conn);
-                cmd.CommandType = CommandType.Text;
+                SqlCommand cmd = new SqlCommand("sp_InsertIdioma", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdIdioma",idioma.Id);
                 cmd.Connection = conn;
                 conn.Open();
 
@@ -247,7 +247,7 @@ namespace DAL
                 try
                 {
                     SqlCommand cmd = new SqlCommand("sp_GetLastIdiomaAdded", conn);
-                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = conn;
                     conn.Open();
 

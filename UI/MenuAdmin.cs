@@ -143,5 +143,18 @@ namespace UI
             
         }
 
+        private void verHistorialDeCambiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHistorialCambios menu = new FormHistorialCambios();
+            if (!FormEstaAbierto(typeof(FormHistorialCambios)))
+            {
+                menu.MdiParent = this;
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
+            }
+        }
     }
 }

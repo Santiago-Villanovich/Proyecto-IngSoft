@@ -11,7 +11,7 @@ namespace BLL
 {
     public class BLL_Permisos : IMetodosGenericos<Componente>
     {
-        public bool Delete(int id)
+        public bool Delete(Componente id)
         {
             return new DAL_Permisos().Delete(id);
         }

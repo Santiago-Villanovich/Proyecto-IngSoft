@@ -88,5 +88,11 @@ namespace UI
             FormAgregarIdioma formu = new FormAgregarIdioma();
             formu.Show();
         }
+
+        private void btnCambiarClave_Click(object sender, EventArgs e)
+        {
+            FormActualizarInfo formu = new FormActualizarInfo();
+            formu.Show();
+        }
     }
 }
