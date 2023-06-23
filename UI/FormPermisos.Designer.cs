@@ -33,10 +33,11 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(110, 66);
+            this.treeView1.Location = new System.Drawing.Point(40, 36);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(518, 252);
             this.treeView1.TabIndex = 0;
+
             // 
             // FormPermisos
             // 
