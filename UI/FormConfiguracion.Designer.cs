@@ -105,6 +105,7 @@
             this.btnCambiarClave.Name = "btnCambiarClave";
             this.btnCambiarClave.Size = new System.Drawing.Size(119, 32);
             this.btnCambiarClave.TabIndex = 6;
+            this.btnCambiarClave.Tag = "26";
             this.btnCambiarClave.Text = "Actualizar informacion";
             this.btnCambiarClave.UseVisualStyleBackColor = true;
             this.btnCambiarClave.Click += new System.EventHandler(this.btnCambiarClave_Click);
