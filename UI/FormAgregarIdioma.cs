@@ -1,4 +1,6 @@
 ﻿using ABS;
+using BE;
+using BLL;
 using Services;
 using Services.Multilanguage;
 using System;
@@ -19,51 +21,65 @@ namespace UI
     {
         private void TraducirForm(IIdioma idioma = null)/*IIdioma idioma = null*/
         {
-
-            var traducciones = traductor.ObtenerTraducciones(idioma);
-
-            foreach (Control control in this.groupBox1.Controls)
+            try
             {
+                var traducciones = traductor.ObtenerTraducciones(idioma);
 
-                if (control is System.Windows.Forms.Button)
+                foreach (Control control in this.groupBox1.Controls)
                 {
-                    System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
-                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                        boton.Text = traducciones[boton.Tag.ToString()].texto;
+
+                    if (control is System.Windows.Forms.Button)
+                    {
+                        System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                            boton.Text = traducciones[boton.Tag.ToString()].texto;
+                    }
+                    else if (control is Label)
+                    {
+                        Label label = (Label)control;
+                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                            label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    }
+
                 }
-                else if (control is Label)
+                foreach (Control control in this.groupBox2.Controls)
                 {
-                    Label label = (Label)control;
-                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                        label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    if (control is System.Windows.Forms.Button)
+                    {
+                        System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                            boton.Text = traducciones[boton.Tag.ToString()].texto;
+                    }
+                    else if (control is Label)
+                    {
+                        Label label = (Label)control;
+                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                            label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    }
 
                 }
-
             }
-            foreach (Control control in this.groupBox2.Controls)
+            catch (Exception ex)
             {
-
-                if (control is System.Windows.Forms.Button)
-                {
-                    System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
-                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                        boton.Text = traducciones[boton.Tag.ToString()].texto;
-                }
-                else if (control is Label)
-                {
-                    Label label = (Label)control;
-                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                        label.Text = traducciones[label.Tag.ToString()].texto;
-
-                }
-
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
             }
+
         }
         public List<Traduccion> TraerListDGV()
         {
-            List<Traduccion> lista = new List<Traduccion>();
-            foreach (DataGridViewRow dr in dataGridView1.Rows)
+            try
             {
+                List<Traduccion> lista = new List<Traduccion>();
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
 
                     Traduccion traduc = new Traduccion()
                     {
@@ -77,9 +93,16 @@ namespace UI
 
                     lista.Add(traduc);
 
-            }
+                }
 
-            return lista;
+                return lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         public FormAgregarIdioma()
@@ -94,16 +117,29 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (new RegexValidation().validarNombre(textBox1.Text))
+            try
             {
-                groupBox1.Enabled = false;
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = traductor.GetAllTerminosDTO();
-                dataGridView1.AutoResizeColumns();
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                dataGridView1.Columns[0].ReadOnly = true;
-                dataGridView1.Columns[1].ReadOnly = true;
+                if (new RegexValidation().validarNombre(textBox1.Text))
+                {
+                    groupBox1.Enabled = false;
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = traductor.GetAllTerminosDTO();
+                    dataGridView1.AutoResizeColumns();
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView1.Columns[0].ReadOnly = true;
+                    dataGridView1.Columns[1].ReadOnly = true;
+                }
             }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
 
         }
 
@@ -151,9 +187,13 @@ namespace UI
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
                 throw;
             }
         }

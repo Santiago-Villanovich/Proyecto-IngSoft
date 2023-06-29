@@ -19,22 +19,31 @@ namespace UI
     {
         public void InitializeComboBoxs()
         {
-            cboxUsuario.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cboxUsuario.AutoCompleteSource = AutoCompleteSource.ListItems;
+            try
+            {
+                cboxUsuario.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cboxUsuario.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            cboxTipo.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cboxTipo.AutoCompleteSource = AutoCompleteSource.ListItems;
+                cboxTipo.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cboxTipo.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            cboxUsuario.DataSource = bllUsr.GetAll();
-            cboxUsuario.ValueMember = "Id";
-            cboxUsuario.DisplayMember = "NombreApellido";
+                cboxUsuario.DataSource = bllUsr.GetAll();
+                cboxUsuario.ValueMember = "Id";
+                cboxUsuario.DisplayMember = "NombreApellido";
 
-            cboxTipo.DataSource = bllBit.GetAllBT();
-            cboxTipo.ValueMember = "Id";
-            cboxTipo.DisplayMember = "Descripcion";
+                cboxTipo.DataSource = bllBit.GetAllBT();
+                cboxTipo.ValueMember = "Id";
+                cboxTipo.DisplayMember = "Descripcion";
 
-            cboxUsuario.SelectedItem = null;
-            cboxTipo.SelectedItem = null;
+                cboxUsuario.SelectedItem = null;
+                cboxTipo.SelectedItem = null;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
         public void InitializeDTPicker()
         {
@@ -45,27 +54,35 @@ namespace UI
         }
         private void TraducirForm(IIdioma idioma = null)/*IIdioma idioma = null*/
         {
+            try
+            {
+                var traducciones = traductor.ObtenerTraducciones(idioma);
 
-            var traducciones = traductor.ObtenerTraducciones(idioma);
+                foreach (Control control in this.Controls)
+                {
 
-            foreach (Control control in this.Controls)
+                    if (control is System.Windows.Forms.Button)
+                    {
+                        System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                            boton.Text = traducciones[boton.Tag.ToString()].texto;
+                    }
+                    else if (control is Label)
+                    {
+                        Label label = (Label)control;
+                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                            label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    }
+
+                }
+            }
+            catch (Exception)
             {
 
-                if (control is System.Windows.Forms.Button)
-                {
-                    System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
-                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                        boton.Text = traducciones[boton.Tag.ToString()].texto;
-                }
-                else if (control is Label)
-                {
-                    Label label = (Label)control;
-                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                        label.Text = traducciones[label.Tag.ToString()].texto;
-
-                }
-
+                throw;
             }
+            
         }
         public FormBitacoras()
         {
@@ -149,26 +166,44 @@ namespace UI
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            btnAnterior.Enabled = true;
-            pageNumber++;
-            lblPageNumber.Text = pageNumber.ToString();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = bllBit.GetAllBU(usr, fromDate, toDate, type, pageNumber);
-        }
-
-        private void btnAnterior_Click(object sender, EventArgs e)
-        {
-            if (pageNumber>1)
+            try
             {
-                pageNumber--;
+                btnAnterior.Enabled = true;
+                pageNumber++;
                 lblPageNumber.Text = pageNumber.ToString();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = bllBit.GetAllBU(usr, fromDate, toDate, type, pageNumber);
             }
-            else
+            catch (Exception)
             {
-                btnAnterior.Enabled = false;
+
+                throw;
             }
+            
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (pageNumber > 1)
+                {
+                    pageNumber--;
+                    lblPageNumber.Text = pageNumber.ToString();
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = bllBit.GetAllBU(usr, fromDate, toDate, type, pageNumber);
+                }
+                else
+                {
+                    btnAnterior.Enabled = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
             
         }
 
