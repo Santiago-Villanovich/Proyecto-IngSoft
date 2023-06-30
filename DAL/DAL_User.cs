@@ -30,6 +30,7 @@ namespace DAL
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     return true;
+
                 }catch(Exception ex) 
                 {
                     return false;
