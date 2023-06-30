@@ -18,22 +18,48 @@ namespace BLL
 
         public bool InsertDVTabla(IEnumerable<IVerificable> list, string Nom)
         {
-            string DVT = GestorDigitoVerificador.CalcularDVTabla(list);
-            return new DAL_DigitoVerificador().InsertDVTabla(Nom, DVT);
+            try
+            {
+                string DVT = GestorDigitoVerificador.CalcularDVTabla(list);
+                return new DAL_DigitoVerificador().InsertDVTabla(Nom, DVT);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
 
         public bool VerificarEstadoTabla(IEnumerable<IVerificable> list, string Nom)
         {
-            string DVfromList = GestorDigitoVerificador.CalcularDVTabla(list);
-            string DVinBD = new DAL_DigitoVerificador().GetDVTabla(Nom);
-            if (DVfromList == DVinBD)
+            try
             {
-                return true;
+                string DVfromList = GestorDigitoVerificador.CalcularDVTabla(list);
+                string DVinBD = new DAL_DigitoVerificador().GetDVTabla(Nom);
+                if (DVfromList == DVinBD)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception e)
             {
-                return false;
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
             }
+
         }
     }
 }

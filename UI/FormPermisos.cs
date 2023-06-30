@@ -24,7 +24,14 @@ namespace UI
         {
 
             List<Componente> _familias = new BLL_Permisos().GetFamilias();
-            comboBox1.DataSource= _familias;
+            List<string> nombreFamilias = new List<string>();
+            nombreFamilias.Add("");
+            _familias.ForEach(familia =>
+            {
+                nombreFamilias.Add(familia.Nombre);
+            });
+
+            comboBox1.DataSource = nombreFamilias;
 
             foreach (var familia in _familias)
             {
@@ -53,28 +60,85 @@ namespace UI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Componente c;
-            Componente padre = new BLL_Permisos().GetFamiliaPorNombre(comboBox1.SelectedItem.ToString());
-            if (radioButton1.Checked)
+            try
             {
-                c = new Patente();
-            }else
-            {
-                c = new Familia();
-            }
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("El permiso debe tener un nombre ingresado");
+                }
+                Componente c;
+                Componente padre = new BLL_Permisos().GetFamiliaPorNombre(comboBox1.SelectedItem.ToString());
+                int IdPadre;
 
-            c.Nombre = textBox1.Text;
-            
+                if (padre != null) IdPadre = padre.Id;
+                else IdPadre = 0;
+
+                if (radioButton1.Checked)
+                {
+                    c = new Patente();
+                }
+                else
+                {
+                    c = new Familia();
+                }
+
+                c.Nombre = textBox1.Text;
+                c.es_patente = radioButton1.Checked;
+
+                new BLL_Permisos().AgregarPermiso(c, IdPadre);
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+
+            }finally
+            {
+                treeView1.Nodes.Clear();    
+                List<Componente> _familias = new BLL_Permisos().GetFamilias();
+                List<string> nombreFamilias = new List<string>();
+                nombreFamilias.Add("");
+                _familias.ForEach(familia =>
+                {
+                    nombreFamilias.Add(familia.Nombre);
+                });
+
+                comboBox1.DataSource = nombreFamilias;
+
+                foreach (var familia in _familias)
+                {
+                    _permisos = new BLL_Permisos().GetPermisosFamilia(familia.Id);
+                    TreeNode padre = new TreeNode(familia.Nombre);
+                    cargarTreeView(_permisos, padre);
+                    treeView1.Nodes.Add(padre);
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var selectedPermiso = new BLL_Permisos().GetFamiliaPorNombre(treeView1.SelectedNode.Text);
-            var permisosFamilia = new BLL_Permisos().GetPermisosFamilia(selectedPermiso.Id);
-            if (permisosFamilia.Count > 0)
+            try
             {
-                MessageBox.Show("No se puede eliminar este permiso porque tiene hijos");
+                if (treeView1 == null)
+                {
+                    MessageBox.Show("Debe seleccionar un permiso");
+                    return;
+                }
+                var selectedPermiso = new BLL_Permisos().GetFamiliaPorNombre(treeView1.SelectedNode.Text);
+                
+                var permisosFamilia = new BLL_Permisos().GetPermisosFamilia(selectedPermiso.Id);
+
+                new BLL_Permisos().Delete(selectedPermiso);
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                treeView1.Nodes.Clear();
+                Permisos_Load(this, null);
+            }
+            
         }
     }
 }

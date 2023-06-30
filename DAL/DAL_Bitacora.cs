@@ -109,7 +109,7 @@ namespace DAL
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("sp_ListarBitacoras", conn);
+                    SqlCommand cmd = new SqlCommand("sp_GetAllBitacorasTipo", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = conn;
                     conn.Open();
@@ -121,7 +121,7 @@ namespace DAL
                             var bit = new BitacoraTipo()
                             {
                                 Id = Convert.ToInt32(reader["Id"].ToString()),
-                                Descripcion = reader["TipoBitacora"].ToString()
+                                Descripcion = reader["Nombre"].ToString()
                             };
 
                             list.Add(bit);

@@ -134,7 +134,12 @@ namespace UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
             }
         }
 
@@ -229,8 +234,12 @@ namespace UI
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
             }
         }
 

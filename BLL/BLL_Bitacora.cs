@@ -18,16 +18,43 @@ namespace BLL
 
         public List<Bitacora> GetAll()
         {
-            return new DAL_Bitacora().GetAll();
+            try
+            {
+                return new DAL_Bitacora().GetAll();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
         public List<DTO_BitacoraUser> GetAllBU(int? User, DateTime? from, DateTime? to, int? tipo, int page)
         {
-            return new DAL_Bitacora().GetAllBU(User, from, to, tipo, page);
+            try
+            {
+                return new DAL_Bitacora().GetAllBU(User, from, to, tipo, page);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         public List<BitacoraTipo> GetAllBT()
         {
-            return new DAL_Bitacora().GetAllBT();
+            try
+            {
+                return new DAL_Bitacora().GetAllBT();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
     }
 }

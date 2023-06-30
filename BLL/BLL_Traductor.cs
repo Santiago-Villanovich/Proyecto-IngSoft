@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ABS;
 using DAL;
-
-
+using BE;
+using BLL;
 
 namespace Services.Multilanguage
 {
@@ -16,53 +16,156 @@ namespace Services.Multilanguage
     {
         public bool InsertIdioma(IIdioma idioma) 
         {
-            return new DAL_Traductor().InsertIdioma(idioma);
+            try
+            {
+                return new DAL_Traductor().InsertIdioma(idioma);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
         public IIdioma ObtenerIdiomaDefault()
         {
-            return new DAL_Traductor().ObtenerIdiomaDefault();
+            try
+            {
+                return new DAL_Traductor().ObtenerIdiomaDefault();
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
 
         public IIdioma GetIdiomaLastAdded()
         {
-            return new DAL_Traductor().GetLastIdiomaAdded();
+            try
+            {
+                return new DAL_Traductor().GetLastIdiomaAdded();
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
 
         public IList<IIdioma> ObtenerIdiomas()
         {
-            return new DAL_Traductor().ObtenerIdiomas();
+            try
+            {
+                return new DAL_Traductor().ObtenerIdiomas();
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
 
         public IDictionary<string, ITraduccion> ObtenerTraducciones(IIdioma idioma) 
         {
-            return new DAL_Traductor().ObtenerTraducciones(idioma);
+            try
+            {
+                return new DAL_Traductor().ObtenerTraducciones(idioma);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
 
         public bool InsertTraducciones(List<Traduccion> lista, Idioma idioma)
         {
-            return new DAL_Traductor().InsertTraduccion(lista, idioma);
+            try
+            {
+                return new DAL_Traductor().InsertTraduccion(lista, idioma);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
 
         public List<Traduccion> GetAllTerminos()
         {
+            try
+            {
+                return new DAL_Traductor().GetAllTerminos();
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
 
-            return new DAL_Traductor().GetAllTerminos(); 
         }
 
         public List<TraduccionDTO> GetAllTerminosDTO()
         {
-            List<TraduccionDTO> traduccionDTOs = new List<TraduccionDTO>();
-            foreach (var item in new DAL_Traductor().GetAllTerminos())
+            try
             {
-                traduccionDTOs.Add(new TraduccionDTO
+                List<TraduccionDTO> traduccionDTOs = new List<TraduccionDTO>();
+                foreach (var item in new DAL_Traductor().GetAllTerminos())
+                {
+                    traduccionDTOs.Add(new TraduccionDTO
                     {
                         id = item.termino.id,
                         termino = item.termino.termino,
                         traduccion = item.texto
                     }
-                );
+                    );
+                }
+                return traduccionDTOs;
             }
-            return traduccionDTOs;
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+            
         }
 
     }

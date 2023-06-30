@@ -91,3 +91,4 @@ G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.CoreCompileIn
 G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.exe
 G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.CorruptedDataBase.resources

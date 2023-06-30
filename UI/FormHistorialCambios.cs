@@ -20,14 +20,27 @@ namespace UI
     {
         public void InitializeComboBoxs()
         {
-            cboxUsuario.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cboxUsuario.AutoCompleteSource = AutoCompleteSource.ListItems;
+            try
+            {
+                cboxUsuario.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cboxUsuario.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            cboxUsuario.DataSource = bllUsr.GetAll();
-            cboxUsuario.ValueMember = "Id";
-            cboxUsuario.DisplayMember = "NombreApellido";
+                cboxUsuario.DataSource = bllUsr.GetAll();
+                cboxUsuario.ValueMember = "Id";
+                cboxUsuario.DisplayMember = "NombreApellido";
 
-            cboxUsuario.SelectedItem = null;
+                cboxUsuario.SelectedItem = null;
+            }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
         public void InitializeDTPicker()
         {
@@ -38,27 +51,40 @@ namespace UI
         }
         private void TraducirForm(IIdioma idioma = null)
         {
-            BLL_Traductor traductor = new BLL_Traductor();
-            var traducciones = traductor.ObtenerTraducciones(idioma);
-
-            foreach (Control control in this.Controls)
+            try
             {
+                BLL_Traductor traductor = new BLL_Traductor();
+                var traducciones = traductor.ObtenerTraducciones(idioma);
 
-                if (control is Button)
+                foreach (Control control in this.Controls)
                 {
-                    Button boton = (Button)control;
-                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                        boton.Text = traducciones[boton.Tag.ToString()].texto;
-                }
-                else if (control is Label)
-                {
-                    Label label = (Label)control;
-                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                        label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    if (control is Button)
+                    {
+                        Button boton = (Button)control;
+                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                            boton.Text = traducciones[boton.Tag.ToString()].texto;
+                    }
+                    else if (control is Label)
+                    {
+                        Label label = (Label)control;
+                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                            label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    }
 
                 }
-
             }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
 
         public void Notify(Idioma idioma)
@@ -111,8 +137,12 @@ namespace UI
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
             }
         }
 
@@ -140,9 +170,13 @@ namespace UI
                 bllUsr.Update(user);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
                 throw;
             }
         }
