@@ -1,5 +1,6 @@
 ﻿using ABS;
 using BE;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,7 +17,32 @@ namespace DAL
         private SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString);
         public bool Delete(Componente id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_DeletePermiso", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", id.Id);
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    throw;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
         }
 
         public Componente Get(int id)
@@ -325,8 +351,10 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand("sp_InsertPermiso", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_permiso", permiso.Id);
-                    cmd.Parameters.AddWithValue("@id_user", IdPadre);
+                    cmd.Parameters.AddWithValue("@id_padre", IdPadre);
+                    cmd.Parameters.AddWithValue("@nombre", permiso.Nombre);
+                    cmd.Parameters.AddWithValue("@es_patente", permiso.es_patente);
+
                     //cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
                     conn.Open();
 

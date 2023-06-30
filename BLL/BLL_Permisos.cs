@@ -13,7 +13,20 @@ namespace BLL
     {
         public bool Delete(Componente id)
         {
-            return new DAL_Permisos().Delete(id);
+            try
+            {
+                var permisosFamilia = GetPermisosFamilia(id.Id);
+                if (permisosFamilia.Count > 0)
+                {
+                    throw new Exception("Este permiso tiene hijos, no se puede eliminar");
+                }
+                return new DAL_Permisos().Delete(id);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            
         }
 
         public Componente Get(int id)
