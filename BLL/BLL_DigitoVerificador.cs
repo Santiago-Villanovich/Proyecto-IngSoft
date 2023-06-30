@@ -52,11 +52,11 @@ namespace BLL
             }
             catch (Exception e)
             {
-                var bitacora = new Bitacora();
+                /*var bitacora = new Bitacora();
                 bitacora.Detalle = e.Message;
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
-                new BLL_Bitacora().Insert(bitacora);
+                new BLL_Bitacora().Insert(bitacora);*/
                 throw;
             }
 
