@@ -114,6 +114,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CorruptedDataBase.resx">
+      <DependentUpon>CorruptedDataBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormActualizarInfo.resx">
       <DependentUpon>FormActualizarInfo.cs</DependentUpon>
     </EmbeddedResource>

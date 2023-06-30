@@ -27,12 +27,12 @@ namespace BLL
             {
                 var bitacora = new Bitacora();
                 bitacora.Detalle = e.Message;
-                bitacora.Responsable = user;
+                bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw e;
+                throw;
             }
-            
+
         }
 
         public User Get(int id)
@@ -76,12 +76,12 @@ namespace BLL
             {
                 var bitacora = new Bitacora();
                 bitacora.Detalle = e.Message;
-                bitacora.Responsable = obj;
+                bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw e;
+                throw;
             }
-            
+
         }
 
         public bool Register(User obj)
@@ -104,7 +104,7 @@ namespace BLL
 
                     Session.Login(user);
                     var bitacora = new Bitacora();
-                    bitacora.Detalle = "Login de usuario";
+                    bitacora.Detalle = "Registro de usuario";
                     bitacora.Responsable = user;
                     bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Informacion);
                     new BLL_Bitacora().Insert(bitacora);
@@ -116,12 +116,12 @@ namespace BLL
             {
                 var bitacora = new Bitacora();
                 bitacora.Detalle = e.Message;
-                bitacora.Responsable = obj;
+                bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw e;
+                throw;
             }
-            
+
         }
 
         public bool Update(User obj)
@@ -130,12 +130,16 @@ namespace BLL
             {
                 return new DAL_User().Update(obj);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
                 throw;
             }
-            
+
         }
 
         public User Login(int dni, string clave)
@@ -149,6 +153,7 @@ namespace BLL
                 if (user != null)
                 {
                     Session.Login(user);
+
                     var bitacora = new Bitacora();
                     bitacora.Detalle = "Login de usuario";
                     bitacora.Responsable = user;
@@ -160,14 +165,14 @@ namespace BLL
             }
             catch (Exception e)
             {
-               /* var bitacora = new Bitacora();
+                var bitacora = new Bitacora();
                 bitacora.Detalle = e.Message;
-                bitacora.Responsable = obj;
+                bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
-                new BLL_Bitacora().Insert(bitacora);*/
-                throw e;
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
             }
-            
+
         }
 
         public List<DTO_UserHistory> GetAllUserHistory(int? User, DateTime? from, DateTime? to, int page)
@@ -176,22 +181,52 @@ namespace BLL
             {
                 return new DAL_User().GetAllUserHistory(User, from, to, page);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
                 throw;
             }
-            
+
         }
 
         public bool InsertUserHistory(DTO_UserHistory user)
         {
-            return new DAL_User().InsertUserHistory(user);
+            try
+            {
+
+                return new DAL_User().InsertUserHistory(user);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
         }
 
         public bool AgregarPermiso(Componente permiso, User user)
         {
-            return new DAL_User().AgregarPermiso(permiso, user);
+            try
+            {
+                return new DAL_User().AgregarPermiso(permiso, user);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
     }
 }

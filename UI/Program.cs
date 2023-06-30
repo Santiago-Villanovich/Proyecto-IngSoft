@@ -18,7 +18,7 @@ namespace UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             BLL_DigitoVerificador verificadorDV = new BLL_DigitoVerificador();
-            if (verificadorDV.VerificarEstadoTabla(new BLL_User().GetAll(),"Users"))
+            if (verificadorDV.VerificarEstadoTabla(new BLL_User().GetAll(), "Users"))
             {
                 Application.Run(new LogIn());
             }
@@ -26,7 +26,8 @@ namespace UI
             {
                 Application.Run(new CorruptedDataBase());
             }
-            
+
+            /*Application.Run(new LogIn());*/
         }
     }
 }

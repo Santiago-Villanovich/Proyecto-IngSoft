@@ -19,27 +19,35 @@ namespace UI
     {
         private void TraducirForm(IIdioma idioma = null)/*IIdioma idioma = null*/
         {
+            try
+            {
+                var traducciones = traductor.ObtenerTraducciones(idioma);
 
-            var traducciones = traductor.ObtenerTraducciones(idioma);
+                foreach (Control control in this.Controls)
+                {
 
-            foreach (Control control in this.Controls)
+                    if (control is Button)
+                    {
+                        Button boton = (Button)control;
+                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                            boton.Text = traducciones[boton.Tag.ToString()].texto;
+                    }
+                    else if (control is Label)
+                    {
+                        Label label = (Label)control;
+                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                            label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    }
+
+                }
+            }
+            catch (Exception)
             {
 
-                if (control is Button)
-                {
-                    Button boton = (Button)control;
-                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                        boton.Text = traducciones[boton.Tag.ToString()].texto;
-                }
-                else if (control is Label)
-                {
-                    Label label = (Label)control;
-                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                        label.Text = traducciones[label.Tag.ToString()].texto;
-
-                }
-
+                throw;
             }
+            
         }
         public FormActualizarInfo()
         {
