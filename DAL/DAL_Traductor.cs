@@ -160,7 +160,7 @@ namespace DAL
             }
         }
 
-        public List<Traduccion> GetAllTerminos()
+        public List<Traduccion> GetAllTerminos(Idioma idioma = null)
         {
             using (SqlConnection conn = _conn)
             {
@@ -170,6 +170,10 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand("sp_GetAllTerminos", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    if (idioma != null)
+                    { cmd.Parameters.AddWithValue("@id_Idioma", idioma.Id); }
+                    else
+                    { cmd.Parameters.AddWithValue("@id_Idioma", DBNull.Value); }
                     cmd.Connection = conn;
                     conn.Open();
 
@@ -177,18 +181,33 @@ namespace DAL
 
                     while (reader.Read())
                     {
-
-                        _lista.Add(
-                         new Traduccion()
-                         {
-                             texto = "",
-
-                             termino = new Termino()
-                             {
-                                 id = Convert.ToInt32(reader["ID"].ToString()),
-                                 termino = reader["Termino"].ToString()
-                             }
-                         });
+                        if (idioma == null)
+                        {
+                            _lista.Add(
+                            new Traduccion()
+                            {
+                                texto = "",
+                                termino = new Termino()
+                                {
+                                    id = Convert.ToInt32(reader["ID"].ToString()),
+                                    termino = reader["Termino"].ToString()
+                                }
+                            });
+                        }
+                        else
+                        {
+                            _lista.Add(
+                            new Traduccion()
+                            {
+                                texto = reader["Traduccion"].ToString(),
+                                termino = new Termino()
+                                {
+                                    id = Convert.ToInt32(reader["ID"].ToString()),
+                                    termino = reader["Termino"].ToString()
+                                }
+                            });
+                        }
+                        
                     }
                     return _lista;
                 }
@@ -301,6 +320,44 @@ namespace DAL
                         cmd.ExecuteNonQuery();
                     }
                     
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    return false;
+                }
+                catch (Exception ex2)
+                {
+                    return false;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public bool UpdateTraduccion(List<Traduccion> traduc, IIdioma idioma)
+        {
+            using (SqlConnection conn = _conn)
+            {
+                conn.Open();
+
+                try
+                {
+                    foreach (Traduccion item in traduc)
+                    {
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.Connection = conn;
+                        cmd.CommandText = "sp_UpdateTraducciones";
+
+                        cmd.Parameters.AddWithValue("@IdIdioma", idioma.Id);
+                        cmd.Parameters.AddWithValue("@IdTermino", item.termino.id);
+                        cmd.Parameters.AddWithValue("@Traduccion", item.texto);
+                        cmd.ExecuteNonQuery();
+                    }
+
                     return true;
                 }
                 catch (SqlException ex)

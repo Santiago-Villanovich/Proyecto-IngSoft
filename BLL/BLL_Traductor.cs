@@ -121,6 +121,24 @@ namespace Services.Multilanguage
 
         }
 
+        public bool UpdateTraducciones(List<Traduccion> lista, Idioma idioma)
+        {
+            try
+            {
+                return new DAL_Traductor().UpdateTraduccion(lista, idioma);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
+        }
+
         public List<Traduccion> GetAllTerminos()
         {
             try
@@ -139,12 +157,12 @@ namespace Services.Multilanguage
 
         }
 
-        public List<TraduccionDTO> GetAllTerminosDTO()
+        public List<TraduccionDTO> GetAllTerminosDTO(Idioma idioma = null)
         {
             try
             {
                 List<TraduccionDTO> traduccionDTOs = new List<TraduccionDTO>();
-                foreach (var item in new DAL_Traductor().GetAllTerminos())
+                foreach (var item in new DAL_Traductor().GetAllTerminos(idioma))
                 {
                     traduccionDTOs.Add(new TraduccionDTO
                     {

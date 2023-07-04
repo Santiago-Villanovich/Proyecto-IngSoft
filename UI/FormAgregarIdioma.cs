@@ -61,6 +61,24 @@ namespace UI
                     }
 
                 }
+                foreach (Control control in this.groupBox3.Controls)
+                {
+
+                    if (control is System.Windows.Forms.Button)
+                    {
+                        System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                            boton.Text = traducciones[boton.Tag.ToString()].texto;
+                    }
+                    else if (control is Label)
+                    {
+                        Label label = (Label)control;
+                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                            label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    }
+
+                }
             }
             catch (Exception ex)
             {
@@ -108,9 +126,18 @@ namespace UI
         public FormAgregarIdioma()
         {
             InitializeComponent();
-            traductor = new BLL_Traductor();
+            this.Size = new Size(392,569);
+            groupBox3.Location = new Point(8, 46);
+            groupBox3.Visible = false;
+            groupBox3.Enabled = false;
 
+            traductor = new BLL_Traductor();
+            comboBox1.DataSource = traductor.ObtenerIdiomas();
+            comboBox1.DisplayMember = "Nombre";
+            comboBox1.ValueMember = "Id";
             TraducirForm(Session.IdiomaActual);
+
+            rbAgregar.Checked = true;
         }
 
         BLL_Traductor traductor;
@@ -121,6 +148,8 @@ namespace UI
             {
                 if (new RegexValidation().validarNombre(textBox1.Text))
                 {
+                    rbAgregar.Enabled = false;
+                    rbModificar.Enabled = false;
                     groupBox1.Enabled = false;
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = traductor.GetAllTerminosDTO();
@@ -150,26 +179,20 @@ namespace UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bool completo = false;
+            
             try
             {
-                
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+
+                /*foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    //if (string.IsNullOrEmpty(row.Cells[2].Value.ToString()))
                     if(row.Cells[2].Value != null || row.Cells[3].Value.ToString() != "")
                     {
                         completo = true;
                     }
                     else { completo = false; break; }
 
-                }
-
-                if (!completo)
-                {
-                    DialogResult ds = MessageBox.Show(this, "Todas las traducciones deben estar completas", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
+                }*/
+                if (rbAgregar.Checked == true)
                 {
                     Idioma _idioma = new Idioma()
                     {
@@ -183,8 +206,16 @@ namespace UI
 
                     MessageBox.Show("Idioma agregado con exito");
                     this.Close();
-                    
                 }
+                else if (rbModificar.Checked == true)
+                {
+                    Idioma IdiomaAux = (Idioma)comboBox1.SelectedItem;
+                    traductor.UpdateTraducciones(TraerListDGV(), IdiomaAux);
+
+                    MessageBox.Show("Idioma agregado con exito");
+                    this.Close();
+                }
+                
 
             }
             catch (Exception ex)
@@ -198,9 +229,74 @@ namespace UI
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.SelectedItem != null)
+                {
+                    Idioma idiom = (Idioma)comboBox1.SelectedItem;
+                    rbAgregar.Enabled = false;
+                    rbModificar.Enabled = false;
+                    groupBox3.Enabled = false;
+
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = traductor.GetAllTerminosDTO(idiom);
+                    dataGridView1.AutoResizeColumns();
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView1.Columns[0].ReadOnly = true;
+                    dataGridView1.Columns[1].ReadOnly = true;
+                }
+                
+                
+            }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
+        }
+
         public void Notify(Idioma idioma)
         {
             TraducirForm(idioma);
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbAgregar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbAgregar.Checked)
+            {
+                groupBox1.Enabled = true;
+                groupBox1.Visible = true;
+                groupBox3.Visible = false;
+                groupBox3.Enabled = false;
+
+            }
+            
+        }
+
+        private void rbModificar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbModificar.Checked)
+            {
+                groupBox3.Visible = true;
+                groupBox3.Enabled = true;
+                groupBox1.Enabled = false;
+                groupBox1.Visible = false;
+            }
+            
+        }
+
+        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ABS;
 using BE;
 using DAL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,16 @@ namespace BLL
                 }
                 return new DAL_Permisos().Delete(id);
             }
-            catch(Exception)
+            catch (Exception e)
             {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
                 throw;
             }
-            
+
         }
 
         public Componente Get(int id)
@@ -62,17 +68,30 @@ namespace BLL
 
         public List<Componente> GetAllPermisos()
         {
-            List<Componente> AllPermisos = new List<Componente>();
-            var familias = new DAL_Permisos().GetFamilias();
-
-            foreach (var familia in familias)
+            try
             {
-                var permisosFamilia = LlenarFamilia(familia);
-                AllPermisos.Add(permisosFamilia);
+                List<Componente> AllPermisos = new List<Componente>();
+                var familias = new DAL_Permisos().GetFamilias();
 
+                foreach (var familia in familias)
+                {
+                    var permisosFamilia = LlenarFamilia(familia);
+                    AllPermisos.Add(permisosFamilia);
+
+                }
+
+                return AllPermisos;
             }
-
-            return AllPermisos;
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+            
 
         }
 
@@ -88,20 +107,46 @@ namespace BLL
 
         public Componente LlenarFamilia(Componente parent)
         {
-            List<Componente> HijosFamilia = new DAL_Permisos().GetPermisosFamilia(parent.Id);
-
-
-            foreach (var item in HijosFamilia)
+            try
             {
-                parent.AgregarHijo(item);
-            }
+                List<Componente> HijosFamilia = new DAL_Permisos().GetPermisosFamilia(parent.Id);
 
-            return parent;
+
+                foreach (var item in HijosFamilia)
+                {
+                    parent.AgregarHijo(item);
+                }
+
+                return parent;
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+            
         }
 
         public void AgregarPermiso(Componente permiso, int idPadre)
         {
-             new DAL_Permisos().AgregarPermiso(permiso, idPadre);
+            try
+            {
+                new DAL_Permisos().AgregarPermiso(permiso, idPadre);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
     }
 }
