@@ -343,8 +343,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LogIn";
-            this.Text = "LogIn";
             this.Load += new System.EventHandler(this.LogIn_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

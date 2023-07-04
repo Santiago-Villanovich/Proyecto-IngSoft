@@ -47,7 +47,10 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.DimGray;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.Location = new System.Drawing.Point(12, 92);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -82,6 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.LightYellow;
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
@@ -92,6 +96,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.LightYellow;
             this.label2.Location = new System.Drawing.Point(59, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(12, 13);
@@ -101,6 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.LightYellow;
             this.label3.Location = new System.Drawing.Point(77, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
@@ -111,6 +117,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.LightYellow;
             this.label4.Location = new System.Drawing.Point(157, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
@@ -121,6 +128,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.LightYellow;
             this.label5.Location = new System.Drawing.Point(269, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
@@ -130,6 +138,11 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Khaki;
+            this.btnBuscar.FlatAppearance.BorderSize = 2;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("MS Reference Sans Serif", 8F);
+            this.btnBuscar.ForeColor = System.Drawing.Color.Khaki;
             this.btnBuscar.Location = new System.Drawing.Point(9, 52);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(420, 25);
@@ -141,17 +154,28 @@
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.DimGray;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Khaki;
+            this.btnLimpiar.FlatAppearance.BorderSize = 2;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("MS Reference Sans Serif", 6F);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Khaki;
             this.btnLimpiar.Location = new System.Drawing.Point(380, 9);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(49, 37);
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Tag = "35";
             this.btnLimpiar.Text = "Limpiar filtros";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnRestablecer
             // 
+            this.btnRestablecer.FlatAppearance.BorderColor = System.Drawing.Color.Khaki;
+            this.btnRestablecer.FlatAppearance.BorderSize = 2;
+            this.btnRestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestablecer.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F);
+            this.btnRestablecer.ForeColor = System.Drawing.Color.Khaki;
             this.btnRestablecer.Location = new System.Drawing.Point(12, 326);
             this.btnRestablecer.Name = "btnRestablecer";
             this.btnRestablecer.Size = new System.Drawing.Size(111, 33);
@@ -165,7 +189,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 389);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(442, 389);
             this.Controls.Add(this.btnRestablecer);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBuscar);

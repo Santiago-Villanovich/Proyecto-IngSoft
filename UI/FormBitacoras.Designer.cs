@@ -53,12 +53,14 @@ namespace UI
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.DimGray;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(295, 42);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(545, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(545, 243);
             this.dataGridView1.TabIndex = 0;
             // 
             // dtDesde
@@ -77,7 +79,12 @@ namespace UI
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(53, 272);
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Khaki;
+            this.btnBuscar.FlatAppearance.BorderSize = 2;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F);
+            this.btnBuscar.ForeColor = System.Drawing.Color.Khaki;
+            this.btnBuscar.Location = new System.Drawing.Point(53, 256);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(182, 32);
             this.btnBuscar.TabIndex = 6;
@@ -89,9 +96,11 @@ namespace UI
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label1.ForeColor = System.Drawing.Color.Khaki;
             this.label1.Location = new System.Drawing.Point(50, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 7;
             this.label1.Tag = "31";
             this.label1.Text = "Desde";
@@ -99,9 +108,11 @@ namespace UI
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label2.ForeColor = System.Drawing.Color.Khaki;
             this.label2.Location = new System.Drawing.Point(50, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 8;
             this.label2.Tag = "32";
             this.label2.Text = "Hasta";
@@ -109,9 +120,11 @@ namespace UI
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label5.ForeColor = System.Drawing.Color.Khaki;
             this.label5.Location = new System.Drawing.Point(50, 194);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
+            this.label5.Size = new System.Drawing.Size(108, 16);
             this.label5.TabIndex = 11;
             this.label5.Tag = "33";
             this.label5.Text = "Tipo de Historial";
@@ -134,33 +147,41 @@ namespace UI
             // 
             // btnSiguiente
             // 
+            this.btnSiguiente.BackColor = System.Drawing.Color.Khaki;
             this.btnSiguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSiguiente.Location = new System.Drawing.Point(765, 310);
+            this.btnSiguiente.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.btnSiguiente.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSiguiente.Location = new System.Drawing.Point(765, 292);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 16;
             this.btnSiguiente.Text = ">";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.UseVisualStyleBackColor = false;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAnterior
             // 
+            this.btnAnterior.BackColor = System.Drawing.Color.Khaki;
             this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAnterior.Location = new System.Drawing.Point(670, 310);
+            this.btnAnterior.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.btnAnterior.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAnterior.Location = new System.Drawing.Point(670, 292);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(75, 23);
             this.btnAnterior.TabIndex = 17;
             this.btnAnterior.Text = "<";
-            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.UseVisualStyleBackColor = false;
             this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(292, 315);
+            this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label4.ForeColor = System.Drawing.Color.Khaki;
+            this.label4.Location = new System.Drawing.Point(292, 297);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 18;
             this.label4.Tag = "36";
             this.label4.Text = "Pagina";
@@ -168,17 +189,23 @@ namespace UI
             // lblPageNumber
             // 
             this.lblPageNumber.AutoSize = true;
-            this.lblPageNumber.Location = new System.Drawing.Point(345, 315);
+            this.lblPageNumber.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.lblPageNumber.ForeColor = System.Drawing.Color.Khaki;
+            this.lblPageNumber.Location = new System.Drawing.Point(345, 297);
             this.lblPageNumber.Name = "lblPageNumber";
-            this.lblPageNumber.Size = new System.Drawing.Size(13, 13);
+            this.lblPageNumber.Size = new System.Drawing.Size(15, 16);
             this.lblPageNumber.TabIndex = 19;
             this.lblPageNumber.Text = "1";
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(102, 310);
+            this.btnLimpiar.FlatAppearance.BorderSize = 2;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("MS Reference Sans Serif", 7F);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Khaki;
+            this.btnLimpiar.Location = new System.Drawing.Point(94, 292);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(82, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(96, 23);
             this.btnLimpiar.TabIndex = 20;
             this.btnLimpiar.Tag = "35";
             this.btnLimpiar.Text = "Limpiar filtros";
@@ -188,9 +215,11 @@ namespace UI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(118, 42);
+            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label3.ForeColor = System.Drawing.Color.Khaki;
+            this.label3.Location = new System.Drawing.Point(127, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 23;
             this.label3.Tag = "8";
             this.label3.Text = "Apellido";
@@ -198,18 +227,22 @@ namespace UI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(100, 42);
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label6.ForeColor = System.Drawing.Color.Khaki;
+            this.label6.Location = new System.Drawing.Point(112, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(12, 13);
+            this.label6.Size = new System.Drawing.Size(12, 16);
             this.label6.TabIndex = 22;
             this.label6.Text = "/";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label7.ForeColor = System.Drawing.Color.Khaki;
             this.label7.Location = new System.Drawing.Point(50, 42);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
+            this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 21;
             this.label7.Tag = "7";
             this.label7.Text = "Nombre";
@@ -218,6 +251,7 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(852, 379);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
@@ -237,6 +271,7 @@ namespace UI
             this.Controls.Add(this.dtDesde);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormBitacoras";
+            this.Text = "Bitacoras";
             this.Load += new System.EventHandler(this.FormBitacoras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

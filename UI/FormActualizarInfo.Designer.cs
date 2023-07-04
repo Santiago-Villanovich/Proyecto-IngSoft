@@ -61,9 +61,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label1.ForeColor = System.Drawing.Color.Khaki;
             this.label1.Location = new System.Drawing.Point(21, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 3;
             this.label1.Tag = "7";
             this.label1.Text = "Nombre";
@@ -71,9 +73,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label2.ForeColor = System.Drawing.Color.Khaki;
             this.label2.Location = new System.Drawing.Point(21, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 4;
             this.label2.Tag = "8";
             this.label2.Text = "Apellido";
@@ -81,18 +85,25 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label3.ForeColor = System.Drawing.Color.Khaki;
             this.label3.Location = new System.Drawing.Point(21, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(42, 16);
             this.label3.TabIndex = 5;
             this.label3.Tag = "3";
             this.label3.Text = "Clave";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(50, 224);
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Khaki;
+            this.btnGuardar.FlatAppearance.BorderSize = 2;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.btnGuardar.ForeColor = System.Drawing.Color.Khaki;
+            this.btnGuardar.Location = new System.Drawing.Point(42, 213);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(88, 33);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Tag = "30";
             this.btnGuardar.Text = "Guardar";
@@ -103,7 +114,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(178, 297);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(178, 274);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -112,7 +124,7 @@
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
             this.Name = "FormActualizarInfo";
-            this.Text = "FormActualizarInfo";
+            this.Text = "Actualizar";
             this.ResumeLayout(false);
             this.PerformLayout();
 
