@@ -66,6 +66,11 @@ namespace UI
                 {
                     MessageBox.Show("El permiso debe tener un nombre ingresado");
                 }
+
+                if(radioButton1.Checked && comboBox1.SelectedItem.ToString()== "")
+                {
+                    MessageBox.Show("Una patente debe estar dentro de una familia");
+                }
                 Componente c;
                 Componente padre = new BLL_Permisos().GetFamiliaPorNombre(comboBox1.SelectedItem.ToString());
                 int IdPadre;
