@@ -68,7 +68,7 @@ namespace UI
 
         private void btnDarPermisos_Click(object sender, EventArgs e)
         {
-            Componente seleccionado = new BLL_Permisos().GetFamiliaPorNombre(comboBox1.SelectedItem.ToString());
+            Componente seleccionado = new BLL_Permisos().GetComponentePorNombre(comboBox1.SelectedItem.ToString());
             User user = (User)dataGridView1.CurrentRow.DataBoundItem;
             try
             {
@@ -79,9 +79,9 @@ namespace UI
                 {
                     MessageBox.Show("Ocurrio un error al agregar permiso");
                 }
-            }catch(Exception ex)
+            }catch(Exception)
             {
-
+                throw;
             }
         }
 

@@ -122,10 +122,7 @@ namespace UI
                             this.Hide();
                             menu.Show();
                         }
-                        /*else
-                        {
-                            MessageBox.Show("Ocurrio un error al iniciar sesion");
-                        }*/
+                        
                     }
                     
                 }
@@ -139,7 +136,7 @@ namespace UI
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -239,7 +236,7 @@ namespace UI
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 

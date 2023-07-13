@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using BE;
@@ -15,6 +9,7 @@ namespace UI
     public partial class FormPermisos : Form
     {
         List<Componente> _permisos = new List<Componente>();
+        List<Componente> componentesSeleccionados = new List<Componente>();
         public FormPermisos()
         {
             InitializeComponent();
@@ -23,16 +18,12 @@ namespace UI
         private void Permisos_Load(object sender, EventArgs e)
         {
 
-            List<Componente> _familias = new BLL_Permisos().GetFamilias();
-            List<string> nombreFamilias = new List<string>();
-            nombreFamilias.Add("");
-            _familias.ForEach(familia =>
-            {
-                nombreFamilias.Add(familia.Nombre);
-            });
+            List<Familia> _familias = new BLL_Permisos().GetFamilias();
+            List<Patente> _patentes = new BLL_Permisos().ObtenerPatentes();
 
-            comboBox1.DataSource = nombreFamilias;
-
+            dataGridView1.DataSource = _patentes;
+            dataGridView3.DataSource = _familias;
+            
             foreach (var familia in _familias)
             {
                 _permisos = new BLL_Permisos().GetPermisosFamilia(familia.Id);
@@ -53,10 +44,6 @@ namespace UI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new BLL_Permisos().GetAllPermisos();
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -67,30 +54,16 @@ namespace UI
                     MessageBox.Show("El permiso debe tener un nombre ingresado");
                 }
 
-                if(radioButton1.Checked && comboBox1.SelectedItem.ToString()== "")
-                {
-                    MessageBox.Show("Una patente debe estar dentro de una familia");
-                }
-                Componente c;
-                Componente padre = new BLL_Permisos().GetFamiliaPorNombre(comboBox1.SelectedItem.ToString());
-                int IdPadre;
-
-                if (padre != null) IdPadre = padre.Id;
-                else IdPadre = 0;
-
-                if (radioButton1.Checked)
-                {
-                    c = new Patente();
-                }
-                else
-                {
-                    c = new Familia();
-                }
+                Familia c = new Familia();
 
                 c.Nombre = textBox1.Text;
-                c.es_patente = radioButton1.Checked;
 
-                new BLL_Permisos().AgregarPermiso(c, IdPadre);
+                componentesSeleccionados.ForEach(p =>
+                {
+                    c.AgregarHijo(p);
+                });
+
+                new BLL_Permisos().AgregarPermiso(c);
 
             }catch (Exception ex)
             {
@@ -98,16 +71,11 @@ namespace UI
 
             }finally
             {
-                treeView1.Nodes.Clear();    
-                List<Componente> _familias = new BLL_Permisos().GetFamilias();
-                List<string> nombreFamilias = new List<string>();
-                nombreFamilias.Add("");
-                _familias.ForEach(familia =>
-                {
-                    nombreFamilias.Add(familia.Nombre);
-                });
+                dataGridView3.DataSource = null;
+                List<Familia> _familias =  new BLL_Permisos().GetFamilias();
+                dataGridView3.DataSource = _familias;
 
-                comboBox1.DataSource = nombreFamilias;
+                treeView1.Nodes.Clear();
 
                 foreach (var familia in _familias)
                 {
@@ -128,11 +96,13 @@ namespace UI
                     MessageBox.Show("Debe seleccionar un permiso");
                     return;
                 }
-                var selectedPermiso = new BLL_Permisos().GetFamiliaPorNombre(treeView1.SelectedNode.Text);
+                var selectedPermiso = new BLL_Permisos().GetComponentePorNombre(treeView1.SelectedNode.Text);
                 
                 var permisosFamilia = new BLL_Permisos().GetPermisosFamilia(selectedPermiso.Id);
 
                 new BLL_Permisos().Delete(selectedPermiso);
+
+                MessageBox.Show("Se elimino el permiso");
 
             }catch(Exception ex)
             {
@@ -143,6 +113,74 @@ namespace UI
                 treeView1.Nodes.Clear();
                 Permisos_Load(this, null);
             }
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.CurrentRow.DataBoundItem == null)
+            {
+                MessageBox.Show("Debe seleccionar una patente");
+                return;
+            }
+
+            Patente seleccion = (Patente)dataGridView1.CurrentRow.DataBoundItem;
+
+            componentesSeleccionados.Add(seleccion);
+
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = componentesSeleccionados;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow.DataBoundItem == null)
+            {
+                MessageBox.Show("Debe seleccionar una patente");
+                return;
+            }
+
+            Familia seleccion = (Familia)dataGridView3.CurrentRow.DataBoundItem;
+
+            if (componentesSeleccionados.Contains(seleccion))
+            {
+                MessageBox.Show("Este componente ya fue agregado");
+                return;
+            }
+
+            componentesSeleccionados.Add(seleccion);
+
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = componentesSeleccionados;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox2.Text == null || textBox2.Text == "")
+                {
+                    MessageBox.Show("Agregue un nombre valido");
+                    return;
+                }
+
+                var patente = new Patente(textBox2.Text);
+
+                new BLL_Permisos().AgregarPermiso(patente);
+
+                MessageBox.Show("Se agrego el permiso correctamente");
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dataGridView1.DataSource= null;
+                dataGridView1.DataSource = new BLL_Permisos().ObtenerPatentes();
+            }
+            
+
             
         }
     }
