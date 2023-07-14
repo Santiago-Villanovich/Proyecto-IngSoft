@@ -332,6 +332,36 @@ namespace DAL
             }
         }
 
+        public bool SacarPermisoUser(User user, Componente permiso)
+        {
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_SacarPermisosUser", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idUser", user.Id);
+                    cmd.Parameters.AddWithValue("@idPermiso", permiso.Id);
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    throw;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+        }
 
         public List<Patente> ObtenerPatentes()
         {
@@ -387,6 +417,52 @@ namespace DAL
             var c = GetComponent(id, lista);
 
             return c != null;
+        }
+
+        public List<Familia> GetPermisosUser(User user)
+        {
+            List<Familia> list = new List<Familia>();
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetPermisosUser", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", user.Id);
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var permiso = new Familia()
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Nombre = reader["nombre"].ToString(),
+                                es_patente = Convert.ToBoolean(reader["es_patente"])
+
+                            };
+
+                            list.Add(permiso);
+                        }
+                    }
+
+                    return list;
+                }
+                catch (SqlException ex)
+                {
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
         }
 
         public void AgregarPatentePermiso(Componente permiso, int IdPadre)

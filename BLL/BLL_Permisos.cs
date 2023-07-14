@@ -139,6 +139,11 @@ namespace BLL
             }
         }
 
+        public bool SacarPermisoUser(User user, Componente permiso)
+        {
+            return new DAL_Permisos().SacarPermisoUser(user, permiso);
+        }
+
         public void AgregarPermiso(Componente permiso)
         {
             try
@@ -169,6 +174,24 @@ namespace BLL
                 new BLL_Bitacora().Insert(bitacora);
                 throw;
             }
+
+        }
+
+        public List<Familia> GetPermisosUser(User user)
+        {
+            List<Familia> familias = new DAL_Permisos().GetPermisosUser(user);
+
+            List<Familia> permisos = new List<Familia>();
+
+            familias.ForEach(f =>
+            {
+                var permisosFamilia = new DAL_Permisos().GetPermisosFamilia(f.Id);
+                f.Hijos = permisosFamilia;
+
+                permisos.Add(f);
+            });
+
+           return permisos;
 
         }
     }

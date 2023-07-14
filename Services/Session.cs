@@ -52,6 +52,30 @@ namespace Services
 
         }
 
+        public static bool recursiva(int id, IList<Componente> roles)
+        {
+            foreach (Componente rol in roles)
+            {
+                if (rol.Id == id) return true;
+                if (rol.Hijos != null) return recursiva(id, rol.Hijos);
+            }
+            return false;
+        }
+
+        public static bool tiene_permiso(int id)
+        {
+            foreach (Componente rol in _session.Usuario.Permisos)
+            {
+                if (rol.Id == id) return true;
+                if (rol.Hijos != null)
+                {
+                    if (recursiva(id, rol.Hijos)) return true;
+
+                }
+            }
+            return false;
+        }
+
         public static void Logout()
         {
             lock (_lock)

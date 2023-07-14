@@ -160,6 +160,7 @@ namespace BLL
                 string claveHash = hash.GenerarMD5(clave);
 
                 var user = new DAL_User().Login(dni, claveHash);
+                user.Permisos = new BLL_Permisos().GetPermisosUser(user);
                 if (user != null)
                 {
                     Session.Login(user);

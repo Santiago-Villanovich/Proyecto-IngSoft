@@ -116,7 +116,9 @@ namespace UI
 
             }finally
             {
+                componentesSeleccionados.Clear();   
                 dataGridView3.DataSource = null;
+                dataGridView2.DataSource = null;
                 List<Familia> _familias =  new BLL_Permisos().GetFamilias();
                 dataGridView3.DataSource = _familias;
 
@@ -141,6 +143,13 @@ namespace UI
                     MessageBox.Show("Debe seleccionar un permiso");
                     return;
                 }
+
+                if(treeView1.SelectedNode== null)
+                {
+                    MessageBox.Show("Debe seleccionar un permiso");
+                    return;
+                }
+               
                 var selectedPermiso = new BLL_Permisos().GetComponentePorNombre(treeView1.SelectedNode.Text);
                 
                 var permisosFamilia = new BLL_Permisos().GetPermisosFamilia(selectedPermiso.Id);
