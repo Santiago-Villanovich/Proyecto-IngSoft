@@ -35,6 +35,9 @@ namespace UI
 
             if (configuracionToolStripMenuItem.Tag != null && traducciones.ContainsKey(configuracionToolStripMenuItem.Tag.ToString()))
                 configuracionToolStripMenuItem.Text = traducciones[configuracionToolStripMenuItem.Tag.ToString()].texto;
+
+            if (permisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(permisosToolStripMenuItem.Tag.ToString()))
+                permisosToolStripMenuItem.Text = traducciones[permisosToolStripMenuItem.Tag.ToString()].texto;
         }
 
         public static bool FormEstaAbierto(Type Form)
@@ -160,6 +163,11 @@ namespace UI
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -74,6 +74,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 20);
             this.label1.TabIndex = 2;
+            this.label1.Tag = "40";
             this.label1.Text = "Crear nuevo permiso";
             // 
             // label2
@@ -85,6 +86,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 3;
+            this.label2.Tag = "7";
             this.label2.Text = "Nombre";
             // 
             // label3
@@ -96,6 +98,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 5;
+            this.label3.Tag = "42";
             this.label3.Text = "Patentes";
             // 
             // button1
@@ -109,6 +112,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 53);
             this.button1.TabIndex = 6;
+            this.button1.Tag = "45";
             this.button1.Text = "Crear";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -123,6 +127,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(205, 30);
             this.button2.TabIndex = 7;
+            this.button2.Tag = "46";
             this.button2.Text = "Eliminar permiso";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -138,6 +143,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(383, 30);
             this.button3.TabIndex = 8;
+            this.button3.Tag = "43";
             this.button3.Text = "Agregar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -159,6 +165,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 16);
             this.label4.TabIndex = 10;
+            this.label4.Tag = "41";
             this.label4.Text = "Componentes Agregados";
             // 
             // dataGridView2
@@ -186,6 +193,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 16);
             this.label5.TabIndex = 13;
+            this.label5.Tag = "44";
             this.label5.Text = "Familias";
             // 
             // button4
@@ -199,6 +207,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(383, 30);
             this.button4.TabIndex = 14;
+            this.button4.Tag = "43";
             this.button4.Text = "Agregar";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);

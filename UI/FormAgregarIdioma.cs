@@ -92,6 +92,7 @@ namespace UI
             }
 
         }
+
         public List<Traduccion> TraerListDGV()
         {
             List<Traduccion> lista = new List<Traduccion>();
