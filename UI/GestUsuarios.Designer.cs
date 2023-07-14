@@ -51,18 +51,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 50);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 25);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(587, 221);
+            this.dataGridView1.Size = new System.Drawing.Size(469, 159);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(31, 322);
+            this.labelNombre.Location = new System.Drawing.Point(53, 200);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(44, 13);
             this.labelNombre.TabIndex = 1;
@@ -72,7 +72,7 @@
             // labelApellido
             // 
             this.labelApellido.AutoSize = true;
-            this.labelApellido.Location = new System.Drawing.Point(31, 380);
+            this.labelApellido.Location = new System.Drawing.Point(53, 244);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(44, 13);
             this.labelApellido.TabIndex = 2;
@@ -81,9 +81,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(259, 380);
+            this.btnEliminar.Location = new System.Drawing.Point(307, 238);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(172, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(132, 23);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Tag = "18";
             this.btnEliminar.Text = "Eliminar";
@@ -92,7 +92,7 @@
             // 
             // btnDarPermisos
             // 
-            this.btnDarPermisos.Location = new System.Drawing.Point(908, 288);
+            this.btnDarPermisos.Location = new System.Drawing.Point(916, 80);
             this.btnDarPermisos.Name = "btnDarPermisos";
             this.btnDarPermisos.Size = new System.Drawing.Size(83, 38);
             this.btnDarPermisos.TabIndex = 4;
@@ -103,7 +103,7 @@
             // 
             // btnSacarPermisos
             // 
-            this.btnSacarPermisos.Location = new System.Drawing.Point(897, 645);
+            this.btnSacarPermisos.Location = new System.Drawing.Point(916, 267);
             this.btnSacarPermisos.Name = "btnSacarPermisos";
             this.btnSacarPermisos.Size = new System.Drawing.Size(83, 38);
             this.btnSacarPermisos.TabIndex = 5;
@@ -115,7 +115,7 @@
             // labelDni
             // 
             this.labelDni.AutoSize = true;
-            this.labelDni.Location = new System.Drawing.Point(256, 326);
+            this.labelDni.Location = new System.Drawing.Point(278, 200);
             this.labelDni.Name = "labelDni";
             this.labelDni.Size = new System.Drawing.Size(23, 13);
             this.labelDni.TabIndex = 6;
@@ -124,7 +124,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(81, 322);
+            this.txtNombre.Location = new System.Drawing.Point(103, 197);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(132, 20);
@@ -132,7 +132,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(81, 380);
+            this.txtApellido.Location = new System.Drawing.Point(103, 241);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.ReadOnly = true;
             this.txtApellido.Size = new System.Drawing.Size(132, 20);
@@ -140,7 +140,7 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(285, 326);
+            this.txtDNI.Location = new System.Drawing.Point(307, 197);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.ReadOnly = true;
             this.txtDNI.Size = new System.Drawing.Size(132, 20);
@@ -149,7 +149,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(688, 34);
+            this.label1.Location = new System.Drawing.Point(564, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 13;
@@ -159,27 +159,29 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(666, 50);
+            this.dataGridView2.Location = new System.Drawing.Point(567, 25);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(546, 221);
+            this.dataGridView2.Size = new System.Drawing.Size(343, 159);
+
             this.dataGridView2.TabIndex = 14;
             // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(666, 392);
+            this.dataGridView3.Location = new System.Drawing.Point(567, 213);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(546, 221);
+            this.dataGridView3.Size = new System.Drawing.Size(343, 180);
+
             this.dataGridView3.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(663, 367);
+            this.label2.Location = new System.Drawing.Point(564, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 16;
@@ -189,7 +191,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 34);
+            this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 17;
@@ -200,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1363, 723);
+            this.ClientSize = new System.Drawing.Size(1022, 419);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView3);
