@@ -25,9 +25,9 @@ namespace UI
             foreach (Control control in this.Controls)
             {
 
-                if (control is System.Windows.Forms.Button)
+                if (control is Button)
                 {
-                    System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                    Button boton = (Button)control;
                     if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
                         boton.Text = traducciones[boton.Tag.ToString()].texto;
                 }
@@ -47,7 +47,7 @@ namespace UI
             dataGridView1.DataSource = null;
             traductor = new BLL_Traductor();
 
-
+            Session._publisherIdioma.Subscribe(this);
             TraducirForm(Session.IdiomaActual);
         }
 

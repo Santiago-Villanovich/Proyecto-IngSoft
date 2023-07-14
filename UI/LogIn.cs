@@ -118,7 +118,7 @@ namespace UI
                         }
                         else if (!Session.GetInstance.Usuario.isAdmin)
                         {
-                            Menu menu = new Menu();
+                            MenuAdmin menu = new MenuAdmin();
                             this.Hide();
                             menu.Show();
                         }

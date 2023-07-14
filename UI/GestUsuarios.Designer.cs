@@ -126,6 +126,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(81, 322);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(132, 20);
             this.txtNombre.TabIndex = 9;
             // 
@@ -133,6 +134,7 @@
             // 
             this.txtApellido.Location = new System.Drawing.Point(81, 380);
             this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ReadOnly = true;
             this.txtApellido.Size = new System.Drawing.Size(132, 20);
             this.txtApellido.TabIndex = 10;
             // 
@@ -140,6 +142,7 @@
             // 
             this.txtDNI.Location = new System.Drawing.Point(285, 326);
             this.txtDNI.Name = "txtDNI";
+            this.txtDNI.ReadOnly = true;
             this.txtDNI.Size = new System.Drawing.Size(132, 20);
             this.txtDNI.TabIndex = 11;
             // 
@@ -150,14 +153,16 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 13;
-            this.label1.Tag = "7";
+            this.label1.Tag = "24";
             this.label1.Text = "Permisos";
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(666, 50);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(546, 221);
             this.dataGridView2.TabIndex = 14;
             // 
@@ -165,7 +170,9 @@
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(666, 392);
+            this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(546, 221);
             this.dataGridView3.TabIndex = 15;
             // 
@@ -176,7 +183,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 16;
-            this.label2.Tag = "7";
+            this.label2.Tag = "24";
             this.label2.Text = "Permisos del usuario";
             // 
             // label3
