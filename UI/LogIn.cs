@@ -205,18 +205,12 @@ namespace UI
 
                     _User.Register(usuario);
 
-                    //verifico el login
-                    var session = Session.GetInstance;
-                    if (session.Usuario != null)
-                    {
-                        Menu menu = new Menu();
-                        this.Hide();
-                        menu.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocurrio un error al iniciar sesion");
-                    }
+                    MenuAdmin menu = new MenuAdmin();
+
+                    this.Hide();
+
+                    menu.Show();
+                    
 
                 }
 

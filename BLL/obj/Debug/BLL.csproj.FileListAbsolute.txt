@@ -88,3 +88,18 @@ G:\Universidad\Ingenieria de software\Merge\BLL\obj\Debug\BLL.csproj.CoreCompile
 G:\Universidad\Ingenieria de software\Merge\BLL\obj\Debug\BLL.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Merge\BLL\obj\Debug\BLL.dll
 G:\Universidad\Ingenieria de software\Merge\BLL\obj\Debug\BLL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\BLL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\BLL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\ABS.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\BE.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\DAL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\Services.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\ABS.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\BE.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\DAL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\Services.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.pdb

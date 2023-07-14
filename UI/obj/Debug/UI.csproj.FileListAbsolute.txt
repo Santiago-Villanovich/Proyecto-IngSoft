@@ -94,3 +94,34 @@ G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.pdb
 C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.CorruptedDataBase.resources
 G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.CorruptedDataBase.resources
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.CorruptedDataBase.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\UI.exe.config
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\UI.exe
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\UI.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\ABS.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\BE.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\BLL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\Services.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\DAL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\ABS.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\BE.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\BLL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\Services.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\DAL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.CorruptedDataBase.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormActualizarInfo.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormAgregarIdioma.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormBitacoras.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormConfiguracion.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormHistorialCambios.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.GestUsuarios.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.LogIn.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.Menu.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.MenuAdmin.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormPermisos.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.Properties.Resources.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.GenerateResource.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.CopyComplete
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.exe
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.pdb

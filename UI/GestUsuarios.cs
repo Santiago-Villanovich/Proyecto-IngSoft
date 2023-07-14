@@ -144,6 +144,7 @@ namespace UI
                 if (new BLL_User().Delete(user))
                 {
                     MessageBox.Show("El usuario se elimino correctamente");
+                    this.GestUsuarios_Load(this, null);
                     
                 }
                 else
