@@ -110,7 +110,7 @@ namespace UI
                     else
                     {
                         Session.IdiomaActual = (Idioma)cmbIdiomas.SelectedItem;
-                        if (Session.GetInstance.Usuario.isAdmin)
+                        if (Session.tiene_permiso(1))
                         {
                             MenuAdmin menu = new MenuAdmin();
                             this.Hide();
@@ -216,7 +216,7 @@ namespace UI
                     var session = Session.GetInstance;
                     if (session.Usuario != null)
                     {
-                        Menu menu = new Menu();
+                        MenuAdmin menu = new MenuAdmin();
                         this.Hide();
                         menu.Show();
                     }
