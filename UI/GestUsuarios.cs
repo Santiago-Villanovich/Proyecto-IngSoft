@@ -95,8 +95,15 @@ namespace UI
         {
             try
             {
+
+                
+                if(dataGridView1.CurrentRow.DataBoundItem == null || dataGridView3.CurrentRow.DataBoundItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un item");
+                }
                 User user = (User)dataGridView1.CurrentRow.DataBoundItem;
                 Componente permiso = (Componente)dataGridView3.CurrentRow.DataBoundItem;
+
 
                 new BLL_Permisos().SacarPermisoUser(user, permiso);
 
