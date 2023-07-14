@@ -15,7 +15,7 @@ namespace BE
             _hijos = new List<Componente>();
         }
 
-        public override IList<Componente> Hijos { get { return _hijos.ToArray(); } }
+        public override IList<Componente> Hijos { get; set; }
 
         public override void AgregarHijo(Componente c)
         {

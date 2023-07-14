@@ -8,7 +8,7 @@ namespace BE
 {
     public class Patente : Componente
     {
-        public override IList<Componente> Hijos { get { return null; } }
+        public override IList<Componente> Hijos { get { return null; } set { Hijos = null; } }
 
         public Patente(string nombre) 
         {

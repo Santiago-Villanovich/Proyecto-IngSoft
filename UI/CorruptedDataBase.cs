@@ -27,10 +27,10 @@ namespace UI
                 BLL_DigitoVerificador verificadorDV = new BLL_DigitoVerificador();
                 verificadorDV.InsertDVTabla(new BLL_User().GetAll(), "Users");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
             finally
             {

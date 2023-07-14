@@ -138,6 +138,8 @@ namespace UI
             groupBox3.Visible = false;
             groupBox3.Enabled = false;
 
+            groupBox2.Enabled = false;
+
             traductor = new BLL_Traductor();
             comboBox1.DataSource = traductor.ObtenerIdiomas();
             comboBox1.DisplayMember = "Nombre";
@@ -158,6 +160,7 @@ namespace UI
                     rbAgregar.Enabled = false;
                     rbModificar.Enabled = false;
                     groupBox1.Enabled = false;
+                    groupBox2.Enabled = true;
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = traductor.GetAllTerminosDTO();
                     dataGridView1.AutoResizeColumns();
@@ -248,6 +251,7 @@ namespace UI
                     rbAgregar.Enabled = false;
                     rbModificar.Enabled = false;
                     groupBox3.Enabled = false;
+                    groupBox2.Enabled = true;
 
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = traductor.GetAllTerminosDTO(idiom);

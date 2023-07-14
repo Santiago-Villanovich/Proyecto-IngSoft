@@ -14,7 +14,7 @@ namespace BE
 
         public bool es_patente { get; set; }
 
-        public abstract IList<Componente> Hijos { get; }
+        public abstract IList<Componente> Hijos { get; set; }
 
         public abstract void AgregarHijo(Componente c);
 

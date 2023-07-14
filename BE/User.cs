@@ -34,5 +34,7 @@ namespace BE
         {
             get { return Nombre + " " + Apellido; }
         }
+
+        public List<Familia> Permisos = new List<Familia>();
     }
 }

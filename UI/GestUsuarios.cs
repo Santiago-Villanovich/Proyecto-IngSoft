@@ -59,20 +59,26 @@ namespace UI
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = new BLL_User().GetAll();
             List<Componente> componentes = new BLL_Permisos().GetAllComponentes();
-            componentes.ForEach(componente =>
-            {
-                comboBox1.Items.Add(componente.Nombre);
-            });
+            dataGridView2.DataSource = componentes;
             
         }
 
         private void btnDarPermisos_Click(object sender, EventArgs e)
         {
-            Componente seleccionado = new BLL_Permisos().GetComponentePorNombre(comboBox1.SelectedItem.ToString());
-            User user = (User)dataGridView1.CurrentRow.DataBoundItem;
+            
             try
             {
-                if(new BLL_User().AgregarPermiso(seleccionado, user))
+                if(dataGridView2.CurrentRow.DataBoundItem == null || dataGridView1.CurrentRow.DataBoundItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar item");
+                    return;
+                }
+
+                Componente seleccionado = (Componente)dataGridView2.CurrentRow.DataBoundItem;
+                User user = (User)dataGridView1.CurrentRow.DataBoundItem;
+
+
+                if (new BLL_User().AgregarPermiso(seleccionado, user))
                 {
                     MessageBox.Show("Se agrego permiso correctamente");
                 }else
@@ -87,18 +93,45 @@ namespace UI
 
         private void btnSacarPermisos_Click(object sender, EventArgs e)
         {
-            checkAdmin.Checked = false;
-        }
+            try
+            {
+                User user = (User)dataGridView1.CurrentRow.DataBoundItem;
+                Componente permiso = (Componente)dataGridView3.CurrentRow.DataBoundItem;
 
-      
+                new BLL_Permisos().SacarPermisoUser(user, permiso);
+
+                MessageBox.Show("El permiso se removio correctamente");
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dataGridView3.DataSource = null;
+            }
+        }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var user = (User)dataGridView1.CurrentRow.DataBoundItem;
-            txtNombre.Text = user.Nombre.ToString();
-            txtApellido.Text = user.Apellido.ToString();
-            txtDNI.Text = user.DNI.ToString();
-            checkAdmin.Checked = Convert.ToBoolean(user.isAdmin);
+            
+            try
+            {
+                if (dataGridView1.CurrentRow.DataBoundItem == null) MessageBox.Show("Seleccione un usuario");
+                var user = (User)dataGridView1.CurrentRow.DataBoundItem;
+                txtNombre.Text = user.Nombre.ToString();
+                txtApellido.Text = user.Apellido.ToString();
+                txtDNI.Text = user.DNI.ToString();
+                List<Familia> permisosUser = new BLL_Permisos().GetPermisosUser(user);
+
+
+                dataGridView3.DataSource = null;
+                dataGridView3.DataSource = permisosUser;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -118,5 +151,7 @@ namespace UI
         {
             TraducirForm(idioma);
         }
+
+
     }
 }
