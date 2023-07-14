@@ -68,7 +68,6 @@ namespace UI
         BLL_DigitoVerificador bllDV;
 
         RegexValidation reg = new RegexValidation();
-        HashCrypto hash = new HashCrypto();
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -94,7 +93,7 @@ namespace UI
                 }
                 if (reg.validarPassword(txtClave.Text))
                 {
-                    userNew.Clave = hash.GenerarMD5(txtClave.Text);
+                    userNew.Clave = new HashCrypto().GenerarMD5(txtClave.Text);
                 }
 
                 userNew.DV = GestorDigitoVerificador.CalcularDV(userNew);
