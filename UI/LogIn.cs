@@ -102,7 +102,7 @@ namespace UI
                 if (!errorFlag)
                 {
                     new BLL_User().Login(Convert.ToInt32(txtDniLog.Text), txtClaveLog.Text);
-
+                    
                     if (Session.GetInstance == null)
                     {
                        MessageBox.Show(this, "Usuario no registrado, verifique los datos o registrese", "Usuario Invalido", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -110,19 +110,12 @@ namespace UI
                     else
                     {
                         Session.IdiomaActual = (Idioma)cmbIdiomas.SelectedItem;
-                        if (Session.tiene_permiso(1))
-                        {
-                            MenuAdmin menu = new MenuAdmin();
-                            this.Hide();
-                            menu.Show();
-                        }
-                        else if (!Session.GetInstance.Usuario.isAdmin)
-                        {
-                            MenuAdmin menu = new MenuAdmin();
-                            this.Hide();
-                            menu.Show();
-                        }
-                        
+                       
+
+                        MenuAdmin menu = new MenuAdmin();
+                        this.Hide();
+                        menu.Show();
+
                     }
                     
                 }

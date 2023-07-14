@@ -97,6 +97,7 @@ namespace UI
                 if (!regex.validarPalabra(textBox1.Text))
                 {
                     MessageBox.Show("El permiso debe tener un nombre ingresado valido");
+                    return;
                 }
 
                 Familia c = new Familia();
@@ -180,6 +181,11 @@ namespace UI
 
             Patente seleccion = (Patente)dataGridView1.CurrentRow.DataBoundItem;
 
+            if (componentesSeleccionados.Contains(seleccion)) {
+                MessageBox.Show("Este permiso ya fue agregado");
+                return;
+            } 
+
             componentesSeleccionados.Add(seleccion);
 
             dataGridView2.DataSource = null;
@@ -195,6 +201,7 @@ namespace UI
             }
 
             Familia seleccion = (Familia)dataGridView3.CurrentRow.DataBoundItem;
+
 
             if (componentesSeleccionados.Contains(seleccion))
             {

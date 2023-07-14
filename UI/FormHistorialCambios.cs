@@ -38,7 +38,7 @@ namespace UI
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw;
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -82,7 +82,7 @@ namespace UI
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw;
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -142,7 +142,7 @@ namespace UI
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -177,7 +177,7 @@ namespace UI
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
     }

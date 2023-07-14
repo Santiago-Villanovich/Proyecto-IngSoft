@@ -79,6 +79,11 @@ namespace UI
         private void gestionarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestUsuarios menu = new GestUsuarios();
+            if (!Session.tiene_permiso(1032))
+            {
+                MessageBox.Show("No tiene permisos adecuados");
+                return;
+            }
             if (!FormEstaAbierto(typeof(GestUsuarios)))
             {
                 menu.MdiParent = this;
@@ -102,6 +107,11 @@ namespace UI
         private void verBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormBitacoras form = new FormBitacoras();
+            if (!Session.tiene_permiso(1006))
+            {
+                MessageBox.Show("No sos admin");
+                return;
+            }
             if (!FormEstaAbierto(typeof(FormBitacoras)))
             {
                 form.MdiParent = this;
@@ -118,6 +128,11 @@ namespace UI
         private void permisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormPermisos menu = new FormPermisos();
+            if (!Session.tiene_permiso(1025))
+            {
+                MessageBox.Show("No sos admin");
+                return;
+            }
             if (!FormEstaAbierto(typeof(FormPermisos)))
             {
                 menu.MdiParent = this;
@@ -134,6 +149,11 @@ namespace UI
         private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormConfiguracion menu = new FormConfiguracion();
+            if (!Session.tiene_permiso(1034))
+            {
+                MessageBox.Show("No tiene permisos adecuados");
+                return;
+            }
             if (!FormEstaAbierto(typeof(FormConfiguracion)))
             {
                 menu.MdiParent = this;
@@ -149,6 +169,11 @@ namespace UI
         private void verHistorialDeCambiosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormHistorialCambios menu = new FormHistorialCambios();
+            if (!Session.tiene_permiso(1033))
+            {
+                MessageBox.Show("No ttiene permisos adecuados");
+                return;
+            }
             if (!FormEstaAbierto(typeof(FormHistorialCambios)))
             {
                 menu.MdiParent = this;
@@ -168,6 +193,11 @@ namespace UI
         private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void administrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
