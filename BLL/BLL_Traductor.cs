@@ -57,12 +57,8 @@ namespace Services.Multilanguage
             }
             catch (Exception e)
             {
-                var bitacora = new Bitacora();
-                bitacora.Detalle = e.Message;
-                bitacora.Responsable = Session.GetInstance.Usuario;
-                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
-                new BLL_Bitacora().Insert(bitacora);
-                throw;
+                
+                throw e;
             }
 
         }
@@ -75,12 +71,8 @@ namespace Services.Multilanguage
             }
             catch (Exception e)
             {
-                var bitacora = new Bitacora();
-                bitacora.Detalle = e.Message;
-                bitacora.Responsable = Session.GetInstance.Usuario;
-                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
-                new BLL_Bitacora().Insert(bitacora);
-                throw;
+           
+                throw e;
             }
 
         }
@@ -102,12 +94,7 @@ namespace Services.Multilanguage
             }
             catch (Exception e)
             {
-                var bitacora = new Bitacora();
-                bitacora.Detalle = e.Message;
-                bitacora.Responsable = Session.GetInstance.Usuario;
-                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
-                new BLL_Bitacora().Insert(bitacora);
-                throw;
+                throw e;
             }
 
         }
