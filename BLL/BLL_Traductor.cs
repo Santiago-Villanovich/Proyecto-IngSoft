@@ -89,7 +89,16 @@ namespace Services.Multilanguage
         {
             try
             {
-                return new DAL_Traductor().ObtenerTraducciones(idioma);
+                IDictionary<string,ITraduccion> traducciones = new DAL_Traductor().ObtenerTraducciones(idioma);
+                IDictionary<string, ITraduccion> traDefault = new DAL_Traductor().ObtenerTraducciones(ObtenerIdiomaDefault());
+                foreach (var item in traducciones)
+                {
+                    if (item.Value.texto == "" || item.Value.texto == null)
+                    {
+                        item.Value.texto = traDefault[item.Key].texto;
+                    }
+                }
+                return traducciones;
             }
             catch (Exception e)
             {

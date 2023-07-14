@@ -4,6 +4,7 @@ using BLL;
 using Services;
 using Services.Multilanguage;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,9 +94,10 @@ namespace UI
         }
         public List<Traduccion> TraerListDGV()
         {
+            List<Traduccion> lista = new List<Traduccion>();
+
             try
             {
-                List<Traduccion> lista = new List<Traduccion>();
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
 
@@ -112,15 +114,20 @@ namespace UI
                     lista.Add(traduc);
 
                 }
-
-                return lista;
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
-           
+
+            return lista;
         }
 
         public FormAgregarIdioma()
@@ -166,7 +173,8 @@ namespace UI
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw;
+
+                MessageBox.Show(ex.Message);
             }
 
 
@@ -225,7 +233,8 @@ namespace UI
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw;
+
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -257,7 +266,8 @@ namespace UI
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                throw;
+
+                MessageBox.Show(ex.Message);
             }
 
         }

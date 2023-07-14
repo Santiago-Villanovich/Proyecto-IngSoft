@@ -126,7 +126,6 @@ namespace UI
                     }
                     
                 }
-
                 
             }
             catch (Exception ex)

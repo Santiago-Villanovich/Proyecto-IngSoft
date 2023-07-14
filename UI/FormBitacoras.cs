@@ -38,10 +38,15 @@ namespace UI
                 cboxUsuario.SelectedItem = null;
                 cboxTipo.SelectedItem = null;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -77,10 +82,15 @@ namespace UI
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -157,10 +167,15 @@ namespace UI
                 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -174,10 +189,9 @@ namespace UI
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = bllBit.GetAllBU(usr, fromDate, toDate, type, pageNumber);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -198,10 +212,9 @@ namespace UI
                     btnAnterior.Enabled = false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
             }
             
             

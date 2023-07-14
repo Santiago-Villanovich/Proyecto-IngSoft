@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using BLL;
 using BE;
+using Services;
+using System.Text.RegularExpressions;
 
 namespace UI
 {
@@ -10,6 +12,8 @@ namespace UI
     {
         List<Componente> _permisos = new List<Componente>();
         List<Componente> componentesSeleccionados = new List<Componente>();
+        RegexValidation regex = new RegexValidation();
+
         public FormPermisos()
         {
             InitializeComponent();
@@ -49,9 +53,9 @@ namespace UI
         {
             try
             {
-                if (String.IsNullOrEmpty(textBox1.Text))
+                if (!regex.validarPalabra(textBox1.Text))
                 {
-                    MessageBox.Show("El permiso debe tener un nombre ingresado");
+                    MessageBox.Show("El permiso debe tener un nombre ingresado valido");
                 }
 
                 Familia c = new Familia();
@@ -154,34 +158,5 @@ namespace UI
             dataGridView2.DataSource = componentesSeleccionados;
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (textBox2.Text == null || textBox2.Text == "")
-                {
-                    MessageBox.Show("Agregue un nombre valido");
-                    return;
-                }
-
-                var patente = new Patente(textBox2.Text);
-
-                new BLL_Permisos().AgregarPermiso(patente);
-
-                MessageBox.Show("Se agrego el permiso correctamente");
-
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dataGridView1.DataSource= null;
-                dataGridView1.DataSource = new BLL_Permisos().ObtenerPatentes();
-            }
-            
-
-            
-        }
     }
 }

@@ -42,10 +42,15 @@ namespace UI
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -102,10 +107,15 @@ namespace UI
                 this.Close();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
             
         }

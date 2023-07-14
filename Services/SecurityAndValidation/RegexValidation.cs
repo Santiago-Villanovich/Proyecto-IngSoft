@@ -57,7 +57,7 @@ namespace Services
             }
             else
             {
-                Regex re = new Regex(@"^([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+)$");
+                Regex re = new Regex(@"^([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-_]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+)$");
                 if (re.IsMatch(palabra))
                 {
                     return true;
