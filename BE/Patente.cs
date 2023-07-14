@@ -10,6 +10,17 @@ namespace BE
     {
         public override IList<Componente> Hijos { get { return null; } }
 
+        public Patente(string nombre) 
+        {
+            es_patente = true;
+            Nombre = nombre;
+        }
+
+        public Patente()
+        {
+           
+        }
+
         public override void AgregarHijo(Componente c)
         {
 

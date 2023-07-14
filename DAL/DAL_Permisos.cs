@@ -155,9 +155,9 @@ namespace DAL
         
         }
 
-        public List<Componente> GetFamilias()
+        public List<Familia> GetFamilias()
         {
-            List<Componente> list = new List<Componente>();
+            List<Familia> list = new List<Familia>();
             using (SqlConnection conn = _conn)
             {
                 try
@@ -284,7 +284,7 @@ namespace DAL
 
         }
 
-        public Componente GetFamiliaPorNombre(string nombre)
+        public Componente GetComponentePorNombre(string nombre)
         {
             using (SqlConnection conn = _conn)
             {
@@ -317,6 +317,52 @@ namespace DAL
 
                     return permiso;
                 }
+                catch (SqlException)
+                {
+                    throw;
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+
+        public List<Patente> ObtenerPatentes()
+        {
+            List<Patente> list = new List<Patente>();
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_ObtenerPatentes", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var permiso = new Patente()
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Nombre = reader["nombre"].ToString(),
+                                es_patente = Convert.ToBoolean(reader["es_patente"])
+
+                            };
+
+                            list.Add(permiso);
+                        }
+                    }
+
+                    return list;
+                }
                 catch (SqlException ex)
                 {
                     return null;
@@ -343,7 +389,34 @@ namespace DAL
             return c != null;
         }
 
-        public void AgregarPermiso(Componente permiso, int IdPadre)
+        public void AgregarPatentePermiso(Componente permiso, int IdPadre)
+        {
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_AgregarPatentePermiso", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_padre", IdPadre);
+                    cmd.Parameters.AddWithValue("@id_hijo", permiso.Id);
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+        }
+
+        public void AgregarPermiso(Componente permiso)
         {
             using(SqlConnection conn = _conn)
             {
@@ -351,11 +424,8 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand("sp_InsertPermiso", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_padre", IdPadre);
                     cmd.Parameters.AddWithValue("@nombre", permiso.Nombre);
                     cmd.Parameters.AddWithValue("@es_patente", permiso.es_patente);
-
-                    //cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
