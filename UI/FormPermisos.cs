@@ -5,19 +5,60 @@ using BLL;
 using BE;
 using Services;
 using System.Text.RegularExpressions;
+using Services.Multilanguage;
 
 namespace UI
 {
-    public partial class FormPermisos : Form
+    public partial class FormPermisos : Form,IObserver
     {
         List<Componente> _permisos = new List<Componente>();
         List<Componente> componentesSeleccionados = new List<Componente>();
         RegexValidation regex = new RegexValidation();
+        BLL_Traductor traductor;
+
+        private void TraducirForm(IIdioma idioma = null)
+        {
+            try
+            {
+                var traducciones = traductor.ObtenerTraducciones(idioma);
+
+                foreach (Control control in this.Controls)
+                {
+
+                    if (control is System.Windows.Forms.Button)
+                    {
+                        System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                            boton.Text = traducciones[boton.Tag.ToString()].texto;
+                    }
+                    else if (control is Label)
+                    {
+                        Label label = (Label)control;
+                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                            label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    }
+
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
 
         public FormPermisos()
         {
             InitializeComponent();
+            traductor = new BLL_Traductor();
+            TraducirForm(Session.IdiomaActual);
+
+            Session._publisherIdioma.Subscribe(this);
         }
+
+
 
         private void Permisos_Load(object sender, EventArgs e)
         {
@@ -167,5 +208,9 @@ namespace UI
             dataGridView2.DataSource = componentesSeleccionados;
         }
 
+        public void Notify(Idioma idioma)
+        {
+            TraducirForm(idioma);
+        }
     }
 }

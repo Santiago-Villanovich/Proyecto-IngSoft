@@ -39,7 +39,9 @@ namespace BLL
         {
             try
             {
-                return new DAL_User().Get(id);
+                User user = new DAL_User().Get(id);
+                user.Apellido = HashCrypto.Desencriptar(user.Apellido);
+                return user;
             }
             catch (Exception)
             {
@@ -52,7 +54,12 @@ namespace BLL
         {
             try
             {
-                return new DAL_User().GetAll();
+                List<User> users = new DAL_User().GetAll();
+                foreach (var u in users)
+                {
+                    u.Apellido = HashCrypto.Desencriptar(u.Apellido);
+                }
+                return users;
             }
             catch (Exception e)
             {
@@ -91,7 +98,10 @@ namespace BLL
                 HashCrypto hash = new HashCrypto();
                 var user = obj;
                 user.Clave = hash.GenerarMD5(obj.Clave);
+                user.Apellido = HashCrypto.Encriptar(user.Apellido);
+
                 user.DV = GestorDigitoVerificador.CalcularDV(user);
+                
                 var dal = new DAL_User().Insert(user);
 
                 //Actualizo DV de tabla Users

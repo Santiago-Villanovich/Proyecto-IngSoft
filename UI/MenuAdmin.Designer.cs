@@ -75,6 +75,7 @@
             // 
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
             this.permisosToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.permisosToolStripMenuItem.Tag = "24";
             this.permisosToolStripMenuItem.Text = "Permisos";
             this.permisosToolStripMenuItem.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click);
             // 
@@ -106,7 +107,7 @@
             // configuracionToolStripMenuItem
             // 
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.configuracionToolStripMenuItem.Tag = "14";
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
@@ -129,6 +130,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuAdmin";
             this.Text = "Menu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuAdmin_FormClosed);
             this.Load += new System.EventHandler(this.MenuAdmin_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
