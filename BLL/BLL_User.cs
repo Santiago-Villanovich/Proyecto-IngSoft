@@ -191,7 +191,13 @@ namespace BLL
         {
             try
             {
-                return new DAL_User().GetAllUserHistory(User, from, to, page);
+                var lista = new DAL_User().GetAllUserHistory(User, from, to, page);
+                foreach (var item in lista)
+                {
+                    item.Apellido = HashCrypto.Desencriptar(item.Apellido);
+
+                }
+                return lista;
             }
             catch (Exception e)
             {

@@ -78,7 +78,7 @@ namespace UI
                 {
                     Id = userNew.Id,
                     Nombre = userNew.Nombre,
-                    Apellido = userNew.Apellido,
+                    Apellido = HashCrypto.Encriptar(userNew.Apellido),
                     DNI = userNew.DNI,
                     Clave = userNew.Clave
                 };
@@ -96,7 +96,7 @@ namespace UI
                     userNew.Clave = new HashCrypto().GenerarMD5(txtClave.Text);
                 }
 
-                userNew.Apellido = HashCrypto.Encriptar(txtApellido.Text);
+                userNew.Apellido = HashCrypto.Encriptar(userNew.Apellido);
                 userNew.DV = GestorDigitoVerificador.CalcularDV(userNew);
                 usuario.Update(userNew);
 
