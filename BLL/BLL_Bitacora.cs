@@ -1,5 +1,6 @@
 ﻿using BE;
 using DAL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,13 @@ namespace BLL
         {
             try
             {
-                return new DAL_Bitacora().GetAllBU(User, from, to, tipo, page);
+                List < DTO_BitacoraUser > lista = new DAL_Bitacora().GetAllBU(User, from, to, tipo, page);
+                foreach (var item in lista)
+                {
+                    item.Apellido = HashCrypto.Desencriptar(item.Apellido);
+                }
+
+                return lista;
             }
             catch (Exception)
             {

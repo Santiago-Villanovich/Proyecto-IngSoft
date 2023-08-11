@@ -157,17 +157,25 @@ namespace UI
         {
             try
             {
-                DTO_UserHistory dtoUser = (DTO_UserHistory)dataGridView1.CurrentRow.DataBoundItem;
-                User user = bllUsr.Get(Session.GetInstance.Usuario.Id);
+                if (dataGridView1.CurrentRow.DataBoundItem != null)
+                {
+                    DTO_UserHistory dtoUser = (DTO_UserHistory)dataGridView1.CurrentRow.DataBoundItem;
+                    User user = bllUsr.Get(Session.GetInstance.Usuario.Id);
 
-                user.Id = dtoUser.Id;
-                user.Nombre = dtoUser.Nombre;
-                user.Apellido = dtoUser.Apellido;
-                user.Clave = dtoUser.Clave;
-                user.DNI = dtoUser.DNI;
-                user.DV = GestorDigitoVerificador.CalcularDV(user);
+                    user.Id = dtoUser.Id;
+                    user.Nombre = dtoUser.Nombre;
+                    user.Apellido = dtoUser.Apellido;
+                    user.Clave = dtoUser.Clave;
+                    user.DNI = dtoUser.DNI;
+                    user.DV = GestorDigitoVerificador.CalcularDV(user);
 
-                bllUsr.Update(user);
+                    bllUsr.Update(user);
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un estado del usuario");
+                }
+                
 
             }
             catch (Exception ex)
