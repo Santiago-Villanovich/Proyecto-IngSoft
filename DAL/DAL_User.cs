@@ -25,7 +25,7 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand("sp_DeleteUser", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id",id);
+                    cmd.Parameters.AddWithValue("@Id",id.Id);
                     cmd.Connection = conn;
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -161,7 +161,7 @@ namespace DAL
                 }
                 finally
                 {
-                    _conn.Close();
+                   conn.Close();
                 }
             }
         }

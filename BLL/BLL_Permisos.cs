@@ -62,34 +62,6 @@ namespace BLL
         }
 
 
-        public List<Componente> GetAllPermisos()
-        {
-            try
-            {
-                List<Componente> AllPermisos = new List<Componente>();
-                var familias = new DAL_Permisos().GetFamilias();
-
-                foreach (var familia in familias)
-                {
-                    var permisosFamilia = LlenarFamilia(familia);
-                    AllPermisos.Add(permisosFamilia);
-
-                }
-
-                return AllPermisos;
-            }
-            catch (Exception e)
-            {
-                var bitacora = new Bitacora();
-                bitacora.Detalle = e.Message;
-                bitacora.Responsable = Session.GetInstance.Usuario;
-                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
-                new BLL_Bitacora().Insert(bitacora);
-                throw;
-            }
-            
-
-        }
 
         public Componente GetComponentePorNombre(string nombre)
         {

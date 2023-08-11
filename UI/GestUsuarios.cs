@@ -58,7 +58,7 @@ namespace UI
             Session._publisherIdioma.Subscribe(this);*/
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = new BLL_User().GetAll();
-            List<Componente> componentes = new BLL_Permisos().GetAllComponentes();
+            List<Familia> componentes = new BLL_Permisos().GetFamilias();
             dataGridView2.DataSource = componentes;
             
         }
@@ -95,8 +95,15 @@ namespace UI
         {
             try
             {
+
+                
+                if(dataGridView1.CurrentRow.DataBoundItem == null || dataGridView3.CurrentRow.DataBoundItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un item");
+                }
                 User user = (User)dataGridView1.CurrentRow.DataBoundItem;
                 Componente permiso = (Componente)dataGridView3.CurrentRow.DataBoundItem;
+
 
                 new BLL_Permisos().SacarPermisoUser(user, permiso);
 
@@ -136,15 +143,26 @@ namespace UI
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            var user = (User)dataGridView1.CurrentRow.DataBoundItem;
-           
-            if (new BLL_User().Delete(user))
+            try
             {
-                MessageBox.Show("El usuario se elimino correctamente");
+                if(dataGridView1.CurrentRow.DataBoundItem == null ) MessageBox.Show("Seleccione un usuario");
+                var user = (User)dataGridView1.CurrentRow.DataBoundItem;
+
+                if (new BLL_User().Delete(user))
+                {
+                    MessageBox.Show("El usuario se elimino correctamente");
+                    this.GestUsuarios_Load(this, null);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error al eliminar el usuario");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
-            else {
-                MessageBox.Show("Ocurrio un error al eliminar el usuario");
-            }
+            
         }
 
         public void Notify(Idioma idioma)

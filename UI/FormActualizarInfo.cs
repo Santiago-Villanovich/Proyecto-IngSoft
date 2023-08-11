@@ -96,6 +96,7 @@ namespace UI
                     userNew.Clave = new HashCrypto().GenerarMD5(txtClave.Text);
                 }
 
+                userNew.Apellido = HashCrypto.Encriptar(txtApellido.Text);
                 userNew.DV = GestorDigitoVerificador.CalcularDV(userNew);
                 usuario.Update(userNew);
 

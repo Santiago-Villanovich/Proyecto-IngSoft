@@ -16,7 +16,7 @@ namespace DAL
     public class DAL_Traductor
     {
         private SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString);
-
+        private string connectionString = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
         public IIdioma ObtenerIdiomaDefault()
         {
             using (SqlConnection conn = _conn)
@@ -27,7 +27,6 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand("sp_GetIdiomaDefault", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Connection = conn;
                     conn.Open();
 
                     reader = cmd.ExecuteReader();
@@ -69,7 +68,6 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand("sp_GetAllIdiomas", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Connection = conn;
                     conn.Open();
 
                     reader = cmd.ExecuteReader();
@@ -112,7 +110,7 @@ namespace DAL
                 idioma = ObtenerIdiomaDefault();
             }
 
-            using (SqlConnection conn = _conn)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 IDataReader reader = null;
                 IDictionary<string, ITraduccion> _traducciones = new Dictionary<string, ITraduccion>();

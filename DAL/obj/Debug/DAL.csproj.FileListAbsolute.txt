@@ -37,3 +37,16 @@ G:\Universidad\Ingenieria de software\Merge\DAL\obj\Debug\DAL.csproj.CoreCompile
 G:\Universidad\Ingenieria de software\Merge\DAL\obj\Debug\DAL.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Merge\DAL\obj\Debug\DAL.dll
 G:\Universidad\Ingenieria de software\Merge\DAL\obj\Debug\DAL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\DAL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\DAL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\ABS.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\BE.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\Services.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\ABS.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\BE.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\Services.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.pdb
