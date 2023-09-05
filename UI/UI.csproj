@@ -76,10 +76,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CorruptedDataBase.cs">
+    <Compile Include="UI-Sistema\CorruptedDataBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CorruptedDataBase.Designer.cs">
+    <Compile Include="UI-Sistema\CorruptedDataBase.Designer.cs">
       <DependentUpon>CorruptedDataBase.cs</DependentUpon>
     </Compile>
     <Compile Include="FormActualizarInfo.cs">
@@ -88,16 +88,16 @@
     <Compile Include="FormActualizarInfo.Designer.cs">
       <DependentUpon>FormActualizarInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAgregarIdioma.cs">
+    <Compile Include="UI-Sistema\FormAgregarIdioma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAgregarIdioma.Designer.cs">
+    <Compile Include="UI-Sistema\FormAgregarIdioma.Designer.cs">
       <DependentUpon>FormAgregarIdioma.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBitacoras.cs">
+    <Compile Include="UI-Sistema\FormBitacoras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBitacoras.Designer.cs">
+    <Compile Include="UI-Sistema\FormBitacoras.Designer.cs">
       <DependentUpon>FormBitacoras.cs</DependentUpon>
     </Compile>
     <Compile Include="FormConfiguracion.cs">
@@ -106,16 +106,16 @@
     <Compile Include="FormConfiguracion.Designer.cs">
       <DependentUpon>FormConfiguracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHistorialCambios.cs">
+    <Compile Include="UI-Sistema\FormHistorialCambios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHistorialCambios.Designer.cs">
+    <Compile Include="UI-Sistema\FormHistorialCambios.Designer.cs">
       <DependentUpon>FormHistorialCambios.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestUsuarios.cs">
+    <Compile Include="UI-Sistema\GestUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestUsuarios.Designer.cs">
+    <Compile Include="UI-Sistema\GestUsuarios.Designer.cs">
       <DependentUpon>GestUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs">
@@ -124,43 +124,43 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="UI-Sistema\MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuAdmin.Designer.cs">
+    <Compile Include="UI-Sistema\MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPermisos.cs">
+    <Compile Include="UI-Sistema\FormPermisos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPermisos.Designer.cs">
+    <Compile Include="UI-Sistema\FormPermisos.Designer.cs">
       <DependentUpon>FormPermisos.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuUser.cs">
+    <Compile Include="UI-Negocio\Org_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuUser.Designer.cs">
-      <DependentUpon>MenuUser.cs</DependentUpon>
+    <Compile Include="UI-Negocio\Org_Menu.Designer.cs">
+      <DependentUpon>Org_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI-Negocio\User_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI-Negocio\User_Menu.Designer.cs">
+      <DependentUpon>User_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CorruptedDataBase.resx">
+    <EmbeddedResource Include="UI-Sistema\CorruptedDataBase.resx">
       <DependentUpon>CorruptedDataBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormActualizarInfo.resx">
       <DependentUpon>FormActualizarInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAgregarIdioma.resx">
+    <EmbeddedResource Include="UI-Sistema\FormAgregarIdioma.resx">
       <DependentUpon>FormAgregarIdioma.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBitacoras.resx">
+    <EmbeddedResource Include="UI-Sistema\FormBitacoras.resx">
       <DependentUpon>FormBitacoras.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -168,26 +168,26 @@
       <DependentUpon>FormConfiguracion.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHistorialCambios.resx">
+    <EmbeddedResource Include="UI-Sistema\FormHistorialCambios.resx">
       <DependentUpon>FormHistorialCambios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestUsuarios.resx">
+    <EmbeddedResource Include="UI-Sistema\GestUsuarios.resx">
       <DependentUpon>GestUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuAdmin.resx">
+    <EmbeddedResource Include="UI-Sistema\MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPermisos.resx">
+    <EmbeddedResource Include="UI-Sistema\FormPermisos.resx">
       <DependentUpon>FormPermisos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuUser.resx">
-      <DependentUpon>MenuUser.cs</DependentUpon>
+    <EmbeddedResource Include="UI-Negocio\Org_Menu.resx">
+      <DependentUpon>Org_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI-Negocio\User_Menu.resx">
+      <DependentUpon>User_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -230,5 +230,6 @@
       <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

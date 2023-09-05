@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class MenuUser : Form
+    public partial class User_Menu : Form
     {
-        public MenuUser()
+        public User_Menu()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace UI
             specialDate1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             specialDate1.Value = new System.DateTime(2023, 09, 15);
             SpecialDates.Add(specialDate1);
-            this.sfCalendar1.SpecialDates = SpecialDates;
+            //this.sfCalendar1.SpecialDates = SpecialDates;
         }
 
         private void CargarMenuContenedor(object formHijo)

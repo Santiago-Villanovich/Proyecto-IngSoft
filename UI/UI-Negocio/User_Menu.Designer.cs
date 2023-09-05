@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class MenuUser
+    partial class User_Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Menu));
             this.NavBar = new System.Windows.Forms.Panel();
             this.btnBuscarEvento = new System.Windows.Forms.Button();
             this.PanelContenedor = new System.Windows.Forms.Panel();
-            this.sfCalendar1 = new Syncfusion.WinForms.Input.SfCalendar();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.NavBar.SuspendLayout();
-            this.PanelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // NavBar
             // 
-            this.NavBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(131)))), ((int)(((byte)(126)))));
+            this.NavBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.NavBar.Controls.Add(this.pictureBox3);
             this.NavBar.Controls.Add(this.pictureBox2);
             this.NavBar.Controls.Add(this.button1);
@@ -57,7 +54,7 @@
             this.NavBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.NavBar.Location = new System.Drawing.Point(0, 0);
             this.NavBar.Name = "NavBar";
-            this.NavBar.Size = new System.Drawing.Size(188, 626);
+            this.NavBar.Size = new System.Drawing.Size(182, 626);
             this.NavBar.TabIndex = 0;
             // 
             // btnBuscarEvento
@@ -79,28 +76,11 @@
             // PanelContenedor
             // 
             this.PanelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.PanelContenedor.Controls.Add(this.label1);
-            this.PanelContenedor.Controls.Add(this.sfCalendar1);
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenedor.Location = new System.Drawing.Point(188, 0);
+            this.PanelContenedor.Location = new System.Drawing.Point(182, 0);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(880, 626);
+            this.PanelContenedor.Size = new System.Drawing.Size(886, 626);
             this.PanelContenedor.TabIndex = 1;
-            // 
-            // sfCalendar1
-            // 
-            this.sfCalendar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sfCalendar1.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.sfCalendar1.HighlightTodayCell = true;
-            this.sfCalendar1.Location = new System.Drawing.Point(439, 0);
-            this.sfCalendar1.MinimumSize = new System.Drawing.Size(252, 252);
-            this.sfCalendar1.Name = "sfCalendar1";
-            this.sfCalendar1.SelectedDate = null;
-            this.sfCalendar1.Size = new System.Drawing.Size(441, 626);
-            this.sfCalendar1.Style.Cell.BlackoutDatesBackColor = System.Drawing.Color.WhiteSmoke;
-            this.sfCalendar1.Style.Cell.CellBackColor = System.Drawing.Color.WhiteSmoke;
-            this.sfCalendar1.TabIndex = 0;
-            this.sfCalendar1.Text = "sfCalendar1";
             // 
             // btnHistorial
             // 
@@ -138,6 +118,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(125)))), ((int)(((byte)(24)))));
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(131)))), ((int)(((byte)(126)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(129)))), ((int)(((byte)(100)))));
@@ -150,7 +131,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Anuncios";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
@@ -172,16 +153,6 @@
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 17F);
-            this.label1.Location = new System.Drawing.Point(97, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 36);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Calendario de Eventos";
-            // 
             // MenuUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -193,8 +164,6 @@
             this.Text = "MenuUser";
             this.Load += new System.EventHandler(this.MenuUser_Load);
             this.NavBar.ResumeLayout(false);
-            this.PanelContenedor.ResumeLayout(false);
-            this.PanelContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -206,12 +175,10 @@
         private System.Windows.Forms.Panel NavBar;
         private System.Windows.Forms.Panel PanelContenedor;
         private System.Windows.Forms.Button btnBuscarEvento;
-        private Syncfusion.WinForms.Input.SfCalendar sfCalendar1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Button btnHistorial;
-        private System.Windows.Forms.Label label1;
     }
 }
