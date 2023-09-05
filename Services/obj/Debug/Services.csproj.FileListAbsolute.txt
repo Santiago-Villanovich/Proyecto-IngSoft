@@ -64,3 +64,14 @@ G:\Universidad\Ingenieria de software\Merge\Services\obj\Debug\Services.csproj.C
 G:\Universidad\Ingenieria de software\Merge\Services\obj\Debug\Services.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Merge\Services\obj\Debug\Services.dll
 G:\Universidad\Ingenieria de software\Merge\Services\obj\Debug\Services.pdb
+C:\Universidad\Diploma\Proyecto\Services\bin\Debug\Services.dll
+C:\Universidad\Diploma\Proyecto\Services\bin\Debug\Services.pdb
+C:\Universidad\Diploma\Proyecto\Services\bin\Debug\ABS.dll
+C:\Universidad\Diploma\Proyecto\Services\bin\Debug\BE.dll
+C:\Universidad\Diploma\Proyecto\Services\bin\Debug\ABS.pdb
+C:\Universidad\Diploma\Proyecto\Services\bin\Debug\BE.pdb
+C:\Universidad\Diploma\Proyecto\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+C:\Universidad\Diploma\Proyecto\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Universidad\Diploma\Proyecto\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Universidad\Diploma\Proyecto\Services\obj\Debug\Services.dll
+C:\Universidad\Diploma\Proyecto\Services\obj\Debug\Services.pdb

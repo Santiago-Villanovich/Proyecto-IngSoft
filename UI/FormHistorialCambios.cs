@@ -164,7 +164,7 @@ namespace UI
 
                     user.Id = dtoUser.Id;
                     user.Nombre = dtoUser.Nombre;
-                    user.Apellido = dtoUser.Apellido;
+                    user.Apellido = HashCrypto.Encriptar(dtoUser.Apellido);
                     user.Clave = dtoUser.Clave;
                     user.DNI = dtoUser.DNI;
                     user.DV = GestorDigitoVerificador.CalcularDV(user);

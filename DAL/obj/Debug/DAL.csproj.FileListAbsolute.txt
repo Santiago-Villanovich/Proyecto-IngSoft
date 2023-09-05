@@ -50,3 +50,16 @@ D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CoreCompile
 D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.dll
 D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\DAL.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\DAL.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\ABS.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\BE.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\Services.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\ABS.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\BE.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\Services.pdb
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.dll
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.pdb
