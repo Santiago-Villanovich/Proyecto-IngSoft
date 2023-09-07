@@ -177,3 +177,4 @@ C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Tools.Base.xml
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Tools.Windows.xml
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.Org_Menu.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.User_Menu.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_Inicio.resources

@@ -76,16 +76,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI-Negocio\User_Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI-Negocio\User_Inicio.Designer.cs">
+      <DependentUpon>User_Inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI-Sistema\CorruptedDataBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI-Sistema\CorruptedDataBase.Designer.cs">
       <DependentUpon>CorruptedDataBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormActualizarInfo.cs">
+    <Compile Include="UI-Sistema\FormActualizarInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormActualizarInfo.Designer.cs">
+    <Compile Include="UI-Sistema\FormActualizarInfo.Designer.cs">
       <DependentUpon>FormActualizarInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="UI-Sistema\FormAgregarIdioma.cs">
@@ -100,10 +106,10 @@
     <Compile Include="UI-Sistema\FormBitacoras.Designer.cs">
       <DependentUpon>FormBitacoras.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConfiguracion.cs">
+    <Compile Include="UI-Sistema\FormConfiguracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConfiguracion.Designer.cs">
+    <Compile Include="UI-Sistema\FormConfiguracion.Designer.cs">
       <DependentUpon>FormConfiguracion.cs</DependentUpon>
     </Compile>
     <Compile Include="UI-Sistema\FormHistorialCambios.cs">
@@ -150,10 +156,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI-Negocio\User_Inicio.resx">
+      <DependentUpon>User_Inicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI-Sistema\CorruptedDataBase.resx">
       <DependentUpon>CorruptedDataBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormActualizarInfo.resx">
+    <EmbeddedResource Include="UI-Sistema\FormActualizarInfo.resx">
       <DependentUpon>FormActualizarInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI-Sistema\FormAgregarIdioma.resx">
@@ -164,7 +173,7 @@
       <DependentUpon>FormBitacoras.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormConfiguracion.resx">
+    <EmbeddedResource Include="UI-Sistema\FormConfiguracion.resx">
       <DependentUpon>FormConfiguracion.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>

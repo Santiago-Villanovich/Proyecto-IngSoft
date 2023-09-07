@@ -256,5 +256,17 @@ namespace UI
             Idioma idioma = (Idioma)cmbIdiomas.SelectedItem;
             TraducirForm(idioma);
         }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            User_Menu menu = new User_Menu();
+            menu.Show();
+        }
+
+        private void btnOrg_Click(object sender, EventArgs e)
+        {
+            Org_Menu menu = new Org_Menu();
+            menu.Show();
+        }
     }
 }
