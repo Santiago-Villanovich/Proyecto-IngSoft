@@ -188,5 +188,10 @@ namespace UI
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FormHistorialCambios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,28 +14,80 @@ namespace UI.UI_Negocio
 {
     public partial class User_Inicio : Form
     {
+        int day,month, year;
+        static DateTime currentDT;
+        static int currentYear;
+        static int currentMonth;
+
         public User_Inicio()
         {
             InitializeComponent();
+            currentDT = DateTime.Now;
+            currentMonth = currentDT.Month;
+            currentYear = currentDT.Year;
         }
 
         private void User_Inicio_Load(object sender, EventArgs e)
-        {
-            SpecialDate specialDate1 = new SpecialDate();
-            List<SpecialDate> SpecialDates = new List<SpecialDate>();
+        { 
+            MostrarDias();
+        }
 
-            specialDate1.BackColor = System.Drawing.Color.Red;
-            specialDate1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            specialDate1.ForeColor = System.Drawing.Color.White;
-            specialDate1.Description = "Evento";
-            /*specialDate1.Image = Properties.Resources.icons_Womens_day;
-            specialDate1.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;*/
-            specialDate1.IsDateVisible = false;
-            specialDate1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            specialDate1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            specialDate1.Value = new System.DateTime(2023, 09, 15);
-            SpecialDates.Add(specialDate1);
-            this.CalendarioInicio.SpecialDates = SpecialDates;
+        private void MostrarDias()
+        {
+
+            //Establezco el lbl de fecha
+            string mesNombre = DateTimeFormatInfo.CurrentInfo.GetMonthName(currentMonth);
+            lblMesNow.Text = mesNombre + " " + currentYear.ToString();
+
+            //Calculo dias para completar el container
+            DateTime starDayMonth = new DateTime(currentYear, currentMonth, 1);
+            int days = DateTime.DaysInMonth(currentYear, currentMonth);
+            int dayOfWeek = Convert.ToInt32(starDayMonth.DayOfWeek.ToString("d")) + 1;
+
+            for (int i = 1; i < dayOfWeek; i++)
+            {
+                CalendarDayBlank CDayBlank = new CalendarDayBlank();
+                DaysContainer.Controls.Add(CDayBlank);
+            }
+            for (int i = 1; i <= days; i++)
+            {
+                CalendarDay CDay = new CalendarDay();
+                CDay.days(i);
+                DaysContainer.Controls.Add(CDay);
+            }
+        }
+
+        private void btnAnteriorMes_Click(object sender, EventArgs e)
+        {
+            DaysContainer.Controls.Clear();
+            if (currentMonth == 1)
+            {
+                currentMonth = 12;
+                currentYear--;
+                MostrarDias();
+            }
+            else
+            {
+                currentMonth--;
+                MostrarDias();
+            }
+            
+        }
+
+        private void btnSiguienteMes_Click(object sender, EventArgs e)
+        {
+            DaysContainer.Controls.Clear();
+            if (currentMonth == 12)
+            {
+                currentMonth = 1;
+                currentYear++;
+                MostrarDias();
+            }
+            else
+            {
+                currentMonth++;
+                MostrarDias();
+            }
         }
     }
 }

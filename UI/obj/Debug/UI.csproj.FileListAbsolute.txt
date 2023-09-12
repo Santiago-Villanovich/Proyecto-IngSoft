@@ -178,3 +178,6 @@ C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Tools.Windows.xml
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.Org_Menu.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.User_Menu.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_Inicio.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.CalendarDay.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.CalendarDayBlank.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.EventCalendar.resources

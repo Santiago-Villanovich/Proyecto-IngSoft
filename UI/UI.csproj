@@ -76,6 +76,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalendarDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalendarDay.Designer.cs">
+      <DependentUpon>CalendarDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarDayBlank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalendarDayBlank.Designer.cs">
+      <DependentUpon>CalendarDayBlank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventCalendar.Designer.cs">
+      <DependentUpon>EventCalendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI-Negocio\User_Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,10 +142,10 @@
     <Compile Include="UI-Sistema\GestUsuarios.Designer.cs">
       <DependentUpon>GestUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.cs">
+    <Compile Include="UI-Negocio\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
+    <Compile Include="UI-Negocio\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="UI-Sistema\MenuAdmin.cs">
@@ -156,6 +174,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CalendarDay.resx">
+      <DependentUpon>CalendarDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalendarDayBlank.resx">
+      <DependentUpon>CalendarDayBlank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventCalendar.resx">
+      <DependentUpon>EventCalendar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI-Negocio\User_Inicio.resx">
       <DependentUpon>User_Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,7 +210,7 @@
     <EmbeddedResource Include="UI-Sistema\GestUsuarios.resx">
       <DependentUpon>GestUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn.resx">
+    <EmbeddedResource Include="UI-Negocio\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI-Sistema\MenuAdmin.resx">

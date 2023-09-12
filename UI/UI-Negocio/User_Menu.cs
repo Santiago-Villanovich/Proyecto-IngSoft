@@ -43,5 +43,10 @@ namespace UI
         {
 
         }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
