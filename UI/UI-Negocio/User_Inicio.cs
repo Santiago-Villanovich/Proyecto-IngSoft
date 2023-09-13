@@ -40,9 +40,9 @@ namespace UI.UI_Negocio
             lblMesNow.Text = mesNombre + " " + currentYear.ToString();
 
             //Calculo dias para completar el container
-            DateTime starDayMonth = new DateTime(currentYear, currentMonth, 1);
+            DateTime startDayMonth = new DateTime(currentYear, currentMonth, 1);
             int days = DateTime.DaysInMonth(currentYear, currentMonth);
-            int dayOfWeek = Convert.ToInt32(starDayMonth.DayOfWeek.ToString("d")) + 1;
+            int dayOfWeek = Convert.ToInt32(startDayMonth.DayOfWeek.ToString("d")) + 1;
 
             for (int i = 1; i < dayOfWeek; i++)
             {
@@ -52,7 +52,7 @@ namespace UI.UI_Negocio
             for (int i = 1; i <= days; i++)
             {
                 CalendarDay CDay = new CalendarDay();
-                CDay.days(i);
+                CDay.days(i,new DateTime(currentYear,currentMonth,i));
                 DaysContainer.Controls.Add(CDay);
             }
         }

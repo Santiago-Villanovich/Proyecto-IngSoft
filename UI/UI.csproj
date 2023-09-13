@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -87,12 +102,6 @@
     </Compile>
     <Compile Include="CalendarDayBlank.Designer.cs">
       <DependentUpon>CalendarDayBlank.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EventCalendar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="EventCalendar.Designer.cs">
-      <DependentUpon>EventCalendar.cs</DependentUpon>
     </Compile>
     <Compile Include="UI-Negocio\User_Inicio.cs">
       <SubType>Form</SubType>
@@ -180,9 +189,6 @@
     <EmbeddedResource Include="CalendarDayBlank.resx">
       <DependentUpon>CalendarDayBlank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventCalendar.resx">
-      <DependentUpon>EventCalendar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI-Negocio\User_Inicio.resx">
       <DependentUpon>User_Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +272,17 @@
       <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
