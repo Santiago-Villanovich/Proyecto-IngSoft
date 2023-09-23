@@ -199,7 +199,6 @@ namespace UI
                     usuario.Apellido = txtApellidoSign.Text;
                     usuario.DNI = Convert.ToInt32(txtDniSign.Text);
                     usuario.Clave = txtClaveSign.Text;
-                    usuario.isAdmin = false;
 
                     BLL_User _User = new BLL_User();
 

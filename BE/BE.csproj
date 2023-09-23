@@ -41,16 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bitacora.cs" />
-    <Compile Include="BitacoraTipo.cs" />
-    <Compile Include="DTO_BitacoraUser.cs" />
-    <Compile Include="Componente.cs" />
-    <Compile Include="DTO_UserHistory.cs" />
-    <Compile Include="Familia.cs" />
-    <Compile Include="Patente.cs" />
+    <Compile Include="Deporte.cs" />
+    <Compile Include="Equipo.cs" />
+    <Compile Include="Evento.cs" />
+    <Compile Include="Natacion.cs" />
+    <Compile Include="Natacion_PostaMetros.cs" />
+    <Compile Include="Natacion_PostaTiempo.cs" />
+    <Compile Include="Organizacion.cs" />
+    <Compile Include="Participante.cs" />
+    <Compile Include="Pileta.cs" />
+    <Compile Include="SystemBE\Bitacora.cs" />
+    <Compile Include="SystemBE\BitacoraTipo.cs" />
+    <Compile Include="SystemBE\DTO_BitacoraUser.cs" />
+    <Compile Include="SystemBE\Componente.cs" />
+    <Compile Include="SystemBE\DTO_UserHistory.cs" />
+    <Compile Include="SystemBE\Familia.cs" />
+    <Compile Include="SystemBE\Patente.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VerificableProperty.cs" />
+    <Compile Include="SystemBE\VerificableProperty.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ABS\ABS.csproj">
@@ -58,5 +67,6 @@
       <Name>ABS</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

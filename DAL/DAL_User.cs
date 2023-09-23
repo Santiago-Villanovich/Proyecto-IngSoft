@@ -63,9 +63,7 @@ namespace DAL
                                 Apellido = reader["Apellido"].ToString(),
                                 DNI = Convert.ToInt32(reader["DNI"]),
                                 Clave = reader["Clave"].ToString(),
-                                DV = reader["DV"].ToString(),
-                                isAdmin = Convert.ToBoolean(reader["isAdmin"])
-
+                                DV = reader["DV"].ToString()
                             };
                         }
                     }
@@ -109,8 +107,7 @@ namespace DAL
                                 Nombre = reader["Nombre"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
                                 DNI = Convert.ToInt32(reader["DNI"]),
-                                DV = reader["DV"].ToString(),
-                                isAdmin = Convert.ToBoolean(reader["isAdmin"])
+                                DV = reader["DV"].ToString()
 
                             };
 
@@ -207,7 +204,6 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@DNI", obj.DNI);
                     cmd.Parameters.AddWithValue("@Clave", obj.Clave);
                     cmd.Parameters.AddWithValue("@DV", obj.DV);
-                    cmd.Parameters.AddWithValue("@Adm", obj.isAdmin);
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
@@ -249,7 +245,6 @@ namespace DAL
                             user.Nombre = dr["Nombre"].ToString();
                             user.Apellido = dr["Apellido"].ToString();
                             user.DNI = Convert.ToInt32(dr["DNI"]);
-                            user.isAdmin = Convert.ToBoolean(dr["isAdmin"]);
                         }
 
 

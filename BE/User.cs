@@ -20,13 +20,16 @@ namespace BE
         
         [VerificableProperty]
         public int DNI { get; set; }
+        public string Telefono { get; set; }
+        public string Email { get; set; }
+        public DateTime FechaNacimiento { get; set; }
 
         [VerificableProperty]
         public string Clave { get; set; } = null;
-
-        public bool isAdmin { get; set; } = false;
-
         public string DV { get; set; }
+
+        public List<Familia> Permisos = new List<Familia>();
+
 
         public User() { }
 
@@ -35,6 +38,12 @@ namespace BE
             get { return Nombre + " " + Apellido; }
         }
 
-        public List<Familia> Permisos = new List<Familia>();
+        public int Edad()
+        {
+            int edad;
+            DateTime Now = DateTime.Now;
+            edad = Now.Year - this.FechaNacimiento.Year;
+            return edad;
+        }
     }
 }
