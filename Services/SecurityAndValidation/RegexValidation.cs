@@ -49,6 +49,46 @@ namespace Services
             }
         }
 
+        public bool validarEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return false;
+            }
+            else
+            {
+                Regex re = new Regex(@"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\""(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\"")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])");
+                if (re.IsMatch(email))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Su nombre o apellido no debe contener caracteres especiales");
+                }
+            }
+        }
+
+        public bool validarTelefono(string tel)
+        {
+            if (string.IsNullOrEmpty(tel))
+            {
+                return false;
+            }
+            else
+            {
+                Regex re = new Regex(@"^(11|15)\d{8}$");
+                if (re.IsMatch(tel))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Su nombre o apellido no debe contener caracteres especiales");
+                }
+            }
+        }
+
         public bool validarPalabra(string palabra)
         {
             if (string.IsNullOrEmpty(palabra))

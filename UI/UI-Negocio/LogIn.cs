@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.UI_Negocio;
 
 namespace UI
 {
@@ -40,31 +41,12 @@ namespace UI
 
             }
 
-            foreach (Control control in this.groupBox1.Controls)
-            {
-
-                if (control is Button)
-                {
-                    Button boton = (Button)control;
-                    if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                        boton.Text = traducciones[boton.Tag.ToString()].texto;
-                }
-                else if (control is Label)
-                {
-                    Label label = (Label)control;
-                    if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                        label.Text = traducciones[label.Tag.ToString()].texto;
-
-                }
-
-            }
         }
 
         public LogIn()
         {
             InitializeComponent();
-            groupBox1.Enabled = false;
-            Size = new Size(354, 472);
+            this.Size = new Size(354, 472);
 
             traductor = new BLL_Traductor();
             cmbIdiomas.DataSource = traductor.ObtenerIdiomas();
@@ -134,9 +116,9 @@ namespace UI
 
         private void label5_Click(object sender, EventArgs e)
         {
-            groupBox1.Enabled = true;
-            groupBox1.Visible = true;
-            Size = new Size(738, 472);
+            this.Hide();
+            User_SignUp form = new User_SignUp();
+            form.ShowDialog();
         }
 
         public bool ojoLog;
@@ -154,97 +136,6 @@ namespace UI
             }
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            User usuario = new User();
-            
-
-            try
-            {
-                #region(ErrorProvider)
-                errorProvider1.Clear();
-                errorProvider1.SetError(txtNombreSign, "");
-                errorProvider1.SetError(txtApellidoSign, "");
-                errorProvider1.SetError(txtDniSign, "");
-                errorProvider1.SetError(txtClaveSign, "");
-
-                bool errorFlag = false;
-                if (!re.validarNombre(txtNombreSign.Text))
-                {
-                    errorFlag = true;
-                    errorProvider1.SetError(txtNombreSign, "El campo es obligatorio");
-                }
-                if (!re.validarNombre(txtApellidoSign.Text))
-                {
-                    errorFlag = true;
-                    errorProvider1.SetError(txtApellidoSign, "El campo es obligatorio");
-                }
-                if (!re.validarDni(txtDniSign.Text))
-                {
-                    errorFlag = true;
-                    errorProvider1.SetError(txtDniSign, "El campo es obligatorio");
-                }
-                if (!re.validarPassword(txtClaveSign.Text))
-                {
-                    errorFlag = true;
-                    errorProvider1.SetError(txtClaveSign, "El campo es obligatorio");
-                }
-                #endregion
-
-                if (!errorFlag)
-                {
-                    //registro al usuario
-
-                    usuario.Nombre = txtNombreSign.Text;
-                    usuario.Apellido = txtApellidoSign.Text;
-                    usuario.DNI = Convert.ToInt32(txtDniSign.Text);
-                    usuario.Clave = txtClaveSign.Text;
-
-                    BLL_User _User = new BLL_User();
-
-                    _User.Register(usuario);
-
-                    MenuAdmin menu = new MenuAdmin();
-
-                    this.Hide();
-
-                    menu.Show();
-                    
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                var bitacora = new Bitacora();
-                bitacora.Detalle = ex.Message;
-                bitacora.Responsable = Session.GetInstance.Usuario;
-                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
-                new BLL_Bitacora().Insert(bitacora);
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public bool ojoSign;
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (ojoSign == true)
-            {
-                txtClaveSign.UseSystemPasswordChar = true;
-                ojoSign = false;
-            }
-            else if (ojoSign == false)
-            {
-                txtClaveSign.UseSystemPasswordChar = false;
-                ojoSign = true;
-            }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void LogIn_Load(object sender, EventArgs e)
         {
 
@@ -256,16 +147,5 @@ namespace UI
             TraducirForm(idioma);
         }
 
-        private void btnUser_Click(object sender, EventArgs e)
-        {
-            User_Menu menu = new User_Menu();
-            menu.Show();
-        }
-
-        private void btnOrg_Click(object sender, EventArgs e)
-        {
-            Org_Menu menu = new Org_Menu();
-            menu.Show();
-        }
     }
 }
