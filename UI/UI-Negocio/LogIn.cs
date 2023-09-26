@@ -46,7 +46,6 @@ namespace UI
         public LogIn()
         {
             InitializeComponent();
-            this.Size = new Size(354, 472);
 
             traductor = new BLL_Traductor();
             cmbIdiomas.DataSource = traductor.ObtenerIdiomas();
@@ -147,5 +146,18 @@ namespace UI
             TraducirForm(idioma);
         }
 
+        private void btnIngresar_MouseEnter(object sender, EventArgs e)
+        {
+            btnIngresar.BackColor = Color.FromArgb(236, 125, 24);
+            btnIngresar.ForeColor = Color.FromArgb(235, 231, 222);
+            btnIngresar.FlatAppearance.BorderColor = Color.FromArgb(236, 125, 24);
+        }
+
+        private void btnIngresar_MouseLeave(object sender, EventArgs e)
+        {
+            btnIngresar.BackColor = Color.FromArgb(45, 48, 71);
+            btnIngresar.ForeColor = Color.FromArgb(236, 125, 24);
+            btnIngresar.FlatAppearance.BorderColor = Color.FromArgb(236, 125, 24);
+        }
     }
 }

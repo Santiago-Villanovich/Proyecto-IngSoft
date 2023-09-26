@@ -62,6 +62,9 @@ namespace DAL
                                 Nombre = reader["Nombre"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
                                 DNI = Convert.ToInt32(reader["DNI"]),
+                                Telefono = reader["Telefono"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                FechaNacimiento = Convert.ToDateTime(reader["Fecha_Nacimiento"]),
                                 Clave = reader["Clave"].ToString(),
                                 DV = reader["DV"].ToString()
                             };
@@ -107,6 +110,10 @@ namespace DAL
                                 Nombre = reader["Nombre"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
                                 DNI = Convert.ToInt32(reader["DNI"]),
+                                Telefono = reader["Telefono"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                FechaNacimiento = Convert.ToDateTime(reader["Fecha_Nacimiento"]),
+                                Clave = reader["Clave"].ToString(),
                                 DV = reader["DV"].ToString()
 
                             };
@@ -132,20 +139,24 @@ namespace DAL
             }
         }
 
-        public bool Insert(User obj) //REVISAR
+        public bool Insert(User obj)
         {
             using (SqlConnection conn = _conn)
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("sp_RegisterUser", conn);
+                    SqlCommand cmd = new SqlCommand("sp_InsertUser", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("@Apellido", obj.Apellido);
                     cmd.Parameters.AddWithValue("@DNI", obj.DNI);
+                    cmd.Parameters.AddWithValue("@Tel", obj.Telefono);
+                    cmd.Parameters.AddWithValue("@Email", obj.Email);
+                    SqlParameter date = new SqlParameter("@Nacimiento", SqlDbType.Date); //Conversion explicita a DATE
+                    date.Value = obj.FechaNacimiento;
+                    cmd.Parameters.Add(date);
                     cmd.Parameters.AddWithValue("@Clave", obj.Clave);
                     cmd.Parameters.AddWithValue("@DV", obj.DV);
-                    //cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
@@ -153,7 +164,6 @@ namespace DAL
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
                 finally
@@ -172,7 +182,6 @@ namespace DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_permiso", permiso.Id);
                     cmd.Parameters.AddWithValue("@id_user", user.Id);
-                    //cmd.Parameters.AddWithValue("@isAdmin", obj.isAdmin);
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
@@ -245,6 +254,11 @@ namespace DAL
                             user.Nombre = dr["Nombre"].ToString();
                             user.Apellido = dr["Apellido"].ToString();
                             user.DNI = Convert.ToInt32(dr["DNI"]);
+                            user.Telefono = dr["Telefono"].ToString();
+                            user.Email = dr["Email"].ToString();
+                            user.FechaNacimiento = Convert.ToDateTime(dr["Fecha_Nacimiento"]);
+                            user.Clave = dr["Clave"].ToString();
+                            user.DV = dr["DV"].ToString();
                         }
 
 

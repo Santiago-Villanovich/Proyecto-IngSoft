@@ -175,12 +175,12 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.label6.Location = new System.Drawing.Point(191, 175);
+            this.label6.Location = new System.Drawing.Point(178, 130);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(262, 49);
+            this.label6.Size = new System.Drawing.Size(302, 59);
             this.label6.TabIndex = 1;
             this.label6.Tag = "6";
             this.label6.Text = "Registrarse";
@@ -192,7 +192,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(200, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(200, -24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(253, 132);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -217,7 +217,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 26);
             this.label1.TabIndex = 14;
-            this.label1.Tag = "7";
+            this.label1.Tag = "";
             this.label1.Text = "Telefono";
             // 
             // txtTelefono
@@ -238,7 +238,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 26);
             this.label2.TabIndex = 15;
-            this.label2.Tag = "8";
+            this.label2.Tag = "";
             this.label2.Text = "Email";
             // 
             // label3
@@ -251,7 +251,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(222, 26);
             this.label3.TabIndex = 17;
-            this.label3.Tag = "2";
+            this.label3.Tag = "";
             this.label3.Text = "Fecha de Nacimiento";
             // 
             // dtNacimiento
@@ -313,6 +313,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "User_SignUp";
             this.Text = "SignUp";
             this.Load += new System.EventHandler(this.SignUp_Load);

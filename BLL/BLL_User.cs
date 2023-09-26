@@ -57,7 +57,7 @@ namespace BLL
                 List<User> users = new DAL_User().GetAll();
                 foreach (var u in users)
                 {
-                    u.Apellido = HashCrypto.Desencriptar(u.Apellido);
+                    u.Email = HashCrypto.Desencriptar(u.Email);
                 }
                 return users;
             }
@@ -68,7 +68,7 @@ namespace BLL
             
         }
 
-        public bool Insert(User obj)
+        public bool Insert(User obj) // Revisar uso de metodo
         {
             try
             {
@@ -76,6 +76,8 @@ namespace BLL
                 var user = obj;
                 user.Clave = hash.GenerarMD5(obj.Clave);
                 user.DV = GestorDigitoVerificador.CalcularDV(user);
+                user.Email = HashCrypto.Encriptar(obj.Email);
+
                 var dal = new DAL_User().Insert(user);
                 return true;
             }
@@ -98,11 +100,11 @@ namespace BLL
                 HashCrypto hash = new HashCrypto();
                 var user = obj;
                 user.Clave = hash.GenerarMD5(obj.Clave);
-                user.Apellido = HashCrypto.Encriptar(user.Apellido);
-
+                user.Email = HashCrypto.Encriptar(obj.Email);
                 user.DV = GestorDigitoVerificador.CalcularDV(user);
                 
                 var dal = new DAL_User().Insert(user);
+
 
                 //Actualizo DV de tabla Users
                 new BLL_DigitoVerificador().InsertDVTabla(this.GetAll(), "Users");
@@ -112,10 +114,10 @@ namespace BLL
                 if (loggedUser != null)
                 {
 
-                    Session.Login(user);
+                    Session.Login(loggedUser);
                     var bitacora = new Bitacora();
                     bitacora.Detalle = "Registro de usuario";
-                    bitacora.Responsable = user;
+                    bitacora.Responsable = loggedUser;
                     bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Informacion);
                     new BLL_Bitacora().Insert(bitacora);
                 }
