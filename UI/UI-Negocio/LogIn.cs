@@ -65,7 +65,7 @@ namespace UI
                 #region(ErrorProvider)
                 errorProvider1.Clear();
                 errorProvider1.SetError(txtDniLog, "");
-                errorProvider1.SetError(txtDniLog, "");
+                errorProvider1.SetError(txtClaveLog, "");
                 bool errorFlag = false;
 
                 if (!re.validarDni(txtDniLog.Text))
@@ -91,11 +91,21 @@ namespace UI
                     else
                     {
                         Session.IdiomaActual = (Idioma)cmbIdiomas.SelectedItem;
-                       
 
-                        MenuAdmin menu = new MenuAdmin();
-                        this.Hide();
-                        menu.Show();
+
+                        if (Session.tiene_permiso(1035))
+                        {
+                            MenuAdmin menu = new MenuAdmin();
+                            this.Hide();
+                            menu.Show();
+                        }
+                        else if (Session.tiene_permiso(1036))
+                        {
+                            User_Menu menu = new User_Menu();
+                            this.Hide();
+                            menu.Show();
+                        }
+                        
 
                     }
                     
@@ -146,6 +156,7 @@ namespace UI
             TraducirForm(idioma);
         }
 
+        #region(button hover)
         private void btnIngresar_MouseEnter(object sender, EventArgs e)
         {
             btnIngresar.BackColor = Color.FromArgb(236, 125, 24);
@@ -159,5 +170,6 @@ namespace UI
             btnIngresar.ForeColor = Color.FromArgb(236, 125, 24);
             btnIngresar.FlatAppearance.BorderColor = Color.FromArgb(236, 125, 24);
         }
+        #endregion
     }
 }

@@ -48,5 +48,10 @@ namespace UI
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            CargarMenuContenedor(new User_Inicio());
+        }
     }
 }
