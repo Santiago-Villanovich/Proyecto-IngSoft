@@ -53,5 +53,11 @@ namespace UI
         {
             CargarMenuContenedor(new User_Inicio());
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            FormConfiguracion form = new FormConfiguracion();
+            form.ShowDialog();
+        }
     }
 }
