@@ -26,5 +26,19 @@ namespace BE
         public string Nombre { get; set; }
         public int EdadInicio { get; set; }
         public int EdadFin { get; set; }
+        public string str { get; }
+
+        public Categoria() { }
+        public Categoria(string nom, int min, int max) {
+            this.Nombre = nom;
+            this.EdadInicio = min;
+            this.EdadFin = max;
+            this.str = $"Categoria: {nom} entre {min} y {max}";
+        }
+
+        public override string ToString()
+        {
+            return $"Categoria: {this.Nombre} entre {this.EdadInicio} y {this.EdadFin}";
+        }
     }
 }

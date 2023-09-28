@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.UI_Negocio;
 
 namespace UI
 {
@@ -28,6 +29,16 @@ namespace UI
             this.panelContenedor.Controls.Add(frm);
             this.panelContenedor.Tag = frm;
             frm.Show();
+        }
+
+        private void btnNuevoEvento_Click(object sender, EventArgs e)
+        {
+            CargarMenuContenedor(new Org_NuevoEvento());
+        }
+
+        private void btnIniciarEvento_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
