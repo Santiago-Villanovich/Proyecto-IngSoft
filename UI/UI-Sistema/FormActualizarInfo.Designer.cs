@@ -39,33 +39,37 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(21, 40);
+            this.txtNombre.Location = new System.Drawing.Point(28, 49);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(129, 20);
+            this.txtNombre.Size = new System.Drawing.Size(171, 22);
             this.txtNombre.TabIndex = 0;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(21, 99);
+            this.txtApellido.Location = new System.Drawing.Point(28, 122);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(129, 20);
+            this.txtApellido.Size = new System.Drawing.Size(171, 22);
             this.txtApellido.TabIndex = 1;
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(21, 163);
+            this.txtClave.Location = new System.Drawing.Point(28, 201);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(129, 20);
+            this.txtClave.Size = new System.Drawing.Size(171, 22);
             this.txtClave.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.label1.ForeColor = System.Drawing.Color.Khaki;
-            this.label1.Location = new System.Drawing.Point(21, 20);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.label1.Location = new System.Drawing.Point(28, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 3;
             this.label1.Tag = "7";
             this.label1.Text = "Nombre";
@@ -74,10 +78,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.label2.ForeColor = System.Drawing.Color.Khaki;
-            this.label2.Location = new System.Drawing.Point(21, 83);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.label2.Location = new System.Drawing.Point(28, 102);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 4;
             this.label2.Tag = "8";
             this.label2.Text = "Apellido";
@@ -86,24 +91,26 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.label3.ForeColor = System.Drawing.Color.Khaki;
-            this.label3.Location = new System.Drawing.Point(21, 147);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.label3.Location = new System.Drawing.Point(28, 181);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 16);
+            this.label3.Size = new System.Drawing.Size(50, 19);
             this.label3.TabIndex = 5;
             this.label3.Tag = "3";
             this.label3.Text = "Clave";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Khaki;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.btnGuardar.FlatAppearance.BorderSize = 2;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
-            this.btnGuardar.ForeColor = System.Drawing.Color.Khaki;
-            this.btnGuardar.Location = new System.Drawing.Point(42, 213);
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.btnGuardar.Location = new System.Drawing.Point(56, 262);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(88, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(117, 41);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Tag = "30";
             this.btnGuardar.Text = "Guardar";
@@ -112,10 +119,10 @@
             // 
             // FormActualizarInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(178, 274);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.ClientSize = new System.Drawing.Size(238, 350);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -123,6 +130,8 @@
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormActualizarInfo";
             this.Text = "Actualizar";
             this.ResumeLayout(false);

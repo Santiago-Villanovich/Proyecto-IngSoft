@@ -1,4 +1,5 @@
 ﻿using BE;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,14 @@ namespace UI.UI_Negocio
             categorias = new List<Categoria>();
 
             lblNombreCat.Text = "1";
-            
+
+            cboxEstilo.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cboxEstilo.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            //cboxEstilo.DataSource = bllUsr.GetAll();
+            cboxEstilo.ValueMember = "Id";
+            cboxEstilo.DisplayMember = "NombreApellido";
+
         }
 
         private void Org_NuevoEvento_Load(object sender, EventArgs e)
@@ -77,10 +85,6 @@ namespace UI.UI_Negocio
                     lblNombreCat.Text = (categorias.Count).ToString();
                     categorias.RemoveAt(categorias.Count - 1);
 
-                    var aux = categorias.Last();
-                    numupEdadMin.Minimum = aux.EdadFin;
-                    numupEdadMin.Value = aux.EdadFin;
-
                     if (categorias.Count == 0)
                     {
                         numupEdadMin.Enabled = true;
@@ -88,6 +92,13 @@ namespace UI.UI_Negocio
                         numupEdadMin.Value = 0;
                         lblNombreCat.Text = (categorias.Count + 1).ToString();
                     }
+                    else
+                    {
+                        var aux = categorias.Last();
+                        numupEdadMin.Minimum = aux.EdadFin;
+                        numupEdadMin.Value = aux.EdadFin;
+                    }
+
 
                     this.OnLoad(null);
                 }

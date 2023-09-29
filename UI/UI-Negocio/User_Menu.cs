@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.Input;
+﻿using Services;
+using Syncfusion.WinForms.Input;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,7 +58,14 @@ namespace UI
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             FormConfiguracion form = new FormConfiguracion();
-            form.ShowDialog();
+            form.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Session.Logout();
+            this.Close();
+            Application.Restart();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace UI
             TraducirForm(idioma);
         }
 
-        private void TraducirForm(IIdioma idioma = null)/*IIdioma idioma = null*/
+        private void TraducirForm(IIdioma idioma = null)
         {
             try
             {
@@ -59,6 +59,20 @@ namespace UI
             }
 
         }
+        private void CargarMenuContenedor(object formHijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
+            Form frm = formHijo as Form;
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(frm);
+            this.panelContenedor.Tag = frm;
+            frm.Show();
+        }
+
         public FormConfiguracion()
         {
             InitializeComponent();
@@ -91,17 +105,6 @@ namespace UI
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Session.Logout();
-            this.Close();
-            Application.Restart();
-            //Application.Run(new LogIn());
-        }
-
-
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -125,14 +128,12 @@ namespace UI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormAgregarIdioma formu = new FormAgregarIdioma();
-            formu.Show();
+            CargarMenuContenedor(new FormAgregarIdioma());
         }
 
         private void btnCambiarClave_Click(object sender, EventArgs e)
         {
-            FormActualizarInfo formu = new FormActualizarInfo();
-            formu.Show();
+            CargarMenuContenedor(new FormActualizarInfo());
         }
     }
 }

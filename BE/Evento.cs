@@ -33,12 +33,12 @@ namespace BE
             this.Nombre = nom;
             this.EdadInicio = min;
             this.EdadFin = max;
-            this.str = $"Categoria: {nom} entre {min} y {max}";
+            this.str = $"Categoria {nom}: entre {min} y {max} años";
         }
 
         public override string ToString()
         {
-            return $"Categoria: {this.Nombre} entre {this.EdadInicio} y {this.EdadFin}";
+            return $"Categoria {this.Nombre}: entre {this.EdadInicio} y {this.EdadFin} años";
         }
     }
 }
