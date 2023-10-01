@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.UI_Sistema;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UI
@@ -198,6 +199,49 @@ namespace UI
         private void administrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void registrarOrganizacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void nuevaOrganizacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCrearOrg menu = new FormCrearOrg();
+            if (!Session.tiene_permiso(1037))
+            {
+                MessageBox.Show("No tiene permisos adecuados");
+                return;
+            }
+            if (!FormEstaAbierto(typeof(FormConfiguracion)))
+            {
+                menu.MdiParent = this;
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
+            }
+        }
+
+        private void asociarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsuarioOrg menu = new FormUsuarioOrg();
+            /*if (!Session.tiene_permiso(1037))
+            {
+                MessageBox.Show("No tiene permisos adecuados");
+                return;
+            }*/
+            if (!FormEstaAbierto(typeof(FormConfiguracion)))
+            {
+                menu.MdiParent = this;
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
+            }
         }
     }
 }

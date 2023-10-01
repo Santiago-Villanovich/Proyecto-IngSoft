@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DAL_Bitacora.cs" />
     <Compile Include="DAL_DigitoVerificador.cs" />
+    <Compile Include="DAL_Org.cs" />
     <Compile Include="DAL_Traductor.cs" />
     <Compile Include="DAL_Permisos.cs" />
     <Compile Include="DAL_User.cs" />

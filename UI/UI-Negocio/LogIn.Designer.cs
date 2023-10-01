@@ -66,7 +66,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.label2.Location = new System.Drawing.Point(111, 274);
+            this.label2.Location = new System.Drawing.Point(112, 290);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 26);
@@ -79,7 +79,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.label3.Location = new System.Drawing.Point(111, 349);
+            this.label3.Location = new System.Drawing.Point(112, 365);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 26);
@@ -118,7 +118,7 @@
             // 
             // txtDniLog
             // 
-            this.txtDniLog.Location = new System.Drawing.Point(116, 304);
+            this.txtDniLog.Location = new System.Drawing.Point(117, 320);
             this.txtDniLog.Margin = new System.Windows.Forms.Padding(4);
             this.txtDniLog.MaxLength = 8;
             this.txtDniLog.Name = "txtDniLog";
@@ -127,7 +127,7 @@
             // 
             // txtClaveLog
             // 
-            this.txtClaveLog.Location = new System.Drawing.Point(116, 379);
+            this.txtClaveLog.Location = new System.Drawing.Point(117, 395);
             this.txtClaveLog.Margin = new System.Windows.Forms.Padding(4);
             this.txtClaveLog.Name = "txtClaveLog";
             this.txtClaveLog.Size = new System.Drawing.Size(241, 22);
@@ -140,7 +140,7 @@
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F);
             this.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(125)))), ((int)(((byte)(24)))));
-            this.btnIngresar.Location = new System.Drawing.Point(170, 433);
+            this.btnIngresar.Location = new System.Drawing.Point(171, 449);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(140, 50);
@@ -156,7 +156,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(396, 379);
+            this.pictureBox1.Location = new System.Drawing.Point(397, 395);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);

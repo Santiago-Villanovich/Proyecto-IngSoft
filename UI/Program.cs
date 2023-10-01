@@ -18,20 +18,20 @@ namespace UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             BLL_DigitoVerificador verificadorDV = new BLL_DigitoVerificador();
-            /*if (verificadorDV.VerificarEstadoTabla(new BLL_User().GetAll(), "Users"))
+            if (verificadorDV.VerificarEstadoTabla(new BLL_User().GetAll(), "Users"))
             {
                 Application.Run(new LogIn());
             }
             else
             {
                 Application.Run(new CorruptedDataBase());
-            }*/
+            }
 
             /*Application.Run(new LogIn());*/
 
             /*Application.Run(new User_Menu());*/
 
-            Application.Run(new Org_Menu());
+            //Application.Run(new Org_Menu());
 
         }
     }

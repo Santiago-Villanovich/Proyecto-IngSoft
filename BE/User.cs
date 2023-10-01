@@ -30,6 +30,8 @@ namespace BE
 
         public List<Familia> Permisos = new List<Familia>();
 
+        public Organizacion Organizacion { get; set; }
+
 
         public User() { }
 

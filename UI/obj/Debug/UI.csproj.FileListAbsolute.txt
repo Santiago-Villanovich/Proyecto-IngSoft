@@ -182,3 +182,5 @@ C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.CalendarDay.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.CalendarDayBlank.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_SignUp.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_NuevoEvento.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Sistema.FormCrearOrg.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Sistema.FormUsuarioOrg.resources
