@@ -136,5 +136,37 @@ namespace DAL
                 }
             }
         }
+
+        public bool AsociarUsuario(int id_user, int id_org)
+        {
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_InsertOrgUsuario", conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_user", id_user);
+                    cmd.Parameters.AddWithValue("@id_org", id_org);
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

@@ -36,5 +36,10 @@ namespace BLL
         {
             return new DAL_Org().Update(obj);
         }
+
+        public bool AsociarUsuario(Organizacion org, User usua)
+        {
+            return new DAL_Org().AsociarUsuario(usua.Id,org.id);
+        }
     }
 }

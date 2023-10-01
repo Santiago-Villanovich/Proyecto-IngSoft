@@ -16,6 +16,7 @@ namespace UI.UI_Sistema
     {
         Organizacion org;
         User usuario;
+        BLL_Org bll_Org;
 
         public FormUsuarioOrg()
         {
@@ -37,7 +38,7 @@ namespace UI.UI_Sistema
             dtgridUsuarios.Columns["Organizacion"].Visible = false;
 
             dtgridOrg.DataSource = null;
-            dtgridOrg.DataSource = new BLL_Org().GetAll();
+            dtgridOrg.DataSource = bll_Org.GetAll();
         }
 
         private void dtgridUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -50,6 +51,26 @@ namespace UI.UI_Sistema
         {
             org = (Organizacion)dtgridOrg.CurrentRow.DataBoundItem;
             lblOrg.Text = org.Nombre;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (org != null && usuario != null)
+                {
+                    if(bll_Org.AsociarUsuario(org, usuario))
+                    {
+                        MessageBox.Show("El usuario fue asociado exitosamente");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
     }
 }
