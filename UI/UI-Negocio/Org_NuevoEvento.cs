@@ -27,14 +27,14 @@ namespace UI.UI_Negocio
             cboxEstilo.AutoCompleteMode = AutoCompleteMode.Suggest;
             cboxEstilo.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            //cboxEstilo.DataSource = bllUsr.GetAll();
-            cboxEstilo.ValueMember = "Id";
-            cboxEstilo.DisplayMember = "NombreApellido";
+            cboxEstilo.DataSource = Enum.GetValues(typeof(Estilos));
 
         }
 
         private void Org_NuevoEvento_Load(object sender, EventArgs e)
         {
+
+
             listboxCategorias.DataSource = null;
             listboxCategorias.DisplayMember = "str";
             listboxCategorias.ValueMember = "nombre";

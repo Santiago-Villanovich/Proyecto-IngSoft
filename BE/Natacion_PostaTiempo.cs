@@ -13,7 +13,8 @@ namespace BE
         public string Detalles { get; set; }
         public bool Elementos { get; set; }
         public Pileta Pileta { get; set; }
-
+        public int cantidad_integrantes_equipo { get; set; }
+        public int id { get; set; }
 
         public Natacion_PostaTiempo() { }
     }

@@ -33,14 +33,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.checkElementos = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.richtextDetalleEvento = new System.Windows.Forms.RichTextBox();
             this.numupCoste = new System.Windows.Forms.NumericUpDown();
             this.cboxPileta = new System.Windows.Forms.ComboBox();
             this.cboxEstilo = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.lblRegistrarPileta = new System.Windows.Forms.Label();
             this.numupEdadMin = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -114,16 +112,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Estilo";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 270);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label8.Size = new System.Drawing.Size(244, 23);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Detalles especificos (Opcional)";
-            // 
             // checkElementos
             // 
             this.checkElementos.AutoSize = true;
@@ -146,7 +134,7 @@
             // 
             this.richtextDetalleEvento.Location = new System.Drawing.Point(39, 278);
             this.richtextDetalleEvento.Name = "richtextDetalleEvento";
-            this.richtextDetalleEvento.Size = new System.Drawing.Size(296, 149);
+            this.richtextDetalleEvento.Size = new System.Drawing.Size(296, 217);
             this.richtextDetalleEvento.TabIndex = 10;
             this.richtextDetalleEvento.Text = "";
             // 
@@ -179,14 +167,6 @@
             this.cboxEstilo.Name = "cboxEstilo";
             this.cboxEstilo.Size = new System.Drawing.Size(320, 31);
             this.cboxEstilo.TabIndex = 13;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(29, 298);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(321, 104);
-            this.richTextBox1.TabIndex = 14;
-            this.richTextBox1.Text = "";
             // 
             // lblRegistrarPileta
             // 
@@ -256,7 +236,7 @@
             this.btnAgregarCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.btnAgregarCat.Location = new System.Drawing.Point(146, 149);
             this.btnAgregarCat.Name = "btnAgregarCat";
-            this.btnAgregarCat.Size = new System.Drawing.Size(156, 57);
+            this.btnAgregarCat.Size = new System.Drawing.Size(156, 51);
             this.btnAgregarCat.TabIndex = 23;
             this.btnAgregarCat.Text = "Agregar categoria";
             this.btnAgregarCat.UseVisualStyleBackColor = true;
@@ -277,7 +257,7 @@
             this.groupBox1.Controls.Add(this.numupEdadMin);
             this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.groupBox1.Location = new System.Drawing.Point(365, 459);
+            this.groupBox1.Location = new System.Drawing.Point(365, 334);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(747, 244);
             this.groupBox1.TabIndex = 24;
@@ -298,7 +278,7 @@
             this.btnDeshacerCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.btnDeshacerCat.Location = new System.Drawing.Point(29, 149);
             this.btnDeshacerCat.Name = "btnDeshacerCat";
-            this.btnDeshacerCat.Size = new System.Drawing.Size(110, 57);
+            this.btnDeshacerCat.Size = new System.Drawing.Size(110, 51);
             this.btnDeshacerCat.TabIndex = 26;
             this.btnDeshacerCat.Text = "Deshacer";
             this.btnDeshacerCat.UseVisualStyleBackColor = true;
@@ -327,19 +307,17 @@
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.lblRegistrarPileta);
             this.groupBox2.Controls.Add(this.rbNataTiempo);
-            this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Controls.Add(this.rbNataMetros);
             this.groupBox2.Controls.Add(this.cboxEstilo);
             this.groupBox2.Controls.Add(this.cboxPileta);
             this.groupBox2.Controls.Add(this.checkElementos);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.groupBox2.Location = new System.Drawing.Point(365, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(747, 428);
+            this.groupBox2.Size = new System.Drawing.Size(747, 287);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Natacion";
@@ -385,7 +363,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(94, 598);
+            this.button1.Location = new System.Drawing.Point(116, 517);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 61);
             this.button1.TabIndex = 26;
@@ -397,7 +375,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(1124, 750);
+            this.ClientSize = new System.Drawing.Size(1124, 625);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
@@ -431,14 +409,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox checkElementos;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.RichTextBox richtextDetalleEvento;
         private System.Windows.Forms.NumericUpDown numupCoste;
         private System.Windows.Forms.ComboBox cboxPileta;
         private System.Windows.Forms.ComboBox cboxEstilo;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label lblRegistrarPileta;
         private System.Windows.Forms.NumericUpDown numupEdadMin;
         private System.Windows.Forms.Label label10;
