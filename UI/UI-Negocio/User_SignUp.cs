@@ -127,10 +127,12 @@ namespace UI.UI_Negocio
                     BLL_User _User = new BLL_User();
                     _User.Register(usuario);
 
+                    
                     User_Menu menu = new User_Menu();
-
-                    this.Close();
+                    this.Hide();
                     menu.Show();
+                    
+                    
                 }
 
             }

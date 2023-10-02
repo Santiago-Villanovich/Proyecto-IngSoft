@@ -105,7 +105,7 @@ namespace BLL
                 
                 var dal = new DAL_User().Insert(user);
 
-
+                
                 //Actualizo DV de tabla Users
                 new BLL_DigitoVerificador().InsertDVTabla(this.GetAll(), "Users");
 
@@ -113,8 +113,12 @@ namespace BLL
                 var loggedUser = new DAL_User().Login(user.DNI, user.Clave);
                 if (loggedUser != null)
                 {
+                    //Agrego permisos de usuario
+                    Componente comp = new BLL_Permisos().GetComponentePorNombre("Usuario");
+                    AgregarPermiso(comp,loggedUser);
 
                     Session.Login(loggedUser);
+
                     var bitacora = new Bitacora();
                     bitacora.Detalle = "Registro de usuario";
                     bitacora.Responsable = loggedUser;
@@ -126,12 +130,12 @@ namespace BLL
             }
             catch (Exception e)
             {
-                var bitacora = new Bitacora();
+                /*var bitacora = new Bitacora();
                 bitacora.Detalle = e.Message;
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
-                new BLL_Bitacora().Insert(bitacora);
-                throw;
+                new BLL_Bitacora().Insert(bitacora);*/
+                throw e;
             }
 
         }

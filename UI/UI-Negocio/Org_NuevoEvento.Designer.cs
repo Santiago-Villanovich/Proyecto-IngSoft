@@ -54,10 +54,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.listboxCategorias = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.rbNataMetros = new System.Windows.Forms.RadioButton();
-            this.rbNataTiempo = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rbNataTiempo = new System.Windows.Forms.RadioButton();
+            this.rbNataMetros = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numupCoste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMax)).BeginInit();
@@ -343,26 +344,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Natacion";
             // 
-            // label7
+            // textBox1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
-            this.label7.Location = new System.Drawing.Point(35, 179);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 23);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "$";
-            // 
-            // rbNataMetros
-            // 
-            this.rbNataMetros.AutoSize = true;
-            this.rbNataMetros.Location = new System.Drawing.Point(456, 87);
-            this.rbNataMetros.Name = "rbNataMetros";
-            this.rbNataMetros.Size = new System.Drawing.Size(224, 27);
-            this.rbNataMetros.TabIndex = 13;
-            this.rbNataMetros.TabStop = true;
-            this.rbNataMetros.Text = "Competencia por metros";
-            this.rbNataMetros.UseVisualStyleBackColor = true;
+            this.textBox1.Location = new System.Drawing.Point(456, 155);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(224, 28);
+            this.textBox1.TabIndex = 16;
             // 
             // rbNataTiempo
             // 
@@ -375,12 +362,35 @@
             this.rbNataTiempo.Text = "Competencia por tiempo";
             this.rbNataTiempo.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // rbNataMetros
             // 
-            this.textBox1.Location = new System.Drawing.Point(456, 155);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 28);
-            this.textBox1.TabIndex = 16;
+            this.rbNataMetros.AutoSize = true;
+            this.rbNataMetros.Location = new System.Drawing.Point(456, 87);
+            this.rbNataMetros.Name = "rbNataMetros";
+            this.rbNataMetros.Size = new System.Drawing.Size(224, 27);
+            this.rbNataMetros.TabIndex = 13;
+            this.rbNataMetros.TabStop = true;
+            this.rbNataMetros.Text = "Competencia por metros";
+            this.rbNataMetros.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
+            this.label7.Location = new System.Drawing.Point(35, 179);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 23);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "$";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(94, 598);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 61);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Org_NuevoEvento
             // 
@@ -388,6 +398,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1124, 750);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -445,5 +456,6 @@
         private System.Windows.Forms.RadioButton rbNataTiempo;
         private System.Windows.Forms.RadioButton rbNataMetros;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
