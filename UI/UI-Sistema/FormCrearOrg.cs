@@ -19,12 +19,22 @@ namespace UI.UI_Sistema
         RegexValidation re;
         BLL_Org bllOrg;
         
+        private void LimpiarControles()
+        {
+            Organizacion = null;
+            txtNombre.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtDireccionweb.Text = string.Empty;
+            txtCuit.Text = string.Empty;
+            dataGridView1.CurrentRow.Selected = false;
+        }
 
         public FormCrearOrg()
         {
             InitializeComponent();
             re = new RegexValidation();
             bllOrg = new BLL_Org();
+            Organizacion = null;
 
         }
 
@@ -47,15 +57,19 @@ namespace UI.UI_Sistema
                         errorFlag = true;
                         errorProvider1.SetError(txtNombre, "El campo es obligatorio");
                     }
-                    if (!re.validarNombre(txtCuit.Text))
+                    if (!re.validarCUIT(txtCuit.Text))
                     {
                         errorFlag = true;
                         errorProvider1.SetError(txtCuit, "El campo es obligatorio");
                     }
-                    if (!re.validarDni(txtEmail.Text))
+                    if (!re.validarEmail(txtEmail.Text))
                     {
                         errorFlag = true;
                         errorProvider1.SetError(txtEmail, "El campo es obligatorio");
+                    }
+                    if (txtDireccionweb.Text == string.Empty) 
+                    {
+                        errorFlag = true;
                     }
 
                     #endregion
@@ -65,15 +79,36 @@ namespace UI.UI_Sistema
                         Organizacion Org = new Organizacion(txtCuit.Text, txtNombre.Text, txtEmail.Text, txtDireccionweb.Text);
                         bllOrg.Insert(Org);
 
+                        LimpiarControles();
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void FormCrearOrg_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bllOrg.GetAll();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Organizacion = (Organizacion)dataGridView1.CurrentRow.DataBoundItem;
+            txtNombre.Text = Organizacion.Nombre;
+            txtEmail.Text = Organizacion.Email;
+            txtDireccionweb.Text = Organizacion.DireccionWeb;
+            txtCuit.Text = Organizacion.CUIT;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarControles();
         }
     }
 }

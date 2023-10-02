@@ -97,7 +97,7 @@ namespace UI
                         {
                             MenuAdmin menu = new MenuAdmin();
                             this.Hide();
-                            menu.Show();
+                            menu.Show(); 
                         }
                         else if (Session.tiene_permiso(1036))
                         {
@@ -105,7 +105,13 @@ namespace UI
                             this.Hide();
                             menu.Show();
                         }
-                        
+                        else if (Session.tiene_permiso(1039))
+                        {
+                            Org_Menu menu = new Org_Menu();
+                            this.Hide();
+                            menu.Show();
+                        }
+
 
                     }
                     

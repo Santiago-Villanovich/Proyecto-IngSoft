@@ -124,8 +124,27 @@ namespace Services
                 }
                 else
                 {
-                    return false;
-                    //throw new Exception("El dni ingresado contiene caracteres invalidos");
+                    throw new Exception("El dni ingresado contiene caracteres invalidos");
+                }
+            }
+        }
+
+        public bool validarCUIT(string dni)
+        {
+            if (string.IsNullOrEmpty(dni))
+            {
+                return false;
+            }
+            else
+            {
+                Regex re = new Regex(@"^\b(30|33|34)(\-)?[0-9]{8}(\-)?[0-9]{1}?$");
+                if (re.IsMatch(dni))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("El CUIT ingresado contiene caracteres invalidos");
                 }
             }
         }

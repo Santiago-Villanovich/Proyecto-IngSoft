@@ -58,7 +58,9 @@ namespace UI
             Session._publisherIdioma.Subscribe(this);*/
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = new BLL_User().GetAll();
+
             List<Familia> componentes = new BLL_Permisos().GetFamilias();
+            dataGridView2.DataSource = null;
             dataGridView2.DataSource = componentes;
             
         }
@@ -81,10 +83,13 @@ namespace UI
                 if (new BLL_User().AgregarPermiso(seleccionado, user))
                 {
                     MessageBox.Show("Se agrego permiso correctamente");
+                    this.OnLoad(null);
+
                 }else
                 {
                     MessageBox.Show("Ocurrio un error al agregar permiso");
                 }
+
             }catch(Exception)
             {
                 throw;

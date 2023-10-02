@@ -209,11 +209,11 @@ namespace UI
         private void nuevaOrganizacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCrearOrg menu = new FormCrearOrg();
-            if (!Session.tiene_permiso(1037))
+            /*if (!Session.tiene_permiso(1037))
             {
                 MessageBox.Show("No tiene permisos adecuados");
                 return;
-            }
+            }*/
             if (!FormEstaAbierto(typeof(FormConfiguracion)))
             {
                 menu.MdiParent = this;
