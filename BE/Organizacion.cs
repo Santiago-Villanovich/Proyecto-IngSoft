@@ -13,6 +13,7 @@ namespace BE
         public string Nombre { get; set; }
         public string Email { get; set; }
         public string DireccionWeb { get; set; }
+        public Pileta PiletaAsociada { get; set; }
 
         public Organizacion() { }
         public Organizacion(string cUIT, string nombre, string email, string direccionWeb)

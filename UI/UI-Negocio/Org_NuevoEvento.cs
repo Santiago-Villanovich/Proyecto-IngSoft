@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,14 +27,23 @@ namespace UI.UI_Negocio
 
             cboxEstilo.AutoCompleteMode = AutoCompleteMode.Suggest;
             cboxEstilo.AutoCompleteSource = AutoCompleteSource.ListItems;
-
             cboxEstilo.DataSource = Enum.GetValues(typeof(Estilos));
 
+            dateTimePicker1.MinDate = DateTime.Now;
         }
 
         private void Org_NuevoEvento_Load(object sender, EventArgs e)
         {
+            cboxPileta.DataSource = null;
+            cboxPileta.DataSource = new BLL_Pileta().GetAll();
+            cboxPileta.ValueMember = "id";
+            cboxPileta.DisplayMember = "direccion";
 
+            if (Session.GetInstance.Usuario.Organizacion != null)
+            {
+                cboxPileta.Enabled = false;
+                cboxPileta.SelectedValue = Session.GetInstance.Usuario.Organizacion.PiletaAsociada.id;
+            }
 
             listboxCategorias.DataSource = null;
             listboxCategorias.DisplayMember = "str";

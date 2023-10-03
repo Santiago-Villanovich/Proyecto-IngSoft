@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gestionarOrganizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaOrganizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asociarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,9 +40,6 @@
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionarOrganizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaOrganizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asociarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,30 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // gestionarOrganizacionToolStripMenuItem
+            // 
+            this.gestionarOrganizacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaOrganizacionToolStripMenuItem,
+            this.asociarUsuarioToolStripMenuItem});
+            this.gestionarOrganizacionToolStripMenuItem.Name = "gestionarOrganizacionToolStripMenuItem";
+            this.gestionarOrganizacionToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
+            this.gestionarOrganizacionToolStripMenuItem.Text = "Organizaciones";
+            this.gestionarOrganizacionToolStripMenuItem.Click += new System.EventHandler(this.registrarOrganizacionToolStripMenuItem_Click);
+            // 
+            // nuevaOrganizacionToolStripMenuItem
+            // 
+            this.nuevaOrganizacionToolStripMenuItem.Name = "nuevaOrganizacionToolStripMenuItem";
+            this.nuevaOrganizacionToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.nuevaOrganizacionToolStripMenuItem.Text = "Gestionar Organizacion";
+            this.nuevaOrganizacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaOrganizacionToolStripMenuItem_Click);
+            // 
+            // asociarUsuarioToolStripMenuItem
+            // 
+            this.asociarUsuarioToolStripMenuItem.Name = "asociarUsuarioToolStripMenuItem";
+            this.asociarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.asociarUsuarioToolStripMenuItem.Text = "Asociar Usuario";
+            this.asociarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.asociarUsuarioToolStripMenuItem_Click);
+            // 
             // administrarToolStripMenuItem
             // 
             this.administrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -64,7 +88,7 @@
             this.verBitacoraToolStripMenuItem,
             this.verHistorialDeCambiosToolStripMenuItem});
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
-            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
+            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.administrarToolStripMenuItem.Tag = "10";
             this.administrarToolStripMenuItem.Text = "Administrar";
             this.administrarToolStripMenuItem.Click += new System.EventHandler(this.administrarToolStripMenuItem_Click);
@@ -105,7 +129,7 @@
             this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configuracionToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.opcionesToolStripMenuItem.Tag = "13";
             this.opcionesToolStripMenuItem.Text = "Opciones";
             this.opcionesToolStripMenuItem.Click += new System.EventHandler(this.opcionesToolStripMenuItem_Click);
@@ -113,7 +137,7 @@
             // configuracionToolStripMenuItem
             // 
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.configuracionToolStripMenuItem.Tag = "14";
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
@@ -125,30 +149,6 @@
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
-            // gestionarOrganizacionToolStripMenuItem
-            // 
-            this.gestionarOrganizacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaOrganizacionToolStripMenuItem,
-            this.asociarUsuarioToolStripMenuItem});
-            this.gestionarOrganizacionToolStripMenuItem.Name = "gestionarOrganizacionToolStripMenuItem";
-            this.gestionarOrganizacionToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
-            this.gestionarOrganizacionToolStripMenuItem.Text = "Gestionar Organizaciones";
-            this.gestionarOrganizacionToolStripMenuItem.Click += new System.EventHandler(this.registrarOrganizacionToolStripMenuItem_Click);
-            // 
-            // nuevaOrganizacionToolStripMenuItem
-            // 
-            this.nuevaOrganizacionToolStripMenuItem.Name = "nuevaOrganizacionToolStripMenuItem";
-            this.nuevaOrganizacionToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.nuevaOrganizacionToolStripMenuItem.Text = "Nueva Organizacion";
-            this.nuevaOrganizacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaOrganizacionToolStripMenuItem_Click);
-            // 
-            // asociarUsuarioToolStripMenuItem
-            // 
-            this.asociarUsuarioToolStripMenuItem.Name = "asociarUsuarioToolStripMenuItem";
-            this.asociarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.asociarUsuarioToolStripMenuItem.Text = "Asociar Usuario";
-            this.asociarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.asociarUsuarioToolStripMenuItem_Click);
-            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,7 +158,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuAdmin";
             this.Text = "Menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuAdmin_FormClosed);

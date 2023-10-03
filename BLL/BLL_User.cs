@@ -252,5 +252,10 @@ namespace BLL
             }
 
         }
+
+        public Organizacion GetUserOrg(int id)
+        {
+            return new DAL_User().GetUserOrg(id);
+        }
     }
 }

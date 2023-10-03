@@ -45,6 +45,7 @@
     <Compile Include="BLL_DigitoVerificador.cs" />
     <Compile Include="BLL_Org.cs" />
     <Compile Include="BLL_Permisos.cs" />
+    <Compile Include="BLL_Pileta.cs" />
     <Compile Include="BLL_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BLL_Traductor.cs" />

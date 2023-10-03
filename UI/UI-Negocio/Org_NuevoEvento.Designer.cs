@@ -39,7 +39,6 @@
             this.numupCoste = new System.Windows.Forms.NumericUpDown();
             this.cboxPileta = new System.Windows.Forms.ComboBox();
             this.cboxEstilo = new System.Windows.Forms.ComboBox();
-            this.lblRegistrarPileta = new System.Windows.Forms.Label();
             this.numupEdadMin = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.lblNombreCat = new System.Windows.Forms.Label();
@@ -167,15 +166,6 @@
             this.cboxEstilo.Name = "cboxEstilo";
             this.cboxEstilo.Size = new System.Drawing.Size(320, 31);
             this.cboxEstilo.TabIndex = 13;
-            // 
-            // lblRegistrarPileta
-            // 
-            this.lblRegistrarPileta.AutoSize = true;
-            this.lblRegistrarPileta.Location = new System.Drawing.Point(222, 50);
-            this.lblRegistrarPileta.Name = "lblRegistrarPileta";
-            this.lblRegistrarPileta.Size = new System.Drawing.Size(128, 23);
-            this.lblRegistrarPileta.TabIndex = 15;
-            this.lblRegistrarPileta.Text = "Registrar pileta";
             // 
             // numupEdadMin
             // 
@@ -305,7 +295,6 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.lblRegistrarPileta);
             this.groupBox2.Controls.Add(this.rbNataTiempo);
             this.groupBox2.Controls.Add(this.rbNataMetros);
             this.groupBox2.Controls.Add(this.cboxEstilo);
@@ -375,7 +364,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(1124, 625);
+            this.ClientSize = new System.Drawing.Size(1124, 615);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
@@ -415,7 +404,6 @@
         private System.Windows.Forms.NumericUpDown numupCoste;
         private System.Windows.Forms.ComboBox cboxPileta;
         private System.Windows.Forms.ComboBox cboxEstilo;
-        private System.Windows.Forms.Label lblRegistrarPileta;
         private System.Windows.Forms.NumericUpDown numupEdadMin;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblNombreCat;

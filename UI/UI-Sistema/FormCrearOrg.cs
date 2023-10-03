@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Services;
 using BLL;
+using System.Linq.Expressions;
 
 namespace UI.UI_Sistema
 {
@@ -36,6 +37,9 @@ namespace UI.UI_Sistema
             bllOrg = new BLL_Org();
             Organizacion = null;
 
+            groupBox1.Enabled = false;
+            groupBox1.Visible = false;
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -50,6 +54,9 @@ namespace UI.UI_Sistema
                     errorProvider1.SetError(txtCuit, "");
                     errorProvider1.SetError(txtDireccionweb, "");
                     errorProvider1.SetError(txtEmail, "");
+                    errorProvider1.SetError(txtPiletaDir, "");
+                    errorProvider1.SetError(numupPiletaCarril, "");
+
 
                     bool errorFlag = false;
                     if (!re.validarNombre(txtNombre.Text))
@@ -71,12 +78,53 @@ namespace UI.UI_Sistema
                     {
                         errorFlag = true;
                     }
+                    if (checkboxPileta.Checked)
+                    {
+                        if (txtPiletaDir.Text == string.Empty)
+                        {
+                            errorFlag = true;
+                            errorProvider1.SetError(txtPiletaDir, "El campo es obligatorio");
+                        }
+                        if (numupPiletaCarril.Value > 0)
+                        {
+                            errorFlag = true;
+                        }
+                        if (!rb20mts.Checked && !rb25mts.Checked && !rb50mts.Checked)
+                        {
+                            errorFlag = true;
+                            MessageBox.Show("Debe seleccionar el tamaño de la pileta");
+                        }
+                    }
 
                     #endregion
 
                     if (!errorFlag)
                     {
                         Organizacion Org = new Organizacion(txtCuit.Text, txtNombre.Text, txtEmail.Text, txtDireccionweb.Text);
+                        Org.PiletaAsociada = null;
+
+                        if (checkboxPileta.Checked) 
+                        {
+                            Pileta pil = new Pileta();
+                            pil.Direccion = txtPiletaDir.Text;
+                            pil.Carriles = Convert.ToInt32(numupPiletaCarril.Value);
+                            if (rb20mts.Checked)
+                            {
+                                pil.Metros = 20;
+                            }
+                            else if (rb25mts.Checked)
+                            {
+                                pil.Metros = 25;
+                            }
+                            else
+                            {
+                                pil.Metros = 50;
+                            }
+
+                            Org.PiletaAsociada = pil;
+                        }
+                        
+
                         bllOrg.Insert(Org);
 
                         LimpiarControles();

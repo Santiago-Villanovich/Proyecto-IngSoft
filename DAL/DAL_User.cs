@@ -367,5 +367,68 @@ namespace DAL
             }
         }
 
+        public Organizacion GetUserOrg(int id)
+        {
+            using (SqlConnection conn = _conn)
+            {
+                Organizacion organizacion = null;
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetUserOrg", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdUser", id);
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var org = new Organizacion()
+                            {
+                                id = Convert.ToInt32(reader["id_org"]),
+                                Nombre = reader["nombre"].ToString(),
+                                DireccionWeb = reader["direccion_web"].ToString(),
+                                Email = reader["email"].ToString(),
+                                CUIT = reader["cuit"].ToString(),
+
+
+                            };
+                            if (!reader.IsDBNull(reader.GetOrdinal("pileta_asociada")))
+                            {
+                                org.PiletaAsociada = new Pileta()
+                                {
+                                    id = Convert.ToInt32(reader["pileta_asociada"]),
+                                    Direccion = reader["direccion"].ToString(),
+                                    Metros = Convert.ToInt32(reader["metros"]),
+                                    Carriles = Convert.ToInt32(reader["carriles"])
+                                };
+                            }
+                            else
+                            {
+                                org.PiletaAsociada = null;
+                            }
+
+                            organizacion = org;
+                        }
+                    }
+
+                    return organizacion;
+                }
+                catch (SqlException ex)
+                {
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
     }
 }

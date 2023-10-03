@@ -107,6 +107,8 @@ namespace UI
                         }
                         else if (Session.tiene_permiso(1039))
                         {
+                            Session.GetInstance.Usuario.Organizacion = new BLL_User().GetUserOrg(Session.GetInstance.Usuario.Id);
+                            
                             Org_Menu menu = new Org_Menu();
                             this.Hide();
                             menu.Show();

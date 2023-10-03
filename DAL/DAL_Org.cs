@@ -49,10 +49,24 @@ namespace DAL
                                 Nombre = reader["nombre"].ToString(),
                                 DireccionWeb = reader["direccion_web"].ToString(),
                                 Email = reader["email"].ToString(),
-                                CUIT = reader["cuit"].ToString()
-
+                                CUIT = reader["cuit"].ToString(),
+                                
 
                             };
+                            if (!reader.IsDBNull(reader.GetOrdinal("id_pileta")))
+                            {
+                                org.PiletaAsociada = new Pileta()
+                                {
+                                    id = Convert.ToInt32(reader["id_pileta"]),
+                                    Direccion = reader["direccion"].ToString(),
+                                    Metros = Convert.ToInt32(reader["metros"]),
+                                    Carriles = Convert.ToInt32(reader["carriles"])
+                                };
+                            }
+                            else
+                            {
+                                org.PiletaAsociada = null;
+                            }
 
                             list.Add(org);
                         }
@@ -81,14 +95,25 @@ namespace DAL
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("sp_UpdateOrg", conn);
-
+                    SqlCommand cmd = new SqlCommand("sp_InsertOrg", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", DBNull.Value);
+
                     cmd.Parameters.AddWithValue("@Nom", obj.Nombre);
                     cmd.Parameters.AddWithValue("@Cuit", obj.CUIT);
                     cmd.Parameters.AddWithValue("@Dir", obj.DireccionWeb);
                     cmd.Parameters.AddWithValue("@Email", obj.Email);
+                    if (obj.PiletaAsociada != null)
+                    {
+                        cmd.Parameters.AddWithValue("@PiletaDir", obj.PiletaAsociada.Direccion);
+                        cmd.Parameters.AddWithValue("@PiletaMetros", obj.PiletaAsociada.Metros);
+                        cmd.Parameters.AddWithValue("@PiletaCarril", obj.PiletaAsociada.Carriles);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@PiletaDir", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@PiletaMetros", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@PiletaCarril", DBNull.Value);
+                    }
 
                     conn.Open();
 
