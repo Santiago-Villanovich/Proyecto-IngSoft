@@ -72,19 +72,28 @@ namespace UI.UI_Sistema
             {
                 if (org != null && usuario != null)
                 {
-                    if(bll_Org.AsociarUsuario(org, usuario))
+                    Familia componente = new Familia() { Id = 1039, Nombre = "Organizacion" };
+                    Familia componente2 = new Familia() { Id = 1036, Nombre = "Usuario" };
+
+                    if (bll_User.tiene_permiso(usuario, 1039))
                     {
-                        Familia componente = new Familia() { Id = 1039, Nombre = "Organizacion" };
-                        Familia componente2 = new Familia() { Id = 1036, Nombre = "Usuario" };
-
-                        if (bll_User.tiene_permiso(usuario, 1036))
+                        if (bll_Org.AsociarUsuario(org, usuario))
                         {
-                            bll_Permisos.SacarPermisoUser(usuario,componente2);
-                        }
+                            if (bll_User.tiene_permiso(usuario, 1036))
+                            {
+                                bll_Permisos.SacarPermisoUser(usuario, componente2);
+                            }
 
-                        bll_User.AgregarPermiso(componente, usuario);
-                        MessageBox.Show("El usuario fue asociado exitosamente");
+                            bll_User.AgregarPermiso(componente, usuario);
+                            MessageBox.Show("El usuario fue asociado exitosamente");
+                        }
                     }
+                    else
+                    {
+                        MessageBox.Show("Este usuario ya esta asociado a una organizacion");
+                        return;
+                    }
+                    
                 }
             }
             catch (Exception)
