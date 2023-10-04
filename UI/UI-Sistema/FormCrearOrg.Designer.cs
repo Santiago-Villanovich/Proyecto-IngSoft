@@ -124,7 +124,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(489, 304);
+            this.btnGuardar.Location = new System.Drawing.Point(489, 359);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(155, 49);
             this.btnGuardar.TabIndex = 8;
@@ -144,13 +144,13 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(571, 253);
+            this.dataGridView1.Size = new System.Drawing.Size(571, 311);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(905, 301);
+            this.button1.Location = new System.Drawing.Point(905, 359);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 32);
             this.button1.TabIndex = 10;
@@ -159,7 +159,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(744, 301);
+            this.btnLimpiar.Location = new System.Drawing.Point(744, 359);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(155, 32);
             this.btnLimpiar.TabIndex = 11;
@@ -180,6 +180,7 @@
             this.checkboxPileta.TabIndex = 13;
             this.checkboxPileta.Text = "Pileta asociada";
             this.checkboxPileta.UseVisualStyleBackColor = true;
+            this.checkboxPileta.CheckedChanged += new System.EventHandler(this.checkboxPileta_CheckedChanged);
             // 
             // label5
             // 

@@ -235,6 +235,30 @@ namespace BLL
             }
         }
 
+        public bool recursiva(int id, IList<Componente> roles)
+        {
+            foreach (Componente rol in roles)
+            {
+                if (rol.Id == id) return true;
+                if (rol.Hijos != null) return recursiva(id, rol.Hijos);
+            }
+            return false;
+        }
+
+        public bool tiene_permiso(User usua,int id)
+        {
+            foreach (Componente rol in usua.Permisos)
+            {
+                if (rol.Id == id) return true;
+                if (rol.Hijos != null)
+                {
+                    if (recursiva(id, rol.Hijos)) return true;
+
+                }
+            }
+            return false;
+        }
+
         public bool AgregarPermiso(Componente permiso, User user)
         {
             try

@@ -29,6 +29,15 @@ namespace UI.UI_Sistema
             txtCuit.Text = string.Empty;
             dataGridView1.CurrentRow.Selected = false;
         }
+        private void LimpiarGroupbox()
+        {
+            checkboxPileta.Checked = false;
+            txtPiletaDir.Text = string.Empty;
+            numupPiletaCarril.Value= 0;
+            rb20mts.Checked = false;
+            rb25mts.Checked = false;
+            rb50mts.Checked = false;
+        }
 
         public FormCrearOrg()
         {
@@ -152,11 +161,50 @@ namespace UI.UI_Sistema
             txtEmail.Text = Organizacion.Email;
             txtDireccionweb.Text = Organizacion.DireccionWeb;
             txtCuit.Text = Organizacion.CUIT;
+            if (Organizacion.PiletaAsociada != null)
+            {
+                checkboxPileta.Enabled = true;
+                checkboxPileta.Checked = true;
+                txtPiletaDir.Text = Organizacion.PiletaAsociada.Direccion;
+                numupPiletaCarril.Value = Convert.ToDecimal(Organizacion.PiletaAsociada.Carriles);
+                switch (Organizacion.PiletaAsociada.Metros)
+                {
+                    case 20: rb20mts.Checked = true; break;
+                    case 25: rb25mts.Checked = true; break;
+                    case 50: rb50mts.Checked = true; break;
+                    default:
+                        break;
+                }
+
+                groupBox1.Enabled = false;
+            }
+            else
+            {
+                LimpiarGroupbox();
+                checkboxPileta.Enabled = false;
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarControles();
+            LimpiarGroupbox();
+            checkboxPileta.Enabled = true;
+        }
+
+        private void checkboxPileta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkboxPileta.Checked)
+            {
+                groupBox1.Visible = true;
+                groupBox1.Enabled = true;
+            }
+            else
+            {
+                groupBox1.Visible = false;
+                groupBox1.Enabled = false;
+            }
+
         }
     }
 }
