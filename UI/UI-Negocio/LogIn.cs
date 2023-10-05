@@ -56,7 +56,6 @@ namespace UI
 
 
         BLL_Traductor traductor;
-        public RegexValidation re = new RegexValidation();
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -68,12 +67,12 @@ namespace UI
                 errorProvider1.SetError(txtClaveLog, "");
                 bool errorFlag = false;
 
-                if (!re.validarDni(txtDniLog.Text))
+                if (!RegexValidation.validarDni(txtDniLog.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtDniLog, "Valor ingresado incorrecto");
                 }
-                if (!re.validarPassword(txtClaveLog.Text))
+                if (!RegexValidation.validarPassword(txtClaveLog.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtClaveLog, "Valor ingresado incorrecto");

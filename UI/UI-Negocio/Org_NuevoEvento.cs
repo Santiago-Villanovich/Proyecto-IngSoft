@@ -16,6 +16,7 @@ namespace UI.UI_Negocio
     public partial class Org_NuevoEvento : Form
     {
         List<Categoria> categorias;
+        public RegexValidation re = new RegexValidation();
 
         public Org_NuevoEvento()
         {
@@ -117,6 +118,85 @@ namespace UI.UI_Negocio
             {
 
                 throw;
+            }
+        }
+
+        private void btnPublicar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                #region(ErrorProvider)
+                errorProvider1.Clear();
+                errorProvider1.SetError(richtextDetalleEvento, "");
+                errorProvider1.SetError(cboxPileta, "");
+                errorProvider1.SetError(txtTiempo, "");
+                errorProvider1.SetError(txtMetros, "");
+
+                bool errorFlag = false;
+
+                if (richtextDetalleEvento.Text == string.Empty)
+                {
+                    errorProvider1.SetError(richtextDetalleEvento, "Debe escribir una descripcion");
+                    return;
+                }
+                if (cboxPileta.SelectedItem == null)
+                {
+                    errorProvider1.SetError(cboxPileta, "Debe seleccionar una pileta para el evento");
+                    return;
+                }
+                if (rbNataTiempo.Checked == true && txtTiempo)
+                {
+                    errorProvider1.SetError(cboxPileta, "Debe seleccionar una pileta para el evento");
+                    return;
+                }
+
+                #endregion
+
+                if (rbNataMetros.Checked)
+                {
+
+                }
+                else if (rbNataTiempo.Checked)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbNataTiempo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbNataTiempo.Checked)
+            {
+                txtTiempo.Visible = true;
+                txtTiempo.Enabled = true;
+            }
+            else
+            {
+                txtTiempo.Visible = false;
+                txtTiempo.Enabled = false;
+            }
+        }
+
+        private void rbNataMetros_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbNataMetros.Checked)
+            {
+                txtMetros.Visible = true;
+                txtMetros.Enabled = true;
+            }
+            else
+            {
+                txtMetros.Visible = false;
+                txtMetros.Enabled = false;
             }
         }
     }

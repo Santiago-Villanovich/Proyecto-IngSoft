@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class RegexValidation
+    public static class RegexValidation
     {
-        public bool validarPassword(string password)
+        public static bool validarPassword(string password)
         {
             if (string.IsNullOrEmpty(password))
             {
@@ -29,7 +29,7 @@ namespace Services
             }
         }
 
-        public bool validarNombre(string nombre)
+        public static bool validarNombre(string nombre)
         {
             if (string.IsNullOrEmpty(nombre))
             {
@@ -49,7 +49,7 @@ namespace Services
             }
         }
 
-        public bool validarEmail(string email)
+        public static bool validarEmail(string email)
         {
             if (string.IsNullOrEmpty(email))
             {
@@ -69,7 +69,7 @@ namespace Services
             }
         }
 
-        public bool validarTelefono(string tel)
+        public static bool validarTelefono(string tel)
         {
             if (string.IsNullOrEmpty(tel))
             {
@@ -89,7 +89,7 @@ namespace Services
             }
         }
 
-        public bool validarPalabra(string palabra)
+        public static bool validarPalabra(string palabra)
         {
             if (string.IsNullOrEmpty(palabra))
             {
@@ -109,7 +109,7 @@ namespace Services
             }
         }
 
-        public bool validarDni(string dni)
+        public static bool validarDni(string dni)
         {
             if (string.IsNullOrEmpty(dni))
             {
@@ -129,7 +129,7 @@ namespace Services
             }
         }
 
-        public bool validarCUIT(string dni)
+        public static bool validarCUIT(string dni)
         {
             if (string.IsNullOrEmpty(dni))
             {
@@ -148,5 +148,26 @@ namespace Services
                 }
             }
         }
+
+        public static bool validarNum(string texto)
+        {
+            if (string.IsNullOrEmpty(texto))
+            {
+                return false;
+            }
+            else
+            {
+                Regex re = new Regex(@"^\d*$");
+                if (re.IsMatch(texto))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Debe ingresar un numero valido");
+                }
+            }
+        }
+
     }
 }

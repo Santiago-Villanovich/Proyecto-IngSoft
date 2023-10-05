@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,16 +52,22 @@
             this.label9 = new System.Windows.Forms.Label();
             this.listboxCategorias = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTiempo = new System.Windows.Forms.TextBox();
             this.rbNataTiempo = new System.Windows.Forms.RadioButton();
             this.rbNataMetros = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPublicar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.txtMetros = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numupCoste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMax)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -114,7 +121,7 @@
             // checkElementos
             // 
             this.checkElementos.AutoSize = true;
-            this.checkElementos.Location = new System.Drawing.Point(28, 223);
+            this.checkElementos.Location = new System.Drawing.Point(419, 157);
             this.checkElementos.Name = "checkElementos";
             this.checkElementos.Size = new System.Drawing.Size(198, 27);
             this.checkElementos.TabIndex = 8;
@@ -171,13 +178,14 @@
             // 
             this.numupEdadMin.Location = new System.Drawing.Point(97, 86);
             this.numupEdadMin.Maximum = new decimal(new int[] {
-            110,
+            1000,
             0,
             0,
             0});
             this.numupEdadMin.Name = "numupEdadMin";
             this.numupEdadMin.Size = new System.Drawing.Size(74, 28);
             this.numupEdadMin.TabIndex = 17;
+            this.numupEdadMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numupEdadMin.ValueChanged += new System.EventHandler(this.numupEdadMin_ValueChanged);
             // 
             // label10
@@ -204,13 +212,14 @@
             // 
             this.numupEdadMax.Location = new System.Drawing.Point(228, 86);
             this.numupEdadMax.Maximum = new decimal(new int[] {
-            110,
+            1000,
             0,
             0,
             0});
             this.numupEdadMax.Name = "numupEdadMax";
             this.numupEdadMax.Size = new System.Drawing.Size(74, 28);
             this.numupEdadMax.TabIndex = 20;
+            this.numupEdadMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
             // 
@@ -247,7 +256,7 @@
             this.groupBox1.Controls.Add(this.numupEdadMin);
             this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.groupBox1.Location = new System.Drawing.Point(365, 334);
+            this.groupBox1.Location = new System.Drawing.Point(365, 359);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(747, 244);
             this.groupBox1.TabIndex = 24;
@@ -294,7 +303,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtMetros);
+            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtTiempo);
             this.groupBox2.Controls.Add(this.rbNataTiempo);
             this.groupBox2.Controls.Add(this.rbNataMetros);
             this.groupBox2.Controls.Add(this.cboxEstilo);
@@ -306,39 +318,42 @@
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.groupBox2.Location = new System.Drawing.Point(365, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(747, 287);
+            this.groupBox2.Size = new System.Drawing.Size(747, 328);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Natacion";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // textBox1
+            // txtTiempo
             // 
-            this.textBox1.Location = new System.Drawing.Point(456, 155);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 28);
-            this.textBox1.TabIndex = 16;
+            this.txtTiempo.Location = new System.Drawing.Point(281, 219);
+            this.txtTiempo.Name = "txtTiempo";
+            this.txtTiempo.Size = new System.Drawing.Size(69, 28);
+            this.txtTiempo.TabIndex = 16;
             // 
             // rbNataTiempo
             // 
             this.rbNataTiempo.AutoSize = true;
-            this.rbNataTiempo.Location = new System.Drawing.Point(456, 48);
+            this.rbNataTiempo.Location = new System.Drawing.Point(28, 220);
             this.rbNataTiempo.Name = "rbNataTiempo";
             this.rbNataTiempo.Size = new System.Drawing.Size(224, 27);
             this.rbNataTiempo.TabIndex = 14;
             this.rbNataTiempo.TabStop = true;
             this.rbNataTiempo.Text = "Competencia por tiempo";
             this.rbNataTiempo.UseVisualStyleBackColor = true;
+            this.rbNataTiempo.CheckedChanged += new System.EventHandler(this.rbNataTiempo_CheckedChanged);
             // 
             // rbNataMetros
             // 
             this.rbNataMetros.AutoSize = true;
-            this.rbNataMetros.Location = new System.Drawing.Point(456, 87);
+            this.rbNataMetros.Location = new System.Drawing.Point(28, 259);
             this.rbNataMetros.Name = "rbNataMetros";
             this.rbNataMetros.Size = new System.Drawing.Size(224, 27);
             this.rbNataMetros.TabIndex = 13;
             this.rbNataMetros.TabStop = true;
             this.rbNataMetros.Text = "Competencia por metros";
             this.rbNataMetros.UseVisualStyleBackColor = true;
+            this.rbNataMetros.CheckedChanged += new System.EventHandler(this.rbNataMetros_CheckedChanged);
             // 
             // label7
             // 
@@ -350,14 +365,48 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "$";
             // 
-            // button1
+            // btnPublicar
             // 
-            this.button1.Location = new System.Drawing.Point(116, 517);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 61);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPublicar.Location = new System.Drawing.Point(116, 517);
+            this.btnPublicar.Name = "btnPublicar";
+            this.btnPublicar.Size = new System.Drawing.Size(153, 61);
+            this.btnPublicar.TabIndex = 26;
+            this.btnPublicar.Text = "Publicar evento";
+            this.btnPublicar.UseVisualStyleBackColor = true;
+            this.btnPublicar.Click += new System.EventHandler(this.btnPublicar_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(415, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(201, 23);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Participantes por equipo";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(419, 80);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(197, 28);
+            this.numericUpDown1.TabIndex = 28;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtMetros
+            // 
+            this.txtMetros.Location = new System.Drawing.Point(281, 258);
+            this.txtMetros.Name = "txtMetros";
+            this.txtMetros.Size = new System.Drawing.Size(69, 28);
+            this.txtMetros.TabIndex = 29;
             // 
             // Org_NuevoEvento
             // 
@@ -365,7 +414,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1124, 615);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPublicar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -386,6 +435,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,7 +470,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton rbNataTiempo;
         private System.Windows.Forms.RadioButton rbNataMetros;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtTiempo;
+        private System.Windows.Forms.Button btnPublicar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtMetros;
     }
 }

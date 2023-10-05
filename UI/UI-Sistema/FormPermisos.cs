@@ -13,7 +13,6 @@ namespace UI
     {
         List<Componente> _permisos = new List<Componente>();
         List<Componente> componentesSeleccionados = new List<Componente>();
-        RegexValidation regex = new RegexValidation();
         BLL_Traductor traductor;
 
         private void TraducirForm(IIdioma idioma = null)
@@ -94,7 +93,7 @@ namespace UI
         {
             try
             {
-                if (!regex.validarPalabra(textBox1.Text))
+                if (!RegexValidation.validarPalabra(textBox1.Text))
                 {
                     MessageBox.Show("El permiso debe tener un nombre ingresado valido");
                     return;

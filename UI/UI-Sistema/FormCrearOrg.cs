@@ -42,7 +42,6 @@ namespace UI.UI_Sistema
         public FormCrearOrg()
         {
             InitializeComponent();
-            re = new RegexValidation();
             bllOrg = new BLL_Org();
             Organizacion = null;
 
@@ -68,17 +67,17 @@ namespace UI.UI_Sistema
 
 
                     bool errorFlag = false;
-                    if (!re.validarNombre(txtNombre.Text))
+                    if (!RegexValidation.validarNombre(txtNombre.Text))
                     {
                         errorFlag = true;
                         errorProvider1.SetError(txtNombre, "El campo es obligatorio");
                     }
-                    if (!re.validarCUIT(txtCuit.Text))
+                    if (!RegexValidation.validarCUIT(txtCuit.Text))
                     {
                         errorFlag = true;
                         errorProvider1.SetError(txtCuit, "El campo es obligatorio");
                     }
-                    if (!re.validarEmail(txtEmail.Text))
+                    if (!RegexValidation.validarEmail(txtEmail.Text))
                     {
                         errorFlag = true;
                         errorProvider1.SetError(txtEmail, "El campo es obligatorio");

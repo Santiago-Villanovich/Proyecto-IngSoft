@@ -156,7 +156,7 @@ namespace UI
         {
             try
             {
-                if (new RegexValidation().validarNombre(textBox1.Text))
+                if (RegexValidation.validarNombre(textBox1.Text))
                 {
                     rbAgregar.Enabled = false;
                     rbModificar.Enabled = false;

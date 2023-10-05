@@ -67,7 +67,6 @@ namespace UI
         BLL_User usuario;
         BLL_DigitoVerificador bllDV;
 
-        RegexValidation reg = new RegexValidation();
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -83,15 +82,15 @@ namespace UI
                     Clave = userNew.Clave
                 };
 
-                if (reg.validarNombre(txtNombre.Text))
+                if (RegexValidation.validarNombre(txtNombre.Text))
                 {
                     userNew.Nombre = txtNombre.Text;
                 }
-                if (reg.validarNombre(txtApellido.Text))
+                if (RegexValidation.validarNombre(txtApellido.Text))
                 {
                     userNew.Apellido = txtApellido.Text;
                 }
-                if (reg.validarPassword(txtClave.Text))
+                if (RegexValidation.validarPassword(txtClave.Text))
                 {
                     userNew.Clave = new HashCrypto().GenerarMD5(txtClave.Text);
                 }

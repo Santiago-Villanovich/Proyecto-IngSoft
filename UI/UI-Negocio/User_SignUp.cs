@@ -18,7 +18,6 @@ namespace UI.UI_Negocio
     public partial class User_SignUp : Form
     {
         BLL_Traductor traductor;
-        public RegexValidation re = new RegexValidation();
 
         private void TraducirForm(IIdioma idioma = null)
         {
@@ -75,32 +74,32 @@ namespace UI.UI_Negocio
                 errorProvider1.SetError(dtNacimiento, "");
 
                 bool errorFlag = false;
-                if (!re.validarNombre(txtNombreSign.Text))
+                if (!RegexValidation.validarNombre(txtNombreSign.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtNombreSign, "El campo es obligatorio");
                 }
-                if (!re.validarNombre(txtApellidoSign.Text))
+                if (!RegexValidation.validarNombre(txtApellidoSign.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtApellidoSign, "El campo es obligatorio");
                 }
-                if (!re.validarDni(txtDniSign.Text))
+                if (!RegexValidation.validarDni(txtDniSign.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtDniSign, "El campo es obligatorio");
                 }
-                if (!re.validarPassword(txtClaveSign.Text))
+                if (!RegexValidation.validarPassword(txtClaveSign.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtClaveSign, "El campo es obligatorio");
                 }
-                if (!re.validarTelefono(txtTelefono.Text))
+                if (!RegexValidation.validarTelefono(txtTelefono.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtTelefono, "El campo es obligatorio");
                 }
-                if (!re.validarEmail(txtEmail.Text))
+                if (!RegexValidation.validarEmail(txtEmail.Text))
                 {
                     errorFlag = true;
                     errorProvider1.SetError(txtEmail, "El campo es obligatorio");
