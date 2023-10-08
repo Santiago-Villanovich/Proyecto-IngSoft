@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Deporte.cs" />
     <Compile Include="Equipo.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Natacion.cs" />

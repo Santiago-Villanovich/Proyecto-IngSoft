@@ -22,3 +22,9 @@ G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\obj\Debug\ABS.csp
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\obj\Debug\ABS.csproj.CoreCompileInputs.cache
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\obj\Debug\ABS.dll
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\ABS\obj\Debug\ABS.pdb
+C:\Universidad\Diploma\Proyecto\ABS\bin\Debug\ABS.dll
+C:\Universidad\Diploma\Proyecto\ABS\bin\Debug\ABS.pdb
+C:\Universidad\Diploma\Proyecto\ABS\obj\Debug\ABS.csproj.AssemblyReference.cache
+C:\Universidad\Diploma\Proyecto\ABS\obj\Debug\ABS.csproj.CoreCompileInputs.cache
+C:\Universidad\Diploma\Proyecto\ABS\obj\Debug\ABS.dll
+C:\Universidad\Diploma\Proyecto\ABS\obj\Debug\ABS.pdb

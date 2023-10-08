@@ -17,7 +17,6 @@ namespace UI.UI_Sistema
     public partial class FormCrearOrg : Form
     {
         Organizacion Organizacion;
-        RegexValidation re;
         BLL_Org bllOrg;
         
         private void LimpiarControles()

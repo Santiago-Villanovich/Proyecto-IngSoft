@@ -42,7 +42,6 @@
             this.cboxEstilo = new System.Windows.Forms.ComboBox();
             this.numupEdadMin = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.lblNombreCat = new System.Windows.Forms.Label();
             this.numupEdadMax = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.btnAgregarCat = new System.Windows.Forms.Button();
@@ -52,22 +51,26 @@
             this.label9 = new System.Windows.Forms.Label();
             this.listboxCategorias = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtMetros = new System.Windows.Forms.TextBox();
+            this.numupParticipantes = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtTiempo = new System.Windows.Forms.TextBox();
             this.rbNataTiempo = new System.Windows.Forms.RadioButton();
             this.rbNataMetros = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.btnPublicar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.txtMetros = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.numupCupos = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numupCoste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMax)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numupParticipantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numupCupos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,7 +124,7 @@
             // checkElementos
             // 
             this.checkElementos.AutoSize = true;
-            this.checkElementos.Location = new System.Drawing.Point(419, 157);
+            this.checkElementos.Location = new System.Drawing.Point(419, 219);
             this.checkElementos.Name = "checkElementos";
             this.checkElementos.Size = new System.Drawing.Size(198, 27);
             this.checkElementos.TabIndex = 8;
@@ -176,7 +179,7 @@
             // 
             // numupEdadMin
             // 
-            this.numupEdadMin.Location = new System.Drawing.Point(97, 86);
+            this.numupEdadMin.Location = new System.Drawing.Point(143, 86);
             this.numupEdadMin.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -198,19 +201,9 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "Categoria: ";
             // 
-            // lblNombreCat
-            // 
-            this.lblNombreCat.AutoSize = true;
-            this.lblNombreCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCat.Location = new System.Drawing.Point(126, 42);
-            this.lblNombreCat.Name = "lblNombreCat";
-            this.lblNombreCat.Size = new System.Drawing.Size(22, 22);
-            this.lblNombreCat.TabIndex = 19;
-            this.lblNombreCat.Text = "A";
-            // 
             // numupEdadMax
             // 
-            this.numupEdadMax.Location = new System.Drawing.Point(228, 86);
+            this.numupEdadMax.Location = new System.Drawing.Point(274, 86);
             this.numupEdadMax.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -224,7 +217,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 88);
+            this.label12.Location = new System.Drawing.Point(48, 91);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 23);
             this.label12.TabIndex = 22;
@@ -233,9 +226,9 @@
             // btnAgregarCat
             // 
             this.btnAgregarCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnAgregarCat.Location = new System.Drawing.Point(146, 149);
+            this.btnAgregarCat.Location = new System.Drawing.Point(143, 149);
             this.btnAgregarCat.Name = "btnAgregarCat";
-            this.btnAgregarCat.Size = new System.Drawing.Size(156, 51);
+            this.btnAgregarCat.Size = new System.Drawing.Size(205, 51);
             this.btnAgregarCat.TabIndex = 23;
             this.btnAgregarCat.Text = "Agregar categoria";
             this.btnAgregarCat.UseVisualStyleBackColor = true;
@@ -244,6 +237,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.groupBox1.Controls.Add(this.txtCategoria);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnDeshacerCat);
             this.groupBox1.Controls.Add(this.label9);
@@ -251,7 +245,6 @@
             this.groupBox1.Controls.Add(this.btnAgregarCat);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.numupEdadMax);
-            this.groupBox1.Controls.Add(this.lblNombreCat);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.numupEdadMin);
             this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
@@ -266,7 +259,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(191, 88);
+            this.label4.Location = new System.Drawing.Point(237, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 23);
             this.label4.TabIndex = 27;
@@ -277,7 +270,7 @@
             this.btnDeshacerCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.btnDeshacerCat.Location = new System.Drawing.Point(29, 149);
             this.btnDeshacerCat.Name = "btnDeshacerCat";
-            this.btnDeshacerCat.Size = new System.Drawing.Size(110, 51);
+            this.btnDeshacerCat.Size = new System.Drawing.Size(95, 51);
             this.btnDeshacerCat.TabIndex = 26;
             this.btnDeshacerCat.Text = "Deshacer";
             this.btnDeshacerCat.UseVisualStyleBackColor = true;
@@ -303,8 +296,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.groupBox2.Controls.Add(this.numupCupos);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtMetros);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.numupParticipantes);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtTiempo);
             this.groupBox2.Controls.Add(this.rbNataTiempo);
@@ -323,6 +318,45 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Natacion";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtMetros
+            // 
+            this.txtMetros.Location = new System.Drawing.Point(281, 258);
+            this.txtMetros.Name = "txtMetros";
+            this.txtMetros.Size = new System.Drawing.Size(69, 28);
+            this.txtMetros.TabIndex = 29;
+            // 
+            // numupParticipantes
+            // 
+            this.numupParticipantes.Location = new System.Drawing.Point(419, 80);
+            this.numupParticipantes.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numupParticipantes.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numupParticipantes.Name = "numupParticipantes";
+            this.numupParticipantes.Size = new System.Drawing.Size(197, 28);
+            this.numupParticipantes.TabIndex = 28;
+            this.numupParticipantes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numupParticipantes.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(415, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(201, 23);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Participantes por equipo";
             // 
             // txtTiempo
             // 
@@ -379,34 +413,44 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label8
+            // txtCategoria
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(415, 50);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(201, 23);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Participantes por equipo";
+            this.txtCategoria.Location = new System.Drawing.Point(143, 40);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(205, 28);
+            this.txtCategoria.TabIndex = 28;
             // 
-            // numericUpDown1
+            // label11
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(419, 80);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10,
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(415, 126);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 23);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Cupos total";
+            // 
+            // numupCupos
+            // 
+            this.numupCupos.Location = new System.Drawing.Point(419, 156);
+            this.numupCupos.Maximum = new decimal(new int[] {
+            1000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(197, 28);
-            this.numericUpDown1.TabIndex = 28;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtMetros
-            // 
-            this.txtMetros.Location = new System.Drawing.Point(281, 258);
-            this.txtMetros.Name = "txtMetros";
-            this.txtMetros.Size = new System.Drawing.Size(69, 28);
-            this.txtMetros.TabIndex = 29;
+            this.numupCupos.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numupCupos.Name = "numupCupos";
+            this.numupCupos.Size = new System.Drawing.Size(197, 28);
+            this.numupCupos.TabIndex = 31;
+            this.numupCupos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numupCupos.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Org_NuevoEvento
             // 
@@ -435,8 +479,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numupParticipantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numupCupos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +502,6 @@
         private System.Windows.Forms.ComboBox cboxEstilo;
         private System.Windows.Forms.NumericUpDown numupEdadMin;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblNombreCat;
         private System.Windows.Forms.NumericUpDown numupEdadMax;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnAgregarCat;
@@ -473,8 +517,11 @@
         private System.Windows.Forms.TextBox txtTiempo;
         private System.Windows.Forms.Button btnPublicar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numupParticipantes;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMetros;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.NumericUpDown numupCupos;
+        private System.Windows.Forms.Label label11;
     }
 }

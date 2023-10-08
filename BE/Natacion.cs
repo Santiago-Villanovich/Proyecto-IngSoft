@@ -8,7 +8,6 @@ namespace BE
 {
     public interface Natacion: Deporte
     {
-        int id { get; set; }
         string Estilo { get; set; }
         bool Elementos { get; set; }
         int cantidad_integrantes_equipo { get; set; }

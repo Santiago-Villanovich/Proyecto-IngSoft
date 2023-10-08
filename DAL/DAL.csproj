@@ -44,8 +44,10 @@
   <ItemGroup>
     <Compile Include="DAL_Bitacora.cs" />
     <Compile Include="DAL_DigitoVerificador.cs" />
+    <Compile Include="DAL_Evento.cs" />
     <Compile Include="DAL_Org.cs" />
     <Compile Include="DAL_Pileta.cs" />
+    <Compile Include="DAL_DeporteNatacion.cs" />
     <Compile Include="DAL_Traductor.cs" />
     <Compile Include="DAL_Permisos.cs" />
     <Compile Include="DAL_User.cs" />

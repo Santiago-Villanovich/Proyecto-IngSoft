@@ -12,13 +12,11 @@ namespace BE
         public DateTime Fecha { get; set; }
         public string Descripcion { get; set; }
         public double ValorInscripcion { get; set; }
-        public Array Categorias { get;}
+        public List<Categoria> Categorias { get; set; }
         public Deporte Deporte { get; set; }
+        public int cupo { get; set; }
         
-        public bool SetCategoria()
-        {
-            return false;
-        }
+        public Evento() { }
     }
 
     public class Categoria

@@ -8,5 +8,7 @@ namespace BE
 {
     public interface Deporte
     {
+        int id_deporte {  get; set; }
+        int id_tipo { get; set; }
     }
 }

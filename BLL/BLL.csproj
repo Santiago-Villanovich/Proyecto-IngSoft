@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL_Bitacora.cs" />
+    <Compile Include="BLL_DeporteNatacion.cs" />
     <Compile Include="BLL_DigitoVerificador.cs" />
+    <Compile Include="BLL_Evento.cs" />
     <Compile Include="BLL_Org.cs" />
     <Compile Include="BLL_Permisos.cs" />
     <Compile Include="BLL_Pileta.cs" />
