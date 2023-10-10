@@ -184,3 +184,6 @@ C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_SignUp.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_NuevoEvento.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Sistema.FormCrearOrg.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Sistema.FormUsuarioOrg.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.Org_EventoDisplay.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_EventosProgramados.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_Inicio.resources

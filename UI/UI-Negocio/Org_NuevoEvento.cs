@@ -19,6 +19,7 @@ namespace UI.UI_Negocio
         List<Categoria> categorias;
         Evento evento;
         BLL_Evento bllEvento;
+        BLL_DeporteNatacion bllNata;
 
         private bool ValidarNomCategoria(string nom)
         {
@@ -46,13 +47,26 @@ namespace UI.UI_Negocio
                 return false;
             }
         }
+        private void Limpiar()
+        {
+            txtNombre.Text = string.Empty;
+            rbNataMetros.Checked = false;
+            rbNataTiempo.Checked = false;
+            checkElementos.Checked = false;
+            numupCoste.Value = 0;
+            numupCupos.Value = 0;
+            richtextDetalleEvento.Text = string.Empty;
+            evento = null;
+            categorias.Clear();
 
+        }
         public Org_NuevoEvento()
         {
             InitializeComponent();
 
             categorias = new List<Categoria>();
             bllEvento = new BLL_Evento();
+            bllNata = new BLL_DeporteNatacion();
 
 
             cboxEstilo.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -171,6 +185,7 @@ namespace UI.UI_Negocio
                 errorProvider1.SetError(txtTiempo, "");
                 errorProvider1.SetError(txtMetros, "");
                 errorProvider1.SetError(numupCupos, "");
+                errorProvider1.SetError(txtNombre, "");
 
                 bool errorFlag = false;
 
@@ -199,6 +214,11 @@ namespace UI.UI_Negocio
                     errorProvider1.SetError(numupCupos, "Debe definir el total de cupos");
                     errorFlag = true;
                 }
+                if (txtNombre.Text.Length == 0)
+                {
+                    errorProvider1.SetError(txtNombre, "El evento debe tener un nombre");
+                    errorFlag = true;
+                }
                 if (categorias.Count == 0)
                 {
                     errorFlag = true;
@@ -211,6 +231,7 @@ namespace UI.UI_Negocio
                 if (!errorFlag)
                 {
                     evento = new Evento();
+                    evento.nombre = txtNombre.Text;
                     evento.Organizacion = Session.GetInstance.Usuario.Organizacion;
                     evento.Descripcion = richtextDetalleEvento.Text;
                     evento.Fecha = dateTimePicker1.Value;
@@ -218,6 +239,7 @@ namespace UI.UI_Negocio
                     evento.Categorias = categorias;
                     evento.cupo = Convert.ToInt32(numupCupos.Value);
 
+                    int idEvent = bllEvento.InsertAndInt(evento);
 
                     if (rbNataMetros.Checked)
                     {
@@ -230,8 +252,7 @@ namespace UI.UI_Negocio
                             cantidad_integrantes_equipo =Convert.ToInt32(numupParticipantes.Value)
                         };
 
-                        postaM.id_deporte = new BLL_DeporteNatacion().InsertPostaMetros(postaM);
-                        evento.Deporte = postaM;
+                        bllNata.InsertPostaMetros(postaM,idEvent);
 
                     }
                     else if (rbNataTiempo.Checked)
@@ -245,14 +266,11 @@ namespace UI.UI_Negocio
                             cantidad_integrantes_equipo = Convert.ToInt32(numupParticipantes.Value)
                         };
 
-                        postaT.id_deporte = new BLL_DeporteNatacion().InsertPostaTiempo(postaT);
-                        evento.Deporte = postaT;
+                        bllNata.InsertPostaTiempo(postaT,idEvent);
                     }
 
-                    if (bllEvento.Insert(evento))
-                    {
-                        MessageBox.Show("Se registro el evento exitosamente, podra verlo en el apartado de 'Eventos Programados' ");
-                    }
+                    Limpiar();
+                    MessageBox.Show("Su evento se ha registrado exitosamente, podra verlo en el apartado de eventos programados"); 
                     
                 }
                 else
@@ -283,6 +301,7 @@ namespace UI.UI_Negocio
             {
                 txtTiempo.Visible = false;
                 txtTiempo.Enabled = false;
+                txtTiempo.Text = string.Empty;
             }
         }
 
@@ -297,6 +316,7 @@ namespace UI.UI_Negocio
             {
                 txtMetros.Visible = false;
                 txtMetros.Enabled = false;
+                txtMetros.Text = string.Empty;
             }
         }
     }

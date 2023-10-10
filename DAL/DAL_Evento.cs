@@ -27,7 +27,55 @@ namespace DAL
 
         public List<Evento> GetAll()
         {
-            throw new NotImplementedException();
+
+            using (SqlConnection conn = _conn)
+            {
+                List<Evento> list = new List<Evento>();
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetAllEvento", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var evento = new Evento()
+                            {
+                                id = Convert.ToInt32(reader["id_org"]),
+                                nombre = reader["nombre"].ToString(),
+                                Descripcion = reader["descripcion"].ToString(),
+                                Fecha = Convert.ToDateTime(reader["fecha"].ToString()),
+                                cupo = Convert.ToInt32(reader["cupos"].ToString()),
+                                ValorInscripcion = Convert.ToDouble(reader["coste_inscripcion"].ToString()),
+                                estado = reader["estado"].ToString(),
+
+                                Organizacion = new Organizacion()
+                                {
+                                    id = Convert.ToInt32(reader["id_org"].ToString()),
+                                    Nombre = reader["nombre"].ToString(),
+                                    CUIT = reader["cuit"].ToString(),
+                                    Email = reader["email"].ToString(),
+                                    DireccionWeb = reader["direccion_web"].ToString()
+                                }
+
+                            };
+
+                            list.Add(evento);
+                        }
+                    }
+
+                    return list;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
 
         public bool Insert(Evento obj)
@@ -40,20 +88,92 @@ namespace DAL
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idOrg", obj.Organizacion.id);
+                    cmd.Parameters.AddWithValue("@nom", obj.nombre);
                     cmd.Parameters.AddWithValue("@desc", obj.Descripcion );
                     cmd.Parameters.AddWithValue("@fecha", obj.Fecha);
                     cmd.Parameters.AddWithValue("@coste", obj.ValorInscripcion);
-                    cmd.Parameters.AddWithValue("@idDeporte", obj.Deporte.id_deporte);
+                    cmd.Parameters.AddWithValue("@idDeporte", 1);
                     cmd.Parameters.AddWithValue("@cupo",obj.cupo );
 
-                    conn.Open();
+                    SqlParameter returno = new SqlParameter();
+                    returno.Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add(returno);
 
+                    conn.Open();
                     cmd.ExecuteNonQuery();
+
+                    int idEvento = (int)returno.Value;
+
+                    foreach (Categoria c in obj.Categorias)
+                    {
+                        SqlCommand cmd2 = new SqlCommand("sp_InsertCategoria", conn);
+
+                        cmd2.CommandType = CommandType.StoredProcedure;
+                        cmd2.Parameters.AddWithValue("@idEvento", idEvento);
+                        cmd2.Parameters.AddWithValue("@Nom", c.Nombre);
+                        cmd2.Parameters.AddWithValue("@EdadMin", c.EdadInicio);
+                        cmd2.Parameters.AddWithValue("@EdadMax", c.EdadFin);
+
+                        cmd2.ExecuteNonQuery();
+                    }
+
                     return true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public int InsertAndInt(Evento obj)
+        {
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_InsertEvento", conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idOrg", obj.Organizacion.id);
+                    cmd.Parameters.AddWithValue("@nom", obj.nombre);
+                    cmd.Parameters.AddWithValue("@desc", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("@fecha", obj.Fecha);
+                    cmd.Parameters.AddWithValue("@coste", obj.ValorInscripcion);
+                    cmd.Parameters.AddWithValue("@idDeporte", 1);
+                    cmd.Parameters.AddWithValue("@cupo", obj.cupo);
+
+                    SqlParameter returno = new SqlParameter();
+                    returno.Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add(returno);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    int idEvento = (int)returno.Value;
+
+                    foreach (Categoria c in obj.Categorias)
+                    {
+                        SqlCommand cmd2 = new SqlCommand("sp_InsertCategoria", conn);
+
+                        cmd2.CommandType = CommandType.StoredProcedure;
+                        cmd2.Parameters.AddWithValue("@IdEvento", idEvento);
+                        cmd2.Parameters.AddWithValue("@Nombre", c.Nombre);
+                        cmd2.Parameters.AddWithValue("@EdadMin", c.EdadInicio);
+                        cmd2.Parameters.AddWithValue("@EdadMax", c.EdadFin);
+
+                        cmd2.ExecuteNonQuery();
+                    }
+
+                    return idEvento;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
                 finally
                 {
@@ -68,5 +188,6 @@ namespace DAL
         }
 
         
+
     }
 }

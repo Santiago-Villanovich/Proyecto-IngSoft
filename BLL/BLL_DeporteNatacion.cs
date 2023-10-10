@@ -12,14 +12,14 @@ namespace BLL
 {
     public class BLL_DeporteNatacion
     {
-        public int InsertPostaMetros(Natacion_PostaMetros obj)
+        public bool InsertPostaMetros(Natacion_PostaMetros obj, int idEvento)
         {
-            return new DAL_DeporteNatacion().InsertPostaMetros(obj);
+            return new DAL_DeporteNatacion().InsertPostaMetros(obj, idEvento);
         }
 
-        public int InsertPostaTiempo(Natacion_PostaTiempo obj)
+        public  bool InsertPostaTiempo(Natacion_PostaTiempo obj, int idEvento)
         {
-            return new DAL_DeporteNatacion().InsertPostaTiempo(obj);
+            return new DAL_DeporteNatacion().InsertPostaTiempo(obj, idEvento);
         }
     }
 }

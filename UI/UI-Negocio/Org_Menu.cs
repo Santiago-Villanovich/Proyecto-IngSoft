@@ -55,5 +55,15 @@ namespace UI
             FormConfiguracion form = new FormConfiguracion();
             form.ShowDialog();
         }
+
+        private void btnEventosProgramados_Click(object sender, EventArgs e)
+        {
+            CargarMenuContenedor(new Org_EventosProgramados());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            CargarMenuContenedor(new Org_Inicio());
+        }
     }
 }

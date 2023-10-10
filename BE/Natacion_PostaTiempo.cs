@@ -14,7 +14,7 @@ namespace BE
         public bool Elementos { get; set; }
         public Pileta Pileta { get; set; }
         public int cantidad_integrantes_equipo { get; set; }
-        public int id_deporte {get; set; }
+        public int id {get; set; }
         public int id_tipo { get; set; }
 
         public Natacion_PostaTiempo() { }

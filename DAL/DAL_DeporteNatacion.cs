@@ -14,7 +14,7 @@ namespace DAL
     {
         private SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString);
 
-        public int InsertPostaMetros(Natacion_PostaMetros obj)
+        public bool InsertPostaMetros(Natacion_PostaMetros obj, int idEvento)
         {
             using (SqlConnection conn = _conn)
             {
@@ -25,6 +25,7 @@ namespace DAL
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_pileta", obj.Pileta.id);
+                    cmd.Parameters.AddWithValue("@id_evento", idEvento);
                     cmd.Parameters.AddWithValue("@estilo", obj.Estilo);
                     cmd.Parameters.AddWithValue("@elementos", obj.Elementos);
                     cmd.Parameters.AddWithValue("@cantIntegrantes", obj.cantidad_integrantes_equipo);
@@ -41,7 +42,7 @@ namespace DAL
                     cmd.ExecuteNonQuery();
                     idNatacion = (int)returno.Value;
 
-                    return idNatacion;
+                    return true;
                 }
                 catch (Exception)
                 {
@@ -54,7 +55,7 @@ namespace DAL
             }
         }
 
-        public int InsertPostaTiempo(Natacion_PostaTiempo obj)
+        public bool InsertPostaTiempo(Natacion_PostaTiempo obj, int idEvento)
         {
             using (SqlConnection conn = _conn)
             {
@@ -65,6 +66,7 @@ namespace DAL
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_pileta", obj.Pileta.id);
+                    cmd.Parameters.AddWithValue("@id_evento", idEvento);
                     cmd.Parameters.AddWithValue("@estilo", obj.Estilo);
                     cmd.Parameters.AddWithValue("@elemtos", obj.Elementos);
                     cmd.Parameters.AddWithValue("@cantIntegrantes", obj.cantidad_integrantes_equipo);
@@ -74,7 +76,7 @@ namespace DAL
                     conn.Open();
 
                     idNatacion = (Int32)cmd.ExecuteScalar();
-                    return idNatacion;
+                    return true;
                 }
                 catch (Exception)
                 {
@@ -86,5 +88,8 @@ namespace DAL
                 }
             }
         }
+
+        
+
     }
 }

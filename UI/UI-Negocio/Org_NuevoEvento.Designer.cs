@@ -46,11 +46,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnAgregarCat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDeshacerCat = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.listboxCategorias = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numupCupos = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtMetros = new System.Windows.Forms.TextBox();
             this.numupParticipantes = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,24 +63,25 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnPublicar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtCategoria = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.numupCupos = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numupCoste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMax)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numupCupos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupParticipantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numupCupos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
-            this.label1.Location = new System.Drawing.Point(35, 75);
+            this.label1.Location = new System.Drawing.Point(35, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 23);
             this.label1.TabIndex = 0;
@@ -97,7 +101,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
-            this.label3.Location = new System.Drawing.Point(35, 151);
+            this.label3.Location = new System.Drawing.Point(35, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 23);
             this.label3.TabIndex = 2;
@@ -134,7 +138,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Franklin Gothic Medium", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(39, 106);
+            this.dateTimePicker1.Location = new System.Drawing.Point(39, 135);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(230, 22);
             this.dateTimePicker1.TabIndex = 9;
@@ -150,7 +154,7 @@
             // numupCoste
             // 
             this.numupCoste.DecimalPlaces = 2;
-            this.numupCoste.Location = new System.Drawing.Point(62, 179);
+            this.numupCoste.Location = new System.Drawing.Point(62, 208);
             this.numupCoste.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -256,6 +260,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Defina las Categorias";
             // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Location = new System.Drawing.Point(143, 40);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(205, 28);
+            this.txtCategoria.TabIndex = 28;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -318,6 +329,38 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Natacion";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // numupCupos
+            // 
+            this.numupCupos.Location = new System.Drawing.Point(419, 156);
+            this.numupCupos.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numupCupos.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numupCupos.Name = "numupCupos";
+            this.numupCupos.Size = new System.Drawing.Size(197, 28);
+            this.numupCupos.TabIndex = 31;
+            this.numupCupos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numupCupos.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(415, 126);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 23);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Cupos total";
             // 
             // txtMetros
             // 
@@ -393,7 +436,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
-            this.label7.Location = new System.Drawing.Point(35, 179);
+            this.label7.Location = new System.Drawing.Point(35, 208);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 23);
             this.label7.TabIndex = 12;
@@ -401,7 +444,7 @@
             // 
             // btnPublicar
             // 
-            this.btnPublicar.Location = new System.Drawing.Point(116, 517);
+            this.btnPublicar.Location = new System.Drawing.Point(116, 635);
             this.btnPublicar.Name = "btnPublicar";
             this.btnPublicar.Size = new System.Drawing.Size(153, 61);
             this.btnPublicar.TabIndex = 26;
@@ -413,51 +456,52 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtCategoria
+            // label13
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(143, 40);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(205, 28);
-            this.txtCategoria.TabIndex = 28;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
+            this.label13.Location = new System.Drawing.Point(35, 522);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(202, 23);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Subir portada del evento";
             // 
-            // label11
+            // button1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(415, 126);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 23);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "Cupos total";
+            this.button1.Location = new System.Drawing.Point(39, 548);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // numupCupos
+            // txtNombre
             // 
-            this.numupCupos.Location = new System.Drawing.Point(419, 156);
-            this.numupCupos.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numupCupos.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numupCupos.Name = "numupCupos";
-            this.numupCupos.Size = new System.Drawing.Size(197, 28);
-            this.numupCupos.TabIndex = 31;
-            this.numupCupos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numupCupos.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.txtNombre.Location = new System.Drawing.Point(39, 50);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(230, 22);
+            this.txtNombre.TabIndex = 30;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(35, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(163, 22);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Nombre del Evento";
             // 
             // Org_NuevoEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(1124, 615);
+            this.ClientSize = new System.Drawing.Size(1124, 723);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.btnPublicar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
@@ -479,9 +523,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numupCupos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupParticipantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numupCupos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,5 +567,9 @@
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.NumericUpDown numupCupos;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label13;
     }
 }

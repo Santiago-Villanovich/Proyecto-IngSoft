@@ -8,6 +8,8 @@ namespace BE
 {
     public class Evento
     {
+        public int id {  get; set; }
+        public string nombre { get; set; }
         public Organizacion Organizacion { get; set; }
         public DateTime Fecha { get; set; }
         public string Descripcion { get; set; }
@@ -15,6 +17,7 @@ namespace BE
         public List<Categoria> Categorias { get; set; }
         public Deporte Deporte { get; set; }
         public int cupo { get; set; }
+        public string estado { get; set; }
         
         public Evento() { }
     }

@@ -103,6 +103,24 @@
     <Compile Include="CalendarDayBlank.Designer.cs">
       <DependentUpon>CalendarDayBlank.cs</DependentUpon>
     </Compile>
+    <Compile Include="Org_EventoDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Org_EventoDisplay.Designer.cs">
+      <DependentUpon>Org_EventoDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI-Negocio\Org_EventosProgramados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI-Negocio\Org_EventosProgramados.Designer.cs">
+      <DependentUpon>Org_EventosProgramados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI-Negocio\Org_Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI-Negocio\Org_Inicio.Designer.cs">
+      <DependentUpon>Org_Inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI-Negocio\Org_NuevoEvento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +230,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CalendarDayBlank.resx">
       <DependentUpon>CalendarDayBlank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Org_EventoDisplay.resx">
+      <DependentUpon>Org_EventoDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI-Negocio\Org_EventosProgramados.resx">
+      <DependentUpon>Org_EventosProgramados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI-Negocio\Org_Inicio.resx">
+      <DependentUpon>Org_Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI-Negocio\Org_NuevoEvento.resx">
       <DependentUpon>Org_NuevoEvento.cs</DependentUpon>

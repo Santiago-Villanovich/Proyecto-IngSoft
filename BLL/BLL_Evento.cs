@@ -31,6 +31,11 @@ namespace BLL
             return new DAL_Evento().Insert(obj);
         }
 
+        public int InsertAndInt (Evento obj)
+        {
+            return new DAL_Evento().InsertAndInt(obj);
+        }
+
         
         public bool Update(Evento obj)
         {
