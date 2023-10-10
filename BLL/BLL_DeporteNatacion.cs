@@ -7,19 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using ABS;
 
 namespace BLL
 {
-    public class BLL_DeporteNatacion
+    public class BLL_DeporteNatacion : IMetodosGenericos<Natacion>
     {
-        public bool InsertPostaMetros(Natacion_PostaMetros obj, int idEvento)
+        public bool Delete(Natacion obj)
         {
-            return new DAL_DeporteNatacion().InsertPostaMetros(obj, idEvento);
+            throw new NotImplementedException();
         }
 
-        public  bool InsertPostaTiempo(Natacion_PostaTiempo obj, int idEvento)
+        public Natacion Get(int id)
         {
-            return new DAL_DeporteNatacion().InsertPostaTiempo(obj, idEvento);
+            throw new NotImplementedException();
+        }
+
+        public List<Natacion> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Insert(Natacion obj)
+        {
+            return new DAL_DeporteNatacion().Insert(obj);
+        }
+
+        public bool Update(Natacion obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }

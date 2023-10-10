@@ -44,8 +44,6 @@
     <Compile Include="Equipo.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Natacion.cs" />
-    <Compile Include="Natacion_PostaMetros.cs" />
-    <Compile Include="Natacion_PostaTiempo.cs" />
     <Compile Include="Organizacion.cs" />
     <Compile Include="Participante.cs" />
     <Compile Include="Pileta.cs" />

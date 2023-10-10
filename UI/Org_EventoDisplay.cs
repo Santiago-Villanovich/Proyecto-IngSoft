@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,24 @@ namespace UI
 {
     public partial class Org_EventoDisplay : UserControl
     {
-        public Org_EventoDisplay()
+        public Evento MiEvento;
+
+        public Org_EventoDisplay(Evento evento)
         {
             InitializeComponent();
+            this.MiEvento = evento;
+        }
+
+        private void Org_EventoDisplay_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void SetEvento(string Nombre, DateTime fecha, int metros, string foto = null)
+        {
+            lblNombre.Text = Nombre;
+            lblFecha.Text = fecha.ToShortDateString();
+            lblMetrosTiempo.Text = metros.ToString();
         }
     }
 }

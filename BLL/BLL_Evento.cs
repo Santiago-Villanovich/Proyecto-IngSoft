@@ -11,6 +11,7 @@ namespace BLL
 {
     public class BLL_Evento : IMetodosGenericos<Evento>
     {
+        DAL_Evento dal = new DAL_Evento();  
         public bool Delete(Evento obj)
         {
             throw new NotImplementedException();
@@ -23,17 +24,24 @@ namespace BLL
 
         public List<Evento> GetAll()
         {
-            throw new NotImplementedException();
+            List<Evento> list = dal.GetAll();
+            foreach (Evento obj in list) 
+            {
+                obj.Deporte = new DAL_DeporteNatacion().Get(obj.id);
+                obj.Categorias = dal.GetCategorias(obj.id);
+            }
+
+            return list;
         }
 
         public bool Insert(Evento obj)
         {
-            return new DAL_Evento().Insert(obj);
+            return dal.Insert(obj);
         }
 
         public int InsertAndInt (Evento obj)
         {
-            return new DAL_Evento().InsertAndInt(obj);
+            return dal.InsertAndInt(obj);
         }
 
         

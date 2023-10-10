@@ -28,58 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Org_EventoDisplay));
             this.lblFecha = new System.Windows.Forms.Label();
-            this.lblEstilo = new System.Windows.Forms.Label();
             this.lblMetrosTiempo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFecha
             // 
+            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(132, 169);
+            this.lblFecha.Font = new System.Drawing.Font("Lucida Sans Unicode", 10F, System.Drawing.FontStyle.Bold);
+            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.lblFecha.Location = new System.Drawing.Point(83, 288);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(71, 16);
+            this.lblFecha.Size = new System.Drawing.Size(126, 21);
             this.lblFecha.TabIndex = 0;
             this.lblFecha.Text = "00/00/0000";
-            // 
-            // lblEstilo
-            // 
-            this.lblEstilo.AutoSize = true;
-            this.lblEstilo.Location = new System.Drawing.Point(146, 260);
-            this.lblEstilo.Name = "lblEstilo";
-            this.lblEstilo.Size = new System.Drawing.Size(40, 16);
-            this.lblEstilo.TabIndex = 1;
-            this.lblEstilo.Text = "Estilo";
+            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMetrosTiempo
             // 
+            this.lblMetrosTiempo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMetrosTiempo.AutoSize = true;
-            this.lblMetrosTiempo.Location = new System.Drawing.Point(132, 219);
+            this.lblMetrosTiempo.Font = new System.Drawing.Font("Lucida Sans Unicode", 8F, System.Drawing.FontStyle.Bold);
+            this.lblMetrosTiempo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.lblMetrosTiempo.Location = new System.Drawing.Point(102, 248);
             this.lblMetrosTiempo.Name = "lblMetrosTiempo";
-            this.lblMetrosTiempo.Size = new System.Drawing.Size(66, 16);
+            this.lblMetrosTiempo.Size = new System.Drawing.Size(91, 17);
             this.lblMetrosTiempo.TabIndex = 2;
             this.lblMetrosTiempo.Text = "10000 mts";
             // 
-            // label1
+            // lblNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 326);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Contacto";
+            this.lblNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.lblNombre.Location = new System.Drawing.Point(101, 203);
+            this.lblNombre.MaximumSize = new System.Drawing.Size(300, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(94, 23);
+            this.lblNombre.TabIndex = 4;
+            this.lblNombre.Text = "Nombre";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(282, 181);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // Org_EventoDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblMetrosTiempo);
-            this.Controls.Add(this.lblEstilo);
             this.Controls.Add(this.lblFecha);
             this.Name = "Org_EventoDisplay";
-            this.Size = new System.Drawing.Size(311, 355);
+            this.Size = new System.Drawing.Size(300, 315);
+            this.Load += new System.EventHandler(this.Org_EventoDisplay_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,8 +106,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label lblEstilo;
         private System.Windows.Forms.Label lblMetrosTiempo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

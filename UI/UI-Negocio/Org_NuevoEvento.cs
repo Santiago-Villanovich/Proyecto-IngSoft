@@ -241,32 +241,31 @@ namespace UI.UI_Negocio
 
                     int idEvent = bllEvento.InsertAndInt(evento);
 
+                    Natacion posta = new Natacion()
+                    {
+                        id = idEvent,
+                        Estilo = cboxEstilo.Text,
+                        Elementos = checkElementos.Checked,
+                        Pileta = (Pileta)cboxPileta.SelectedItem,
+                        cantidad_integrantes_equipo = Convert.ToInt32(numupParticipantes.Value)
+                    };
+
                     if (rbNataMetros.Checked)
                     {
-                        Natacion_PostaMetros postaM = new Natacion_PostaMetros()
-                        {
-                            MetrosTotales = Convert.ToInt32(txtMetros.Text),
-                            Estilo = cboxEstilo.Text,
-                            Elementos = checkElementos.Checked,
-                            Pileta = (Pileta)cboxPileta.SelectedItem,
-                            cantidad_integrantes_equipo =Convert.ToInt32(numupParticipantes.Value)
-                        };
-
-                        bllNata.InsertPostaMetros(postaM,idEvent);
-
+                        posta.MetrosTotales = Convert.ToInt32(txtMetros.Text);
                     }
-                    else if (rbNataTiempo.Checked)
+                    else
                     {
-                        Natacion_PostaTiempo postaT = new Natacion_PostaTiempo()
-                        {
-                            TiempoTotal = Convert.ToInt32(txtTiempo.Text),
-                            Estilo = cboxEstilo.Text,
-                            Elementos = checkElementos.Checked,
-                            Pileta = (Pileta)cboxPileta.SelectedItem,
-                            cantidad_integrantes_equipo = Convert.ToInt32(numupParticipantes.Value)
-                        };
+                        posta.TiempoTotal = 0;
+                    }
 
-                        bllNata.InsertPostaTiempo(postaT,idEvent);
+                    if (rbNataTiempo.Checked)
+                    {
+                        posta.TiempoTotal = Convert.ToInt32(txtTiempo.Text);
+                    }
+                    else
+                    {
+                        posta.MetrosTotales = 0;
                     }
 
                     Limpiar();

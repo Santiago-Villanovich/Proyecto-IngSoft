@@ -45,7 +45,7 @@ namespace DAL
                         {
                             var evento = new Evento()
                             {
-                                id = Convert.ToInt32(reader["id_org"]),
+                                id = Convert.ToInt32(reader["id_evento"]),
                                 nombre = reader["nombre"].ToString(),
                                 Descripcion = reader["descripcion"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["fecha"].ToString()),
@@ -187,6 +187,46 @@ namespace DAL
             throw new NotImplementedException();
         }
 
+        public List<Categoria> GetCategorias(int idEvento) 
+        {
+            using (SqlConnection conn = _conn)
+            {
+                List<Categoria> list = new List<Categoria>();
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetAllCategorias", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdEvento", idEvento);
+
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var cat = new Categoria()
+                            {
+                                Nombre = reader["nombre"].ToString(),
+                                EdadInicio = Convert.ToInt32(reader["edad_min"].ToString()),
+                                EdadFin = Convert.ToInt32(reader["edad_max"].ToString())
+
+                            };
+
+                            list.Add(cat);
+                        }
+                    }
+
+                    return list;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
         
 
     }

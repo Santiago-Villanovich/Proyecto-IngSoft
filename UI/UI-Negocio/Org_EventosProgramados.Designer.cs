@@ -35,18 +35,20 @@
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 17);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(649, 600);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(949, 645);
             this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // Org_EventosProgramados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 674);
+            this.ClientSize = new System.Drawing.Size(975, 686);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Org_EventosProgramados";
             this.Text = "Org_EventosProgramados";
+            this.Load += new System.EventHandler(this.Org_EventosProgramados_Load);
             this.ResumeLayout(false);
 
         }
