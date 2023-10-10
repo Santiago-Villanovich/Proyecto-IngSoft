@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,24 @@ namespace UI.UI_Negocio
             bllEvento = new BLL_Evento();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void CargarEventos()
         {
+            foreach (Evento evento in listEventos)
+            {
+                Org_EventoDisplay Edisp = new Org_EventoDisplay( evento);
+                Edisp.SetEvento(evento.nombre,evento.Fecha);
 
+                flowLayoutPanel1.Controls.Add(Edisp);
+            }
+            
+            
         }
 
         private void Org_EventosProgramados_Load(object sender, EventArgs e)
         {
-
+            listEventos = bllEvento.GetAll();
+            CargarEventos();
+            
         }
     }
 }

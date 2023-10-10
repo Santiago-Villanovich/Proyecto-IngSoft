@@ -26,11 +26,14 @@ namespace UI
 
         }
 
-        public void SetEvento(string Nombre, DateTime fecha, int metros, string foto = null)
+        public void SetEvento(string Nombre, DateTime fecha, string foto = null)
         {
             lblNombre.Text = Nombre;
             lblFecha.Text = fecha.ToShortDateString();
-            lblMetrosTiempo.Text = metros.ToString();
+            if (foto != null)
+            {
+
+            }
         }
     }
 }

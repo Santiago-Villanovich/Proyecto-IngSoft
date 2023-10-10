@@ -14,6 +14,7 @@ namespace DAL
     public class DAL_Evento : IMetodosGenericos<Evento>
     {
         private SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString);
+        private string connectionString = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
 
         public bool Delete(Evento obj)
         {
@@ -28,7 +29,7 @@ namespace DAL
         public List<Evento> GetAll()
         {
 
-            using (SqlConnection conn = _conn)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 List<Evento> list = new List<Evento>();
 
@@ -70,10 +71,13 @@ namespace DAL
 
                     return list;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    throw;
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
         }
@@ -189,7 +193,7 @@ namespace DAL
 
         public List<Categoria> GetCategorias(int idEvento) 
         {
-            using (SqlConnection conn = _conn)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 List<Categoria> list = new List<Categoria>();
 
@@ -199,7 +203,6 @@ namespace DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@IdEvento", idEvento);
 
-                    cmd.Connection = conn;
                     conn.Open();
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -220,10 +223,13 @@ namespace DAL
 
                     return list;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    throw;
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
         }
