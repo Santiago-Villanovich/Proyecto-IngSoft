@@ -79,6 +79,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
@@ -90,9 +91,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblFecha);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "Org_EventoDisplay";
             this.Size = new System.Drawing.Size(273, 315);
             this.Load += new System.EventHandler(this.Org_EventoDisplay_Load);
+            this.Click += new System.EventHandler(this.Org_EventoDisplay_Click);
             this.MouseEnter += new System.EventHandler(this.Org_EventoDisplay_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Org_EventoDisplay_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -127,6 +127,12 @@
     <Compile Include="UI-Negocio\Org_NuevoEvento.Designer.cs">
       <DependentUpon>Org_NuevoEvento.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI-Negocio\User_BuscarEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI-Negocio\User_BuscarEvento.Designer.cs">
+      <DependentUpon>User_BuscarEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI-Negocio\User_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI-Negocio\Org_NuevoEvento.resx">
       <DependentUpon>Org_NuevoEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI-Negocio\User_BuscarEvento.resx">
+      <DependentUpon>User_BuscarEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI-Negocio\User_SignUp.resx">
       <DependentUpon>User_SignUp.cs</DependentUpon>

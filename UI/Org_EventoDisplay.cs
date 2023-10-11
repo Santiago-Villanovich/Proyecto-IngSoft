@@ -9,11 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.UI_Negocio;
 
 namespace UI
 {
     public partial class Org_EventoDisplay : UserControl
     {
+        public event EventHandler ImagenClickeada;
+
+
         public Evento MiEvento;
         Color on = Color.FromArgb(86, 88, 99);
         Color off = Color.FromArgb(45, 48, 71);
@@ -89,6 +93,16 @@ namespace UI
         private void lblNombre_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Org_EventoDisplay_Click(object sender, EventArgs e)
+        {
+            ImagenClickeada?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ImagenClickeada?.Invoke(this, EventArgs.Empty);
         }
     }
 }

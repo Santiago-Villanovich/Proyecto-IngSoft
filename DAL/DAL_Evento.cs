@@ -102,7 +102,7 @@ namespace DAL
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("sp_GetAllEvento", conn);
+                    SqlCommand cmd = new SqlCommand("sp_GetAllEventoByOrg", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("IdOrg", id);
                     cmd.Connection = conn;

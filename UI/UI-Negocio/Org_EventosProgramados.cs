@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,14 +18,28 @@ namespace UI.UI_Negocio
     {
         BLL_Evento bllEvento;
         List<Evento> listEventos;
+        public static Evento eventoSeleccionado;
+
+
+
         public Org_EventosProgramados()
         {
             InitializeComponent();
+            groupBox1.Visible = false;
+            groupBox1.Enabled = false;
             bllEvento = new BLL_Evento();
-            flowLayoutPanel1.VerticalScroll.Visible = true;
+            flowLayoutPanel1.HorizontalScroll.Visible = true;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.AutoScroll = true;
         }
+        public void MostrarOpciones(Evento evento)
+        {
+            this.groupBox1.Visible = true;
+            this.groupBox1.Enabled = true;
 
+            MessageBox.Show(evento.nombre);
+
+        }
         private void CargarEventos()
         {
             foreach (Evento evento in listEventos)

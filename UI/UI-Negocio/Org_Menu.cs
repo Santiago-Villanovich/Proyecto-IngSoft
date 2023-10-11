@@ -17,6 +17,8 @@ namespace UI
         public Org_Menu()
         {
             InitializeComponent();
+            this.Size = new Size(1200, 650);
+            this.MinimumSize = new Size(1200, 650);
         }
         private void CargarMenuContenedor(object formHijo)
         {
@@ -35,7 +37,6 @@ namespace UI
         private void btnNuevoEvento_Click(object sender, EventArgs e)
         {
             CargarMenuContenedor(new Org_NuevoEvento());
-            this.Size = new Size(1200,650);
         }
 
         private void btnIniciarEvento_Click(object sender, EventArgs e)
