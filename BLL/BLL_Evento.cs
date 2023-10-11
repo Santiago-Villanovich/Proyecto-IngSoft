@@ -1,6 +1,7 @@
 ﻿using ABS;
 using BE;
 using DAL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,18 @@ namespace BLL
         {
             List<Evento> list = dal.GetAll();
             foreach (Evento obj in list) 
+            {
+                obj.Deporte = new DAL_DeporteNatacion().Get(obj.id);
+                obj.Categorias = dal.GetCategorias(obj.id);
+            }
+
+            return list;
+        }
+
+        public List<Evento> GetAllByOrg()
+        {
+            List<Evento> list = dal.GetAllbyOrg(Session.GetInstance.Usuario.Organizacion.id);
+            foreach (Evento obj in list)
             {
                 obj.Deporte = new DAL_DeporteNatacion().Get(obj.id);
                 obj.Categorias = dal.GetCategorias(obj.id);

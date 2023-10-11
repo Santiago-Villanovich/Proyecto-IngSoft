@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace UI.UI_Negocio
         Evento evento;
         BLL_Evento bllEvento;
         BLL_DeporteNatacion bllNata;
+        string Imagename;
+        
 
         private bool ValidarNomCategoria(string nom)
         {
@@ -49,14 +52,19 @@ namespace UI.UI_Negocio
         }
         private void Limpiar()
         {
+            evento = null;
             txtNombre.Text = string.Empty;
+            numupCoste.Value = 1;
+            richtextDetalleEvento.Text = string.Empty;
+            Imagename = string.Empty;
+            pictureBox1.Image = null;
+
             rbNataMetros.Checked = false;
             rbNataTiempo.Checked = false;
             checkElementos.Checked = false;
-            numupCoste.Value = 0;
-            numupCupos.Value = 0;
-            richtextDetalleEvento.Text = string.Empty;
-            evento = null;
+            numupCupos.Value = 1;
+            
+            listboxCategorias.DataSource = null;
             categorias.Clear();
 
         }
@@ -68,15 +76,13 @@ namespace UI.UI_Negocio
             bllEvento = new BLL_Evento();
             bllNata = new BLL_DeporteNatacion();
 
-
-            cboxEstilo.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cboxEstilo.AutoCompleteSource = AutoCompleteSource.ListItems;
             cboxEstilo.DataSource = Enum.GetValues(typeof(Estilos));
 
             dateTimePicker1.MinDate = DateTime.Now;
 
             txtMetros.Visible = false;
             txtTiempo.Visible = false;
+            pictureBox3.Visible = false;
         }
 
         private void Org_NuevoEvento_Load(object sender, EventArgs e)
@@ -219,6 +225,11 @@ namespace UI.UI_Negocio
                     errorProvider1.SetError(txtNombre, "El evento debe tener un nombre");
                     errorFlag = true;
                 }
+                if (rbNataMetros.Checked == false && rbNataTiempo.Checked == false)
+                {
+                    MessageBox.Show("Debe indicar tipo de posta");
+                    errorFlag = true;
+                }
                 if (categorias.Count == 0)
                 {
                     errorFlag = true;
@@ -238,6 +249,15 @@ namespace UI.UI_Negocio
                     evento.ValorInscripcion = Convert.ToDouble(numupCoste.Value);
                     evento.Categorias = categorias;
                     evento.cupo = Convert.ToInt32(numupCupos.Value);
+                    if (Imagename.Length > 0 )
+                    {
+                        evento.portada = File.ReadAllBytes(System.Windows.Forms.Application.StartupPath + "/Images/" + Imagename);
+                    }
+                    else
+                    {
+                        evento.portada = null;
+                    }
+                    
 
                     int idEvent = bllEvento.InsertAndInt(evento);
 
@@ -253,20 +273,16 @@ namespace UI.UI_Negocio
                     if (rbNataMetros.Checked)
                     {
                         posta.MetrosTotales = Convert.ToInt32(txtMetros.Text);
-                    }
-                    else
-                    {
                         posta.TiempoTotal = 0;
                     }
 
                     if (rbNataTiempo.Checked)
                     {
                         posta.TiempoTotal = Convert.ToInt32(txtTiempo.Text);
-                    }
-                    else
-                    {
                         posta.MetrosTotales = 0;
                     }
+
+                    bllNata.Insert(posta);
 
                     Limpiar();
                     MessageBox.Show("Su evento se ha registrado exitosamente, podra verlo en el apartado de eventos programados"); 
@@ -317,6 +333,39 @@ namespace UI.UI_Negocio
                 txtMetros.Enabled = false;
                 txtMetros.Text = string.Empty;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string imageDirectory = Path.Combine(System.Windows.Forms.Application.StartupPath, "Images");
+                    if (!Directory.Exists(imageDirectory))
+                    {
+                        Directory.CreateDirectory(imageDirectory);
+                    }
+
+                    Imagename = Guid.NewGuid().ToString() + ".jpg";
+                    string fileName = Imagename;
+                    string imagePath = Path.Combine(imageDirectory, fileName);
+
+                    File.Copy(openFileDialog.FileName, imagePath);
+
+                    pictureBox1.Image = System.Drawing.Image.FromFile(imagePath);
+                }
+
+                pictureBox3.Visible = true;
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+            Imagename = string.Empty;
+            pictureBox3.Visible= false;
         }
     }
 }

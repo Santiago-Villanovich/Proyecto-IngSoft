@@ -21,6 +21,8 @@ namespace UI.UI_Negocio
         {
             InitializeComponent();
             bllEvento = new BLL_Evento();
+            flowLayoutPanel1.VerticalScroll.Visible = true;
+            flowLayoutPanel1.AutoScroll = true;
         }
 
         private void CargarEventos()
@@ -28,7 +30,7 @@ namespace UI.UI_Negocio
             foreach (Evento evento in listEventos)
             {
                 Org_EventoDisplay Edisp = new Org_EventoDisplay( evento);
-                Edisp.SetEvento(evento.nombre,evento.Fecha);
+                Edisp.SetEvento(evento.nombre,evento.Fecha,evento.portada);
 
                 flowLayoutPanel1.Controls.Add(Edisp);
             }
@@ -38,7 +40,7 @@ namespace UI.UI_Negocio
 
         private void Org_EventosProgramados_Load(object sender, EventArgs e)
         {
-            listEventos = bllEvento.GetAll();
+            listEventos = bllEvento.GetAllByOrg();
             CargarEventos();
             
         }

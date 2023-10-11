@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Org_NuevoEvento));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,9 +65,12 @@
             this.btnPublicar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numupCoste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupEdadMax)).BeginInit();
@@ -75,6 +79,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numupCupos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupParticipantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,7 +154,7 @@
             // 
             this.richtextDetalleEvento.Location = new System.Drawing.Point(39, 278);
             this.richtextDetalleEvento.Name = "richtextDetalleEvento";
-            this.richtextDetalleEvento.Size = new System.Drawing.Size(296, 217);
+            this.richtextDetalleEvento.Size = new System.Drawing.Size(296, 170);
             this.richtextDetalleEvento.TabIndex = 10;
             this.richtextDetalleEvento.Text = "";
             // 
@@ -175,6 +182,7 @@
             // 
             // cboxEstilo
             // 
+            this.cboxEstilo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxEstilo.FormattingEnabled = true;
             this.cboxEstilo.Location = new System.Drawing.Point(28, 155);
             this.cboxEstilo.Name = "cboxEstilo";
@@ -253,7 +261,7 @@
             this.groupBox1.Controls.Add(this.numupEdadMin);
             this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.groupBox1.Location = new System.Drawing.Point(365, 359);
+            this.groupBox1.Location = new System.Drawing.Point(365, 385);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(747, 244);
             this.groupBox1.TabIndex = 24;
@@ -444,9 +452,9 @@
             // 
             // btnPublicar
             // 
-            this.btnPublicar.Location = new System.Drawing.Point(116, 635);
+            this.btnPublicar.Location = new System.Drawing.Point(39, 669);
             this.btnPublicar.Name = "btnPublicar";
-            this.btnPublicar.Size = new System.Drawing.Size(153, 61);
+            this.btnPublicar.Size = new System.Drawing.Size(296, 61);
             this.btnPublicar.TabIndex = 26;
             this.btnPublicar.Text = "Publicar evento";
             this.btnPublicar.UseVisualStyleBackColor = true;
@@ -460,24 +468,16 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
-            this.label13.Location = new System.Drawing.Point(35, 522);
+            this.label13.Location = new System.Drawing.Point(35, 468);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(202, 23);
             this.label13.TabIndex = 27;
             this.label13.Text = "Subir portada del evento";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(39, 548);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(39, 50);
+            this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(230, 22);
             this.txtNombre.TabIndex = 30;
@@ -492,15 +492,54 @@
             this.label14.TabIndex = 29;
             this.label14.Text = "Nombre del Evento";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(94, 494);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(241, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(39, 494);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(49, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(61, 592);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(27, 37);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 33;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // Org_NuevoEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(1124, 723);
+            this.ClientSize = new System.Drawing.Size(1124, 754);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnPublicar);
             this.Controls.Add(this.label7);
@@ -526,6 +565,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numupCupos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numupParticipantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,7 +611,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

@@ -18,6 +18,7 @@ namespace BE
         public Deporte Deporte { get; set; }
         public int cupo { get; set; }
         public string estado { get; set; }
+        public byte[] portada { get; set; }
        
         public Evento() { }
     }

@@ -97,7 +97,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@id_pileta", obj.Pileta.id);
                     cmd.Parameters.AddWithValue("@id_evento", obj.id);
                     cmd.Parameters.AddWithValue("@estilo", obj.Estilo);
-                    cmd.Parameters.AddWithValue("@elemtos", obj.Elementos);
+                    cmd.Parameters.AddWithValue("@elementos", obj.Elementos);
                     cmd.Parameters.AddWithValue("@cantIntegrantes", obj.cantidad_integrantes_equipo);
 
                     if (obj.MetrosTotales != 0)
