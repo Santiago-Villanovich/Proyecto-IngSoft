@@ -351,28 +351,37 @@ namespace UI.UI_Negocio
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            try
             {
-                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    string imageDirectory = Path.Combine(System.Windows.Forms.Application.StartupPath, "Images");
-                    if (!Directory.Exists(imageDirectory))
+                    openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        Directory.CreateDirectory(imageDirectory);
+                        string imageDirectory = Path.Combine(System.Windows.Forms.Application.StartupPath, "Images");
+                        if (!Directory.Exists(imageDirectory))
+                        {
+                            Directory.CreateDirectory(imageDirectory);
+                        }
+
+                        Imagename = Guid.NewGuid().ToString() + ".jpg";
+                        string fileName = Imagename;
+                        string imagePath = Path.Combine(imageDirectory, fileName);
+
+                        File.Copy(openFileDialog.FileName, imagePath);
+
+                        pictureBox1.Image = System.Drawing.Image.FromFile(imagePath);
                     }
 
-                    Imagename = Guid.NewGuid().ToString() + ".jpg";
-                    string fileName = Imagename;
-                    string imagePath = Path.Combine(imageDirectory, fileName);
-
-                    File.Copy(openFileDialog.FileName, imagePath);
-
-                    pictureBox1.Image = System.Drawing.Image.FromFile(imagePath);
+                    pictureBox3.Visible = true;
                 }
-
-                pictureBox3.Visible = true;
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

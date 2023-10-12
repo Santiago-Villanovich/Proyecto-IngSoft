@@ -33,8 +33,9 @@ namespace DAL
 
                 }catch(Exception ex) 
                 {
-                    return false;
+                    throw ex;
                 }
+                finally { conn.Close(); }
             
             }
         }

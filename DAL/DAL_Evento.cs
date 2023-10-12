@@ -20,6 +20,30 @@ namespace DAL
         {
             throw new NotImplementedException();
         }
+        public bool Cancel(Evento obj)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_UpdateEventoEstado", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdEvento", obj.id);
+                    cmd.Parameters.AddWithValue("@IdEstado", 3);
+                    cmd.Connection = conn;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return true;
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally { conn.Close(); }
+
+            }
+        }
 
         public Evento Get(int id)
         {
@@ -275,7 +299,40 @@ namespace DAL
 
         public bool Update(Evento obj)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_UpdateEvento", conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdEvento", obj.id);
+                    cmd.Parameters.AddWithValue("@Nom", obj.nombre);
+                    cmd.Parameters.AddWithValue("@Desc", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("@Fecha", obj.Fecha);
+                    if (obj.portada != null)
+                    {
+                        cmd.Parameters.AddWithValue("@portada", obj.portada);
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add("@portada", SqlDbType.VarBinary, -1).Value = DBNull.Value;
+                    }
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
         }
 
         public List<Categoria> GetCategorias(int idEvento) 

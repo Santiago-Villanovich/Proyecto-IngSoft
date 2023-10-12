@@ -17,6 +17,10 @@ namespace BLL
         {
             throw new NotImplementedException();
         }
+        public bool Cancel(Evento obj)
+        {
+            return dal.Cancel(obj);
+        }
 
         public Evento Get(int id)
         {
@@ -60,7 +64,7 @@ namespace BLL
         
         public bool Update(Evento obj)
         {
-            throw new NotImplementedException();
+            return dal.Update(obj);
         }
     }
 }

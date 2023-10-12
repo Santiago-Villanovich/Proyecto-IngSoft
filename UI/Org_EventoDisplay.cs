@@ -25,7 +25,6 @@ namespace UI
         {
             InitializeComponent();
             this.MiEvento = evento;
-            editarHandler += btnEditar_Click;
         }
 
         private void Org_EventoDisplay_Load(object sender, EventArgs e)
