@@ -56,7 +56,7 @@ namespace UI.UI_Negocio
             txtNombre.Text = string.Empty;
             numupCoste.Value = 1;
             richtextDetalleEvento.Text = string.Empty;
-            Imagename = string.Empty;
+            Imagename = null;
             pictureBox1.Image = null;
 
             rbNataMetros.Checked = false;
@@ -64,8 +64,29 @@ namespace UI.UI_Negocio
             checkElementos.Checked = false;
             numupCupos.Value = 1;
             
-            listboxCategorias.DataSource = null;
             categorias.Clear();
+            SetCategorias();
+
+        }
+
+        private void SetCategorias()
+        {
+            txtCategoria.Text = string.Empty;
+
+            listboxCategorias.DataSource = null;
+            listboxCategorias.DisplayMember = "str";
+            listboxCategorias.ValueMember = "nombre";
+
+            if (categorias.Count > 0)
+            {
+                listboxCategorias.DataSource = categorias;
+            }
+            else
+            {
+                numupEdadMin.Enabled = true;
+                numupEdadMin.Minimum = 0;
+                numupEdadMin.Value = 0;
+            }
 
         }
         public Org_NuevoEvento()
@@ -87,7 +108,7 @@ namespace UI.UI_Negocio
 
         private void Org_NuevoEvento_Load(object sender, EventArgs e)
         {
-            txtCategoria.Text = string.Empty;
+            
 
             cboxPileta.DataSource = null;
             cboxPileta.DataSource = new BLL_Pileta().GetAll();
@@ -100,13 +121,8 @@ namespace UI.UI_Negocio
                 cboxPileta.SelectedValue = Session.GetInstance.Usuario.Organizacion.PiletaAsociada.id;
             }
 
-            listboxCategorias.DataSource = null;
-            listboxCategorias.DisplayMember = "str";
-            listboxCategorias.ValueMember = "nombre";
-            if (categorias.Count > 0)
-            {
-                listboxCategorias.DataSource = categorias;
-            }
+            SetCategorias();
+            
         }
 
         private void btnAgregarCat_Click(object sender, EventArgs e)
@@ -125,10 +141,8 @@ namespace UI.UI_Negocio
                     numupEdadMin.Minimum = numupEdadMax.Value + 1;
                     numupEdadMin.Enabled = false;
 
-                    this.OnLoad(null);
+                    SetCategorias();
                 }
-                
-                
             }
             catch (Exception)
             {
@@ -170,7 +184,7 @@ namespace UI.UI_Negocio
                 }
                 else
                 {
-                    MessageBox.Show("Debe ingresar un nombre de categoria valido");
+                    MessageBox.Show("No hay categorias ingresadas");
                 }
             }
             catch (Exception)
@@ -249,7 +263,7 @@ namespace UI.UI_Negocio
                     evento.ValorInscripcion = Convert.ToDouble(numupCoste.Value);
                     evento.Categorias = categorias;
                     evento.cupo = Convert.ToInt32(numupCupos.Value);
-                    if (Imagename.Length > 0 )
+                    if (Imagename != null )
                     {
                         evento.portada = File.ReadAllBytes(System.Windows.Forms.Application.StartupPath + "/Images/" + Imagename);
                     }

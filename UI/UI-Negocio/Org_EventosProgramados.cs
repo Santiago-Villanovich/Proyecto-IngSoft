@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,11 @@ namespace UI.UI_Negocio
 {
     public partial class Org_EventosProgramados : Form
     {
+
+        
         BLL_Evento bllEvento;
         List<Evento> listEventos;
-        public static Evento eventoSeleccionado;
-
-
+        private Evento eventoSeleccionado;
 
         public Org_EventosProgramados()
         {
@@ -32,13 +33,26 @@ namespace UI.UI_Negocio
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.AutoScroll = true;
         }
-        public void MostrarOpciones(Evento evento)
+        public void MostrarOpciones()
         {
             this.groupBox1.Visible = true;
             this.groupBox1.Enabled = true;
 
-            MessageBox.Show(evento.nombre);
+            MessageBox.Show(eventoSeleccionado.nombre);
 
+        }
+        public void CancelarEvento()
+        {
+            string mensaje = "Esta seguro que desea cancelar el evento, una vez cancelado\nse le comunicara a los participantes inscriptos y posteriormente se le\ndevolvera el coste de inscripcion ";
+            DialogResult result = MessageBox.Show(mensaje,"Cancelar evento", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                MessageBox.Show("Ok");
+            }
+            else
+            {
+                MessageBox.Show("Cancel");
+            }
         }
         private void CargarEventos()
         {
@@ -46,6 +60,16 @@ namespace UI.UI_Negocio
             {
                 Org_EventoDisplay Edisp = new Org_EventoDisplay( evento);
                 Edisp.SetEvento(evento.nombre,evento.Fecha,evento.portada);
+                Edisp.editarHandler += (sender, e) =>
+                {
+                    eventoSeleccionado = Edisp.MiEvento;
+                    MostrarOpciones();
+                };
+                Edisp.cancelarHandler += (sender, e) =>
+                {
+                    eventoSeleccionado = Edisp.MiEvento;
+                    CancelarEvento();
+                };
 
                 flowLayoutPanel1.Controls.Add(Edisp);
             }
@@ -59,5 +83,6 @@ namespace UI.UI_Negocio
             CargarEventos();
             
         }
+
     }
 }

@@ -163,7 +163,7 @@ namespace DAL
 
         public bool Insert(Evento obj)
         {
-            using (SqlConnection conn = _conn)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -215,7 +215,7 @@ namespace DAL
 
         public int InsertAndInt(Evento obj)
         {
-            using (SqlConnection conn = _conn)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -235,7 +235,7 @@ namespace DAL
                     }
                     else
                     {
-                        cmd.Parameters.AddWithValue("@cupo", DBNull.Value);
+                        cmd.Parameters.Add("@imagen", SqlDbType.VarBinary,-1).Value = DBNull.Value;
                     }
 
                     SqlParameter returno = new SqlParameter();

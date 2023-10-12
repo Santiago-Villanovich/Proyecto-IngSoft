@@ -187,3 +187,4 @@ C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Sistema.FormUsuarioOrg.resour
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.Org_EventoDisplay.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_EventosProgramados.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_Inicio.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_BuscarEvento.resources

@@ -1,4 +1,5 @@
 ﻿using BE;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,6 @@ namespace UI
 {
     public partial class Org_EventoDisplay : UserControl
     {
-        public event EventHandler ImagenClickeada;
-
 
         public Evento MiEvento;
         Color on = Color.FromArgb(86, 88, 99);
@@ -26,6 +25,7 @@ namespace UI
         {
             InitializeComponent();
             this.MiEvento = evento;
+            editarHandler += btnEditar_Click;
         }
 
         private void Org_EventoDisplay_Load(object sender, EventArgs e)
@@ -46,6 +46,19 @@ namespace UI
                     pictureBox1.Image = imagen;
                 }
             }
+        }
+
+        public event EventHandler editarHandler;
+        public event EventHandler cancelarHandler;
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            editarHandler?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            cancelarHandler?.Invoke(this, EventArgs.Empty);
         }
 
         #region(Hovers)
@@ -88,21 +101,11 @@ namespace UI
         {
             this.BackColor = off;
         }
+
+
         #endregion
 
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Org_EventoDisplay_Click(object sender, EventArgs e)
-        {
-            ImagenClickeada?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            ImagenClickeada?.Invoke(this, EventArgs.Empty);
-        }
+        
     }
 }
