@@ -67,5 +67,10 @@ namespace UI
             this.Close();
             Application.Restart();
         }
+
+        private void btnBuscarEvento_Click(object sender, EventArgs e)
+        {
+            CargarMenuContenedor(new User_BuscarEvento());
+        }
     }
 }

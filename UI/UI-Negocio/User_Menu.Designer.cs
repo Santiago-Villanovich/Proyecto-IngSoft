@@ -55,7 +55,7 @@
             this.NavBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.NavBar.Location = new System.Drawing.Point(0, 0);
             this.NavBar.Name = "NavBar";
-            this.NavBar.Size = new System.Drawing.Size(182, 705);
+            this.NavBar.Size = new System.Drawing.Size(182, 753);
             this.NavBar.TabIndex = 0;
             // 
             // pictureBox1
@@ -75,7 +75,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 646);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 694);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(43, 47);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -88,7 +88,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(121, 646);
+            this.pictureBox2.Location = new System.Drawing.Point(121, 694);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(55, 47);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,6 +145,7 @@
             this.btnBuscarEvento.Text = "Buscar Evento";
             this.btnBuscarEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarEvento.UseVisualStyleBackColor = true;
+            this.btnBuscarEvento.Click += new System.EventHandler(this.btnBuscarEvento_Click);
             // 
             // PanelContenedor
             // 
@@ -152,17 +153,17 @@
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenedor.Location = new System.Drawing.Point(182, 0);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(1002, 705);
+            this.PanelContenedor.Size = new System.Drawing.Size(1100, 753);
             this.PanelContenedor.TabIndex = 1;
             // 
             // User_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 705);
+            this.ClientSize = new System.Drawing.Size(1282, 753);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.NavBar);
-            this.MinimumSize = new System.Drawing.Size(1202, 752);
+            this.MinimumSize = new System.Drawing.Size(1300, 800);
             this.Name = "User_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuUser";
