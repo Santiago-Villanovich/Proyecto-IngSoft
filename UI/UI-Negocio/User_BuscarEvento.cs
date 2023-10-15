@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace UI.UI_Negocio
         public List<Evento> listEventos;
         public BLL_Evento bllEvento;
         private Evento eventoSeleccionado;
+        private Natacion eventoDeporte;
+        
         public User_BuscarEvento()
         {
             InitializeComponent();
@@ -24,12 +27,33 @@ namespace UI.UI_Negocio
             flowLayoutPanel1.VerticalScroll.Visible = true;
             flowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight;
             flowLayoutPanel1.AutoScroll = true;
+
         }
 
         private void MostrarEvento(Evento evento)
         {
             eventoSeleccionado = evento;
+            eventoDeporte = (Natacion)evento.Deporte;
 
+            Natacion nata = (Natacion)evento.Deporte;
+            gboxInformacion.Visible = true;
+
+            lblTitulo.Text = evento.nombre;
+            lblDesc.Text = evento.Descripcion;
+            lblNomOrg.Text = evento.Organizacion.Nombre;
+            lblContactoOrg.Text = evento.Organizacion.Email;
+            lblDireccion.Text = nata.Pileta.Direccion;
+            lblEquipo.Text = nata.cantidad_integrantes_equipo.ToString();
+            if (nata.MetrosTotales != 0)
+            {
+                lblDistancia.Text = nata.MetrosTotales.ToString() + " Mts";
+            }
+            else
+            {
+                lblDistancia.Text = nata.TiempoTotal.ToString() + " min";
+            }
+            lblCoste.Text = "$ " + evento.ValorInscripcion.ToString();
+            
         }
 
         private void CargarEventos()
@@ -77,6 +101,29 @@ namespace UI.UI_Negocio
         {
             listEventos =  bllEvento.GetAll();
             CargarEventos();
+
+            gboxInformacion.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (eventoDeporte.cantidad_integrantes_equipo > 1)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show( ex.Message);
+            }
+            
+
         }
     }
 }

@@ -15,8 +15,8 @@ namespace UI
     public partial class User_EventoDisplay : UserControl
     {
         public Evento MiEvento;
-        Color on = Color.FromArgb(86, 88, 99);
-        Color off = Color.FromArgb(45, 48, 71);
+        Color naranja = Color.FromArgb(236, 125, 24);
+        Color crema = Color.FromArgb(235, 231, 222);
 
         public User_EventoDisplay(Evento e)
         {
@@ -30,6 +30,7 @@ namespace UI
         {
             lblNombre.Text = MiEvento.nombre;
             lblFecha.Text = MiEvento.Fecha.ToShortDateString();
+            lblCoste.Text = "$ " + MiEvento.ValorInscripcion.ToString();
             if (MiEvento.portada != null)
             {
                 using (MemoryStream stream = new MemoryStream(MiEvento.portada))
@@ -47,5 +48,33 @@ namespace UI
         {
             clickHandler?.Invoke(this, EventArgs.Empty);
         }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            clickHandler?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+            clickHandler?.Invoke(this, EventArgs.Empty);
+        }
+
+        #region(hovers)
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = naranja;
+            lblNombre.ForeColor = crema; 
+            lblFecha.ForeColor = crema;
+            lblCoste.ForeColor = crema;
+        }
+        private void lblNombre_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = crema;
+            lblNombre.ForeColor = Color.Black;
+            lblFecha.ForeColor = Color.Black;
+            lblCoste.ForeColor = Color.Black;
+        }
+        #endregion
+
+
     }
 }

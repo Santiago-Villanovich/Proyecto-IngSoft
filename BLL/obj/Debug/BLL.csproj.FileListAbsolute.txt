@@ -118,3 +118,4 @@ C:\Universidad\Diploma\Proyecto\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Universidad\Diploma\Proyecto\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Universidad\Diploma\Proyecto\BLL\obj\Debug\BLL.dll
 C:\Universidad\Diploma\Proyecto\BLL\obj\Debug\BLL.pdb
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\QRCoder.dll

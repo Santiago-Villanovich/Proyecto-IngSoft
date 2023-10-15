@@ -75,3 +75,4 @@ C:\Universidad\Diploma\Proyecto\Services\obj\Debug\Services.csproj.CoreCompileIn
 C:\Universidad\Diploma\Proyecto\Services\obj\Debug\Services.csproj.CopyComplete
 C:\Universidad\Diploma\Proyecto\Services\obj\Debug\Services.dll
 C:\Universidad\Diploma\Proyecto\Services\obj\Debug\Services.pdb
+C:\Universidad\Diploma\Proyecto\Services\bin\Debug\QRCoder.dll

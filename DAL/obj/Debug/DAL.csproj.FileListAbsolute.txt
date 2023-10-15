@@ -63,3 +63,4 @@ C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.dll
 C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\QRCoder.dll

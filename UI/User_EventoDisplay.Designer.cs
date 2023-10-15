@@ -47,6 +47,9 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.lblNombre_MouseLeave);
             // 
             // lblNombre
             // 
@@ -61,6 +64,9 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
+            this.lblNombre.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.lblNombre.MouseLeave += new System.EventHandler(this.lblNombre_MouseLeave);
             // 
             // lblFecha
             // 
@@ -75,6 +81,8 @@
             this.lblFecha.TabIndex = 2;
             this.lblFecha.Text = "Fecha";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFecha.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.lblFecha.MouseLeave += new System.EventHandler(this.lblNombre_MouseLeave);
             // 
             // lblCoste
             // 
@@ -89,11 +97,14 @@
             this.lblCoste.TabIndex = 3;
             this.lblCoste.Text = "precio";
             this.lblCoste.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCoste.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.lblCoste.MouseLeave += new System.EventHandler(this.lblNombre_MouseLeave);
             // 
             // User_EventoDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.Controls.Add(this.lblCoste);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblNombre);
@@ -101,6 +112,8 @@
             this.Name = "User_EventoDisplay";
             this.Size = new System.Drawing.Size(250, 373);
             this.Click += new System.EventHandler(this.User_EventoDisplay_Click);
+            this.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.lblNombre_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

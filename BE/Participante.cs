@@ -9,7 +9,8 @@ namespace BE
     public class Participante
     {
         public User Usuario { get; set; }
-        public double TiempoLogrado { get;set; }
-        public double MetrosLogrados { get; set; }
+        public TimeSpan tiempoPromedio { get;set; }
+        public List<TimeSpan> tiempos { get; set; }
+        public int MetrosLogrados { get; set; }
     }
 }

@@ -55,10 +55,12 @@ namespace DAL
                             if (!reader.IsDBNull(reader.GetOrdinal("total_metros")))
                             {
                                 nat.MetrosTotales = Convert.ToInt32(reader["total_metros"]);
+                                nat.TiempoTotal = 0;
                             }
                             else
                             {
                                 nat.TiempoTotal = Convert.ToInt32(reader["total_tiempo"]);
+                                nat.MetrosTotales = 0;
                             }
                         }
                     }

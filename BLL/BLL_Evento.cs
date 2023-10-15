@@ -4,6 +4,7 @@ using DAL;
 using Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,39 @@ namespace BLL
         {
             throw new NotImplementedException();
         }
+        public List<Equipo> GetAllInscriptos(int IdEvento)
+        {
+            List<Equipo> equipos = dal.GetInscriptos(IdEvento);
+            foreach (Equipo equip in equipos)
+            {
+                equip.Participantes = dal.GetParticipantes(equip.Id);
+            }
+
+            return equipos;
+        }
         public bool Cancel(Evento obj)
         {
-            return dal.Cancel(obj);
+            /*if (dal.Cancel(obj))
+            {
+                List<Equipo> inscriptos = GetAllInscriptos(obj.id);
+
+                MailProvider mail = new MailProvider();
+                string body = @"<style>
+                            </style>
+                            <h1>Este es el body del correo</h1></br>
+                            <h2>Este es el segundo párrafo</h2>";
+
+                foreach (var i in inscriptos)
+                {
+                    mail.sendMail($"{i.Email}", $"Evento {obj.nombre} cancelado", body);
+                }
+
+                return true;
+
+            }else { return false; }*/
+
+            throw new NotImplementedException();
+
         }
 
         public Evento Get(int id)

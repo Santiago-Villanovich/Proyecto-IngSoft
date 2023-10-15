@@ -33,22 +33,22 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.picCancel = new System.Windows.Forms.PictureBox();
+            this.picSearch = new System.Windows.Forms.PictureBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.richTextDescripcion = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.picSearch = new System.Windows.Forms.PictureBox();
-            this.picCancel = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +94,96 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones del evento";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
+            this.label5.Location = new System.Drawing.Point(291, 141);
+            this.label5.MaximumSize = new System.Drawing.Size(220, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(202, 23);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Subir portada del evento";
+            // 
+            // picCancel
+            // 
+            this.picCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picCancel.Image = ((System.Drawing.Image)(resources.GetObject("picCancel.Image")));
+            this.picCancel.Location = new System.Drawing.Point(498, 212);
+            this.picCancel.Name = "picCancel";
+            this.picCancel.Size = new System.Drawing.Size(33, 28);
+            this.picCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCancel.TabIndex = 33;
+            this.picCancel.TabStop = false;
+            this.picCancel.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // picSearch
+            // 
+            this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSearch.Image = ((System.Drawing.Image)(resources.GetObject("picSearch.Image")));
+            this.picSearch.Location = new System.Drawing.Point(295, 186);
+            this.picSearch.Name = "picSearch";
+            this.picSearch.Size = new System.Drawing.Size(88, 54);
+            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearch.TabIndex = 32;
+            this.picSearch.TabStop = false;
+            this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(22, 71);
+            this.txtNombre.MaxLength = 30;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(237, 26);
+            this.txtNombre.TabIndex = 31;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
+            this.label4.Location = new System.Drawing.Point(18, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 23);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Nombre del evento";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(537, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(172, 176);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(295, 69);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(132, 26);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
+            this.label3.Location = new System.Drawing.Point(291, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Fecha del evento";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
+            this.label2.Location = new System.Drawing.Point(18, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(184, 23);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Descripcion del evento";
+            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(131)))), ((int)(((byte)(126)))));
@@ -115,96 +205,6 @@
             this.richTextDescripcion.TabIndex = 0;
             this.richTextDescripcion.Text = "";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
-            this.label2.Location = new System.Drawing.Point(18, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 23);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Descripcion del evento";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
-            this.label3.Location = new System.Drawing.Point(291, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Fecha del evento";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(295, 69);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(132, 26);
-            this.dateTimePicker1.TabIndex = 5;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(537, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 176);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
-            this.label4.Location = new System.Drawing.Point(18, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 23);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Nombre del evento";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(22, 71);
-            this.txtNombre.MaxLength = 30;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(237, 26);
-            this.txtNombre.TabIndex = 31;
-            // 
-            // picSearch
-            // 
-            this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picSearch.Image = ((System.Drawing.Image)(resources.GetObject("picSearch.Image")));
-            this.picSearch.Location = new System.Drawing.Point(295, 186);
-            this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(88, 54);
-            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSearch.TabIndex = 32;
-            this.picSearch.TabStop = false;
-            this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
-            // 
-            // picCancel
-            // 
-            this.picCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCancel.Image = ((System.Drawing.Image)(resources.GetObject("picCancel.Image")));
-            this.picCancel.Location = new System.Drawing.Point(498, 212);
-            this.picCancel.Name = "picCancel";
-            this.picCancel.Size = new System.Drawing.Size(33, 28);
-            this.picCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCancel.TabIndex = 33;
-            this.picCancel.TabStop = false;
-            this.picCancel.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
-            this.label5.Location = new System.Drawing.Point(291, 141);
-            this.label5.MaximumSize = new System.Drawing.Size(220, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(202, 23);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Subir portada del evento";
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -224,9 +224,9 @@
             this.Load += new System.EventHandler(this.Org_EventosProgramados_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

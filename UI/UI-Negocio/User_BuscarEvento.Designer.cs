@@ -47,11 +47,11 @@
             this.lblDistancia = new System.Windows.Forms.Label();
             this.lblCoste = new System.Windows.Forms.Label();
             this.lblCupos = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gboxInformacion = new System.Windows.Forms.GroupBox();
+            this.btnInscribirse = new System.Windows.Forms.Button();
+            this.gboxEventos = new System.Windows.Forms.GroupBox();
+            this.gboxInformacion.SuspendLayout();
+            this.gboxEventos.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -59,7 +59,7 @@
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 107);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(722, 600);
@@ -67,8 +67,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 13.8F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(307, 44);
@@ -76,6 +74,7 @@
             this.label1.Size = new System.Drawing.Size(105, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Eventos";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -254,53 +253,54 @@
             this.lblCupos.TabIndex = 18;
             this.lblCupos.Text = "cupos";
             // 
-            // groupBox1
+            // gboxInformacion
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.lblCupos);
-            this.groupBox1.Controls.Add(this.lblCoste);
-            this.groupBox1.Controls.Add(this.lblDistancia);
-            this.groupBox1.Controls.Add(this.lblEquipo);
-            this.groupBox1.Controls.Add(this.lblDireccion);
-            this.groupBox1.Controls.Add(this.lblContactoOrg);
-            this.groupBox1.Controls.Add(this.lblNomOrg);
-            this.groupBox1.Controls.Add(this.lblDesc);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.lblTitulo);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(748, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(505, 719);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
+            this.gboxInformacion.Controls.Add(this.btnInscribirse);
+            this.gboxInformacion.Controls.Add(this.lblCupos);
+            this.gboxInformacion.Controls.Add(this.lblCoste);
+            this.gboxInformacion.Controls.Add(this.lblDistancia);
+            this.gboxInformacion.Controls.Add(this.lblEquipo);
+            this.gboxInformacion.Controls.Add(this.lblDireccion);
+            this.gboxInformacion.Controls.Add(this.lblContactoOrg);
+            this.gboxInformacion.Controls.Add(this.lblNomOrg);
+            this.gboxInformacion.Controls.Add(this.lblDesc);
+            this.gboxInformacion.Controls.Add(this.label9);
+            this.gboxInformacion.Controls.Add(this.label8);
+            this.gboxInformacion.Controls.Add(this.label7);
+            this.gboxInformacion.Controls.Add(this.lblTitulo);
+            this.gboxInformacion.Controls.Add(this.label6);
+            this.gboxInformacion.Controls.Add(this.label5);
+            this.gboxInformacion.Controls.Add(this.label4);
+            this.gboxInformacion.Controls.Add(this.label3);
+            this.gboxInformacion.Controls.Add(this.label2);
+            this.gboxInformacion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gboxInformacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gboxInformacion.Location = new System.Drawing.Point(748, 0);
+            this.gboxInformacion.Name = "gboxInformacion";
+            this.gboxInformacion.Size = new System.Drawing.Size(505, 719);
+            this.gboxInformacion.TabIndex = 19;
+            this.gboxInformacion.TabStop = false;
             // 
-            // button1
+            // btnInscribirse
             // 
-            this.button1.Location = new System.Drawing.Point(123, 629);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(257, 54);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInscribirse.Location = new System.Drawing.Point(123, 629);
+            this.btnInscribirse.Name = "btnInscribirse";
+            this.btnInscribirse.Size = new System.Drawing.Size(257, 54);
+            this.btnInscribirse.TabIndex = 19;
+            this.btnInscribirse.Text = "Inscribirse";
+            this.btnInscribirse.UseVisualStyleBackColor = true;
+            this.btnInscribirse.Click += new System.EventHandler(this.button1_Click);
             // 
-            // groupBox2
+            // gboxEventos
             // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(748, 719);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
+            this.gboxEventos.Controls.Add(this.label1);
+            this.gboxEventos.Controls.Add(this.flowLayoutPanel1);
+            this.gboxEventos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gboxEventos.Location = new System.Drawing.Point(0, 0);
+            this.gboxEventos.Name = "gboxEventos";
+            this.gboxEventos.Size = new System.Drawing.Size(748, 719);
+            this.gboxEventos.TabIndex = 20;
+            this.gboxEventos.TabStop = false;
             // 
             // User_BuscarEvento
             // 
@@ -308,16 +308,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1253, 719);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gboxEventos);
+            this.Controls.Add(this.gboxInformacion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User_BuscarEvento";
             this.Text = "User_BuscarEvento";
             this.Load += new System.EventHandler(this.User_BuscarEvento_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gboxInformacion.ResumeLayout(false);
+            this.gboxInformacion.PerformLayout();
+            this.gboxEventos.ResumeLayout(false);
+            this.gboxEventos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -343,8 +343,8 @@
         private System.Windows.Forms.Label lblDistancia;
         private System.Windows.Forms.Label lblCoste;
         private System.Windows.Forms.Label lblCupos;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox gboxInformacion;
+        private System.Windows.Forms.GroupBox gboxEventos;
+        private System.Windows.Forms.Button btnInscribirse;
     }
 }

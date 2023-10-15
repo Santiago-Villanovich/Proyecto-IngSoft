@@ -61,3 +61,4 @@ C:\Universidad\Diploma\Proyecto\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Universidad\Diploma\Proyecto\BE\obj\Debug\BE.csproj.CopyComplete
 C:\Universidad\Diploma\Proyecto\BE\obj\Debug\BE.dll
 C:\Universidad\Diploma\Proyecto\BE\obj\Debug\BE.pdb
+C:\Universidad\Diploma\Proyecto\BE\bin\Debug\QRCoder.dll

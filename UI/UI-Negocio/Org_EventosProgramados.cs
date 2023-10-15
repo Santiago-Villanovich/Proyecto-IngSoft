@@ -10,6 +10,8 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -213,6 +215,32 @@ namespace UI.UI_Negocio
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string test = $"Se le informa que el evento {eventoSeleccionado.nombre} del {eventoSeleccionado.Fecha.ToShortDateString()} fue cancelado, por lo que se realizara una devolucion de el pago realizado.\n Importe a devolver $ {eventoSeleccionado.ValorInscripcion}. Lamentamos las molestias.";
+
+            SmtpClient smtpClient = new SmtpClient("smtp.office365.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("santiagovillanovich@yahoo.com", "sa7918vi"),
+                EnableSsl = true,
+            };
+
+            // Crear el mensaje de correo
+            MailMessage mailMessage = new MailMessage
+            {
+                From = new MailAddress("santiagovillanovich@yahoo.com"),
+                Subject = "Cancelacion de evento",
+                Body = test,
+                IsBodyHtml = false,  // Si el cuerpo es HTML
+            };
+
+            mailMessage.To.Add("inntent@hotmail.com");
+
+            // Enviar el correo electrónico
+            smtpClient.Send(mailMessage);
         }
     }
 }
