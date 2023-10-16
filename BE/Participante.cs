@@ -12,5 +12,13 @@ namespace BE
         public TimeSpan tiempoPromedio { get;set; }
         public List<TimeSpan> tiempos { get; set; }
         public int MetrosLogrados { get; set; }
+
+        public Participante() { }
+
+        public Participante(User usuario)
+        {
+            Usuario = usuario;
+            this.tiempos = null;
+        }
     }
 }

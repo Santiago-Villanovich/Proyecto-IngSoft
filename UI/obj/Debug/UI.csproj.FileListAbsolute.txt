@@ -160,21 +160,15 @@ C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Core.WinForms.dll
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Grid.Base.dll
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Grid.Windows.dll
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Licensing.dll
-C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.SfInput.WinForms.dll
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Shared.Base.dll
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Shared.Windows.dll
-C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.SpellChecker.Base.dll
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Tools.Base.dll
-C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Tools.Windows.dll
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Core.WinForms.xml
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Grid.Base.xml
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Grid.Windows.xml
-C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.SfInput.WinForms.xml
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Shared.Base.xml
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Shared.Windows.xml
-C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.SpellChecker.Base.xml
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Tools.Base.xml
-C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Tools.Windows.xml
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.Org_Menu.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.User_Menu.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_Inicio.resources
@@ -190,3 +184,5 @@ C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_Inicio.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_BuscarEvento.resources
 C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.User_EventoDisplay.resources
 C:\Universidad\Diploma\Proyecto\UI\bin\Debug\QRCoder.dll
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.FormPagar.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.FormAgregarEquipo.resources

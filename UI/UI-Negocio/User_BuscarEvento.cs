@@ -113,7 +113,22 @@ namespace UI.UI_Negocio
             {
                 if (eventoDeporte.cantidad_integrantes_equipo > 1)
                 {
-
+                    using (FormAgregarEquipo formDialogo = new FormAgregarEquipo(eventoDeporte))
+                    {   
+                        if (formDialogo.ShowDialog() == DialogResult.OK)
+                        {
+                            equip = new Equipo()
+                            {
+                                Nombre = Session.GetInstance.Usuario.NombreApellido,
+                                Participantes = formDialogo.participantes
+                            };
+                            equip.Categoria = eventoSeleccionado.CalcularCategoria(equip);
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
                 }
                 else
                 {
@@ -125,15 +140,20 @@ namespace UI.UI_Negocio
                     equip.Categoria = eventoSeleccionado.CalcularCategoria(equip);
                 }
 
-                DialogResult result = new FormPagar().ShowDialog(this);
-                if (result == DialogResult.OK)
+                if (equip != null)
                 {
-                   new BLL_Equipo().Insert(equip,eventoSeleccionado.id);
-                }
-                else
-                {
-
-                }
+                    DialogResult result = new FormPagar().ShowDialog(this);
+                    if (result == DialogResult.OK)
+                    {
+                        new BLL_Equipo().Insert(equip, eventoSeleccionado.id);
+                        MessageBox.Show("Inscripcion registrada con exito!");
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }else { return; }
+                
             }
             catch (Exception ex)
             {

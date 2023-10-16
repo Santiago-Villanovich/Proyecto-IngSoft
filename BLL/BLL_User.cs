@@ -68,6 +68,24 @@ namespace BLL
             
         }
 
+        public List<User> GetAllByPermiso(int permiso)
+        {
+            try
+            {
+                List<User> users = new DAL_User().GetAllByPermiso(permiso);
+                foreach (var u in users)
+                {
+                    u.Email = HashCrypto.Desencriptar(u.Email);
+                }
+                return users;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
         public bool Insert(User obj) // Revisar uso de metodo
         {
             try

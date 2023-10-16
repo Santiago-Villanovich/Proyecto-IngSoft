@@ -58,7 +58,7 @@ namespace BLL
                 {
                     foreach (var item in obj.Participantes)
                     {
-                        dal.InsertParticipante(item);
+                        dal.InsertParticipante(item,id,idEvento);
                     }
                 }
 

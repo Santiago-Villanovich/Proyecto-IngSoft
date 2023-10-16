@@ -163,7 +163,7 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public bool InsertParticipante(Participante obj, Guid idEquipo)
+        public bool InsertParticipante(Participante obj, Guid idEquipo, int idEvento)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -174,6 +174,7 @@ namespace DAL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_user", obj.Usuario.Id);
                     cmd.Parameters.AddWithValue("@id_equipo", idEquipo);
+                    cmd.Parameters.AddWithValue("@id_evento", idEvento);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();

@@ -140,6 +140,58 @@ namespace DAL
             }
         }
 
+        public List<User> GetAllByPermiso(int permiso)
+        {
+            List<User> list = new List<User>();
+            using (SqlConnection conn = _conn)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetAllUsersByPermiso", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_permiso",permiso);
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var user = new User()
+                            {
+                                Id = Convert.ToInt32(reader["Id"]),
+                                Nombre = reader["Nombre"].ToString(),
+                                Apellido = reader["Apellido"].ToString(),
+                                DNI = Convert.ToInt32(reader["DNI"]),
+                                Telefono = reader["Telefono"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                FechaNacimiento = Convert.ToDateTime(reader["Fecha_Nacimiento"]),
+                                Clave = reader["Clave"].ToString(),
+                                DV = reader["DV"].ToString()
+
+                            };
+
+                            list.Add(user);
+                        }
+                    }
+
+                    return list;
+                }
+                catch (SqlException ex)
+                {
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         public bool Insert(User obj)
         {
             using (SqlConnection conn = _conn)

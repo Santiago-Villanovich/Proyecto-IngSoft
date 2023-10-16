@@ -41,17 +41,25 @@ namespace UI.UI_Negocio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            errorProvider1.SetError(textBox1,"");
-            int input = Convert.ToInt32(textBox1.Text);
+            errorProvider1.SetError(textBox1, "");
+            int input;
 
-            if (validator == input)
+            if (int.TryParse(textBox1.Text, out input))
             {
-                this.DialogResult = DialogResult.OK;
+                if (validator == input)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox1, "Número verificador incorrecto");
+                    button1.Enabled = true; 
+                }
             }
             else
             {
-                errorProvider1.SetError(textBox1, "Numero verificador incorrecto");
-                return;
+                errorProvider1.SetError(textBox1, "Ingresa un número válido");
+                button1.Enabled = true; 
             }
         }
 
