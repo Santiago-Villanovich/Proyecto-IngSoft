@@ -10,26 +10,27 @@ namespace Services
 {
     public class MailProvider
     {
-        public string sendMail(string to, string asunto, string body)
+        public string sendMail(List<string> to, string asunto, string body)
         {
             string msge = "Error al enviar este correo. Por favor verifique los datos o intente más tarde.";
             string from = "santiagovillanovich@yahoo.com"; //mi mail
             string displayName = "GoComp"; //Nombre que se muestra en el mail
             try
             {
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress(from, displayName);
-                mail.To.Add(to); //destinatario
-
-                mail.Subject = asunto;
-                mail.Body = body;
-                mail.IsBodyHtml = true;
-
-
                 SmtpClient client = new SmtpClient("smtp.office365.com", 587); //Aquí debes sustituir tu servidor SMTP y el puerto
                 client.Credentials = new NetworkCredential(from, "sa7918vi"); //tu contrasenia
                 client.EnableSsl = true; //En caso de que tu servidor de correo no utilice cifrado SSL,poner en false
 
+
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress(from, displayName);
+                foreach (var item in to)
+                {
+                    mail.To.Add(item.Trim()); //destinatario
+                }
+                mail.Subject = asunto;
+                mail.Body = body;
+                mail.IsBodyHtml = true;
 
                 client.Send(mail);
                 msge = "¡Correo enviado exitosamente! Pronto te contactaremos.";

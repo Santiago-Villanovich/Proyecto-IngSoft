@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -105,6 +106,7 @@ namespace UI.UI_Negocio
             gboxInformacion.Visible = false;
         }
 
+        Equipo equip;
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -112,6 +114,21 @@ namespace UI.UI_Negocio
                 if (eventoDeporte.cantidad_integrantes_equipo > 1)
                 {
 
+                }
+                else
+                {
+                    equip = new Equipo()
+                    {
+                        Nombre = Session.GetInstance.Usuario.NombreApellido,
+                        Participantes = new List<Participante> { new Participante() { Usuario = Session.GetInstance.Usuario } }
+                    };
+                    equip.Categoria = eventoSeleccionado.CalcularCategoria(equip);
+                }
+
+                DialogResult result = new FormPagar().ShowDialog(this);
+                if (result == DialogResult.OK)
+                {
+                   new BLL_Equipo().Insert(equip,eventoSeleccionado.id);
                 }
                 else
                 {

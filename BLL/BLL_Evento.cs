@@ -18,21 +18,12 @@ namespace BLL
         {
             throw new NotImplementedException();
         }
-        public List<Equipo> GetAllInscriptos(int IdEvento)
-        {
-            List<Equipo> equipos = dal.GetInscriptos(IdEvento);
-            foreach (Equipo equip in equipos)
-            {
-                equip.Participantes = dal.GetParticipantes(equip.Id);
-            }
-
-            return equipos;
-        }
+        
         public bool Cancel(Evento obj)
         {
-            /*if (dal.Cancel(obj))
+            if (dal.Cancel(obj))
             {
-                List<Equipo> inscriptos = GetAllInscriptos(obj.id);
+                List<Equipo> equip = new DAL_Equipo().GetAllEquiposEvento(obj.id);
 
                 MailProvider mail = new MailProvider();
                 string body = @"<style>
@@ -40,14 +31,12 @@ namespace BLL
                             <h1>Este es el body del correo</h1></br>
                             <h2>Este es el segundo párrafo</h2>";
 
-                foreach (var i in inscriptos)
-                {
-                    mail.sendMail($"{i.Email}", $"Evento {obj.nombre} cancelado", body);
-                }
+                
 
                 return true;
 
-            }else { return false; }*/
+            }
+            else { return false; }
 
             throw new NotImplementedException();
 

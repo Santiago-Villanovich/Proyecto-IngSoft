@@ -80,6 +80,11 @@ namespace UI.UI_Negocio
                 }
             }
         }
+        public void NotificarNuevaFecha(Evento e)
+        {
+
+        }
+
         private void CargarEventos()
         {
             try
@@ -204,11 +209,16 @@ namespace UI.UI_Negocio
                 {
                     eventoSeleccionado.nombre = txtNombre.Text;
                     eventoSeleccionado.Descripcion = richTextDescripcion.Text;
-                    eventoSeleccionado.Fecha = dateTimePicker1.Value;
+                    if (dateTimePicker1.Value != eventoSeleccionado.Fecha)
+                    {
+                        eventoSeleccionado.Fecha = dateTimePicker1.Value;
+                        NotificarNuevaFecha(eventoSeleccionado);
+                    }
 
                     bllEvento.Update(eventoSeleccionado);
                     this.OnLoad(null);
                     groupBox1.Visible = false;
+                    MessageBox.Show("Se actualizao correctamente la informacion del evento.");
                 }
             }
             catch (Exception ex)
@@ -217,30 +227,5 @@ namespace UI.UI_Negocio
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string test = $"Se le informa que el evento {eventoSeleccionado.nombre} del {eventoSeleccionado.Fecha.ToShortDateString()} fue cancelado, por lo que se realizara una devolucion de el pago realizado.\n Importe a devolver $ {eventoSeleccionado.ValorInscripcion}. Lamentamos las molestias.";
-
-            SmtpClient smtpClient = new SmtpClient("smtp.office365.com")
-            {
-                Port = 587,
-                Credentials = new NetworkCredential("santiagovillanovich@yahoo.com", "sa7918vi"),
-                EnableSsl = true,
-            };
-
-            // Crear el mensaje de correo
-            MailMessage mailMessage = new MailMessage
-            {
-                From = new MailAddress("santiagovillanovich@yahoo.com"),
-                Subject = "Cancelacion de evento",
-                Body = test,
-                IsBodyHtml = false,  // Si el cuerpo es HTML
-            };
-
-            mailMessage.To.Add("inntent@hotmail.com");
-
-            // Enviar el correo electrónico
-            smtpClient.Send(mailMessage);
-        }
     }
 }

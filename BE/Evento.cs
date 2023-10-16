@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,31 @@ namespace BE
         public byte[] portada { get; set; }
        
         public Evento() { }
+
+        public Categoria CalcularCategoria(Equipo e)
+        {
+            int EdadSum = 0;
+            Categoria c = null;
+
+            foreach (var item in e.Participantes)
+            {
+                EdadSum += item.Usuario.Edad();
+            }
+
+            foreach (var item in this.Categorias)
+            {
+                if (EdadSum >= item.EdadInicio && EdadSum <= item.EdadFin)
+                {
+                    c = item;
+                }
+            }
+
+            if (c!= null)
+            {
+                return c;
+
+            }else { return null; }
+        }
     }
 
     public class Categoria

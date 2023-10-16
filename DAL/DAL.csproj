@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="DAL_Bitacora.cs" />
     <Compile Include="DAL_DigitoVerificador.cs" />
+    <Compile Include="DAL_Equipo.cs" />
     <Compile Include="DAL_Evento.cs" />
     <Compile Include="DAL_Org.cs" />
     <Compile Include="DAL_Pileta.cs" />
