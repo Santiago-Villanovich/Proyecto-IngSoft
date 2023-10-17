@@ -46,11 +46,11 @@
             // panelNav
             // 
             this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.panelNav.Controls.Add(this.btnEventosProgramados);
             this.panelNav.Controls.Add(this.pictureBox3);
             this.panelNav.Controls.Add(this.pictureBox2);
             this.panelNav.Controls.Add(this.pictureBox1);
             this.panelNav.Controls.Add(this.btnIniciarEvento);
-            this.panelNav.Controls.Add(this.btnEventosProgramados);
             this.panelNav.Controls.Add(this.btnNuevoEvento);
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNav.Location = new System.Drawing.Point(0, 0);
@@ -107,7 +107,7 @@
             this.btnIniciarEvento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.btnIniciarEvento.Location = new System.Drawing.Point(3, 156);
             this.btnIniciarEvento.Name = "btnIniciarEvento";
-            this.btnIniciarEvento.Size = new System.Drawing.Size(219, 86);
+            this.btnIniciarEvento.Size = new System.Drawing.Size(216, 86);
             this.btnIniciarEvento.TabIndex = 5;
             this.btnIniciarEvento.Text = "Iniciar Evento";
             this.btnIniciarEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,9 +123,9 @@
             this.btnEventosProgramados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEventosProgramados.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEventosProgramados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.btnEventosProgramados.Location = new System.Drawing.Point(0, 361);
+            this.btnEventosProgramados.Location = new System.Drawing.Point(3, 361);
             this.btnEventosProgramados.Name = "btnEventosProgramados";
-            this.btnEventosProgramados.Size = new System.Drawing.Size(222, 73);
+            this.btnEventosProgramados.Size = new System.Drawing.Size(216, 61);
             this.btnEventosProgramados.TabIndex = 4;
             this.btnEventosProgramados.Text = "Eventos Programados";
             this.btnEventosProgramados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,7 +143,7 @@
             this.btnNuevoEvento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.btnNuevoEvento.Location = new System.Drawing.Point(0, 294);
             this.btnNuevoEvento.Name = "btnNuevoEvento";
-            this.btnNuevoEvento.Size = new System.Drawing.Size(222, 61);
+            this.btnNuevoEvento.Size = new System.Drawing.Size(219, 61);
             this.btnNuevoEvento.TabIndex = 2;
             this.btnNuevoEvento.Text = "Nuevo evento";
             this.btnNuevoEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

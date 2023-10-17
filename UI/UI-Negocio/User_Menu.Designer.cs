@@ -46,25 +46,26 @@
             // NavBar
             // 
             this.NavBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.NavBar.Controls.Add(this.button1);
             this.NavBar.Controls.Add(this.pictureBox1);
             this.NavBar.Controls.Add(this.pictureBox3);
             this.NavBar.Controls.Add(this.pictureBox2);
-            this.NavBar.Controls.Add(this.button1);
             this.NavBar.Controls.Add(this.btnHistorial);
             this.NavBar.Controls.Add(this.btnBuscarEvento);
             this.NavBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.NavBar.Location = new System.Drawing.Point(0, 0);
             this.NavBar.Name = "NavBar";
-            this.NavBar.Size = new System.Drawing.Size(182, 753);
+            this.NavBar.Size = new System.Drawing.Size(231, 753);
             this.NavBar.TabIndex = 0;
+            this.NavBar.Paint += new System.Windows.Forms.PaintEventHandler(this.NavBar_Paint);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(201, 109);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -88,7 +89,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(121, 694);
+            this.pictureBox2.Location = new System.Drawing.Point(170, 694);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(55, 47);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -105,9 +106,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.button1.Location = new System.Drawing.Point(0, 257);
+            this.button1.Location = new System.Drawing.Point(3, 337);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 43);
+            this.button1.Size = new System.Drawing.Size(225, 56);
             this.button1.TabIndex = 5;
             this.button1.Text = "Anuncios";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,9 +122,9 @@
             this.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorial.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.btnHistorial.Location = new System.Drawing.Point(0, 208);
+            this.btnHistorial.Location = new System.Drawing.Point(3, 275);
             this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(188, 43);
+            this.btnHistorial.Size = new System.Drawing.Size(225, 56);
             this.btnHistorial.TabIndex = 2;
             this.btnHistorial.Text = "Mi Desempeño";
             this.btnHistorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,9 +139,9 @@
             this.btnBuscarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarEvento.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarEvento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.btnBuscarEvento.Location = new System.Drawing.Point(0, 159);
+            this.btnBuscarEvento.Location = new System.Drawing.Point(3, 173);
             this.btnBuscarEvento.Name = "btnBuscarEvento";
-            this.btnBuscarEvento.Size = new System.Drawing.Size(188, 43);
+            this.btnBuscarEvento.Size = new System.Drawing.Size(225, 86);
             this.btnBuscarEvento.TabIndex = 1;
             this.btnBuscarEvento.Text = "Buscar Evento";
             this.btnBuscarEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -151,9 +152,9 @@
             // 
             this.PanelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenedor.Location = new System.Drawing.Point(182, 0);
+            this.PanelContenedor.Location = new System.Drawing.Point(231, 0);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(1100, 753);
+            this.PanelContenedor.Size = new System.Drawing.Size(1051, 753);
             this.PanelContenedor.TabIndex = 1;
             // 
             // User_Menu

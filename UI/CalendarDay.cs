@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,18 @@ namespace UI
         private Color normal;
         private Color evento;
         private Color today;
+        private Color eventoHover;
+
+        public Evento eventoDia;
 
         public CalendarDay()
         {
             InitializeComponent();
             hover = Color.Gainsboro;
             normal = Color.White;
-            evento = Color.IndianRed;
+            evento = Color.LightGreen;
             today = Color.LightBlue;
+            eventoHover = Color.LimeGreen;
 
             lblEvento.Text = string.Empty;
 
@@ -46,12 +51,14 @@ namespace UI
 
         }
 
-        public void days(int numDay, DateTime date)
+        public void days(DateTime date)
         {
             fecha = date;
-            this.numberDisplay.Text = numDay.ToString();
+            this.numberDisplay.Text = date.Day.ToString();
 
             if (FechaIgualHoy(date)) { this.BackColor = today; }
+
+            if (eventoDia != null){this.BackColor = evento;}
 
         }
 
@@ -63,37 +70,74 @@ namespace UI
 
         private void CalendarDay_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = hover;
+            if (eventoDia != null)
+            {
+                this.BackColor = eventoHover;
+            }
+            else
+            {
+                this.BackColor = hover;
+            }
         }
 
         private void CalendarDay_MouseMove(object sender, MouseEventArgs e)
         {
-            this.BackColor = hover;
+            if (eventoDia != null)
+            {
+                this.BackColor = eventoHover;
+            }
+            else
+            {
+                this.BackColor = hover;
+            }
         }
 
         private void CalendarDay_MouseLeave(object sender, EventArgs e)
         {
             if (FechaIgualHoy(fecha))
             { this.BackColor = today; }
+            else if (eventoDia != null)
+            {
+                this.BackColor = evento;
+            }
             else { this.BackColor = normal; }
 
         }
 
         private void numberDisplay_MouseMove(object sender, MouseEventArgs e)
         {
-            this.BackColor = hover;
+            if (eventoDia != null)
+            {
+                this.BackColor = eventoHover;
+            }
+            else
+            {
+                this.BackColor = hover;
+            }
         }
 
         private void numberDisplay_MouseLeave(object sender, EventArgs e)
         {
             if (FechaIgualHoy(fecha))
             { this.BackColor = today; }
+            else if (eventoDia != null)
+            {
+                this.BackColor = evento;
+            }
             else { this.BackColor = normal; }
         }
 
         private void numberDisplay_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = hover;
+            if (eventoDia != null)
+            {
+                this.BackColor = eventoHover;
+            }
+            else
+            {
+                this.BackColor = hover;
+            }
+            
         }
         #endregion
     }

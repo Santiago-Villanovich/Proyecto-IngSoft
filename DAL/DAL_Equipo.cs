@@ -40,7 +40,7 @@ namespace DAL
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("sp_GetAllEventoEquipos", conn);
+                    SqlCommand cmd = new SqlCommand("sp_GetAllEquiposByEvento", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_evento", idEvento);
                     cmd.Connection = conn;

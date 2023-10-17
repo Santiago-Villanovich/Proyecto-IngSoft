@@ -1,4 +1,6 @@
 ﻿
+using BE;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,12 +21,16 @@ namespace UI.UI_Negocio
         static int currentYear;
         static int currentMonth;
 
+        public List<Evento> events;
+
         public User_Inicio()
         {
             InitializeComponent();
             currentDT = DateTime.Now;
             currentMonth = currentDT.Month;
             currentYear = currentDT.Year;
+
+            events = new BLL_Evento().GetAllByUser();
         }
 
         private void User_Inicio_Load(object sender, EventArgs e)
@@ -52,7 +58,15 @@ namespace UI.UI_Negocio
             for (int i = 1; i <= days; i++)
             {
                 CalendarDay CDay = new CalendarDay();
-                CDay.days(i,new DateTime(currentYear,currentMonth,i));
+                DateTime fecha = new DateTime(currentYear, currentMonth, i);
+                Evento ev = events.Find(objeto => objeto.Fecha == fecha);
+                if (ev != null)
+                {
+                    CDay.eventoDia = ev;
+                }
+
+                CDay.days(fecha);
+
                 DaysContainer.Controls.Add(CDay);
             }
         }

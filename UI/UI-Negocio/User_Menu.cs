@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using BE;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,14 +11,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.UI_Negocio;
+using BLL;
 
 namespace UI
 {
     public partial class User_Menu : Form
     {
+       
+
         public User_Menu()
         {
             InitializeComponent();
+
             CargarMenuContenedor(new User_Inicio());
         }
 
@@ -70,6 +75,11 @@ namespace UI
         private void btnBuscarEvento_Click(object sender, EventArgs e)
         {
             CargarMenuContenedor(new User_BuscarEvento());
+        }
+
+        private void NavBar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

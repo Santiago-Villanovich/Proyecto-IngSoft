@@ -71,6 +71,18 @@ namespace BLL
             return list;
         }
 
+        public List<Evento> GetAllByUser()
+        {
+            List<Evento> list = dal.GetAllbyUser(Session.GetInstance.Usuario.Id);
+            foreach (Evento obj in list)
+            {
+                obj.Deporte = new DAL_DeporteNatacion().Get(obj.id);
+                obj.Categorias = dal.GetCategorias(obj.id);
+            }
+
+            return list;
+        }
+
         public bool Insert(Evento obj)
         {
             return dal.Insert(obj);

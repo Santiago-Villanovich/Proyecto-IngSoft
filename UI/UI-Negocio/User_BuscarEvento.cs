@@ -122,6 +122,7 @@ namespace UI.UI_Negocio
                                 Nombre = Session.GetInstance.Usuario.NombreApellido,
                                 Participantes = formDialogo.participantes
                             };
+                            equip.Participantes.Add(new Participante(Session.GetInstance.Usuario)) ;
                             equip.Categoria = eventoSeleccionado.CalcularCategoria(equip);
                         }
                         else
