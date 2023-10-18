@@ -62,3 +62,13 @@ C:\Universidad\Diploma\Proyecto\BE\obj\Debug\BE.csproj.CopyComplete
 C:\Universidad\Diploma\Proyecto\BE\obj\Debug\BE.dll
 C:\Universidad\Diploma\Proyecto\BE\obj\Debug\BE.pdb
 C:\Universidad\Diploma\Proyecto\BE\bin\Debug\QRCoder.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\bin\Debug\BE.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\bin\Debug\BE.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\bin\Debug\ABS.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\bin\Debug\QRCoder.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\bin\Debug\ABS.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\santi\source\repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.csproj.CopyComplete
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.pdb
