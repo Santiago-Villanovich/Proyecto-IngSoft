@@ -23,7 +23,7 @@ namespace BE
        
         public Evento() { }
 
-        public Categoria CalcularCategoria(Equipo e)
+        public Categoria CalcularCategoriaEquipo(Equipo e)
         {
             int EdadSum = 0;
             Categoria c = null;
@@ -55,6 +55,7 @@ namespace BE
         public int EdadInicio { get; set; }
         public int EdadFin { get; set; }
         public string str { get; }
+        public List<Equipo> equipos { get; set; }
 
         public Categoria() { }
         public Categoria(string nom, int min, int max) {

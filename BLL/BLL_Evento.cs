@@ -21,9 +21,9 @@ namespace BLL
         
         public bool Cancel(Evento obj)
         {
-            if (dal.Cancel(obj))
+            if (dal.UpdateEstado(obj,3))
             {
-                List<Equipo> equips = new DAL_Equipo().GetAllEquiposEvento(obj.id);
+                List<Equipo> equips = new BLL_Equipo().GetAllEquiposEvento(obj.id);
                 List<string> to = new List<string>();
 
                 MailProvider mail = new MailProvider();
@@ -51,6 +51,18 @@ namespace BLL
 
         }
 
+        public bool CerrarInscripcion(Evento obj)
+        {
+            if (dal.UpdateEstado(obj, 4))
+            {
+                return true;
+            }
+            else { return false; }
+
+            throw new NotImplementedException();
+
+        }
+
         public Evento Get(int id)
         {
             throw new NotImplementedException();
@@ -68,9 +80,21 @@ namespace BLL
             return list;
         }
 
-        public List<Evento> GetAllByOrg()
+        public List<Evento> GetAllByOrg_publicado()
         {
-            List<Evento> list = dal.GetAllbyOrg(Session.GetInstance.Usuario.Organizacion.id);
+            List<Evento> list = dal.GetAllbyOrg(Session.GetInstance.Usuario.Organizacion.id,2);
+            foreach (Evento obj in list)
+            {
+                obj.Deporte = new DAL_DeporteNatacion().Get(obj.id);
+                obj.Categorias = dal.GetCategorias(obj.id);
+            }
+
+            return list;
+        }
+
+        public List<Evento> GetAllByOrg_estado(int idEstado)
+        {
+            List<Evento> list = dal.GetAllbyOrg(Session.GetInstance.Usuario.Organizacion.id, idEstado);
             foreach (Evento obj in list)
             {
                 obj.Deporte = new DAL_DeporteNatacion().Get(obj.id);
@@ -106,6 +130,36 @@ namespace BLL
         public bool Update(Evento obj)
         {
             return dal.Update(obj);
+        }
+
+        public List<Categoria> CalcularCategorias(Evento evento)
+        {
+            try
+            {
+                List<Equipo> equiposInscriptos = new BLL_Equipo().GetAllEquiposEvento(evento.id);
+                int flag = 0;
+
+                foreach (var cat in evento.Categorias)
+                {
+                    cat.equipos = equiposInscriptos.Where(eq => eq.Categoria.Nombre.Trim() == cat.Nombre.Trim()).ToList();
+                    flag += cat.equipos.Count;
+                }
+
+                if (flag == equiposInscriptos.Count)
+                {
+                    return evento.Categorias;
+                }
+                else
+                {
+                    throw new Exception("Ha ocurrido un error calculando las categorias del evento. Informe a soporte");
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

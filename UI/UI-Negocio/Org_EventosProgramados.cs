@@ -16,6 +16,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Documents;
+using System.Xml.Linq;
 
 namespace UI.UI_Negocio
 {
@@ -40,7 +42,7 @@ namespace UI.UI_Negocio
         }        
         private void Org_EventosProgramados_Load(object sender, EventArgs e)
         {
-            listEventos = bllEvento.GetAllByOrg();
+            listEventos = bllEvento.GetAllByOrg_publicado();
             CargarEventos();
             
         }
@@ -60,7 +62,7 @@ namespace UI.UI_Negocio
                 pictureBox1.Visible = true;
                 using (MemoryStream stream = new MemoryStream(evento.portada))
                 {
-                    Image imagen = Image.FromStream(stream);
+                    System.Drawing.Image imagen = Image.FromStream(stream);
 
                     pictureBox1.Image = imagen;
                 }
@@ -76,21 +78,37 @@ namespace UI.UI_Negocio
 
         public void CancelarEvento(Evento evento)
         {
-            string mensaje = $"Esta seguro que desea cancelar el evento '{evento.nombre}' , una vez cancelado\nse le comunicara a los participantes inscriptos y posteriormente se le\ndevolvera el coste de inscripcion ";
-            DialogResult result = MessageBox.Show(mensaje,"Cancelar evento", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.OK)
+            try
             {
-                if (bllEvento.Cancel(evento))
+                string mensaje = $"Esta seguro que desea cancelar el evento '{evento.nombre}' , una vez cancelado\nse le comunicara a los participantes inscriptos y posteriormente se le\ndevolvera el coste de inscripcion ";
+                DialogResult result = MessageBox.Show(mensaje, "Cancelar evento", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Evento cancelado exitosamente","Evento Cancelado",MessageBoxButtons.OK);
-                    this.OnLoad(null);
+                    if (bllEvento.Cancel(evento))
+                    {
+                        MessageBox.Show("Evento cancelado exitosamente", "Evento Cancelado", MessageBoxButtons.OK);
+                        this.OnLoad(null);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public void CerrarInscripcion(Evento even)
         {
-
+            try
+            {
+                bllEvento.CerrarInscripcion(even);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         
 
@@ -109,8 +127,6 @@ namespace UI.UI_Negocio
 
                 if (listEventos.Count>0)
                 {
-                    
-
                     foreach (Evento evento in listEventos)
                     {
                         Org_EventoDisplay Edisp = new Org_EventoDisplay(evento);
@@ -211,18 +227,25 @@ namespace UI.UI_Negocio
 
                 if (!errorFlag) 
                 {
+                    bool cambioFecha;
+
                     eventoSeleccionado.nombre = txtNombre.Text;
                     eventoSeleccionado.Descripcion = richTextDescripcion.Text;
                     if (dateTimePicker1.Value != eventoSeleccionado.Fecha)
                     {
+                        cambioFecha = true;
                         eventoSeleccionado.Fecha = dateTimePicker1.Value;
-                        NotificarNuevaFecha(eventoSeleccionado);
                     }
+                    else { cambioFecha = false;}
 
                     bllEvento.Update(eventoSeleccionado);
+                    if (cambioFecha)
+                    {
+                        NotificarNuevaFecha(eventoSeleccionado);
+                    }
                     this.OnLoad(null);
                     groupBox1.Visible = false;
-                    MessageBox.Show("Se actualizao correctamente la informacion del evento.");
+                    MessageBox.Show("Se actualizo y notifico correctamente la informacion del evento.");
                 }
             }
             catch (Exception ex)
@@ -233,12 +256,45 @@ namespace UI.UI_Negocio
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            CancelarEvento(eventoSeleccionado);
+            try
+            {
+                CancelarEvento(eventoSeleccionado);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         public void NotificarNuevaFecha(Evento e)
         {
+            try
+            {
+                List<Equipo> equips = new BLL_Equipo().GetAllEquiposEvento(e.id);
+                List<string> to = new List<string>();
 
+                MailProvider mail = new MailProvider();
+                string body = $"Hola, nos comunicamos de GoComp para informarle que el evento al que estaba suscrito:\n" +
+                              $"'{e.nombre}' fue reprogramado, por lo que se llevara a cabo el dia" +
+                              $" {e.Fecha} ";
+
+
+                foreach (var eq in equips)
+                {
+                    foreach (var p in eq.Participantes)
+                    {
+                        to.Add(p.Usuario.Email.Trim());
+                    }
+                }
+
+                mail.sendMail(to, "Cambio de fecha para la competencia", body);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
     }

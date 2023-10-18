@@ -123,7 +123,7 @@ namespace UI.UI_Negocio
                                 Participantes = formDialogo.participantes
                             };
                             equip.Participantes.Add(new Participante(Session.GetInstance.Usuario)) ;
-                            equip.Categoria = eventoSeleccionado.CalcularCategoria(equip);
+                            equip.Categoria = eventoSeleccionado.CalcularCategoriaEquipo(equip);
                         }
                         else
                         {
@@ -138,7 +138,7 @@ namespace UI.UI_Negocio
                         Nombre = Session.GetInstance.Usuario.NombreApellido,
                         Participantes = new List<Participante> { new Participante() { Usuario = Session.GetInstance.Usuario } }
                     };
-                    equip.Categoria = eventoSeleccionado.CalcularCategoria(equip);
+                    equip.Categoria = eventoSeleccionado.CalcularCategoriaEquipo(equip);
                 }
 
                 if (equip != null)

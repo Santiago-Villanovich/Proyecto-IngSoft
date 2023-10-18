@@ -20,30 +20,6 @@ namespace DAL
         {
             throw new NotImplementedException();
         }
-        public bool Cancel(Evento obj)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("sp_UpdateEventoEstado", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@IdEvento", obj.id);
-                    cmd.Parameters.AddWithValue("@IdEstado", 3);
-                    cmd.Connection = conn;
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    return true;
-                    
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                finally { conn.Close(); }
-
-            }
-        }
 
         public Evento Get(int id)
         {
@@ -117,7 +93,7 @@ namespace DAL
             }
         }
 
-        public List<Evento> GetAllbyOrg(int id)
+        public List<Evento> GetAllbyOrg(int idOrg,int idEstado)
         {
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -128,7 +104,8 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand("sp_GetAllEventoByOrg", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("IdOrg", id);
+                    cmd.Parameters.AddWithValue("IdOrg", idOrg);
+                    cmd.Parameters.AddWithValue("IdEstado", idEstado);
                     cmd.Connection = conn;
                     conn.Open();
 
@@ -386,6 +363,34 @@ namespace DAL
                     {
                         cmd.Parameters.Add("@portada", SqlDbType.VarBinary, -1).Value = DBNull.Value;
                     }
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public bool UpdateEstado(Evento obj,int idEstado)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_UpdateEvento", conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdEvento", obj.id);
+                    cmd.Parameters.AddWithValue("@IdEstado", idEstado);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();

@@ -41,9 +41,9 @@ namespace BLL
 
                 return equipos;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             
         }
