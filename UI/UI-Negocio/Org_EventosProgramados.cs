@@ -37,6 +37,12 @@ namespace UI.UI_Negocio
             flowLayoutPanel1.HorizontalScroll.Visible = true;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.AutoScroll = true;
+        }        
+        private void Org_EventosProgramados_Load(object sender, EventArgs e)
+        {
+            listEventos = bllEvento.GetAllByOrg();
+            CargarEventos();
+            
         }
         public void MostrarOpciones(Evento evento)
         {
@@ -67,6 +73,7 @@ namespace UI.UI_Negocio
             }
 
         }
+
         public void CancelarEvento(Evento evento)
         {
             string mensaje = $"Esta seguro que desea cancelar el evento '{evento.nombre}' , una vez cancelado\nse le comunicara a los participantes inscriptos y posteriormente se le\ndevolvera el coste de inscripcion ";
@@ -80,10 +87,12 @@ namespace UI.UI_Negocio
                 }
             }
         }
-        public void NotificarNuevaFecha(Evento e)
+
+        public void CerrarInscripcion(Evento even)
         {
 
         }
+        
 
         private void CargarEventos()
         {
@@ -112,7 +121,7 @@ namespace UI.UI_Negocio
                         };
                         Edisp.cancelarHandler += (sender, e) =>
                         {
-                            CancelarEvento(Edisp.MiEvento);
+                            CerrarInscripcion(Edisp.MiEvento);
                         };
 
                         flowLayoutPanel1.Controls.Add(Edisp);
@@ -131,12 +140,7 @@ namespace UI.UI_Negocio
             
         }
 
-        private void Org_EventosProgramados_Load(object sender, EventArgs e)
-        {
-            listEventos = bllEvento.GetAllByOrg();
-            CargarEventos();
-            
-        }
+
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -225,6 +229,16 @@ namespace UI.UI_Negocio
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            CancelarEvento(eventoSeleccionado);
+        }
+
+        public void NotificarNuevaFecha(Evento e)
+        {
+
         }
 
     }
