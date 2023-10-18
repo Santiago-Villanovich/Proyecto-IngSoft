@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Documents;
 using System.Xml.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace UI.UI_Negocio
 {
@@ -103,7 +104,19 @@ namespace UI.UI_Negocio
         {
             try
             {
-                bllEvento.CerrarInscripcion(even);
+                if (bllEvento.CerrarInscripcion(even))
+                {
+                    string mensaje = $"Se cerro la inscripcion al evento correctamente.\n\nPresione 'Yes' si desea descargar un archivo con la distribucion de las categorias o 'No' en caso contrario.";
+                    DialogResult result = MessageBox.Show(mensaje, "Inscripcion cerrada", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+
+                    }
+                    else
+                    {
+                        this.OnLoad(null);
+                    }
+                }
             }
             catch (Exception ex)
             {

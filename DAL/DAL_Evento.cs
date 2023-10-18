@@ -37,6 +37,7 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand("sp_GetAllEvento", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdEstado", DBNull.Value);
                     cmd.Connection = conn;
                     conn.Open();
 
@@ -54,6 +55,74 @@ namespace DAL
                                 ValorInscripcion = Convert.ToDouble(reader["coste_inscripcion"].ToString()),
                                 estado = reader["estado"].ToString(),
                                 
+
+                                Organizacion = new Organizacion()
+                                {
+                                    id = Convert.ToInt32(reader["id_org"].ToString()),
+                                    Nombre = reader["nombre"].ToString(),
+                                    CUIT = reader["cuit"].ToString(),
+                                    Email = reader["email"].ToString(),
+                                    DireccionWeb = reader["direccion_web"].ToString()
+                                }
+
+                            };
+
+                            object pre = reader["portada"];
+                            if (pre != DBNull.Value)
+                            {
+                                evento.portada = (byte[])reader["portada"];
+                            }
+                            else
+                            {
+                                evento.portada = null;
+                            }
+
+                            list.Add(evento);
+                        }
+                    }
+
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public List<Evento> GetAll(int idEstado)
+        {
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                List<Evento> list = new List<Evento>();
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetAllEvento", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdEstado", idEstado);
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var evento = new Evento()
+                            {
+                                id = Convert.ToInt32(reader["id_evento"]),
+                                nombre = reader["nombre"].ToString(),
+                                Descripcion = reader["descripcion"].ToString(),
+                                Fecha = Convert.ToDateTime(reader["fecha"].ToString()),
+                                cupo = Convert.ToInt32(reader["cupos"].ToString()),
+                                ValorInscripcion = Convert.ToDouble(reader["coste_inscripcion"].ToString()),
+                                estado = reader["estado"].ToString(),
+
 
                                 Organizacion = new Organizacion()
                                 {
@@ -386,7 +455,7 @@ namespace DAL
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("sp_UpdateEvento", conn);
+                    SqlCommand cmd = new SqlCommand("sp_UpdateEventoEstado", conn);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@IdEvento", obj.id);

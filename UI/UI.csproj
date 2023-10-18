@@ -176,6 +176,12 @@
     <Compile Include="UI-Negocio\Org_EventosProgramados.Designer.cs">
       <DependentUpon>Org_EventosProgramados.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI-Negocio\Org_IniciarEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI-Negocio\Org_IniciarEvento.Designer.cs">
+      <DependentUpon>Org_IniciarEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI-Negocio\Org_Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI-Negocio\Org_EventosProgramados.resx">
       <DependentUpon>Org_EventosProgramados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI-Negocio\Org_IniciarEvento.resx">
+      <DependentUpon>Org_IniciarEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI-Negocio\Org_Inicio.resx">
       <DependentUpon>Org_Inicio.cs</DependentUpon>

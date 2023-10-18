@@ -64,3 +64,5 @@ C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.dll
 C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.pdb
 C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\QRCoder.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\DAL.dll.config
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\Services.dll.config
