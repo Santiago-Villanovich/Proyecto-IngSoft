@@ -336,15 +336,26 @@ namespace UI.UI_Negocio
                         doc.Add(Chunk.NEWLINE);
                         doc.Add(new Paragraph($"CATEGORIA: {cat.Nombre} - De {cat.EdadInicio} a {cat.EdadFin}"));
                         doc.Add(new Paragraph($"Equipos:"));
-                        foreach (var eq in cat.equipos)
+
+                        if (cat.equipos.Count > 0)
                         {
-                            doc.Add(Chunk.NEWLINE);
-                            doc.Add(new Paragraph($"Nombre equipo:{eq.Nombre}:"));
-                            foreach (var part in eq.Participantes)
+                            foreach (var eq in cat.equipos)
                             {
-                                doc.Add(new Paragraph($"Participante: {part.Usuario.Apellido} {part.Usuario.Nombre} - {part.Usuario.Edad()} años"));
+                                doc.Add(Chunk.NEWLINE);
+                                doc.Add(new Paragraph($"Nombre equipo:{eq.Nombre}:"));
+                                foreach (var part in eq.Participantes)
+                                {
+                                    doc.Add(new Paragraph($"Participante: {part.Usuario.Apellido} {part.Usuario.Nombre} - {part.Usuario.Edad()} años"));
+                                }
                             }
                         }
+                        else
+                        {
+                            doc.Add(Chunk.NEWLINE);
+                            doc.Add(new Paragraph($"Sin equipos inscriptos"));
+
+                        }
+
                     }
 
                     doc.Close();
