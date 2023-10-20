@@ -23,11 +23,16 @@ namespace UI.UI_Negocio
 
         private void CargarDatagrid(Equipo eq)
         {
-            DataGridTextBoxColumn columTxt;
+            DataGridViewTextBoxColumn columTxt;
             foreach (var part in eq.Participantes)
             {
-                columTxt = new DataGridTextBoxColumn();
-                columTxt.HeaderText = part.Usuario.NombreApellido.ToString();
+                columTxt = new DataGridViewTextBoxColumn()
+                {
+                    Name = "usuario",
+                    HeaderText = part.Usuario.NombreApellido
+                };
+
+                this.dataGridView1.Columns.Add(columTxt);
 
             }
         }

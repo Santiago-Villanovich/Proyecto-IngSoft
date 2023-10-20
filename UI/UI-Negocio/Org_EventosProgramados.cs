@@ -16,9 +16,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Documents;
 using System.Xml.Linq;
 using Microsoft.Extensions.Logging;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace UI.UI_Negocio
 {
@@ -43,6 +44,7 @@ namespace UI.UI_Negocio
         }        
         private void Org_EventosProgramados_Load(object sender, EventArgs e)
         {
+            groupBox1.Visible=false;
             listEventos = bllEvento.GetAllByOrg_publicado();
             CargarEventos();
             
@@ -63,7 +65,7 @@ namespace UI.UI_Negocio
                 pictureBox1.Visible = true;
                 using (MemoryStream stream = new MemoryStream(evento.portada))
                 {
-                    System.Drawing.Image imagen = Image.FromStream(stream);
+                    System.Drawing.Image imagen = System.Drawing.Image.FromStream(stream);
 
                     pictureBox1.Image = imagen;
                 }
@@ -110,7 +112,8 @@ namespace UI.UI_Negocio
                     DialogResult result = MessageBox.Show(mensaje, "Inscripcion cerrada", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     {
-
+                        DescargarPdf(even);
+                        this.OnLoad(null);
                     }
                     else
                     {
@@ -308,6 +311,48 @@ namespace UI.UI_Negocio
                 throw ex;
             }
             
+        }
+
+        public void DescargarPdf(Evento ev)
+        {
+            ev.Categorias = bllEvento.CalcularCategorias(ev);
+            OpenFileDialog file = new OpenFileDialog();
+
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string DocumentoLoc = saveFileDialog.FileName + ".pdf";
+                    Document doc = new Document();
+                    PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(DocumentoLoc, FileMode.Create));
+                    doc.Open();
+                    doc.Add(new Paragraph("CATEGORIAS DEL EVENTO"));
+
+                    iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8);
+
+                    foreach (Categoria cat in ev.Categorias)
+                    {
+                        doc.Add(Chunk.NEWLINE);
+                        doc.Add(new Paragraph($"CATEGORIA: {cat.Nombre} - De {cat.EdadInicio} a {cat.EdadFin}"));
+                        doc.Add(new Paragraph($"Equipos:"));
+                        foreach (var eq in cat.equipos)
+                        {
+                            doc.Add(Chunk.NEWLINE);
+                            doc.Add(new Paragraph($"Nombre equipo:{eq.Nombre}:"));
+                            foreach (var part in eq.Participantes)
+                            {
+                                doc.Add(new Paragraph($"Participante: {part.Usuario.Apellido} {part.Usuario.Nombre} - {part.Usuario.Edad()} años"));
+                            }
+                        }
+                    }
+
+                    doc.Close();
+
+                    MessageBox.Show("Se guardo el PDF correctamente. Ruta de acceso: " + DocumentoLoc);
+                }
+            }
+
         }
 
     }
