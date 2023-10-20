@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Inicio));
             this.DaysContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,7 +41,12 @@
             this.btnSiguienteMes = new System.Windows.Forms.Button();
             this.lblMesNow = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gboxEventoHoy = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.gboxEventoHoy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // DaysContainer
@@ -161,12 +167,46 @@
             this.panel1.Size = new System.Drawing.Size(523, 96);
             this.panel1.TabIndex = 19;
             // 
+            // gboxEventoHoy
+            // 
+            this.gboxEventoHoy.Controls.Add(this.lblTitulo);
+            this.gboxEventoHoy.Controls.Add(this.pictureBox1);
+            this.gboxEventoHoy.Location = new System.Drawing.Point(541, 12);
+            this.gboxEventoHoy.Name = "gboxEventoHoy";
+            this.gboxEventoHoy.Size = new System.Drawing.Size(421, 620);
+            this.gboxEventoHoy.TabIndex = 20;
+            this.gboxEventoHoy.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(409, 321);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Lucida Sans Unicode", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Location = new System.Drawing.Point(1, 17);
+            this.lblTitulo.MaximumSize = new System.Drawing.Size(420, 0);
+            this.lblTitulo.MinimumSize = new System.Drawing.Size(420, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(420, 28);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Titulo Evento";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // User_Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(754, 669);
+            this.ClientSize = new System.Drawing.Size(1131, 669);
+            this.Controls.Add(this.gboxEventoHoy);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DaysContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -175,6 +215,9 @@
             this.Load += new System.EventHandler(this.User_Inicio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.gboxEventoHoy.ResumeLayout(false);
+            this.gboxEventoHoy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,5 +235,8 @@
         private System.Windows.Forms.Button btnSiguienteMes;
         private System.Windows.Forms.Label lblMesNow;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox gboxEventoHoy;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

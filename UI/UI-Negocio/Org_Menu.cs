@@ -1,4 +1,6 @@
-﻿using Services;
+﻿using BE;
+using BLL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,17 +11,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.UI_Negocio;
+using static Org.BouncyCastle.Crypto.Digests.SkeinEngine;
 
 namespace UI
 {
     public partial class Org_Menu : Form
     {
+        BLL_Evento bllEvento;
         public Org_Menu()
         {
             InitializeComponent();
             this.Size = new Size(1200, 650);
             this.MinimumSize = new Size(1200, 650);
+            bllEvento = new BLL_Evento();
         }
+
         private void CargarMenuContenedor(object formHijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
@@ -31,7 +37,18 @@ namespace UI
             frm.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(frm);
             this.panelContenedor.Tag = frm;
+
+            if (frm is Org_IniciarEvento orgIniciarEventoForm)
+            {
+                orgIniciarEventoForm.mostrarIniciar += (sender, e) => MostrarEventoIniciado(orgIniciarEventoForm.eventoIniciado);
+            }
             frm.Show();
+        }
+
+
+        private void MostrarEventoIniciado(Evento ev)
+        {
+            CargarMenuContenedor(new Org_EventoIniciado(ev));
         }
 
         private void btnNuevoEvento_Click(object sender, EventArgs e)
@@ -39,9 +56,11 @@ namespace UI
             CargarMenuContenedor(new Org_NuevoEvento());
         }
 
-        private void btnIniciarEvento_Click(object sender, EventArgs e)
+        private void btnIniciarEvento_Click(object psender, EventArgs ea)
         {
-
+            CargarMenuContenedor(new Org_IniciarEvento());
+            this.Size = new Size(650, 650);
+            this.MinimumSize = new Size(650, 650);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

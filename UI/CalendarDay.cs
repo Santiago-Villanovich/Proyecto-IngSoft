@@ -62,12 +62,13 @@ namespace UI
 
         }
 
-        #region(hovers)
+        public event EventHandler eventoClick;
         private void CalendarDay_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(fecha.ToString());
+            eventoClick?.Invoke(this, EventArgs.Empty);
         }
 
+        #region(hovers)
         private void CalendarDay_MouseHover(object sender, EventArgs e)
         {
             if (eventoDia != null)

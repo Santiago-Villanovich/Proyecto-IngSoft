@@ -52,6 +52,7 @@ namespace DAL
                         {
                             var equip = new Equipo()
                             {
+                                Id = Guid.Parse(reader["id"].ToString()),
                                 Nombre = reader["nombre"].ToString(),
                                 Categoria = new Categoria() { Nombre = reader["categoria"].ToString() }
 
@@ -86,7 +87,7 @@ namespace DAL
                 {
                     SqlCommand cmd = new SqlCommand("sp_GetAllEquipoParticipantes", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_equipo", idEquipo);
+                    cmd.Parameters.AddWithValue("@id_equipo", idEquipo.ToString());
                     cmd.Connection = conn;
                     conn.Open();
 
@@ -96,8 +97,7 @@ namespace DAL
                         {
                             var par = new Participante()
                             {
-                                MetrosLogrados = Convert.ToInt32(reader["metros"]),
-                                tiempoPromedio = TimeSpan.Parse(reader["tiempo"].ToString()),
+                                
                                 Usuario = new User()
                                 {
                                     Id = Convert.ToInt32(reader["Id"].ToString()),
@@ -110,6 +110,24 @@ namespace DAL
                                 }
 
                             };
+
+                            if (reader["metros"] is DBNull)
+                            {
+                                par.MetrosLogrados = 0;
+                            }
+                            else
+                            {
+                                par.MetrosLogrados = Convert.ToInt32(reader["metros"]);
+                            }
+
+                            if (reader["tiempo"] is DBNull)
+                            {
+                                par.tiempoPromedio = TimeSpan.Zero;
+                            }
+                            else
+                            {
+                                par.tiempoPromedio = TimeSpan.Parse(reader["tiempo"].ToString());
+                            }
 
                             list.Add(par);
                         }

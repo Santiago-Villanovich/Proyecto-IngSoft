@@ -99,6 +99,7 @@ namespace BLL
             {
                 obj.Deporte = new DAL_DeporteNatacion().Get(obj.id);
                 obj.Categorias = dal.GetCategorias(obj.id);
+                obj.Categorias = CalcularCategorias(obj);
             }
 
             return list;
@@ -130,6 +131,11 @@ namespace BLL
         public bool Update(Evento obj)
         {
             return dal.Update(obj);
+        }
+
+        public bool UpdateEstado(Evento obj,int id)
+        {
+            return dal.UpdateEstado(obj,id);
         }
 
         public List<Categoria> CalcularCategorias(Evento evento)

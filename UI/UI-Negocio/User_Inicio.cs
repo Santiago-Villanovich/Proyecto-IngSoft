@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +30,25 @@ namespace UI.UI_Negocio
             currentDT = DateTime.Now;
             currentMonth = currentDT.Month;
             currentYear = currentDT.Year;
+            gboxEventoHoy.Visible = false;
 
             events = new BLL_Evento().GetAllByUser();
+        }
+
+        public void MostrarEventoHoy(Evento ev)
+        {
+            if (ev != null)
+            {
+                gboxEventoHoy.Visible = true;
+                lblTitulo.Text = ev.nombre;
+                using (MemoryStream stream = new MemoryStream(ev.portada))
+                {
+                    Image imagen = Image.FromStream(stream);
+
+                    pictureBox1.Image = imagen;
+                }
+            }
+            
         }
 
         private void User_Inicio_Load(object sender, EventArgs e)
@@ -63,9 +81,14 @@ namespace UI.UI_Negocio
                 if (ev != null)
                 {
                     CDay.eventoDia = ev;
+                    if (CDay.fecha == currentDT) { MostrarEventoHoy(ev); }
                 }
-
+                
                 CDay.days(fecha);
+                CDay.eventoClick += (sender, e) =>
+                {
+                    MostrarEventoHoy(CDay.eventoDia);
+                };
 
                 DaysContainer.Controls.Add(CDay);
             }

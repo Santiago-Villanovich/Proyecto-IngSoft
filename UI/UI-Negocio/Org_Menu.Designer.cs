@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Org_Menu));
             this.panelNav = new System.Windows.Forms.Panel();
+            this.btnEventosProgramados = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnIniciarEvento = new System.Windows.Forms.Button();
-            this.btnEventosProgramados = new System.Windows.Forms.Button();
             this.btnNuevoEvento = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelNav.SuspendLayout();
@@ -57,6 +57,24 @@
             this.panelNav.Name = "panelNav";
             this.panelNav.Size = new System.Drawing.Size(222, 673);
             this.panelNav.TabIndex = 0;
+            // 
+            // btnEventosProgramados
+            // 
+            this.btnEventosProgramados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEventosProgramados.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(125)))), ((int)(((byte)(24)))));
+            this.btnEventosProgramados.FlatAppearance.BorderSize = 0;
+            this.btnEventosProgramados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(125)))), ((int)(((byte)(24)))));
+            this.btnEventosProgramados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEventosProgramados.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEventosProgramados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.btnEventosProgramados.Location = new System.Drawing.Point(6, 380);
+            this.btnEventosProgramados.Name = "btnEventosProgramados";
+            this.btnEventosProgramados.Size = new System.Drawing.Size(216, 61);
+            this.btnEventosProgramados.TabIndex = 4;
+            this.btnEventosProgramados.Text = "Eventos Programados";
+            this.btnEventosProgramados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEventosProgramados.UseVisualStyleBackColor = true;
+            this.btnEventosProgramados.Click += new System.EventHandler(this.btnEventosProgramados_Click);
             // 
             // pictureBox3
             // 
@@ -105,32 +123,14 @@
             this.btnIniciarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarEvento.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarEvento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.btnIniciarEvento.Location = new System.Drawing.Point(3, 156);
+            this.btnIniciarEvento.Location = new System.Drawing.Point(3, 184);
             this.btnIniciarEvento.Name = "btnIniciarEvento";
-            this.btnIniciarEvento.Size = new System.Drawing.Size(216, 86);
+            this.btnIniciarEvento.Size = new System.Drawing.Size(216, 89);
             this.btnIniciarEvento.TabIndex = 5;
             this.btnIniciarEvento.Text = "Iniciar Evento";
             this.btnIniciarEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIniciarEvento.UseVisualStyleBackColor = true;
             this.btnIniciarEvento.Click += new System.EventHandler(this.btnIniciarEvento_Click);
-            // 
-            // btnEventosProgramados
-            // 
-            this.btnEventosProgramados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEventosProgramados.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(125)))), ((int)(((byte)(24)))));
-            this.btnEventosProgramados.FlatAppearance.BorderSize = 0;
-            this.btnEventosProgramados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(125)))), ((int)(((byte)(24)))));
-            this.btnEventosProgramados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEventosProgramados.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEventosProgramados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.btnEventosProgramados.Location = new System.Drawing.Point(3, 361);
-            this.btnEventosProgramados.Name = "btnEventosProgramados";
-            this.btnEventosProgramados.Size = new System.Drawing.Size(216, 61);
-            this.btnEventosProgramados.TabIndex = 4;
-            this.btnEventosProgramados.Text = "Eventos Programados";
-            this.btnEventosProgramados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEventosProgramados.UseVisualStyleBackColor = true;
-            this.btnEventosProgramados.Click += new System.EventHandler(this.btnEventosProgramados_Click);
             // 
             // btnNuevoEvento
             // 
@@ -141,7 +141,7 @@
             this.btnNuevoEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoEvento.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoEvento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.btnNuevoEvento.Location = new System.Drawing.Point(0, 294);
+            this.btnNuevoEvento.Location = new System.Drawing.Point(3, 313);
             this.btnNuevoEvento.Name = "btnNuevoEvento";
             this.btnNuevoEvento.Size = new System.Drawing.Size(219, 61);
             this.btnNuevoEvento.TabIndex = 2;

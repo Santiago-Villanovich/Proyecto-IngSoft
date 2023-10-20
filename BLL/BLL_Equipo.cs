@@ -1,6 +1,7 @@
 ﻿using ABS;
 using BE;
 using DAL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace BLL
                 List<Equipo> equipos = dal.GetAllEquiposEvento(IdEvento);
                 foreach (Equipo equip in equipos)
                 {
-                    equip.Participantes = dal.GetParticipantes(equip.Id);
+                    equip.Participantes = GetParticipantes(equip);
                 }
 
                 return equipos;
@@ -46,6 +47,17 @@ namespace BLL
                 throw ex;
             }
             
+        }
+
+        public List<Participante> GetParticipantes(Equipo eq)
+        {
+            List<Participante> list =  dal.GetParticipantes(eq.Id);
+            foreach (Participante participante in list)
+            {
+                participante.Usuario.Email = HashCrypto.Desencriptar(participante.Usuario.Email);
+            }
+
+            return list;
         }
 
         public bool Insert(Equipo obj,int idEvento)
