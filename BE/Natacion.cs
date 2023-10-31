@@ -11,7 +11,6 @@ namespace BE
         public int id { get; set; }
         public int id_tipo { get; set; }
         public string Estilo { get; set; }
-        public string Detalles { get; set; }
         public bool Elementos { get; set; }
         public Pileta Pileta { get; set; }
         public int cantidad_integrantes_equipo { get; set; }

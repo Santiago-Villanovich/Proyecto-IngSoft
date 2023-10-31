@@ -328,8 +328,10 @@ namespace DAL
                     foreach (Categoria c in obj.Categorias)
                     {
                         SqlCommand cmd2 = new SqlCommand("sp_InsertCategoria", conn);
+                        Guid id = Guid.NewGuid();
 
                         cmd2.CommandType = CommandType.StoredProcedure;
+                        cmd2.Parameters.AddWithValue("@Id", id);
                         cmd2.Parameters.AddWithValue("@idEvento", idEvento);
                         cmd2.Parameters.AddWithValue("@Nom", c.Nombre);
                         cmd2.Parameters.AddWithValue("@EdadMin", c.EdadInicio);
@@ -388,8 +390,10 @@ namespace DAL
                     foreach (Categoria c in obj.Categorias)
                     {
                         SqlCommand cmd2 = new SqlCommand("sp_InsertCategoria", conn);
+                        Guid id = Guid.NewGuid();
 
                         cmd2.CommandType = CommandType.StoredProcedure;
+                        cmd2.Parameters.AddWithValue("@Id", id);
                         cmd2.Parameters.AddWithValue("@IdEvento", idEvento);
                         cmd2.Parameters.AddWithValue("@Nombre", c.Nombre);
                         cmd2.Parameters.AddWithValue("@EdadMin", c.EdadInicio);
@@ -497,6 +501,7 @@ namespace DAL
                         {
                             var cat = new Categoria()
                             {
+                                id = Guid.Parse(reader["id_categoria"].ToString()),
                                 Nombre = reader["nombre"].ToString(),
                                 EdadInicio = Convert.ToInt32(reader["edad_min"].ToString()),
                                 EdadFin = Convert.ToInt32(reader["edad_max"].ToString())

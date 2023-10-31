@@ -54,8 +54,12 @@ namespace DAL
                             {
                                 Id = Guid.Parse(reader["id"].ToString()),
                                 Nombre = reader["nombre"].ToString(),
-                                Categoria = new Categoria() { Nombre = reader["categoria"].ToString() }
-
+                                Categoria = new Categoria() {
+                                    id = Guid.Parse(reader["id_categoria"].ToString()),
+                                    Nombre = reader["categoria"].ToString(),
+                                    EdadInicio = Convert.ToInt32(reader["edad_min"]),
+                                    EdadFin = Convert.ToInt32(reader["edad_max"])
+                                }
 
                             };
 
@@ -158,7 +162,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@id", obj.Id);
                     cmd.Parameters.AddWithValue("@id_evento", idEvento);
                     cmd.Parameters.AddWithValue("@nom", obj.Nombre);
-                    cmd.Parameters.AddWithValue("@cat", obj.Categoria.Nombre);
+                    cmd.Parameters.AddWithValue("@cat", obj.Categoria.id);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();

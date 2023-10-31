@@ -51,6 +51,7 @@ namespace BE
 
     public class Categoria
     {
+        public Guid id { get; set; }
         public string Nombre { get; set; }
         public int EdadInicio { get; set; }
         public int EdadFin { get; set; }

@@ -87,7 +87,7 @@ namespace UI.UI_Negocio
                 }
                 else
                 {
-                    MessageBox.Show("Por el momento no tiene eventos publicados", "Sin eventos disponibles", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Por el momento no hay eventos publicados", "Sin eventos disponibles", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -100,10 +100,11 @@ namespace UI.UI_Negocio
 
         private void User_BuscarEvento_Load(object sender, EventArgs e)
         {
+            gboxInformacion.Visible = false;
             listEventos =  bllEvento.GetAll();
             CargarEventos();
 
-            gboxInformacion.Visible = false;
+            
         }
 
         Equipo equip;

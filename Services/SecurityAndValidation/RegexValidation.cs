@@ -169,5 +169,24 @@ namespace Services
             }
         }
 
+        public static bool validarTiempo(string tiempo)
+        {
+            if (string.IsNullOrEmpty(tiempo))
+            {
+                return false;
+            }
+            else
+            {
+                Regex re = new Regex(@"^(?:(?:[0-5]?[0-9][:.])?[0-5]?[0-9][:.]?[0-5]?[0-9])$");
+                if (re.IsMatch(tiempo))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Valor ingresado invalido. Ej: 01:10:09 o 00.10.11");
+                }
+            }
+        }
     }
 }

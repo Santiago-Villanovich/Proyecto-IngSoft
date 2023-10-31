@@ -17,26 +17,43 @@ namespace Services
 
         /*public Document generarPDF()
         {
-            int contador = 0;
-            string Documento = saveFileDialog.FileName + ".pdf";
-            Document doc = new Document();
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(Documento, FileMode.Create));
-            doc.Open();
-            doc.Add(new Paragraph("Lista de viajes"));
-            iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8);
+            string DocumentoLoc = saveFileDialog.FileName + ".pdf";
+                    Document doc = new Document();
+                    PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(DocumentoLoc, FileMode.Create));
+                    doc.Open();
+                    doc.Add(new Paragraph("CATEGORIAS DEL EVENTO"));
 
+                    iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8);
 
-            foreach (var viaje in viajes)
-            {
-                contador++;
-                AgregarTitulo(doc, "viaje " + contador);
-                doc.Add(new Paragraph($"ID del Viaje: {viaje.id}", fuente));
+                    foreach (Categoria cat in ev.Categorias)
+                    {
+                        doc.Add(Chunk.NEWLINE);
+                        doc.Add(new Paragraph($"CATEGORIA: {cat.Nombre} - De {cat.EdadInicio} a {cat.EdadFin}"));
+                        doc.Add(new Paragraph($"Equipos:"));
 
-            }
-            doc.Close();
+                        if (cat.equipos.Count > 0)
+                        {
+                            foreach (var eq in cat.equipos)
+                            {
+                                doc.Add(Chunk.NEWLINE);
+                                doc.Add(new Paragraph($"Nombre equipo:{eq.Nombre}:"));
+                                foreach (var part in eq.Participantes)
+                                {
+                                    doc.Add(new Paragraph($"Participante: {part.Usuario.Apellido} {part.Usuario.Nombre} - {part.Usuario.Edad()} años"));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            doc.Add(Chunk.NEWLINE);
+                            doc.Add(new Paragraph($"Sin equipos inscriptos"));
 
-            return doc;
+                        }
+
+                    }
+
+                    doc.Close();
         }*/
-        
+
     }
 }

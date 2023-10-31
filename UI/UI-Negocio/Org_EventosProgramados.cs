@@ -109,7 +109,7 @@ namespace UI.UI_Negocio
                 if (bllEvento.CerrarInscripcion(even))
                 {
                     string mensaje = $"Se cerro la inscripcion al evento correctamente.\n\nPresione 'Yes' si desea descargar un archivo con la distribucion de las categorias o 'No' en caso contrario.";
-                    DialogResult result = MessageBox.Show(mensaje, "Inscripcion cerrada", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show(mensaje, "Inscripcion cerrada", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     {
                         DescargarPdf(even);
