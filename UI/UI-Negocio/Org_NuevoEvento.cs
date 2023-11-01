@@ -22,7 +22,6 @@ namespace UI.UI_Negocio
         BLL_Evento bllEvento;
         BLL_DeporteNatacion bllNata;
         string Imagename;
-        
 
         private bool ValidarNomCategoria(string nom)
         {

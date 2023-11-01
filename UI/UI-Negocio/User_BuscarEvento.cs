@@ -73,7 +73,6 @@ namespace UI.UI_Negocio
                 if (listEventos.Count > 0)
                 {
 
-
                     foreach (Evento evento in listEventos)
                     {
                         User_EventoDisplay eDisp = new User_EventoDisplay(evento);
@@ -101,10 +100,12 @@ namespace UI.UI_Negocio
         private void User_BuscarEvento_Load(object sender, EventArgs e)
         {
             gboxInformacion.Visible = false;
-            listEventos =  bllEvento.GetAll();
+            List<Evento> misEv = bllEvento.GetAllByUser();
+            List<Evento> allEv = bllEvento.GetAll();
+
+            listEventos = allEv.Where(evento => !misEv.Any(ev => ev.id == evento.id)).ToList();
             CargarEventos();
 
-            
         }
 
         Equipo equip;
@@ -112,50 +113,58 @@ namespace UI.UI_Negocio
         {
             try
             {
-                if (eventoDeporte.cantidad_integrantes_equipo > 1)
+                if (bllEvento.isCuposLlenos(eventoSeleccionado))
                 {
-                    using (FormAgregarEquipo formDialogo = new FormAgregarEquipo(eventoDeporte))
-                    {   
-                        if (formDialogo.ShowDialog() == DialogResult.OK)
+
+                    if (eventoDeporte.cantidad_integrantes_equipo > 1)
+                    {
+                        using (FormAgregarEquipo formDialogo = new FormAgregarEquipo(eventoDeporte))
                         {
-                            equip = new Equipo()
+                            if (formDialogo.ShowDialog() == DialogResult.OK)
                             {
-                                Nombre = Session.GetInstance.Usuario.NombreApellido,
-                                Participantes = formDialogo.participantes
-                            };
-                            equip.Participantes.Add(new Participante(Session.GetInstance.Usuario)) ;
-                            equip.Categoria = eventoSeleccionado.CalcularCategoriaEquipo(equip);
+                                equip = new Equipo()
+                                {
+                                    Nombre = Session.GetInstance.Usuario.NombreApellido,
+                                    Participantes = formDialogo.participantes
+                                };
+                                equip.Participantes.Add(new Participante(Session.GetInstance.Usuario));
+                                equip.Categoria = eventoSeleccionado.CalcularCategoriaEquipo(equip);
+                            }
+                            else
+                            {
+                                return;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        equip = new Equipo()
+                        {
+                            Nombre = Session.GetInstance.Usuario.NombreApellido,
+                            Participantes = new List<Participante> { new Participante() { Usuario = Session.GetInstance.Usuario } }
+                        };
+                        equip.Categoria = eventoSeleccionado.CalcularCategoriaEquipo(equip);
+                    }
+
+                    if (equip != null)
+                    {
+                        DialogResult result = new FormPagar().ShowDialog(this);
+                        if (result == DialogResult.OK)
+                        {
+                            new BLL_Equipo().Insert(equip, eventoSeleccionado.id);
+                            MessageBox.Show("Inscripcion registrada con exito!");
                         }
                         else
                         {
                             return;
                         }
                     }
+                    else { return; }
                 }
                 else
                 {
-                    equip = new Equipo()
-                    {
-                        Nombre = Session.GetInstance.Usuario.NombreApellido,
-                        Participantes = new List<Participante> { new Participante() { Usuario = Session.GetInstance.Usuario } }
-                    };
-                    equip.Categoria = eventoSeleccionado.CalcularCategoriaEquipo(equip);
+                    MessageBox.Show("El evento no tiene cupos disponibles");
                 }
-
-                if (equip != null)
-                {
-                    DialogResult result = new FormPagar().ShowDialog(this);
-                    if (result == DialogResult.OK)
-                    {
-                        new BLL_Equipo().Insert(equip, eventoSeleccionado.id);
-                        MessageBox.Show("Inscripcion registrada con exito!");
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }else { return; }
-                
             }
             catch (Exception ex)
             {

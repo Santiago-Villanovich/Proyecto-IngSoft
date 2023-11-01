@@ -31,12 +31,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboxCategoriaElegir = new System.Windows.Forms.ComboBox();
             this.btnIniciarCategoria = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblNombreEquipo = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datagvParticipantes = new System.Windows.Forms.DataGridView();
             this.GuardarEquipo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.datagvEquipos = new System.Windows.Forms.DataGridView();
+            this.gboxMetros = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.datagvParticipantes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagvEquipos)).BeginInit();
+            this.gboxMetros.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -67,38 +70,31 @@
             this.btnIniciarCategoria.UseVisualStyleBackColor = true;
             this.btnIniciarCategoria.Click += new System.EventHandler(this.btnIniciarCategoria_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 127);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Equipo: ";
-            // 
             // lblNombreEquipo
             // 
             this.lblNombreEquipo.AutoSize = true;
-            this.lblNombreEquipo.Location = new System.Drawing.Point(29, 163);
+            this.lblNombreEquipo.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
+            this.lblNombreEquipo.Location = new System.Drawing.Point(6, 43);
             this.lblNombreEquipo.Name = "lblNombreEquipo";
-            this.lblNombreEquipo.Size = new System.Drawing.Size(53, 16);
+            this.lblNombreEquipo.Size = new System.Drawing.Size(71, 23);
             this.lblNombreEquipo.TabIndex = 5;
             this.lblNombreEquipo.Text = "nombre";
             // 
-            // dataGridView1
+            // datagvParticipantes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 207);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(495, 200);
-            this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.datagvParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagvParticipantes.Location = new System.Drawing.Point(6, 80);
+            this.datagvParticipantes.Name = "datagvParticipantes";
+            this.datagvParticipantes.RowHeadersWidth = 51;
+            this.datagvParticipantes.RowTemplate.Height = 24;
+            this.datagvParticipantes.Size = new System.Drawing.Size(488, 217);
+            this.datagvParticipantes.TabIndex = 6;
+            this.datagvParticipantes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // GuardarEquipo
             // 
-            this.GuardarEquipo.Location = new System.Drawing.Point(32, 413);
+            this.GuardarEquipo.ForeColor = System.Drawing.Color.Black;
+            this.GuardarEquipo.Location = new System.Drawing.Point(6, 326);
             this.GuardarEquipo.Name = "GuardarEquipo";
             this.GuardarEquipo.Size = new System.Drawing.Size(102, 36);
             this.GuardarEquipo.TabIndex = 7;
@@ -109,11 +105,43 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(151, 423);
+            this.label3.Location = new System.Drawing.Point(114, 333);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(231, 16);
+            this.label3.Size = new System.Drawing.Size(301, 23);
             this.label3.TabIndex = 9;
             this.label3.Text = "Al guardar pasara al siguiente equipo";
+            // 
+            // datagvEquipos
+            // 
+            this.datagvEquipos.AllowUserToAddRows = false;
+            this.datagvEquipos.AllowUserToDeleteRows = false;
+            this.datagvEquipos.AllowUserToOrderColumns = true;
+            this.datagvEquipos.AllowUserToResizeColumns = false;
+            this.datagvEquipos.ColumnHeadersHeight = 29;
+            this.datagvEquipos.Location = new System.Drawing.Point(32, 130);
+            this.datagvEquipos.MultiSelect = false;
+            this.datagvEquipos.Name = "datagvEquipos";
+            this.datagvEquipos.RowHeadersWidth = 51;
+            this.datagvEquipos.RowTemplate.Height = 24;
+            this.datagvEquipos.Size = new System.Drawing.Size(354, 468);
+            this.datagvEquipos.TabIndex = 10;
+            this.datagvEquipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagvEquipos_CellClick);
+            // 
+            // gboxMetros
+            // 
+            this.gboxMetros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.gboxMetros.Controls.Add(this.lblNombreEquipo);
+            this.gboxMetros.Controls.Add(this.datagvParticipantes);
+            this.gboxMetros.Controls.Add(this.label3);
+            this.gboxMetros.Controls.Add(this.GuardarEquipo);
+            this.gboxMetros.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.8F);
+            this.gboxMetros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.gboxMetros.Location = new System.Drawing.Point(431, 130);
+            this.gboxMetros.Name = "gboxMetros";
+            this.gboxMetros.Size = new System.Drawing.Size(500, 368);
+            this.gboxMetros.TabIndex = 11;
+            this.gboxMetros.TabStop = false;
+            this.gboxMetros.Text = "Equipo";
             // 
             // Org_EventoIniciado
             // 
@@ -121,11 +149,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1007, 656);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.GuardarEquipo);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lblNombreEquipo);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.gboxMetros);
+            this.Controls.Add(this.datagvEquipos);
             this.Controls.Add(this.btnIniciarCategoria);
             this.Controls.Add(this.cboxCategoriaElegir);
             this.Controls.Add(this.label1);
@@ -133,7 +158,10 @@
             this.Name = "Org_EventoIniciado";
             this.Text = "Org_EventoIniciado";
             this.Load += new System.EventHandler(this.Org_EventoIniciado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagvParticipantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagvEquipos)).EndInit();
+            this.gboxMetros.ResumeLayout(false);
+            this.gboxMetros.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,10 +171,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboxCategoriaElegir;
         private System.Windows.Forms.Button btnIniciarCategoria;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNombreEquipo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagvParticipantes;
         private System.Windows.Forms.Button GuardarEquipo;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView datagvEquipos;
+        private System.Windows.Forms.GroupBox gboxMetros;
     }
 }

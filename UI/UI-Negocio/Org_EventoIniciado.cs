@@ -1,5 +1,6 @@
 ﻿using BE;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,9 @@ namespace UI.UI_Negocio
         //Defino listas segun los estados
         private List<Categoria> categoriasIniciales;
         private List<Categoria> categoriasCompletadas;
+
+
+
         public Org_EventoIniciado(Evento ev)
         {
             InitializeComponent();
@@ -33,6 +37,7 @@ namespace UI.UI_Negocio
             categoriasIniciales = ev.Categorias.Where(categoria => categoria.equipos.Count > 0).ToList();
             categoriasCompletadas = new List<Categoria>();
 
+            gboxMetros.Visible = false;
             CargarComboCat();
         }
         private void Org_EventoIniciado_Load(object sender, EventArgs e)
@@ -48,16 +53,34 @@ namespace UI.UI_Negocio
             cboxCategoriaElegir.ValueMember = "Nombre";
         }
 
-        private void CargarDatagrid(Equipo eq)
+        private void CargarDataGVEquipos(List<Equipo> equipos)
+        {
+            datagvEquipos.DataSource = equipos;
+            datagvEquipos.AutoGenerateColumns = false;
+
+            DataGridViewTextBoxColumn columnaPropiedad = new DataGridViewTextBoxColumn();
+            columnaPropiedad.DataPropertyName = "nombre";
+            columnaPropiedad.HeaderText = "Nombre";
+            columnaPropiedad.Width = 225;
+            columnaPropiedad.ReadOnly = true;
+            datagvEquipos.Columns.Add(columnaPropiedad);
+
+            DataGridViewCheckBoxColumn columnaCheckBox = new DataGridViewCheckBoxColumn();
+            columnaCheckBox.HeaderText = "Estado";
+            columnaCheckBox.Width = 75;
+            columnaCheckBox.ReadOnly = true;
+            datagvEquipos.Columns.Add(columnaCheckBox);
+        }
+        private void CargarDatagridParticipantes(Equipo eq)
         {
             lblNombreEquipo.Text = eq.Nombre.ToString();
 
-            dataGridView1.Columns.Clear();
-            dataGridView1.Rows.Clear();
+            datagvParticipantes.Columns.Clear();
+            datagvParticipantes.Rows.Clear();
 
             DataGridViewTextBoxColumn columTxt;
 
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            datagvParticipantes.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 Name = "pasada",
                 HeaderText = "Num. Pasada"
@@ -71,7 +94,7 @@ namespace UI.UI_Negocio
                     HeaderText = part.Usuario.NombreApellido
                 };
 
-                this.dataGridView1.Columns.Add(columTxt);
+                this.datagvParticipantes.Columns.Add(columTxt);
 
             }
         }
@@ -88,27 +111,41 @@ namespace UI.UI_Negocio
             equiposCategoriaActual = categoriaActual.equipos;
             CantEq = equiposCategoriaActual.Count;
 
-            equipoActual = equiposCategoriaActual[0];
-            CargarDatagrid(equipoActual);
+            CargarDataGVEquipos(equiposCategoriaActual);
             
-        }
-
-
-        
-        private void GuardarEquipo_Click(object sender, EventArgs e)
-        {
-            
-            if (ActEq != CantEq -1)
-            {
-                ActEq += 1;
-                equipoActual = equiposCategoriaActual[ActEq];
-                CargarDatagrid(equipoActual);
-            }
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void datagvEquipos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (!(bool)datagvEquipos.Rows[e.RowIndex].Cells[1].Value)
+                {
+                    equipoActual = (Equipo)datagvEquipos.CurrentRow.DataBoundItem;
+                    lblNombreEquipo.Text = equipoActual.Nombre;
+                    CargarDatagridParticipantes(equipoActual);
+                    gboxMetros.Visible = true;
+                }
+                
+            }
+        }
+
+
+        private void GuardarEquipo_Click(object sender, EventArgs e)
+        {
+
+            if (ActEq != CantEq - 1)
+            {
+                ActEq += 1;
+                equipoActual = equiposCategoriaActual[ActEq];
+                //CargarDatagrid(equipoActual);
+            }
+        }
+
     }
 }

@@ -138,6 +138,11 @@ namespace BLL
             return dal.UpdateEstado(obj,id);
         }
 
+        public bool isCuposLlenos(Evento ev)
+        {
+            return dal.isCuposLlenos(ev);
+        }
+
         public List<Categoria> CalcularCategorias(Evento evento)
         {
             try

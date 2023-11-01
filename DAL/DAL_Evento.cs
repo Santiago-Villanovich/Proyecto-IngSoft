@@ -481,6 +481,39 @@ namespace DAL
             }
         }
 
+        public bool isCuposLlenos(Evento obj)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("dbo.fn_HayCuposDisponibles", conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@id_evento", obj.id));
+
+                    
+                    SqlParameter resultadoParameter = new SqlParameter("@Res", SqlDbType.Bit);
+                    resultadoParameter.Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add(resultadoParameter);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    bool resultado = Convert.ToBoolean(resultadoParameter.Value);
+
+                    return resultado;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         public List<Categoria> GetCategorias(int idEvento) 
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
