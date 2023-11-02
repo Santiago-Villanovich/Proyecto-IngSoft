@@ -148,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(1007, 656);
+            this.ClientSize = new System.Drawing.Size(994, 656);
             this.Controls.Add(this.gboxMetros);
             this.Controls.Add(this.datagvEquipos);
             this.Controls.Add(this.btnIniciarCategoria);

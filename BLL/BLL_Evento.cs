@@ -152,7 +152,7 @@ namespace BLL
 
                 foreach (var cat in evento.Categorias)
                 {
-                    cat.equipos = equiposInscriptos.Where(eq => eq.Categoria.Nombre.Trim() == cat.Nombre.Trim()).ToList();
+                    cat.equipos = equiposInscriptos.Where(eq => eq.Categoria.id == cat.id).ToList();
                     flag += cat.equipos.Count;
                 }
 

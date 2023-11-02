@@ -106,19 +106,22 @@ namespace UI.UI_Negocio
         {
             try
             {
-                if (bllEvento.CerrarInscripcion(even))
+                string mensaje = $"Se cerrara la inscripcion al evento.\n\nPresione 'Yes' si desea descargar un archivo con la distribucion de las categorias o 'No' en caso contrario.\n\nEn caso de no querer cerrar la inscripcion seleccione 'cancel'";
+                DialogResult result = MessageBox.Show(mensaje, "Cerrar inscripciones", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
                 {
-                    string mensaje = $"Se cerro la inscripcion al evento correctamente.\n\nPresione 'Yes' si desea descargar un archivo con la distribucion de las categorias o 'No' en caso contrario.";
-                    DialogResult result = MessageBox.Show(mensaje, "Inscripcion cerrada", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-                    if (result == DialogResult.Yes)
-                    {
-                        DescargarPdf(even);
-                        this.OnLoad(null);
-                    }
-                    else
-                    {
-                        this.OnLoad(null);
-                    }
+                    bllEvento.CerrarInscripcion(even);
+                    DescargarPdf(even);
+                    this.OnLoad(null);
+                }
+                else if (result == DialogResult.No)
+                {
+                    bllEvento.CerrarInscripcion(even);
+                    this.OnLoad(null);
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    this.OnLoad(null);
                 }
             }
             catch (Exception ex)
@@ -247,7 +250,7 @@ namespace UI.UI_Negocio
 
                     eventoSeleccionado.nombre = txtNombre.Text;
                     eventoSeleccionado.Descripcion = richTextDescripcion.Text;
-                    if (dateTimePicker1.Value != eventoSeleccionado.Fecha)
+                    if (dateTimePicker1.Value.Date != eventoSeleccionado.Fecha.Date)
                     {
                         cambioFecha = true;
                         eventoSeleccionado.Fecha = dateTimePicker1.Value;
@@ -290,21 +293,24 @@ namespace UI.UI_Negocio
                 List<Equipo> equips = new BLL_Equipo().GetAllEquiposEvento(e.id);
                 List<string> to = new List<string>();
 
-                MailProvider mail = new MailProvider();
-                string body = $"Hola, nos comunicamos de GoComp para informarle que el evento al que estaba suscrito:\n" +
-                              $"'{e.nombre}' fue reprogramado, por lo que se llevara a cabo el dia" +
-                              $" {e.Fecha} ";
-
-
-                foreach (var eq in equips)
+                if (equips.Count > 0)
                 {
-                    foreach (var p in eq.Participantes)
-                    {
-                        to.Add(p.Usuario.Email.Trim());
-                    }
-                }
+                    MailProvider mail = new MailProvider();
+                    string body = $"Hola, nos comunicamos de GoComp para informarle que el evento al que estaba suscrito:\n" +
+                                  $"'{e.nombre}' fue reprogramado, por lo que se llevara a cabo el dia" +
+                                  $" {e.Fecha} ";
 
-                mail.sendMail(to, "Cambio de fecha para la competencia", body);
+                    foreach (var eq in equips)
+                    {
+                        foreach (var p in eq.Participantes)
+                        {
+                            to.Add(p.Usuario.Email.Trim());
+                        }
+                    }
+
+                    mail.sendMail(to, "Cambio de fecha para la competencia", body);
+                }
+                
             }
             catch (Exception ex)
             {

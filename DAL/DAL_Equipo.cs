@@ -56,7 +56,7 @@ namespace DAL
                                 Nombre = reader["nombre"].ToString(),
                                 Categoria = new Categoria() {
                                     id = Guid.Parse(reader["id_categoria"].ToString()),
-                                    Nombre = reader["categoria"].ToString(),
+                                    Nombre = reader["nombre_categoria"].ToString(),
                                     EdadInicio = Convert.ToInt32(reader["edad_min"]),
                                     EdadFin = Convert.ToInt32(reader["edad_max"])
                                 }
