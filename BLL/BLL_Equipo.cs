@@ -90,7 +90,7 @@ namespace BLL
 
         public bool Update(Equipo obj)
         {
-            throw new NotImplementedException();
+            return dal.Update(obj);
         }
     }
 }

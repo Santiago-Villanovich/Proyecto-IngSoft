@@ -8,9 +8,10 @@ namespace BE
 {
     public class Participante
     {
+        public Guid Id { get; set; }
         public User Usuario { get; set; }
-        public TimeSpan tiempoPromedio { get;set; }
-        public List<TimeSpan> tiempos { get; set; }
+        public TimeSpan TiempoPromedio { get;set; }
+        public List<TimeSpan> Tiempos { get; set; }
         public int MetrosLogrados { get; set; }
 
         public Participante() { }
@@ -18,7 +19,7 @@ namespace BE
         public Participante(User usuario)
         {
             Usuario = usuario;
-            this.tiempos = null;
+            Tiempos = new List<TimeSpan>();
         }
     }
 }

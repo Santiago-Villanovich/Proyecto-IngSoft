@@ -164,7 +164,7 @@ namespace Services
                 }
                 else
                 {
-                    throw new Exception("Debe ingresar un numero valido");
+                    throw new FormatException("Formato invalido. Ingrese unicamente digitos numericos, por ejemplo: 750");
                 }
             }
         }
@@ -177,16 +177,18 @@ namespace Services
             }
             else
             {
-                Regex re = new Regex(@"^(?:(?:[0-5]?[0-9][:.])?[0-5]?[0-9][:.]?[0-5]?[0-9])$");
+                Regex re = new Regex(@"^(?:(?:(?:(?:(0?[0-9]|1[0-9]|2[0-3])[:])?(0?[0-5]?[0-9])[:]?)(0?[0-5]?[0-9]))?)$");
                 if (re.IsMatch(tiempo))
                 {
                     return true;
                 }
                 else
                 {
-                    throw new Exception("Valor ingresado invalido. Ej: 01:10:09 o 00.10.11");
+                    return false;
                 }
             }
         }
+
+        
     }
 }

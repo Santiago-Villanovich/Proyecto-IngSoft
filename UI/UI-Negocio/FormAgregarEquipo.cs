@@ -130,7 +130,7 @@ namespace UI.UI_Negocio
                 Participante p = (Participante)listBox1.SelectedItem;
                 participantes.Remove(p);
                 if (participantes.Count > 0) { btnEliminar.Enabled = true; }
-                else { btnEliminar.Enabled = false; }
+                else { btnEliminar.Enabled = false; btnAgregar.Enabled = true; }
 
                 CargarListbox();
                 this.OnLoad(null);

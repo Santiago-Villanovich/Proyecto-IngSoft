@@ -58,12 +58,15 @@ namespace BE
         public string str { get; }
         public List<Equipo> equipos { get; set; }
 
-        public Categoria() { }
+        public Categoria() {
+            this.equipos = new List<Equipo>();
+        }
         public Categoria(string nom, int min, int max) {
             this.Nombre = nom;
             this.EdadInicio = min;
             this.EdadFin = max;
             this.str = $"Categoria {nom}: entre {min} y {max} años";
+            this.equipos = new List<Equipo>();
         }
 
         public override string ToString()

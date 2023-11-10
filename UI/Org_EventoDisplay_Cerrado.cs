@@ -15,6 +15,8 @@ namespace UI
     public partial class Org_EventoDisplay_Cerrado : UserControl
     {
         public Evento MiEvento;
+        Color on = Color.FromArgb(86, 88, 99);
+        Color off = Color.FromArgb(45, 48, 71);
 
         public Org_EventoDisplay_Cerrado(Evento evento)
         {
@@ -52,5 +54,37 @@ namespace UI
         {
             iniciarClick?.Invoke(this, EventArgs.Empty);
         }
+
+        public event EventHandler verClick;
+        private void Org_EventoDisplay_Cerrado_Click(object sender, EventArgs e)
+        {
+            verClick?.Invoke(this, EventArgs.Empty);
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            verClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void Org_EventoDisplay_Cerrado_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = on;
+        }
+
+        private void Org_EventoDisplay_Cerrado_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = off;
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = on;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = off;
+        }
+
+        
     }
 }

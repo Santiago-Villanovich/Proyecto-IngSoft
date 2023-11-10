@@ -101,7 +101,8 @@ namespace DAL
                         {
                             var par = new Participante()
                             {
-                                
+                                Id = Guid.Parse(reader["id"].ToString()),
+
                                 Usuario = new User()
                                 {
                                     Id = Convert.ToInt32(reader["Id"].ToString()),
@@ -124,14 +125,6 @@ namespace DAL
                                 par.MetrosLogrados = Convert.ToInt32(reader["metros"]);
                             }
 
-                            if (reader["tiempo"] is DBNull)
-                            {
-                                par.tiempoPromedio = TimeSpan.Zero;
-                            }
-                            else
-                            {
-                                par.tiempoPromedio = TimeSpan.Parse(reader["tiempo"].ToString());
-                            }
 
                             list.Add(par);
                         }
@@ -191,9 +184,12 @@ namespace DAL
             {
                 try
                 {
+                    Guid id = Guid.NewGuid();
+
                     SqlCommand cmd = new SqlCommand("sp_InsertParticipante", conn);
 
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@id_user", obj.Usuario.Id);
                     cmd.Parameters.AddWithValue("@id_equipo", idEquipo);
                     cmd.Parameters.AddWithValue("@id_evento", idEvento);
@@ -217,7 +213,47 @@ namespace DAL
 
         public bool Update(Equipo obj)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_UpdateEquipo", conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", obj.Id);
+                    cmd.Parameters.AddWithValue("@nom", obj.Nombre);
+
+                    if (obj.PosicionGeneral != 0)
+                    {
+                        cmd.Parameters.AddWithValue("@posicion", obj.PosicionGeneral);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@posicion", DBNull.Value);
+                    }
+                    if (obj.PosicionCategoria != 0)
+                    {
+                        cmd.Parameters.AddWithValue("@posicionCat", obj.PosicionCategoria);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@posicionCat", DBNull.Value);
+                    }
+                    
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
         }
     }
 }

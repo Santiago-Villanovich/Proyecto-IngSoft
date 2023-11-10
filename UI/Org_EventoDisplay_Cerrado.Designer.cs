@@ -45,11 +45,15 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Lucida Sans Unicode", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.lblNombre.Location = new System.Drawing.Point(279, 21);
             this.lblNombre.MaximumSize = new System.Drawing.Size(170, 0);
             this.lblNombre.MinimumSize = new System.Drawing.Size(170, 0);
@@ -73,6 +77,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Lucida Sans Unicode", 10F, System.Drawing.FontStyle.Bold);
+            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.lblFecha.Location = new System.Drawing.Point(279, 152);
             this.lblFecha.MaximumSize = new System.Drawing.Size(170, 0);
             this.lblFecha.MinimumSize = new System.Drawing.Size(170, 0);
@@ -86,12 +91,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Org_EventoDisplay_Cerrado";
             this.Size = new System.Drawing.Size(478, 235);
+            this.Click += new System.EventHandler(this.Org_EventoDisplay_Cerrado_Click);
+            this.MouseEnter += new System.EventHandler(this.Org_EventoDisplay_Cerrado_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.Org_EventoDisplay_Cerrado_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

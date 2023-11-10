@@ -49,18 +49,23 @@ namespace UI
         private void MostrarEventoIniciado(Evento ev)
         {
             CargarMenuContenedor(new Org_EventoIniciado(ev));
+            this.MinimumSize = new Size(1080, 680);
+            this.Size = new Size(1080, 680);
         }
 
         private void btnNuevoEvento_Click(object sender, EventArgs e)
         {
             CargarMenuContenedor(new Org_NuevoEvento());
+            this.MinimumSize = new Size(1125, 755);
+            this.Size = new Size(1125, 755);
         }
 
         private void btnIniciarEvento_Click(object psender, EventArgs ea)
         {
             CargarMenuContenedor(new Org_IniciarEvento());
-            this.Size = new Size(650, 650);
             this.MinimumSize = new Size(650, 650);
+            this.Size = new Size(650, 650);
+            
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -79,6 +84,8 @@ namespace UI
         private void btnEventosProgramados_Click(object sender, EventArgs e)
         {
             CargarMenuContenedor(new Org_EventosProgramados());
+            this.MinimumSize = new Size(980, 780);
+            this.Size = new Size(980, 780);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
