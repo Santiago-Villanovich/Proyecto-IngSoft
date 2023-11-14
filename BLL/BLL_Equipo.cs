@@ -92,5 +92,26 @@ namespace BLL
         {
             return dal.Update(obj);
         }
+
+        public bool UpdateParticipantes(Equipo obj)
+        {
+            foreach (Participante p in obj.Participantes)
+            {
+                dal.UpdateParticipante(p);
+            }
+            return true;
+        }
+
+        public bool InsertParticipantesTiempo(Equipo obj)
+        {
+            foreach (Participante p in obj.Participantes)
+            {
+                if (p.Tiempos.Count > 0)
+                {
+                    dal.InsertParticipanteTiempo(p);
+                }
+            }
+            return true;
+        }
     }
 }

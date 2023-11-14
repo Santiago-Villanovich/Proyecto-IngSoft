@@ -148,6 +148,8 @@ namespace UI.UI_Negocio
                     Document doc = new Document();
                     PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(DocumentoLoc, FileMode.Create));
                     doc.Open();
+                    doc.AddTitle($"Listado categorias - {eventoDisplay.nombre}");
+                    doc.AddCreator("GoComp");
                     doc.Add(new Paragraph("CATEGORIAS DEL EVENTO"));
 
                     iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8);

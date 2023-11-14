@@ -153,6 +153,7 @@ namespace UI.UI_Negocio
                         {
                             new BLL_Equipo().Insert(equip, eventoSeleccionado.id);
                             MessageBox.Show("Inscripcion registrada con exito!");
+                            this.OnLoad(null);
                         }
                         else
                         {

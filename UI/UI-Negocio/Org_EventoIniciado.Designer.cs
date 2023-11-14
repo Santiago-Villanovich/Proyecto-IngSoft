@@ -127,7 +127,6 @@
             // 
             // datagvParticipantes
             // 
-            this.datagvParticipantes.AllowUserToDeleteRows = false;
             this.datagvParticipantes.AllowUserToResizeRows = false;
             this.datagvParticipantes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

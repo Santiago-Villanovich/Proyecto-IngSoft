@@ -63,8 +63,8 @@ namespace UI
         private void btnIniciarEvento_Click(object psender, EventArgs ea)
         {
             CargarMenuContenedor(new Org_IniciarEvento());
-            this.MinimumSize = new Size(650, 650);
-            this.Size = new Size(650, 650);
+            this.MinimumSize = new Size(1100, 650);
+            this.Size = new Size(1100, 650);
             
         }
 

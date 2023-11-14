@@ -16,6 +16,12 @@ namespace BE
         public int MetrosTotal { get; set; }
         public int PosicionGeneral { get; set; }
         public int PosicionCategoria { get; set; }
+
+        public Equipo() {
+            PosicionCategoria = 0;
+            PosicionGeneral = 0;
+        }
+
         public void CalcularTiempoTotal()
         {
            
@@ -59,6 +65,7 @@ namespace BE
             }
         }
 
+        
     }
 
 

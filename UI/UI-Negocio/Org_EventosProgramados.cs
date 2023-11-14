@@ -106,6 +106,7 @@ namespace UI.UI_Negocio
         {
             try
             {
+
                 string mensaje = $"Se cerrara la inscripcion al evento.\n\nPresione 'Yes' si desea descargar un archivo con la distribucion de las categorias o 'No' en caso contrario.\n\nEn caso de no querer cerrar la inscripcion seleccione 'cancel'";
                 DialogResult result = MessageBox.Show(mensaje, "Cerrar inscripciones", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
@@ -333,7 +334,10 @@ namespace UI.UI_Negocio
                     Document doc = new Document();
                     PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(DocumentoLoc, FileMode.Create));
                     doc.Open();
+                    doc.AddTitle($"Listado categorias - {ev.nombre}");
+                    doc.AddCreator("GoComp");
                     doc.Add(new Paragraph("CATEGORIAS DEL EVENTO"));
+
 
                     iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8);
 

@@ -9,46 +9,117 @@ namespace BLL
 {
     public class BLL_Categoria
     {
-        public void GuardarCategoriaCompleta(Categoria obj)
+        public bool GuardarCategoriaPosiciones(Categoria obj)
         {
-            BLL_Equipo bllEq = new BLL_Equipo();
-
-            foreach (Equipo eq in obj.equipos)
+            try
             {
-                bllEq.Update(eq);
+                BLL_Equipo bllEq = new BLL_Equipo();
+
+                foreach (Equipo eq in obj.equipos)
+                {
+                    bllEq.Update(eq);
+                }
+
+                return true;
             }
+            catch (Exception ex)
+            {   
+                throw ex;
+            }
+            
 
         }
 
+        public bool GuardarLogrado(Categoria obj, Natacion ev)
+        {
+            try
+            {
+                BLL_Equipo bllEq = new BLL_Equipo();
+
+                foreach (Equipo eq in obj.equipos)
+                {
+
+                    if (ev.MetrosTotales == 0) //POSTA POR METROS
+                    {
+                        bllEq.UpdateParticipantes(eq);
+                    }
+                    else //POSTA POR TIEMPO
+                    {
+                        bllEq.InsertParticipantesTiempo(eq);
+                    }
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public Categoria CalcularPosicionCategoriaNatacion(Categoria obj, Natacion ev)
         {
-            if (ev.MetrosTotales == 0) //POSTA POR METROS
+            try
             {
-                obj.equipos = obj.equipos.OrderByDescending(equipo => equipo.MetrosTotal).ToList();
-            }
-            else //POSTA POR TIEMPO
-            {
-                obj.equipos = obj.equipos.OrderBy(equipo => equipo.TiempoTotal).ToList();
-            }
+                if (ev.MetrosTotales == 0) //POSTA POR METROS
+                {
+                    obj.equipos = obj.equipos.OrderByDescending(equipo => equipo.MetrosTotal).ToList();
+                }
+                else //POSTA POR TIEMPO
+                {
+                    obj.equipos = obj.equipos.OrderBy(equipo => equipo.TiempoTotal).ToList();
+                }
 
-            for (int index = 0; index < obj.equipos.Count; index++)
-            {
-                obj.equipos[index].PosicionCategoria = index + 1;
-            }
+                for (int index = 0; index < obj.equipos.Count; index++)
+                {
+                    obj.equipos[index].PosicionCategoria = index + 1;
+                }
 
-            return obj;
+                return obj;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         public Categoria CalcularPosicionGeneralNatacion(List<Categoria> obj, Natacion ev)
         {
-            Categoria general = new Categoria() { Nombre = "General" };
-
-            foreach (Categoria obj2 in obj)
+            try
             {
-                general.equipos.AddRange(obj2.equipos);
-            }
+                Categoria general = new Categoria() { Nombre = "General"
+                };
 
-            return CalcularPosicionCategoriaNatacion(general, ev);
+                foreach (Categoria obj2 in obj)
+                {
+                    general.equipos.AddRange(obj2.equipos);
+                }
+
+                if (ev.MetrosTotales == 0) //POSTA POR METROS
+                {
+                    general.equipos = general.equipos.OrderByDescending(equipo => equipo.MetrosTotal).ToList();
+                }
+                else //POSTA POR TIEMPO
+                {
+                    general.equipos = general.equipos.OrderBy(equipo => equipo.TiempoTotal).ToList();
+                }
+
+
+                //CALCULO POSICIONES
+                for (int index = 0; index < general.equipos.Count; index++)
+                {
+                    general.equipos[index].PosicionGeneral = index + 1;
+                }
+
+                return general;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
     }
 }

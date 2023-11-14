@@ -210,6 +210,38 @@ namespace DAL
             }
         }
 
+        public bool InsertParticipanteTiempo(Participante obj)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open ();
+
+                    foreach (var tiempo in obj.Tiempos)
+                    {
+                        SqlCommand cmd = new SqlCommand("sp_InsertParticipanteTiempos", conn);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", obj.Id);
+                        cmd.Parameters.AddWithValue("@tiempo", tiempo.ToString());
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
 
         public bool Update(Equipo obj)
         {
@@ -244,6 +276,41 @@ namespace DAL
 
                     cmd.ExecuteNonQuery();
                     return true;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public bool UpdateParticipante(Participante obj)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    if (obj.MetrosLogrados != 0) 
+                    {
+                        SqlCommand cmd = new SqlCommand("sp_UpdateParticipante", conn);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", obj.Id);
+                        cmd.Parameters.AddWithValue("@metros", obj.MetrosLogrados);
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 catch (Exception)
                 {

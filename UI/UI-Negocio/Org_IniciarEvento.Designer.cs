@@ -67,7 +67,7 @@
             // 
             // btnDescargarPDF
             // 
-            this.btnDescargarPDF.Location = new System.Drawing.Point(720, 550);
+            this.btnDescargarPDF.Location = new System.Drawing.Point(577, 550);
             this.btnDescargarPDF.Name = "btnDescargarPDF";
             this.btnDescargarPDF.Size = new System.Drawing.Size(146, 28);
             this.btnDescargarPDF.TabIndex = 4;

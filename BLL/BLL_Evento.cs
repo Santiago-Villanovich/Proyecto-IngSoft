@@ -53,14 +53,26 @@ namespace BLL
 
         public bool CerrarInscripcion(Evento obj)
         {
-            if (dal.UpdateEstado(obj, 4))
+            if (UpdateEstado(obj, 4))
             {
                 return true;
             }
             else { return false; }
 
-            throw new NotImplementedException();
+        }
 
+        public bool TerminarEvento(Evento obj,Categoria cat)
+        {
+            if (UpdateEstado(obj, 5))
+            {
+                foreach(Equipo e in cat.equipos)
+                {
+
+                }
+
+                return true;
+            }
+            else { return false; }
         }
 
         public Evento Get(int id)
@@ -133,7 +145,7 @@ namespace BLL
             return dal.Update(obj);
         }
 
-        public bool UpdateEstado(Evento obj,int id)
+        private bool UpdateEstado(Evento obj,int id)
         {
             return dal.UpdateEstado(obj,id);
         }
