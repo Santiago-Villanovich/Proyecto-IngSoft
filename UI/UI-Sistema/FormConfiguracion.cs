@@ -126,11 +126,6 @@ namespace UI
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            CargarMenuContenedor(new FormAgregarIdioma());
-        }
-
         private void btnCambiarClave_Click(object sender, EventArgs e)
         {
             CargarMenuContenedor(new FormActualizarInfo());

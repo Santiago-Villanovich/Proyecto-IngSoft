@@ -137,9 +137,9 @@
             // configuracionToolStripMenuItem
             // 
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.configuracionToolStripMenuItem.Tag = "14";
-            this.configuracionToolStripMenuItem.Text = "Configuracion";
+            this.configuracionToolStripMenuItem.Text = "Gestionar idiomas";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem

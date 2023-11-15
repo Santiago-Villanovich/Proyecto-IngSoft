@@ -77,8 +77,10 @@ namespace UI
                 {
                     Id = userNew.Id,
                     Nombre = userNew.Nombre,
-                    Apellido = HashCrypto.Encriptar(userNew.Apellido),
+                    Apellido = userNew.Apellido,
                     DNI = userNew.DNI,
+                    Telefono = userNew.Telefono,
+                    Mail = HashCrypto.Encriptar(userNew.Email),
                     Clave = userNew.Clave
                 };
 
@@ -86,16 +88,27 @@ namespace UI
                 {
                     userNew.Nombre = txtNombre.Text;
                 }
-                if (RegexValidation.validarNombre(txtApellido.Text))
+                else if (RegexValidation.validarNombre(txtApellido.Text))
                 {
                     userNew.Apellido = txtApellido.Text;
                 }
-                if (RegexValidation.validarPassword(txtClave.Text))
+                else if (RegexValidation.validarPassword(txtClave.Text))
                 {
                     userNew.Clave = new HashCrypto().GenerarMD5(txtClave.Text);
                 }
+                else if (RegexValidation.validarEmail(txtMail.Text))
+                {
+                    userNew.Clave = HashCrypto.Encriptar(userNew.Email);
+                }
+                else if (RegexValidation.validarTelefono(txtTelefono.Text))
+                {
+                    userNew.Clave = txtTelefono.Text;
+                }
+                else
+                {
+                    return;
+                }
 
-                userNew.Apellido = HashCrypto.Encriptar(userNew.Apellido);
                 userNew.DV = GestorDigitoVerificador.CalcularDV(userNew);
                 usuario.Update(userNew);
 

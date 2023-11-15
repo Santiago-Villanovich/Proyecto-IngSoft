@@ -218,7 +218,7 @@ namespace BLL
                 var lista = new DAL_User().GetAllUserHistory(User, from, to, page);
                 foreach (var item in lista)
                 {
-                    item.Apellido = HashCrypto.Desencriptar(item.Apellido);
+                    item.Mail = HashCrypto.Desencriptar(item.Mail);
 
                 }
                 return lista;
@@ -239,7 +239,6 @@ namespace BLL
         {
             try
             {
-
                 return new DAL_User().InsertUserHistory(user);
             }
             catch (Exception e)

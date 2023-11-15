@@ -149,13 +149,13 @@ namespace UI
 
         private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormConfiguracion menu = new FormConfiguracion();
-            if (!Session.tiene_permiso(1034))
+            FormAgregarIdioma menu = new FormAgregarIdioma();
+            if (!Session.tiene_permiso(1011))
             {
                 MessageBox.Show("No tiene permisos adecuados");
                 return;
             }
-            if (!FormEstaAbierto(typeof(FormConfiguracion)))
+            if (!FormEstaAbierto(typeof(FormAgregarIdioma)))
             {
                 menu.MdiParent = this;
                 menu.Show();

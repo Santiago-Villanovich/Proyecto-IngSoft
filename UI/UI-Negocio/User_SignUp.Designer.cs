@@ -79,7 +79,7 @@
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(140, 50);
-            this.btnRegistrar.TabIndex = 8;
+            this.btnRegistrar.TabIndex = 7;
             this.btnRegistrar.Tag = "4";
             this.btnRegistrar.Text = "Ingresar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@
             this.txtClaveSign.Margin = new System.Windows.Forms.Padding(4);
             this.txtClaveSign.Name = "txtClaveSign";
             this.txtClaveSign.Size = new System.Drawing.Size(248, 22);
-            this.txtClaveSign.TabIndex = 7;
+            this.txtClaveSign.TabIndex = 6;
             this.txtClaveSign.UseSystemPasswordChar = true;
             // 
             // txtDniSign
@@ -102,7 +102,7 @@
             this.txtDniSign.MaxLength = 8;
             this.txtDniSign.Name = "txtDniSign";
             this.txtDniSign.Size = new System.Drawing.Size(248, 22);
-            this.txtDniSign.TabIndex = 6;
+            this.txtDniSign.TabIndex = 2;
             // 
             // txtApellidoSign
             // 
@@ -110,7 +110,7 @@
             this.txtApellidoSign.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidoSign.Name = "txtApellidoSign";
             this.txtApellidoSign.Size = new System.Drawing.Size(248, 22);
-            this.txtApellidoSign.TabIndex = 5;
+            this.txtApellidoSign.TabIndex = 1;
             // 
             // txtNombreSign
             // 
@@ -118,7 +118,7 @@
             this.txtNombreSign.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreSign.Name = "txtNombreSign";
             this.txtNombreSign.Size = new System.Drawing.Size(248, 22);
-            this.txtNombreSign.TabIndex = 4;
+            this.txtNombreSign.TabIndex = 0;
             // 
             // label10
             // 
@@ -205,7 +205,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(248, 22);
-            this.txtEmail.TabIndex = 18;
+            this.txtEmail.TabIndex = 5;
             // 
             // label1
             // 
@@ -226,7 +226,7 @@
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(248, 22);
-            this.txtTelefono.TabIndex = 16;
+            this.txtTelefono.TabIndex = 4;
             // 
             // label2
             // 
@@ -260,7 +260,7 @@
             this.dtNacimiento.Location = new System.Drawing.Point(57, 518);
             this.dtNacimiento.Name = "dtNacimiento";
             this.dtNacimiento.Size = new System.Drawing.Size(247, 22);
-            this.dtNacimiento.TabIndex = 19;
+            this.dtNacimiento.TabIndex = 3;
             // 
             // label11
             // 
@@ -284,7 +284,7 @@
             this.cmbIdiomas.MaxDropDownItems = 15;
             this.cmbIdiomas.Name = "cmbIdiomas";
             this.cmbIdiomas.Size = new System.Drawing.Size(111, 24);
-            this.cmbIdiomas.TabIndex = 20;
+            this.cmbIdiomas.TabIndex = 8;
             this.cmbIdiomas.SelectedIndexChanged += new System.EventHandler(this.cmbIdiomas_SelectedIndexChanged_1);
             // 
             // User_SignUp

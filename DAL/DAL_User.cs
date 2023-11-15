@@ -364,6 +364,8 @@ namespace DAL
                                 Nombre = reader["Nombre"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
                                 DNI = Convert.ToInt32(reader["DNI"]),
+                                Mail = reader["Mail"].ToString(),
+                                Telefono = reader["Telefono"].ToString(),
                                 Clave = reader["Clave"].ToString(),
                                 Fecha = Convert.ToDateTime(reader["Fecha"])
 
@@ -402,6 +404,8 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@Nom", user.Nombre);
                     cmd.Parameters.AddWithValue("@Ape", user.Apellido);
                     cmd.Parameters.AddWithValue("@Dni", user.DNI);
+                    cmd.Parameters.AddWithValue("@Mail", user.Mail);
+                    cmd.Parameters.AddWithValue("@Tel", user.Telefono);
                     cmd.Parameters.AddWithValue("@Clave", user.Clave);
                     conn.Open();
 

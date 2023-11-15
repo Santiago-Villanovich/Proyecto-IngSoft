@@ -16,6 +16,8 @@ namespace BE
 
         public int DNI { get; set; }
 
+        public string Telefono { get; set; }
+        public string Mail { get; set; }
         public string Clave { get; set; } = null;
         public DateTime Fecha { get; set; }
         public DTO_UserHistory() { }
