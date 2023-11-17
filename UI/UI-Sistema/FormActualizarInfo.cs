@@ -54,6 +54,15 @@ namespace UI
             }
             
         }
+
+        private void CargarDatos()
+        {
+            txtNombre.Text = Session.GetInstance.Usuario.Nombre;
+            txtApellido.Text = Session.GetInstance.Usuario.Apellido;
+            txtDni.Text = Session.GetInstance.Usuario.DNI.ToString();
+            txtTelefono.Text = Session.GetInstance.Usuario.Telefono;
+            txtMail.Text = Session.GetInstance.Usuario.Email;
+        }
         public FormActualizarInfo()
         {
             InitializeComponent();
@@ -61,6 +70,8 @@ namespace UI
             usuario = new BLL_User();
             bllDV = new BLL_DigitoVerificador();
             TraducirForm(Session.IdiomaActual);
+
+            txtDni.Enabled = false;
         }
 
         BLL_Traductor traductor;
@@ -130,6 +141,11 @@ namespace UI
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void FormActualizarInfo_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
         }
     }
 }

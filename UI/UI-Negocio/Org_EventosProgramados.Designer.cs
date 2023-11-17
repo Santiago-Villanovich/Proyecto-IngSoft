@@ -72,6 +72,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 36);
             this.label1.TabIndex = 1;
+            this.label1.Tag = "72";
             this.label1.Text = "Mis eventos ";
             // 
             // groupBox1
@@ -96,7 +97,6 @@
             this.groupBox1.Size = new System.Drawing.Size(888, 277);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Opciones del evento";
             // 
             // btnCancelar
             // 
@@ -107,6 +107,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(115, 74);
             this.btnCancelar.TabIndex = 35;
+            this.btnCancelar.Tag = "73";
             this.btnCancelar.Text = "Cancelar evento";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -120,6 +121,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(202, 23);
             this.label5.TabIndex = 34;
+            this.label5.Tag = "57";
             this.label5.Text = "Subir portada del evento";
             // 
             // picCancel
@@ -162,6 +164,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 23);
             this.label4.TabIndex = 8;
+            this.label4.Tag = "53";
             this.label4.Text = "Nombre del evento";
             // 
             // pictureBox1
@@ -189,6 +192,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 23);
             this.label3.TabIndex = 4;
+            this.label3.Tag = "54";
             this.label3.Text = "Fecha del evento";
             // 
             // label2
@@ -199,6 +203,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 23);
             this.label2.TabIndex = 3;
+            this.label2.Tag = "56";
             this.label2.Text = "Descripcion del evento";
             // 
             // btnGuardar
@@ -210,6 +215,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(115, 121);
             this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Tag = "30";
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);

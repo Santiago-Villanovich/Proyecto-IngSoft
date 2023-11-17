@@ -49,6 +49,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 1;
+            this.label1.Tag = "67";
             this.label1.Text = "Categoria";
             // 
             // cboxCategoriaElegir
@@ -66,6 +67,7 @@
             this.btnIniciarCategoria.Name = "btnIniciarCategoria";
             this.btnIniciarCategoria.Size = new System.Drawing.Size(265, 33);
             this.btnIniciarCategoria.TabIndex = 3;
+            this.btnIniciarCategoria.Tag = "74";
             this.btnIniciarCategoria.Text = "Iniciar categoria";
             this.btnIniciarCategoria.UseVisualStyleBackColor = true;
             this.btnIniciarCategoria.Click += new System.EventHandler(this.btnIniciarCategoria_Click);
@@ -88,6 +90,7 @@
             this.btnGuardarEquipoTiempo.Name = "btnGuardarEquipoTiempo";
             this.btnGuardarEquipoTiempo.Size = new System.Drawing.Size(190, 49);
             this.btnGuardarEquipoTiempo.TabIndex = 7;
+            this.btnGuardarEquipoTiempo.Tag = "30";
             this.btnGuardarEquipoTiempo.Text = "Guardar ";
             this.btnGuardarEquipoTiempo.UseVisualStyleBackColor = true;
             this.btnGuardarEquipoTiempo.Click += new System.EventHandler(this.GuardarEquipo_Click);
@@ -147,6 +150,7 @@
             this.btnGuardarCategoria.Name = "btnGuardarCategoria";
             this.btnGuardarCategoria.Size = new System.Drawing.Size(265, 33);
             this.btnGuardarCategoria.TabIndex = 12;
+            this.btnGuardarCategoria.Tag = "75";
             this.btnGuardarCategoria.Text = "Terminar categoria";
             this.btnGuardarCategoria.UseVisualStyleBackColor = true;
             this.btnGuardarCategoria.Click += new System.EventHandler(this.btnGuardarCategoria_Click);

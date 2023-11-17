@@ -39,6 +39,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDni = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -59,7 +61,7 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(28, 201);
+            this.txtClave.Location = new System.Drawing.Point(298, 194);
             this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(225, 22);
@@ -96,7 +98,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.label3.Location = new System.Drawing.Point(28, 181);
+            this.label3.Location = new System.Drawing.Point(298, 174);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 19);
@@ -111,10 +113,10 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnGuardar.Location = new System.Drawing.Point(193, 373);
+            this.btnGuardar.Location = new System.Drawing.Point(28, 381);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(163, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(225, 41);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Tag = "30";
             this.btnGuardar.Text = "Guardar";
@@ -163,12 +165,35 @@
             this.txtTelefono.Size = new System.Drawing.Size(225, 22);
             this.txtTelefono.TabIndex = 7;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.label6.Location = new System.Drawing.Point(28, 174);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Tag = "3";
+            this.label6.Text = "DNI";
+            // 
+            // txtDni
+            // 
+            this.txtDni.Location = new System.Drawing.Point(28, 194);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(225, 22);
+            this.txtDni.TabIndex = 11;
+            // 
             // FormActualizarInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(555, 464);
+            this.ClientSize = new System.Drawing.Size(612, 464);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtDni);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtMail);
@@ -184,6 +209,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormActualizarInfo";
             this.Text = "Actualizar";
+            this.Load += new System.EventHandler(this.FormActualizarInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +228,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtDni;
     }
 }

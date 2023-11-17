@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,15 +16,100 @@ using static Org.BouncyCastle.Crypto.Digests.SkeinEngine;
 
 namespace UI
 {
-    public partial class Org_Menu : Form
+    public partial class Org_Menu : Form,IObserver
     {
         BLL_Evento bllEvento;
+        BLL_Traductor traductor;
         public Org_Menu()
         {
             InitializeComponent();
             this.Size = new Size(1200, 650);
             this.MinimumSize = new Size(1200, 650);
             bllEvento = new BLL_Evento();
+            traductor = new BLL_Traductor();
+            Session._publisherIdioma.Subscribe(this);
+
+            TraducirForm(Session.IdiomaActual);
+        }
+
+        public void Notify(Idioma idioma)
+        {
+            TraducirForm(idioma);
+        }
+
+        private void TraducirForm(IIdioma idioma = null)
+        {
+            try
+            {
+                TraducirFormPanel(this.panelNav,idioma);
+                TraducirFormPanel(this.panelContenedor,idioma);
+            }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TraducirFormPanel(Panel panel,IIdioma idioma = null)
+        {
+            try
+            {
+                var traducciones = traductor.ObtenerTraducciones(idioma);
+
+                foreach (Control control in panel.Controls)
+                {
+
+                    if (control is System.Windows.Forms.Button)
+                    {
+                        System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                            boton.Text = traducciones[boton.Tag.ToString()].texto;
+                    }
+                    else if (control is Label)
+                    {
+                        Label label = (Label)control;
+                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                            label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    }
+                    else if (control is System.Windows.Forms.GroupBox)
+                    {
+                        foreach (Control cont in control.Controls)
+                        {
+                            if (control is System.Windows.Forms.Button)
+                            {
+                                System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                                if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                                    boton.Text = traducciones[boton.Tag.ToString()].texto;
+                            }
+                            else if (control is Label)
+                            {
+                                Label label = (Label)control;
+                                if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                                    label.Text = traducciones[label.Tag.ToString()].texto;
+
+                            }
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CargarMenuContenedor(object formHijo)
@@ -42,6 +128,8 @@ namespace UI
             {
                 orgIniciarEventoForm.mostrarIniciar += (sender, e) => MostrarEventoIniciado(orgIniciarEventoForm.eventoIniciado);
             }
+
+            TraducirFormPanel(this.panelContenedor,Session.IdiomaActual);
             frm.Show();
         }
 
@@ -51,6 +139,7 @@ namespace UI
             CargarMenuContenedor(new Org_EventoIniciado(ev));
             this.MinimumSize = new Size(1080, 680);
             this.Size = new Size(1080, 680);
+            
         }
 
         private void btnNuevoEvento_Click(object sender, EventArgs e)

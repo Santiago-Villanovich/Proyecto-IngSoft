@@ -71,6 +71,7 @@
             this.btnEventosProgramados.Name = "btnEventosProgramados";
             this.btnEventosProgramados.Size = new System.Drawing.Size(216, 61);
             this.btnEventosProgramados.TabIndex = 4;
+            this.btnEventosProgramados.Tag = "52";
             this.btnEventosProgramados.Text = "Eventos Programados";
             this.btnEventosProgramados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEventosProgramados.UseVisualStyleBackColor = true;
@@ -123,10 +124,11 @@
             this.btnIniciarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarEvento.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarEvento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.btnIniciarEvento.Location = new System.Drawing.Point(3, 184);
+            this.btnIniciarEvento.Location = new System.Drawing.Point(3, 143);
             this.btnIniciarEvento.Name = "btnIniciarEvento";
             this.btnIniciarEvento.Size = new System.Drawing.Size(216, 89);
             this.btnIniciarEvento.TabIndex = 5;
+            this.btnIniciarEvento.Tag = "50";
             this.btnIniciarEvento.Text = "Iniciar Evento";
             this.btnIniciarEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIniciarEvento.UseVisualStyleBackColor = true;
@@ -145,7 +147,8 @@
             this.btnNuevoEvento.Name = "btnNuevoEvento";
             this.btnNuevoEvento.Size = new System.Drawing.Size(219, 61);
             this.btnNuevoEvento.TabIndex = 2;
-            this.btnNuevoEvento.Text = "Nuevo evento";
+            this.btnNuevoEvento.Tag = "51";
+            this.btnNuevoEvento.Text = "Nuevo Evento";
             this.btnNuevoEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevoEvento.UseVisualStyleBackColor = true;
             this.btnNuevoEvento.Click += new System.EventHandler(this.btnNuevoEvento_Click);

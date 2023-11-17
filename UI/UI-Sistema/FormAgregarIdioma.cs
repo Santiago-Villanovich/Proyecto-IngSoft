@@ -134,8 +134,7 @@ namespace UI
         public FormAgregarIdioma()
         {
             InitializeComponent();
-            this.Size = new Size(392,569);
-            groupBox3.Location = new Point(8, 46);
+            groupBox3.Location = new Point(160, 50);
             groupBox3.Visible = false;
             groupBox3.Enabled = false;
 
@@ -224,7 +223,7 @@ namespace UI
                     Idioma IdiomaAux = (Idioma)comboBox1.SelectedItem;
                     traductor.UpdateTraducciones(TraerListDGV(), IdiomaAux);
 
-                    MessageBox.Show("Idioma agregado con exito");
+                    MessageBox.Show("Idioma actualizado con exito");
                     this.Close();
                 }
                 

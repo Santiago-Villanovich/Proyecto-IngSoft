@@ -217,7 +217,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 26);
             this.label1.TabIndex = 14;
-            this.label1.Tag = "";
+            this.label1.Tag = "47";
             this.label1.Text = "Telefono";
             // 
             // txtTelefono
@@ -238,7 +238,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 26);
             this.label2.TabIndex = 15;
-            this.label2.Tag = "";
+            this.label2.Tag = "48";
             this.label2.Text = "Email";
             // 
             // label3
@@ -251,7 +251,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(222, 26);
             this.label3.TabIndex = 17;
-            this.label3.Tag = "";
+            this.label3.Tag = "49";
             this.label3.Text = "Fecha de Nacimiento";
             // 
             // dtNacimiento

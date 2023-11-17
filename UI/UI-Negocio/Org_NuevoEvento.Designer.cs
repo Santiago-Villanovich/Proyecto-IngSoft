@@ -92,6 +92,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 23);
             this.label1.TabIndex = 0;
+            this.label1.Tag = "54";
             this.label1.Text = "Fecha del Evento";
             // 
             // label2
@@ -102,6 +103,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 23);
             this.label2.TabIndex = 1;
+            this.label2.Tag = "56";
             this.label2.Text = "Descripcion del evento";
             // 
             // label3
@@ -112,6 +114,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 23);
             this.label3.TabIndex = 2;
+            this.label3.Tag = "55";
             this.label3.Text = "Coste de Inscripcion";
             // 
             // label5
@@ -121,6 +124,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 23);
             this.label5.TabIndex = 4;
+            this.label5.Tag = "59";
             this.label5.Text = "Seleccionar Pileta";
             // 
             // label6
@@ -130,6 +134,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 23);
             this.label6.TabIndex = 5;
+            this.label6.Tag = "60";
             this.label6.Text = "Estilo";
             // 
             // checkElementos
@@ -139,6 +144,7 @@
             this.checkElementos.Name = "checkElementos";
             this.checkElementos.Size = new System.Drawing.Size(198, 27);
             this.checkElementos.TabIndex = 8;
+            this.checkElementos.Tag = "65";
             this.checkElementos.Text = "Se utilizan elementos";
             this.checkElementos.UseVisualStyleBackColor = true;
             // 
@@ -211,6 +217,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 22);
             this.label10.TabIndex = 18;
+            this.label10.Tag = "67";
             this.label10.Text = "Categoria: ";
             // 
             // numupEdadMax
@@ -233,6 +240,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 23);
             this.label12.TabIndex = 22;
+            this.label12.Tag = "68";
             this.label12.Text = "Entre";
             // 
             // btnAgregarCat
@@ -242,6 +250,7 @@
             this.btnAgregarCat.Name = "btnAgregarCat";
             this.btnAgregarCat.Size = new System.Drawing.Size(205, 51);
             this.btnAgregarCat.TabIndex = 23;
+            this.btnAgregarCat.Tag = "71";
             this.btnAgregarCat.Text = "Agregar categoria";
             this.btnAgregarCat.UseVisualStyleBackColor = true;
             this.btnAgregarCat.Click += new System.EventHandler(this.btnAgregarCat_Click);
@@ -266,6 +275,7 @@
             this.groupBox1.Size = new System.Drawing.Size(747, 244);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "66";
             this.groupBox1.Text = "Defina las Categorias";
             // 
             // txtCategoria
@@ -282,6 +292,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 23);
             this.label4.TabIndex = 27;
+            this.label4.Tag = "69";
             this.label4.Text = "y";
             // 
             // btnDeshacerCat
@@ -291,6 +302,7 @@
             this.btnDeshacerCat.Name = "btnDeshacerCat";
             this.btnDeshacerCat.Size = new System.Drawing.Size(95, 51);
             this.btnDeshacerCat.TabIndex = 26;
+            this.btnDeshacerCat.Tag = "70";
             this.btnDeshacerCat.Text = "Deshacer";
             this.btnDeshacerCat.UseVisualStyleBackColor = true;
             this.btnDeshacerCat.Click += new System.EventHandler(this.button1_Click);
@@ -335,7 +347,8 @@
             this.groupBox2.Size = new System.Drawing.Size(747, 328);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Informacion Natacion";
+            this.groupBox2.Tag = "58";
+            this.groupBox2.Text = "Detalles del deporte";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // numupCupos
@@ -368,6 +381,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 23);
             this.label11.TabIndex = 30;
+            this.label11.Tag = "64";
             this.label11.Text = "Cupos total";
             // 
             // txtMetros
@@ -407,6 +421,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(201, 23);
             this.label8.TabIndex = 17;
+            this.label8.Tag = "63";
             this.label8.Text = "Participantes por equipo";
             // 
             // txtTiempo
@@ -424,6 +439,7 @@
             this.rbNataTiempo.Size = new System.Drawing.Size(224, 27);
             this.rbNataTiempo.TabIndex = 14;
             this.rbNataTiempo.TabStop = true;
+            this.rbNataTiempo.Tag = "61";
             this.rbNataTiempo.Text = "Competencia por tiempo";
             this.rbNataTiempo.UseVisualStyleBackColor = true;
             this.rbNataTiempo.CheckedChanged += new System.EventHandler(this.rbNataTiempo_CheckedChanged);
@@ -436,6 +452,7 @@
             this.rbNataMetros.Size = new System.Drawing.Size(224, 27);
             this.rbNataMetros.TabIndex = 13;
             this.rbNataMetros.TabStop = true;
+            this.rbNataMetros.Tag = "62";
             this.rbNataMetros.Text = "Competencia por metros";
             this.rbNataMetros.UseVisualStyleBackColor = true;
             this.rbNataMetros.CheckedChanged += new System.EventHandler(this.rbNataMetros_CheckedChanged);
@@ -472,6 +489,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(202, 23);
             this.label13.TabIndex = 27;
+            this.label13.Tag = "57";
             this.label13.Text = "Subir portada del evento";
             // 
             // txtNombre
@@ -490,6 +508,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(163, 22);
             this.label14.TabIndex = 29;
+            this.label14.Tag = "53";
             this.label14.Text = "Nombre del Evento";
             // 
             // openFileDialog1
