@@ -27,3 +27,299 @@ G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.cspro
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.exe
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.pdb
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.FormHistorialCambios.resources
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.FormActualizarInfo.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\UI.exe.config
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\UI.exe
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\UI.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\BE.dll
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\BLL.dll
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\Services.dll
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\DAL.dll
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\BE.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\BLL.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\Services.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\UI\bin\Debug\DAL.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.csproj.SuggestedBindingRedirects.cache
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.FormActualizarInfo.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.FormAgregarIdioma.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.FormBitacoras.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.FormConfiguracion.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.FormHistorialCambios.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.GestUsuarios.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.LogIn.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.Menu.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.MenuAdmin.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.FormPermisos.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.csproj.GenerateResource.cache
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.csproj.CopyComplete
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.exe
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\UI.exe.config
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\UI.exe
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\UI.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\ABS.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\BE.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\BLL.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\Services.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\DAL.dll
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\ABS.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\BE.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\BLL.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\Services.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\bin\Debug\DAL.pdb
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.SuggestedBindingRedirects.cache
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormActualizarInfo.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormAgregarIdioma.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormBitacoras.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormConfiguracion.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormHistorialCambios.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.GestUsuarios.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.LogIn.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.Menu.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.MenuAdmin.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.FormPermisos.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.Properties.Resources.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.GenerateResource.cache
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.csproj.CopyComplete
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.exe
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\UI\obj\Debug\UI.CorruptedDataBase.resources
+G:\Universidad\Ingenieria de software\Merge\UI\obj\Debug\UI.CorruptedDataBase.resources
+G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\UI\obj\Debug\UI.CorruptedDataBase.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\UI.exe.config
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\UI.exe
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\UI.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\ABS.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\BE.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\BLL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\Services.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\DAL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\ABS.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\BE.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\BLL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\Services.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\bin\Debug\DAL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.CorruptedDataBase.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormActualizarInfo.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormAgregarIdioma.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormBitacoras.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormConfiguracion.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormHistorialCambios.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.GestUsuarios.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.LogIn.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.Menu.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.MenuAdmin.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.FormPermisos.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.Properties.Resources.resources
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.GenerateResource.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.CopyComplete
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.exe
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\UI\obj\Debug\UI.pdb
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\UI.exe.config
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\UI.exe
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\UI.pdb
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\ABS.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\BE.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\BLL.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Services.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\DAL.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\ABS.pdb
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\BE.pdb
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\BLL.pdb
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Services.pdb
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\DAL.pdb
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.csproj.SuggestedBindingRedirects.cache
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.CorruptedDataBase.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.FormActualizarInfo.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.FormAgregarIdioma.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.FormBitacoras.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.FormConfiguracion.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.FormHistorialCambios.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.GestUsuarios.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.LogIn.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.MenuAdmin.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.FormPermisos.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.csproj.GenerateResource.cache
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.csproj.CopyComplete
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.exe
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.pdb
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Core.WinForms.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Grid.Base.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Grid.Windows.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Licensing.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Shared.Windows.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Tools.Base.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Core.WinForms.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Grid.Base.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Grid.Windows.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Shared.Windows.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Syncfusion.Tools.Base.xml
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.Org_Menu.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.User_Menu.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_Inicio.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.CalendarDay.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.CalendarDayBlank.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_SignUp.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_NuevoEvento.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Sistema.FormCrearOrg.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Sistema.FormUsuarioOrg.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.Org_EventoDisplay.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_EventosProgramados.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_Inicio.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.User_BuscarEvento.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.User_EventoDisplay.resources
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\QRCoder.dll
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.FormPagar.resources
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.FormAgregarEquipo.resources
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\BouncyCastle.Crypto.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\itextsharp.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Newtonsoft.Json.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Buffers.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Memory.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Numerics.Vectors.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.ValueTuple.dll
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\BLL.dll.config
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Services.dll.config
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\itextsharp.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\Newtonsoft.Json.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Buffers.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Memory.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Numerics.Vectors.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\System.ValueTuple.xml
+C:\Universidad\Diploma\Proyecto\UI\bin\Debug\DAL.dll.config
+C:\Universidad\Diploma\Proyecto\UI\obj\Debug\UI.UI_Negocio.Org_IniciarEvento.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\UI.exe.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\UI.exe
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\UI.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\ABS.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\BE.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\BLL.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\itextsharp.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\QRCoder.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Services.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Core.WinForms.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Grid.Base.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Grid.Windows.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Shared.Windows.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Tools.Base.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Buffers.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Memory.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.ValueTuple.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\DAL.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\ABS.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\BE.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\BLL.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\BLL.dll.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Services.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Services.dll.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\itextsharp.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Core.WinForms.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Grid.Base.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Grid.Windows.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Shared.Windows.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Tools.Base.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Buffers.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Memory.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.ValueTuple.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\DAL.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\DAL.dll.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.SuggestedBindingRedirects.cache
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.CalendarDay.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.CalendarDayBlank.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.Org_EventoDisplay.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.FormAgregarEquipo.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.FormPagar.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.Org_EventosProgramados.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.Org_IniciarEvento.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.Org_Inicio.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.Org_NuevoEvento.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.User_BuscarEvento.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.User_SignUp.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.User_Inicio.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.CorruptedDataBase.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.FormActualizarInfo.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.FormAgregarIdioma.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.FormBitacoras.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.FormConfiguracion.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Sistema.FormCrearOrg.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.FormHistorialCambios.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Sistema.FormUsuarioOrg.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.GestUsuarios.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.LogIn.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.MenuAdmin.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.FormPermisos.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.Org_Menu.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.User_Menu.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.User_EventoDisplay.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.GenerateResource.cache
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\Users\santi\source\repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.csproj.CopyComplete
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.exe
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.Org_EventoDisplay_Cerrado.resources
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.Org_EventoIniciado.resources

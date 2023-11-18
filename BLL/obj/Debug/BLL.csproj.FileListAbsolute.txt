@@ -73,3 +73,131 @@ G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BLL\obj\Debug\BLL.csp
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BLL\obj\Debug\BLL.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BLL\obj\Debug\BLL.dll
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\BLL\obj\Debug\BLL.pdb
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\BLL.dll
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\BLL.pdb
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\ABS.dll
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\BE.dll
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\DAL.dll
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\Services.dll
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\ABS.pdb
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\BE.pdb
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\DAL.pdb
+G:\Universidad\Ingenieria de software\Merge\BLL\bin\Debug\Services.pdb
+G:\Universidad\Ingenieria de software\Merge\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+G:\Universidad\Ingenieria de software\Merge\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+G:\Universidad\Ingenieria de software\Merge\BLL\obj\Debug\BLL.csproj.CopyComplete
+G:\Universidad\Ingenieria de software\Merge\BLL\obj\Debug\BLL.dll
+G:\Universidad\Ingenieria de software\Merge\BLL\obj\Debug\BLL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\BLL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\BLL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\ABS.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\BE.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\DAL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\Services.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\ABS.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\BE.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\DAL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\bin\Debug\Services.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\BLL\obj\Debug\BLL.pdb
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\BLL.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\BLL.pdb
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\ABS.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\BE.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\DAL.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Services.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\ABS.pdb
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\BE.pdb
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\DAL.pdb
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Services.pdb
+C:\Universidad\Diploma\Proyecto\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Universidad\Diploma\Proyecto\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Universidad\Diploma\Proyecto\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Universidad\Diploma\Proyecto\BLL\obj\Debug\BLL.dll
+C:\Universidad\Diploma\Proyecto\BLL\obj\Debug\BLL.pdb
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\QRCoder.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\BLL.dll.config
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Buffers.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Memory.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.ValueTuple.dll
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\DAL.dll.config
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Services.dll.config
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Buffers.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Memory.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Numerics.Vectors.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Universidad\Diploma\Proyecto\BLL\bin\Debug\System.ValueTuple.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\BLL.dll.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\BLL.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\BLL.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\ABS.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\BE.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\DAL.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\QRCoder.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Services.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Buffers.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Memory.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.ValueTuple.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\ABS.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\BE.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\DAL.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\DAL.dll.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Services.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Services.dll.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Buffers.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Memory.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\bin\Debug\System.ValueTuple.xml
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\santi\source\repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BLL\obj\Debug\BLL.pdb

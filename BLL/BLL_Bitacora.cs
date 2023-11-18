@@ -1,5 +1,6 @@
 ﻿using BE;
 using DAL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace BLL
 {
     public class BLL_Bitacora
     {
+        
         public bool Insert(Bitacora bitacora)
         {
             return new DAL_Bitacora().Insert(bitacora);
@@ -17,11 +19,49 @@ namespace BLL
 
         public List<Bitacora> GetAll()
         {
-            return new DAL_Bitacora().GetAll();
+            try
+            {
+                return new DAL_Bitacora().GetAll();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
-        public List<DTO_BitacoraUser> GetAllBU()
+        public List<DTO_BitacoraUser> GetAllBU(int? User, DateTime? from, DateTime? to, int? tipo, int page)
         {
-            return new DAL_Bitacora().GetAllBU();
+            try
+            {
+                List < DTO_BitacoraUser > lista = new DAL_Bitacora().GetAllBU(User, from, to, tipo, page);
+                foreach (var item in lista)
+                {
+                    item.Apellido = HashCrypto.Desencriptar(item.Apellido);
+                }
+
+                return lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
+
+        public List<BitacoraTipo> GetAllBT()
+        {
+            try
+            {
+                return new DAL_Bitacora().GetAllBT();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
     }
 }

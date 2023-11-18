@@ -11,3 +11,74 @@ G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\DAL\obj\Debug\DAL.csp
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\DAL\obj\Debug\DAL.csproj.CopyComplete
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\DAL\obj\Debug\DAL.dll
 G:\Universidad\Ingenieria de software\Proyecto-IngSoftware\DAL\obj\Debug\DAL.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\DAL.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\DAL.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\ABS.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\BE.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\Services.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\ABS.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\BE.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\bin\Debug\Services.pdb
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.dll
+C:\Users\Matias\Documents\Ingenieria-Software\DAL\obj\Debug\DAL.pdb
+G:\Universidad\Ingenieria de software\Merge\DAL\bin\Debug\DAL.dll
+G:\Universidad\Ingenieria de software\Merge\DAL\bin\Debug\DAL.pdb
+G:\Universidad\Ingenieria de software\Merge\DAL\bin\Debug\ABS.dll
+G:\Universidad\Ingenieria de software\Merge\DAL\bin\Debug\BE.dll
+G:\Universidad\Ingenieria de software\Merge\DAL\bin\Debug\Services.dll
+G:\Universidad\Ingenieria de software\Merge\DAL\bin\Debug\ABS.pdb
+G:\Universidad\Ingenieria de software\Merge\DAL\bin\Debug\BE.pdb
+G:\Universidad\Ingenieria de software\Merge\DAL\bin\Debug\Services.pdb
+G:\Universidad\Ingenieria de software\Merge\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+G:\Universidad\Ingenieria de software\Merge\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+G:\Universidad\Ingenieria de software\Merge\DAL\obj\Debug\DAL.csproj.CopyComplete
+G:\Universidad\Ingenieria de software\Merge\DAL\obj\Debug\DAL.dll
+G:\Universidad\Ingenieria de software\Merge\DAL\obj\Debug\DAL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\DAL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\DAL.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\ABS.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\BE.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\Services.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\ABS.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\BE.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\bin\Debug\Services.pdb
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.dll
+D:\Parcial2_Villanovich\TP\Proyecto-IngSoft\DAL\obj\Debug\DAL.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\DAL.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\DAL.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\ABS.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\BE.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\Services.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\ABS.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\BE.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\Services.pdb
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.dll
+C:\Universidad\Diploma\Proyecto\DAL\obj\Debug\DAL.pdb
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\QRCoder.dll
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\DAL.dll.config
+C:\Universidad\Diploma\Proyecto\DAL\bin\Debug\Services.dll.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\DAL.dll.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\DAL.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\DAL.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\ABS.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\BE.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\QRCoder.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\Services.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\ABS.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\BE.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\Services.pdb
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\bin\Debug\Services.dll.config
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.dll
+C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\DAL\obj\Debug\DAL.pdb

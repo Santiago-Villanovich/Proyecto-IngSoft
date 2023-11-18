@@ -1,6 +1,7 @@
 ﻿using ABS;
 using BE;
 using DAL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,23 @@ namespace BLL
 {
     public class BLL_Permisos : IMetodosGenericos<Componente>
     {
-        public bool Delete(int id)
+        public bool Delete(Componente id)
         {
-            return new DAL_Permisos().Delete(id);
+            try
+            {
+                var permisosFamilia = GetPermisosFamilia(id.Id);
+                return new DAL_Permisos().Delete(id);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+
         }
 
         public Componente Get(int id)
@@ -28,7 +43,7 @@ namespace BLL
 
         public bool Insert(Componente obj)
         {
-            return new DAL_Permisos().Insert(obj);
+            throw new NotImplementedException();
         }
 
         public bool Update(Componente obj)
@@ -36,7 +51,7 @@ namespace BLL
             return new DAL_Permisos().Update(obj);
         }
 
-        public List<Componente> GetFamilias()
+        public List<Familia> GetFamilias()
         {
             return new DAL_Permisos().GetFamilias();
         }
@@ -47,35 +62,108 @@ namespace BLL
         }
 
 
-        public List<Componente> GetAllPermisos()
+
+        public Componente GetComponentePorNombre(string nombre)
         {
-            List<Componente> AllPermisos = new List<Componente>();
-            var familias = new DAL_Permisos().GetFamilias();
-
-            foreach (var familia in familias)
-            {
-                var permisosFamilia = LlenarFamilia(familia);
-                AllPermisos.Add(permisosFamilia);
-
-            }
-
-            return AllPermisos;
-
+            return new DAL_Permisos().GetComponentePorNombre(nombre);
         }
 
+        public List<Componente> GetAllComponentes()
+        {
+            return new DAL_Permisos().GetAllComponentes();
+        }
 
         public Componente LlenarFamilia(Componente parent)
         {
-            List<Componente> HijosFamilia = new DAL_Permisos().GetPermisosFamilia(parent.Id);
-
-
-            foreach (var item in HijosFamilia)
+            try
             {
-                parent.AgregarHijo(item);
+                List<Componente> HijosFamilia = new DAL_Permisos().GetPermisosFamilia(parent.Id);
+
+
+                foreach (var item in HijosFamilia)
+                {
+                    parent.AgregarHijo(item);
+                }
+
+                return parent;
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
+            }
+            
+        }
+
+        public List<Patente> ObtenerPatentes()
+        {
+            try
+            {
+                return new DAL_Permisos().ObtenerPatentes();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool SacarPermisoUser(User user, Componente permiso)
+        {
+            return new DAL_Permisos().SacarPermisoUser(user, permiso);
+        }
+
+        public void AgregarPermiso(Componente permiso)
+        {
+            try
+            {
+                new DAL_Permisos().AgregarPermiso(permiso);
+                Componente familia = new DAL_Permisos().GetComponentePorNombre(permiso.Nombre);
+
+                if (!permiso.es_patente && permiso.Hijos != null && permiso.Hijos.Count > 0)
+                {
+                    permiso.Hijos.ToList().ForEach(i =>
+                    {
+                        new DAL_Permisos().AgregarPatentePermiso(i, familia.Id);
+                    });
+                }
+                
+                var bitacora = new Bitacora();
+                bitacora.Detalle = "Agrego nuevo permiso";
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Informacion);
+                new BLL_Bitacora().Insert(bitacora);
+            }
+            catch (Exception e)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = e.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+                throw;
             }
 
-            return parent;
+        }
 
+        public List<Familia> GetPermisosUser(User user)
+        {
+            List<Familia> familias = new DAL_Permisos().GetPermisosUser(user);
+
+            List<Familia> permisos = new List<Familia>();
+
+            familias.ForEach(f =>
+            {
+                var permisosFamilia = new DAL_Permisos().GetPermisosFamilia(f.Id);
+                f.Hijos = permisosFamilia;
+
+                permisos.Add(f);
+            });
+
+           return permisos;
 
         }
     }
