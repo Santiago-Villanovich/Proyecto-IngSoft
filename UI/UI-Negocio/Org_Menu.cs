@@ -42,7 +42,6 @@ namespace UI
             try
             {
                 TraducirFormPanel(this.panelNav,idioma);
-                TraducirFormPanel(this.panelContenedor,idioma);
             }
             catch (Exception ex)
             {
@@ -116,6 +115,7 @@ namespace UI
         {
             if (this.panelContenedor.Controls.Count > 0)
             {
+                Session._publisherIdioma.Unsuscribe((IObserver)panelContenedor.Controls[0].Tag);
                 this.panelContenedor.Controls.RemoveAt(0);
             }
             Form frm = formHijo as Form;
@@ -129,7 +129,7 @@ namespace UI
                 orgIniciarEventoForm.mostrarIniciar += (sender, e) => MostrarEventoIniciado(orgIniciarEventoForm.eventoIniciado);
             }
 
-            TraducirFormPanel(this.panelContenedor,Session.IdiomaActual);
+            
             frm.Show();
         }
 

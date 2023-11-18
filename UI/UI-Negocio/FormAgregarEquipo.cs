@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,56 @@ using System.Windows.Forms;
 
 namespace UI.UI_Negocio
 {
-    public partial class FormAgregarEquipo : Form
+    public partial class FormAgregarEquipo : Form, IObserver
     {
         public List<Participante> participantes;
         private List<User> users;
         public Natacion eve;
         private BLL_User bllUser;
+        BLL_Traductor traductor = new BLL_Traductor();
+
+        private void TraducirForm(IIdioma idioma = null)
+        {
+            try
+            {
+                var traducciones = traductor.ObtenerTraducciones(idioma);
+
+                foreach (Control control in this.Controls)
+                {
+
+                    if (control is System.Windows.Forms.Button)
+                    {
+                        System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
+                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
+                            boton.Text = traducciones[boton.Tag.ToString()].texto;
+                    }
+                    else if (control is Label)
+                    {
+                        Label label = (Label)control;
+                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
+                            label.Text = traducciones[label.Tag.ToString()].texto;
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void Notify(Idioma idioma)
+        {
+            TraducirForm(Session.IdiomaActual);
+        }
 
         private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -62,6 +107,8 @@ namespace UI.UI_Negocio
             btnEliminar.Enabled = false;
             eve = e;
 
+            Session._publisherIdioma.Subscribe(this);
+            TraducirForm(Session.IdiomaActual);
             CargarUsers();
         }
         private void FormAgregarEquipo_Load(object sender, EventArgs e)

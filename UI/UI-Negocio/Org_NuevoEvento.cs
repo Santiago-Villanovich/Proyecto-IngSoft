@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,63 @@ using System.Windows.Forms;
 
 namespace UI.UI_Negocio
 {
-    public partial class Org_NuevoEvento : Form
+    public partial class Org_NuevoEvento : Form,IObserver
     {
         List<Categoria> categorias;
         Evento evento;
         BLL_Evento bllEvento;
         BLL_DeporteNatacion bllNata;
         string Imagename;
+        BLL_Traductor traductor = new BLL_Traductor();
+
+        private void TraducirForm( IIdioma idioma = null)
+        {
+            try
+            {
+                var traducciones = traductor.ObtenerTraducciones(idioma);
+
+                foreach (Control control in this.Controls)
+                {
+                    
+
+                    if(control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                    {
+                        control.Text = traducciones[control.Tag.ToString()].texto;
+                    }
+
+                }
+                foreach  (Control control in this.groupBox1.Controls)
+                {
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                    {
+                        control.Text = traducciones[control.Tag.ToString()].texto;
+                    }
+                }
+                foreach (Control control in this.groupBox2.Controls)
+                {
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                    {
+                        control.Text = traducciones[control.Tag.ToString()].texto;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void Notify(Idioma idioma)
+        {
+            TraducirForm(Session.IdiomaActual);
+        }
 
         private bool ValidarNomCategoria(string nom)
         {
@@ -103,6 +154,9 @@ namespace UI.UI_Negocio
             txtMetros.Visible = false;
             txtTiempo.Visible = false;
             pictureBox3.Visible = false;
+
+            Session._publisherIdioma.Subscribe(this);
+            TraducirForm(Session.IdiomaActual);
         }
 
         private void Org_NuevoEvento_Load(object sender, EventArgs e)
@@ -389,5 +443,7 @@ namespace UI.UI_Negocio
             Imagename = string.Empty;
             pictureBox3.Visible= false;
         }
+
+        
     }
 }
