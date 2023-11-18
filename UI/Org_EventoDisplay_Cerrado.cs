@@ -18,7 +18,7 @@ namespace UI
         Color on = Color.FromArgb(86, 88, 99);
         Color off = Color.FromArgb(45, 48, 71);
 
-        public Org_EventoDisplay_Cerrado(Evento evento)
+        public Org_EventoDisplay_Cerrado(Evento evento = null)
         {
             InitializeComponent();
 
@@ -26,27 +26,35 @@ namespace UI
             btnIniciar.Visible = false;
         }
 
-        public void SetEvento(Evento evento, DateTime fecha)
+        public void SetEvento(DateTime fecha,Evento evento = null)
         {
-            lblNombre.Text = evento.nombre;
-            if (evento.Fecha.ToShortDateString() == fecha.ToShortDateString()) {
-                lblFecha.Text = "Hoy";
-                btnIniciar.Visible = true;
+            if (evento != null)
+            {
+                lblNombre.Text = evento.nombre;
+                lblFecha.Text = evento.Fecha.ToShortDateString();
+                if (evento.Fecha.Date == fecha.Date)
+                {
+                    btnIniciar.Visible = true;
+                }
+
+                if (evento.portada != null)
+                {
+                    using (MemoryStream stream = new MemoryStream(evento.portada))
+                    {
+                        Image imagen = Image.FromStream(stream);
+
+                        pictureBox1.Image = imagen;
+                    }
+                }
             }
             else
             {
-                lblFecha.Text = evento.Fecha.ToShortDateString();
+                pictureBox1.Visible = false;
+                btnIniciar.Visible = false;
+                lblFecha.Visible = false;
+                lblNombre.Text = "No hay evento disponible";
             }
-
-            if (evento.portada != null)
-            {
-                using (MemoryStream stream = new MemoryStream(evento.portada))
-                {
-                    Image imagen = Image.FromStream(stream);
-
-                    pictureBox1.Image = imagen;
-                }
-            }
+            
         }
 
         public event EventHandler iniciarClick;

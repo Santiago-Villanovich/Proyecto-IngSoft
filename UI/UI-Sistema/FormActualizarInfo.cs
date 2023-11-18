@@ -15,7 +15,7 @@ using Services.SecurityAndValidation;
 
 namespace UI
 {
-    public partial class FormActualizarInfo : Form
+    public partial class FormActualizarInfo : Form, IObserver
     {
         private void TraducirForm(IIdioma idioma = null)/*IIdioma idioma = null*/
         {
@@ -146,6 +146,11 @@ namespace UI
         private void FormActualizarInfo_Load(object sender, EventArgs e)
         {
             CargarDatos();
+        }
+
+        public void Notify(Idioma idioma)
+        {
+            TraducirForm(idioma);
         }
     }
 }

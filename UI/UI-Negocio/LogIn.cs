@@ -121,12 +121,12 @@ namespace UI
             }
             catch (Exception ex)
             {
-                var bitacora = new Bitacora();
+                /*var bitacora = new Bitacora();
                 bitacora.Detalle = ex.Message;
                 bitacora.Responsable = Session.GetInstance.Usuario;
                 bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
                 new BLL_Bitacora().Insert(bitacora);
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);*/
             }
         }
 

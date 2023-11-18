@@ -167,7 +167,7 @@ namespace UI
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             FormConfiguracion form = new FormConfiguracion();
-            form.ShowDialog();
+            form.Show();
         }
 
         private void btnEventosProgramados_Click(object sender, EventArgs e)

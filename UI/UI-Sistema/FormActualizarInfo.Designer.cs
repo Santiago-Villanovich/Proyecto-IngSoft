@@ -133,7 +133,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 19);
             this.label4.TabIndex = 10;
-            this.label4.Tag = "3";
+            this.label4.Tag = "48";
             this.label4.Text = "Mail";
             // 
             // label5
@@ -146,7 +146,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 19);
             this.label5.TabIndex = 9;
-            this.label5.Tag = "8";
+            this.label5.Tag = "47";
             this.label5.Text = "Telefono";
             // 
             // txtMail
@@ -175,7 +175,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 19);
             this.label6.TabIndex = 12;
-            this.label6.Tag = "3";
+            this.label6.Tag = "2";
             this.label6.Text = "DNI";
             // 
             // txtDni

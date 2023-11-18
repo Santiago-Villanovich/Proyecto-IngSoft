@@ -172,11 +172,11 @@
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(43, 134);
-            this.lblDesc.MaximumSize = new System.Drawing.Size(500, 0);
-            this.lblDesc.MinimumSize = new System.Drawing.Size(500, 0);
+            this.lblDesc.Location = new System.Drawing.Point(31, 135);
+            this.lblDesc.MaximumSize = new System.Drawing.Size(440, 0);
+            this.lblDesc.MinimumSize = new System.Drawing.Size(440, 0);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(500, 16);
+            this.lblDesc.Size = new System.Drawing.Size(440, 16);
             this.lblDesc.TabIndex = 11;
             this.lblDesc.Text = "desc";
             // 

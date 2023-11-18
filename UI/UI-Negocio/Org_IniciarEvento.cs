@@ -33,24 +33,14 @@ namespace UI.UI_Negocio
 
                 foreach (Control control in this.Controls)
                 {
-
-                    if (control is System.Windows.Forms.Button)
-                    {
-                        System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
-                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                            boton.Text = traducciones[boton.Tag.ToString()].texto;
-                    }
-                    else if (control is Label)
-                    {
-                        Label label = (Label)control;
-                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                            label.Text = traducciones[label.Tag.ToString()].texto;
-
-                    }
-
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                        control.Text = traducciones[control.Tag.ToString()].texto;
                 }
-                
-
+                foreach (Control control in this.groupBox1.Controls)
+                {
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                        control.Text = traducciones[control.Tag.ToString()].texto;
+                }
             }
             catch (Exception ex)
             {
@@ -74,8 +64,7 @@ namespace UI.UI_Negocio
             InitializeComponent();
             eventos = new BLL_Evento().GetAllByOrg_estado(4);
             hoy = DateTime.Now;
-            treeView1.Visible = false;
-            btnDescargarPDF.Visible = false;
+            groupBox1.Visible = false;
             CargarEventos(hoy);
 
             TraducirForm(Session.IdiomaActual);
@@ -112,8 +101,7 @@ namespace UI.UI_Negocio
             }
 
             treeView1.ExpandAll();
-            treeView1.Visible = true;
-            btnDescargarPDF.Visible = true;
+            groupBox1.Visible = true;
         }
 
         public event EventHandler mostrarIniciar;
@@ -129,26 +117,32 @@ namespace UI.UI_Negocio
                     }
                     flowLayoutPanel1.Controls.Clear();
                 }
+                if (flowLayoutPanel2.Controls.Count > 0)
+                {
+                    foreach (Control control in flowLayoutPanel2.Controls)
+                    {
+                        control.Dispose();
+                    }
+                    flowLayoutPanel2.Controls.Clear();
+                }
 
                 if (eventos.Count > 0)
                 {
                     Evento ev = eventos.Find(obj => obj.Fecha.Date == fecha.Date);
+                    List<Evento> eventosProx = eventos.FindAll(obj => obj.Fecha.Date > fecha.Date);
 
                     if (ev != null) 
                     {
                         Org_EventoDisplay_Cerrado Edisp = new Org_EventoDisplay_Cerrado(ev);
-                        Edisp.SetEvento(ev,fecha);
-                        
+                        Edisp.SetEvento(fecha,ev);
 
                         flowLayoutPanel1.Controls.Add(Edisp);
-                        lblTitulo.Text = "El Evento de hoy";
                         Edisp.iniciarClick += (sender, e) =>
                         {
                             eventoIniciado = Edisp.MiEvento;
                             mostrarIniciar?.Invoke(this, EventArgs.Empty);
 
                             //new BLL_Evento().UpdateEstado(Edisp.MiEvento,6);
-                           
                         };
                         Edisp.verClick += (sender, e) =>
                         {
@@ -158,20 +152,42 @@ namespace UI.UI_Negocio
                     }
                     else
                     {
-                        foreach (Evento evento in eventos)
-                        {
-                            Org_EventoDisplay_Cerrado Edisp = new Org_EventoDisplay_Cerrado(evento);
-                            Edisp.SetEvento(evento, fecha);
+                        Label label = new Label();
+                        label.Text = "No hay eventos proximos";
+                        label.AutoSize = true;
+                        label.Padding = new Padding(30, 40, 30, 5);
+                        label.Font = new System.Drawing.Font("Lucida Sans Unicode", 12);
 
-                            flowLayoutPanel1.Controls.Add(Edisp);
-                        }
-                        lblTitulo.Text = "Eventos proximos";
+                        flowLayoutPanel2.Controls.Add(label);
                     }
-                    
+
+                    if (eventosProx.Count > 0)
+                    {
+                        Org_EventoDisplay_Cerrado Edisp = new Org_EventoDisplay_Cerrado(ev);
+                        Edisp.SetEvento(fecha, ev);
+
+                        flowLayoutPanel2.Controls.Add(Edisp);
+                        Edisp.verClick += (sender, e) =>
+                        {
+                            eventoDisplay = Edisp.MiEvento;
+                            MostrarInscriptos(eventoDisplay);
+                        };
+                    }
+                    else
+                    {
+                        Label label = new Label();
+                        label.Text = "No hay eventos proximos";
+                        label.AutoSize = true;
+                        label.Padding = new Padding(30, 40, 30, 5); 
+                        label.Font = new System.Drawing.Font("Lucida Sans Unicode", 12);
+
+                        flowLayoutPanel2.Controls.Add(label);
+                    }
+
                 }
                 else
                 {
-                    lblTitulo.Text = "Sin eventos disponibles";
+                    lblEventoProximos.Text = "Sin eventos disponibles";
                     MessageBox.Show("Por el momento no tiene eventos publicados", "Sin eventos disponibles", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 

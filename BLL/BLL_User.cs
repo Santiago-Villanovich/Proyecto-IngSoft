@@ -40,7 +40,7 @@ namespace BLL
             try
             {
                 User user = new DAL_User().Get(id);
-                user.Apellido = HashCrypto.Desencriptar(user.Apellido);
+                user.Email = HashCrypto.Desencriptar(user.Email);
                 return user;
             }
             catch (Exception)
@@ -162,6 +162,7 @@ namespace BLL
         {
             try
             {
+                obj.Email = HashCrypto.Encriptar(obj.Email);
                 return new DAL_User().Update(obj);
             }
             catch (Exception e)
@@ -187,6 +188,7 @@ namespace BLL
                 
                 if (user != null)
                 {
+                    user.Email = HashCrypto.Desencriptar(user.Email);
                     user.Permisos = new BLL_Permisos().GetPermisosUser(user);
                     Session.Login(user);
 

@@ -18,6 +18,8 @@ namespace UI.UI_Negocio
     public partial class FormAgregarEquipo : Form, IObserver
     {
         public List<Participante> participantes;
+        public string nombre;
+
         private List<User> users;
         public Natacion eve;
         private BLL_User bllUser;
@@ -197,8 +199,25 @@ namespace UI.UI_Negocio
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             errorProvider1.SetError(listBox1,"");
-            if (participantes.Count == eve.cantidad_integrantes_equipo -1) { this.DialogResult = DialogResult.OK; }
-            else { errorProvider1.SetError(listBox1, $"Faltan {(eve.cantidad_integrantes_equipo - 1) - participantes.Count} integrantes"); }
+            errorProvider1.SetError(textBox1, "");
+            bool flag = true;
+
+            if (!(participantes.Count == eve.cantidad_integrantes_equipo - 1))
+            {
+                flag = false;
+                errorProvider1.SetError(listBox1, $"Faltan {(eve.cantidad_integrantes_equipo - 1) - participantes.Count} integrantes");
+            }
+            else if (!(textBox1.Text.Length > 3))
+            {
+                flag |= false;
+                errorProvider1.SetError(textBox1, $"El nombre debe contener minimo 3 caracteres");
+            }
+
+            if (flag) 
+            { 
+                nombre = textBox1.Text;
+                this.DialogResult = DialogResult.OK; 
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

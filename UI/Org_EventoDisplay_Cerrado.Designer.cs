@@ -41,7 +41,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 229);
+            this.pictureBox1.Size = new System.Drawing.Size(253, 205);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -65,7 +65,7 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(270, 176);
+            this.btnIniciar.Location = new System.Drawing.Point(270, 164);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(188, 44);
             this.btnIniciar.TabIndex = 2;
@@ -78,7 +78,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Lucida Sans Unicode", 10F, System.Drawing.FontStyle.Bold);
             this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.lblFecha.Location = new System.Drawing.Point(279, 152);
+            this.lblFecha.Location = new System.Drawing.Point(279, 140);
             this.lblFecha.MaximumSize = new System.Drawing.Size(170, 0);
             this.lblFecha.MinimumSize = new System.Drawing.Size(170, 0);
             this.lblFecha.Name = "lblFecha";
@@ -97,7 +97,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Org_EventoDisplay_Cerrado";
-            this.Size = new System.Drawing.Size(478, 235);
+            this.Size = new System.Drawing.Size(478, 214);
             this.Click += new System.EventHandler(this.Org_EventoDisplay_Cerrado_Click);
             this.MouseEnter += new System.EventHandler(this.Org_EventoDisplay_Cerrado_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Org_EventoDisplay_Cerrado_MouseLeave);

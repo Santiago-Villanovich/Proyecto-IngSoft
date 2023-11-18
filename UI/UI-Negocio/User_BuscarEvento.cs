@@ -124,7 +124,7 @@ namespace UI.UI_Negocio
                             {
                                 equip = new Equipo()
                                 {
-                                    Nombre = Session.GetInstance.Usuario.NombreApellido,
+                                    Nombre = formDialogo.nombre,
                                     Participantes = formDialogo.participantes
                                 };
                                 equip.Participantes.Add(new Participante(Session.GetInstance.Usuario));

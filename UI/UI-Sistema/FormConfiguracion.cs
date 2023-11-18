@@ -29,24 +29,21 @@ namespace UI
             {
                 var traducciones = traductor.ObtenerTraducciones(idioma);
 
-                foreach (Control control in this.Controls)
+                foreach (Control control in this.panel1.Controls)
                 {
 
-                    if (control is Button)
-                    {
-                        Button boton = (Button)control;
-                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                            boton.Text = traducciones[boton.Tag.ToString()].texto;
-                    }
-                    else if (control is Label)
-                    {
-                        Label label = (Label)control;
-                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                            label.Text = traducciones[label.Tag.ToString()].texto;
-
-                    }
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                        control.Text = traducciones[control.Tag.ToString()].texto;
 
                 }
+                foreach (Control control in this.panelContenedor.Controls)
+                {
+
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                        control.Text = traducciones[control.Tag.ToString()].texto;
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -76,7 +73,8 @@ namespace UI
         public FormConfiguracion()
         {
             InitializeComponent();
-            
+            this.MinimumSize = new Size(750,600);
+            this.Size = new Size(750, 600);
             traductor = new BLL_Traductor();
             TraducirForm(Session.IdiomaActual);
         }
@@ -110,8 +108,8 @@ namespace UI
             try
             {
                 var idioma1 = (Idioma)comboBox1.SelectedItem;
-
                 Session.CambiarIdioma(idioma1);
+                TraducirForm(idioma1);
             }
             catch (Exception ex)
             {
