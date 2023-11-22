@@ -371,10 +371,14 @@ namespace UI.UI_Negocio
                                     .Cast<DataGridViewRow>()
                                     .Any(row =>
                                     {
-                                        var cell1 = row.Cells[1].Value;
-                                        var cell2 = row.Cells[2].Value;
-                                        return cell1 != null && !string.IsNullOrWhiteSpace(cell1.ToString()) ||
-                                               cell2 != null && !string.IsNullOrWhiteSpace(cell2.ToString());
+                                        return row.Cells
+                                            .Cast<DataGridViewCell>()
+                                            .Skip(1)  // Excluir la columna 0
+                                            .Any(cell =>
+                                            {
+                                                var cellValue = cell.Value;
+                                                return cellValue != null && !string.IsNullOrWhiteSpace(cellValue.ToString());
+                                            });
                                     });
 
                 if (!hayValores)
@@ -453,6 +457,7 @@ namespace UI.UI_Negocio
 
         }
 
+        
         private void datagvParticipantes_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (e.RowIndex == 0)
@@ -465,6 +470,7 @@ namespace UI.UI_Negocio
             }
         }
 
+        public event EventHandler TerminarEvento;
         private void btnGuardarCategoria_Click(object sender, EventArgs e)
         {
             try
@@ -512,6 +518,9 @@ namespace UI.UI_Negocio
                         {
                             this.OnLoad(null );
                         }
+
+                        bllEvento.TerminarEvento(EventoHoy);
+                        TerminarEvento?.Invoke(this, EventArgs.Empty);
 
                     }
 

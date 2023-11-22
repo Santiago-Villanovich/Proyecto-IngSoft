@@ -113,10 +113,10 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F);
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.btnGuardar.Location = new System.Drawing.Point(28, 381);
+            this.btnGuardar.Location = new System.Drawing.Point(139, 258);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(225, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(277, 41);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Tag = "30";
             this.btnGuardar.Text = "Guardar";
@@ -191,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(612, 464);
+            this.ClientSize = new System.Drawing.Size(578, 464);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.label4);

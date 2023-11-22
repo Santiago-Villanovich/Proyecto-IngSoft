@@ -77,7 +77,7 @@
             this.lblNombreEquipoTiempo.AutoSize = true;
             this.lblNombreEquipoTiempo.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreEquipoTiempo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.lblNombreEquipoTiempo.Location = new System.Drawing.Point(8, 18);
+            this.lblNombreEquipoTiempo.Location = new System.Drawing.Point(203, 18);
             this.lblNombreEquipoTiempo.Name = "lblNombreEquipoTiempo";
             this.lblNombreEquipoTiempo.Size = new System.Drawing.Size(108, 36);
             this.lblNombreEquipoTiempo.TabIndex = 5;
@@ -85,8 +85,9 @@
             // 
             // btnGuardarEquipoTiempo
             // 
+            this.btnGuardarEquipoTiempo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGuardarEquipoTiempo.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardarEquipoTiempo.Location = new System.Drawing.Point(14, 313);
+            this.btnGuardarEquipoTiempo.Location = new System.Drawing.Point(169, 312);
             this.btnGuardarEquipoTiempo.Name = "btnGuardarEquipoTiempo";
             this.btnGuardarEquipoTiempo.Size = new System.Drawing.Size(190, 49);
             this.btnGuardarEquipoTiempo.TabIndex = 7;
@@ -131,7 +132,8 @@
             // datagvParticipantes
             // 
             this.datagvParticipantes.AllowUserToResizeRows = false;
-            this.datagvParticipantes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.datagvParticipantes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datagvParticipantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.datagvParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -139,7 +141,7 @@
             this.datagvParticipantes.Name = "datagvParticipantes";
             this.datagvParticipantes.RowHeadersWidth = 51;
             this.datagvParticipantes.RowTemplate.Height = 24;
-            this.datagvParticipantes.Size = new System.Drawing.Size(492, 179);
+            this.datagvParticipantes.Size = new System.Drawing.Size(492, 221);
             this.datagvParticipantes.TabIndex = 8;
             this.datagvParticipantes.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.datagvParticipantes_RowsAdded);
             // 

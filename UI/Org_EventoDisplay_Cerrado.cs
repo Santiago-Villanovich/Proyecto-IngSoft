@@ -18,7 +18,7 @@ namespace UI
         Color on = Color.FromArgb(86, 88, 99);
         Color off = Color.FromArgb(45, 48, 71);
 
-        public Org_EventoDisplay_Cerrado(Evento evento = null)
+        public Org_EventoDisplay_Cerrado(Evento evento)
         {
             InitializeComponent();
 

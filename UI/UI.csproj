@@ -212,6 +212,12 @@
     <Compile Include="UI-Negocio\User_BuscarEvento.Designer.cs">
       <DependentUpon>User_BuscarEvento.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI-Negocio\User_Desempenio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI-Negocio\User_Desempenio.Designer.cs">
+      <DependentUpon>User_Desempenio.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI-Negocio\User_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>

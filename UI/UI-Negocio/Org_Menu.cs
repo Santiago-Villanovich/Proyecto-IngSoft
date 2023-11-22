@@ -12,7 +12,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.UI_Negocio;
-using static Org.BouncyCastle.Crypto.Digests.SkeinEngine;
 
 namespace UI
 {
@@ -41,59 +40,20 @@ namespace UI
         {
             try
             {
-                TraducirFormPanel(this.panelNav,idioma);
-            }
-            catch (Exception ex)
-            {
-                var bitacora = new Bitacora();
-                bitacora.Detalle = ex.Message;
-                bitacora.Responsable = Session.GetInstance.Usuario;
-                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
-                new BLL_Bitacora().Insert(bitacora);
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void TraducirFormPanel(Panel panel,IIdioma idioma = null)
-        {
-            try
-            {
                 var traducciones = traductor.ObtenerTraducciones(idioma);
 
-                foreach (Control control in panel.Controls)
+                foreach (Control control in this.panelNav.Controls)
                 {
 
-                    if (control is System.Windows.Forms.Button)
-                    {
-                        System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
-                        if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                            boton.Text = traducciones[boton.Tag.ToString()].texto;
-                    }
-                    else if (control is Label)
-                    {
-                        Label label = (Label)control;
-                        if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                            label.Text = traducciones[label.Tag.ToString()].texto;
-
-                    }
-                    else if (control is System.Windows.Forms.GroupBox)
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                        control.Text = traducciones[control.Tag.ToString()].texto;
+                    
+                    if (control is System.Windows.Forms.GroupBox)
                     {
                         foreach (Control cont in control.Controls)
                         {
-                            if (control is System.Windows.Forms.Button)
-                            {
-                                System.Windows.Forms.Button boton = (System.Windows.Forms.Button)control;
-                                if (boton.Tag != null && traducciones.ContainsKey(boton.Tag.ToString()))
-                                    boton.Text = traducciones[boton.Tag.ToString()].texto;
-                            }
-                            else if (control is Label)
-                            {
-                                Label label = (Label)control;
-                                if (label.Tag != null && traducciones.ContainsKey(label.Tag.ToString()))
-                                    label.Text = traducciones[label.Tag.ToString()].texto;
-
-                            }
+                            if (cont.Tag != null && traducciones.ContainsKey(cont.Tag.ToString()))
+                                cont.Text = traducciones[cont.Tag.ToString()].texto;
                         }
                     }
 
@@ -128,8 +88,11 @@ namespace UI
             {
                 orgIniciarEventoForm.mostrarIniciar += (sender, e) => MostrarEventoIniciado(orgIniciarEventoForm.eventoIniciado);
             }
+            if (frm is Org_EventoIniciado FormIniciado)
+            {
+                FormIniciado.TerminarEvento += (sender, e) => CargarMenuContenedor(new Org_Inicio());
+            }
 
-            
             frm.Show();
         }
 

@@ -37,17 +37,31 @@ namespace UI.UI_Negocio
 
         public void MostrarEventoHoy(Evento ev)
         {
-            if (ev != null)
+            try
             {
-                gboxEventoHoy.Visible = true;
-                lblTitulo.Text = ev.nombre;
-                using (MemoryStream stream = new MemoryStream(ev.portada))
+                if (ev != null)
                 {
-                    Image imagen = Image.FromStream(stream);
+                    gboxEventoHoy.Visible = true;
+                    lblTitulo.Text = ev.nombre;
+                    lblDesc.Text = ev.Descripcion;
+                    lblDir.Text = ev.Organizacion.Nombre;
+                    if (ev.portada != null)
+                    {
+                        using (MemoryStream stream = new MemoryStream(ev.portada))
+                        {
+                            Image imagen = Image.FromStream(stream);
 
-                    pictureBox1.Image = imagen;
+                            pictureBox1.Image = imagen;
+                        }
+                    }
+                    
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             
         }
 

@@ -99,26 +99,23 @@ namespace UI
                 {
                     userNew.Nombre = txtNombre.Text;
                 }
-                else if (RegexValidation.validarNombre(txtApellido.Text))
+                if (RegexValidation.validarNombre(txtApellido.Text))
                 {
                     userNew.Apellido = txtApellido.Text;
                 }
-                else if (RegexValidation.validarPassword(txtClave.Text))
+                if (RegexValidation.validarPassword(txtClave.Text))
                 {
                     userNew.Clave = new HashCrypto().GenerarMD5(txtClave.Text);
                 }
-                else if (RegexValidation.validarEmail(txtMail.Text))
+                if (RegexValidation.validarEmail(txtMail.Text))
                 {
-                    userNew.Clave = HashCrypto.Encriptar(userNew.Email);
+                    userNew.Email = txtMail.Text;
                 }
-                else if (RegexValidation.validarTelefono(txtTelefono.Text))
+                if (RegexValidation.validarTelefono(txtTelefono.Text))
                 {
                     userNew.Clave = txtTelefono.Text;
                 }
-                else
-                {
-                    return;
-                }
+                
 
                 userNew.DV = GestorDigitoVerificador.CalcularDV(userNew);
                 usuario.Update(userNew);

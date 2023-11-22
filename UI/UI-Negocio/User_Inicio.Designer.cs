@@ -44,6 +44,8 @@
             this.gboxEventoHoy = new System.Windows.Forms.GroupBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.lblDir = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gboxEventoHoy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -173,6 +175,8 @@
             // 
             // gboxEventoHoy
             // 
+            this.gboxEventoHoy.Controls.Add(this.lblDir);
+            this.gboxEventoHoy.Controls.Add(this.lblDesc);
             this.gboxEventoHoy.Controls.Add(this.lblTitulo);
             this.gboxEventoHoy.Controls.Add(this.pictureBox1);
             this.gboxEventoHoy.Location = new System.Drawing.Point(584, 27);
@@ -203,6 +207,32 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.Location = new System.Drawing.Point(34, 449);
+            this.lblDesc.MaximumSize = new System.Drawing.Size(350, 0);
+            this.lblDesc.MinimumSize = new System.Drawing.Size(350, 0);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(350, 18);
+            this.lblDesc.TabIndex = 2;
+            this.lblDesc.Text = "Descripcion";
+            this.lblDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDir
+            // 
+            this.lblDir.AutoSize = true;
+            this.lblDir.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDir.Location = new System.Drawing.Point(34, 571);
+            this.lblDir.MaximumSize = new System.Drawing.Size(350, 0);
+            this.lblDir.MinimumSize = new System.Drawing.Size(350, 0);
+            this.lblDir.Name = "lblDir";
+            this.lblDir.Size = new System.Drawing.Size(350, 18);
+            this.lblDir.TabIndex = 3;
+            this.lblDir.Text = "Org";
+            this.lblDir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // User_Inicio
             // 
@@ -242,5 +272,7 @@
         private System.Windows.Forms.GroupBox gboxEventoHoy;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblDir;
+        private System.Windows.Forms.Label lblDesc;
     }
 }

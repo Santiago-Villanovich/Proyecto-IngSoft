@@ -15,23 +15,25 @@ namespace UI
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            BLL_DigitoVerificador verificadorDV = new BLL_DigitoVerificador();
-            if (verificadorDV.VerificarEstadoTabla(new BLL_User().GetAll(), "Users"))
+            try
             {
-                Application.Run(new LogIn());
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                BLL_DigitoVerificador verificadorDV = new BLL_DigitoVerificador();
+                if (verificadorDV.VerificarEstadoTabla(new BLL_User().GetAll(), "Users"))
+                {
+                    Application.Run(new LogIn());
+                }
+                else
+                {
+                    Application.Run(new CorruptedDataBase());
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Application.Run(new CorruptedDataBase());
+                MessageBox.Show(ex.Message);
             }
-
-            /*Application.Run(new LogIn());*/
-
-            /*Application.Run(new User_Menu());*/
-
-            //Application.Run(new Org_Menu());
+            
 
         }
     }

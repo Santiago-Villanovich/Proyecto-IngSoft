@@ -61,18 +61,17 @@ namespace BLL
 
         }
 
-        public bool TerminarEvento(Evento obj,Categoria cat)
+        public bool TerminarEvento(Evento obj)
         {
-            if (UpdateEstado(obj, 5))
+            try
             {
-                foreach(Equipo e in cat.equipos)
-                {
-
-                }
-
-                return true;
+                return UpdateEstado(obj, 5);
             }
-            else { return false; }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public Evento Get(int id)

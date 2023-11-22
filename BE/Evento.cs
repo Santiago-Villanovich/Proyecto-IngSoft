@@ -27,13 +27,14 @@ namespace BE
         {
             int EdadSum = 0;
             Categoria c = null;
+            var categoriasOrdenadas = this.Categorias.OrderBy(categoria => categoria.EdadInicio).ToList();
 
             foreach (var item in e.Participantes)
             {
                 EdadSum += item.Usuario.Edad();
             }
 
-            foreach (var item in this.Categorias)
+            foreach (Categoria item in categoriasOrdenadas)
             {
                 if (EdadSum >= item.EdadInicio && EdadSum <= item.EdadFin)
                 {
@@ -45,7 +46,18 @@ namespace BE
             {
                 return c;
 
-            }else { return null; }
+            }else 
+            {
+                for (int i = 0; i < categoriasOrdenadas.Count; i++)
+                {
+                    if (EdadSum <= categoriasOrdenadas[i].EdadInicio)
+                    {
+                        c = categoriasOrdenadas[i];
+                    }
+                }
+
+                return c;
+            }
         }
     }
 

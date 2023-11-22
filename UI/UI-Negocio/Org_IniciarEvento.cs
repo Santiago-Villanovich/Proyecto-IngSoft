@@ -153,25 +153,31 @@ namespace UI.UI_Negocio
                     else
                     {
                         Label label = new Label();
-                        label.Text = "No hay eventos proximos";
+                        label.Text = "No tiene un evento registrado para hoy";
                         label.AutoSize = true;
                         label.Padding = new Padding(30, 40, 30, 5);
                         label.Font = new System.Drawing.Font("Lucida Sans Unicode", 12);
 
-                        flowLayoutPanel2.Controls.Add(label);
+                        flowLayoutPanel1.Controls.Add(label);
                     }
 
                     if (eventosProx.Count > 0)
                     {
-                        Org_EventoDisplay_Cerrado Edisp = new Org_EventoDisplay_Cerrado(ev);
-                        Edisp.SetEvento(fecha, ev);
+                        Org_EventoDisplay_Cerrado Edisp;
 
-                        flowLayoutPanel2.Controls.Add(Edisp);
-                        Edisp.verClick += (sender, e) =>
+                        foreach (Evento evento in eventosProx)
                         {
-                            eventoDisplay = Edisp.MiEvento;
-                            MostrarInscriptos(eventoDisplay);
-                        };
+                            Edisp = new Org_EventoDisplay_Cerrado(evento);
+                            Edisp.SetEvento(fecha, evento);
+
+                            flowLayoutPanel2.Controls.Add(Edisp);
+                            Edisp.verClick += (sender, e) =>
+                            {
+                                eventoDisplay = Edisp.MiEvento;
+                                MostrarInscriptos(eventoDisplay);
+                            };
+                        }
+                        
                     }
                     else
                     {
