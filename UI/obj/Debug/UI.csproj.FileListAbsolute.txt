@@ -323,3 +323,4 @@ C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\U
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.pdb
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.Org_EventoDisplay_Cerrado.resources
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.Org_EventoIniciado.resources
+C:\Users\santi\source\repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.User_Desempenio.resources

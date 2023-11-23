@@ -358,6 +358,9 @@
     <EmbeddedResource Include="UI-Negocio\User_BuscarEvento.resx">
       <DependentUpon>User_BuscarEvento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI-Negocio\User_Desempenio.resx">
+      <DependentUpon>User_Desempenio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI-Negocio\User_SignUp.resx">
       <DependentUpon>User_SignUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,6 +420,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="User_EventoDisplay.resx">
       <DependentUpon>User_EventoDisplay.cs</DependentUpon>
@@ -464,6 +468,27 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO-Blue_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PortadaDefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ojo-Password.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

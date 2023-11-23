@@ -74,6 +74,15 @@ namespace UI.UI_Negocio
             TraducirForm(Session.IdiomaActual);
         }
 
+        public byte[] ConvertirImagenAByteArray(Image imagen)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                imagen.Save(ms, System.Drawing.Imaging.ImageFormat.Png); 
+                return ms.ToArray();
+            }
+        }
+
         private bool ValidarNomCategoria(string nom)
         {
             if (nom != null && nom != string.Empty)
@@ -153,7 +162,6 @@ namespace UI.UI_Negocio
 
             txtMetros.Visible = false;
             txtTiempo.Visible = false;
-            pictureBox3.Visible = false;
 
             Session._publisherIdioma.Subscribe(this);
             TraducirForm(Session.IdiomaActual);
@@ -242,7 +250,6 @@ namespace UI.UI_Negocio
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -426,7 +433,6 @@ namespace UI.UI_Negocio
                         pictureBox1.Image = System.Drawing.Image.FromFile(imagePath);
                     }
 
-                    pictureBox3.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -441,7 +447,6 @@ namespace UI.UI_Negocio
         {
             pictureBox1.Image = null;
             Imagename = string.Empty;
-            pictureBox3.Visible= false;
         }
 
         
