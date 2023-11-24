@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.UI_Negocio;
+using UI.UI_Sistema;
 
 namespace UI
 {
@@ -94,7 +95,7 @@ namespace UI
 
                         if (Session.tiene_permiso(1035))
                         {
-                            MenuAdmin menu = new MenuAdmin();
+                            MenuAdmin2 menu = new MenuAdmin2();
                             this.Hide();
                             menu.Show(); 
                         }

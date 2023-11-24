@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionarOrganizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaOrganizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asociarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,17 +40,18 @@
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.administrarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarOrganizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opcionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarOrganizacionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.asociarUsuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verBitacoraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.verHistorialUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(913, 28);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // gestionarOrganizacionToolStripMenuItem
             // 
@@ -146,16 +146,78 @@
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(948, 28);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // administrarUsuariosToolStripMenuItem
+            // 
+            this.administrarUsuariosToolStripMenuItem.Name = "administrarUsuariosToolStripMenuItem";
+            this.administrarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.administrarUsuariosToolStripMenuItem.Text = "Administrar usuarios";
+            // 
+            // administrarOrganizacionesToolStripMenuItem
+            // 
+            this.administrarOrganizacionesToolStripMenuItem.Name = "administrarOrganizacionesToolStripMenuItem";
+            this.administrarOrganizacionesToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
+            this.administrarOrganizacionesToolStripMenuItem.Text = "Administrar organizaciones";
+            // 
+            // opcionesToolStripMenuItem1
+            // 
+            this.opcionesToolStripMenuItem1.Name = "opcionesToolStripMenuItem1";
+            this.opcionesToolStripMenuItem1.Size = new System.Drawing.Size(85, 24);
+            this.opcionesToolStripMenuItem1.Text = "Opciones";
+            // 
+            // gestionarIdiomaToolStripMenuItem
+            // 
+            this.gestionarIdiomaToolStripMenuItem.Name = "gestionarIdiomaToolStripMenuItem";
+            this.gestionarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gestionarIdiomaToolStripMenuItem.Text = "Gestionar idioma";
+            // 
+            // gestionarOrganizacionToolStripMenuItem1
+            // 
+            this.gestionarOrganizacionToolStripMenuItem1.Name = "gestionarOrganizacionToolStripMenuItem1";
+            this.gestionarOrganizacionToolStripMenuItem1.Size = new System.Drawing.Size(245, 26);
+            this.gestionarOrganizacionToolStripMenuItem1.Text = "Gestionar organizacion";
+            // 
+            // asociarUsuarioToolStripMenuItem1
+            // 
+            this.asociarUsuarioToolStripMenuItem1.Name = "asociarUsuarioToolStripMenuItem1";
+            this.asociarUsuarioToolStripMenuItem1.Size = new System.Drawing.Size(245, 26);
+            this.asociarUsuarioToolStripMenuItem1.Text = "Asociar usuario";
+            // 
+            // gestionarUsuarioToolStripMenuItem
+            // 
+            this.gestionarUsuarioToolStripMenuItem.Name = "gestionarUsuarioToolStripMenuItem";
+            this.gestionarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gestionarUsuarioToolStripMenuItem.Text = "Gestionar usuario";
+            // 
+            // verBitacoraToolStripMenuItem1
+            // 
+            this.verBitacoraToolStripMenuItem1.Name = "verBitacoraToolStripMenuItem1";
+            this.verBitacoraToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.verBitacoraToolStripMenuItem1.Text = "Ver bitacora";
+            // 
+            // verHistorialUsuarioToolStripMenuItem
+            // 
+            this.verHistorialUsuarioToolStripMenuItem.Name = "verHistorialUsuarioToolStripMenuItem";
+            this.verHistorialUsuarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.verHistorialUsuarioToolStripMenuItem.Text = "Ver historial usuario";
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(913, 444);
+            this.ClientSize = new System.Drawing.Size(948, 489);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuAdmin";
             this.Text = "Menu";
@@ -169,8 +231,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem administrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verBitacoraToolStripMenuItem;
@@ -182,5 +242,15 @@
         private System.Windows.Forms.ToolStripMenuItem gestionarOrganizacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaOrganizacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asociarUsuarioToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem administrarUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verBitacoraToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem verHistorialUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarOrganizacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarOrganizacionToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem asociarUsuarioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gestionarIdiomaToolStripMenuItem;
     }
 }

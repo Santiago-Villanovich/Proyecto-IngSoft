@@ -9,14 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UI.UI_Sistema;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace UI
+namespace UI.UI_Sistema
 {
-    public partial class MenuAdmin : Form, IObserver
+    public partial class MenuAdmin2 : Form, IObserver
     {
-        private Idioma IdiomaActual { get; set; }
+        BLL_Traductor traductor;
+
         private void TraducirForm(IIdioma idioma = null)
         {
 
@@ -34,11 +33,8 @@ namespace UI
             if (opcionesToolStripMenuItem.Tag != null && traducciones.ContainsKey(opcionesToolStripMenuItem.Tag.ToString()))
                 opcionesToolStripMenuItem.Text = traducciones[opcionesToolStripMenuItem.Tag.ToString()].texto;
 
-            if (configuracionToolStripMenuItem.Tag != null && traducciones.ContainsKey(configuracionToolStripMenuItem.Tag.ToString()))
-                configuracionToolStripMenuItem.Text = traducciones[configuracionToolStripMenuItem.Tag.ToString()].texto;
-
-            if (permisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(permisosToolStripMenuItem.Tag.ToString()))
-                permisosToolStripMenuItem.Text = traducciones[permisosToolStripMenuItem.Tag.ToString()].texto;
+            if (gestionarPermisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(gestionarPermisosToolStripMenuItem.Tag.ToString()))
+                gestionarPermisosToolStripMenuItem.Text = traducciones[gestionarPermisosToolStripMenuItem.Tag.ToString()].texto;
         }
 
         public static bool FormEstaAbierto(Type Form)
@@ -53,28 +49,16 @@ namespace UI
             return false;
         }
 
-        public MenuAdmin()
-        {
-            InitializeComponent();
-            traductor = new BLL_Traductor();
-
-            //Session.IdiomaActual = (Idioma)traductor.ObtenerIdiomaDefault();
-            //IdiomaActual = Session.IdiomaActual;
-            //TraducirForm(Session.IdiomaActual);
-        }
-
-        BLL_Traductor traductor;
-
-        private void MenuAdmin_Load(object sender, EventArgs e)
-        {
-            Session._publisherIdioma.Subscribe(this);
-            IdiomaActual = Session.IdiomaActual;
-
-        }
-
         public void Notify(Idioma idioma)
         {
             TraducirForm(idioma);
+        }
+
+        public MenuAdmin2()
+        {
+            InitializeComponent();
+            traductor = new BLL_Traductor();
+            TraducirForm(Session.IdiomaActual);
         }
 
         private void gestionarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,15 +78,25 @@ namespace UI
             {
                 MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
             }
-            
         }
 
-        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gestionarPermisosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Session.Logout();
-            LogIn form = new LogIn();
-            this.Close();
-            form.Show();
+            FormPermisos menu = new FormPermisos();
+            if (!Session.tiene_permiso(1025))
+            {
+                MessageBox.Show("No sos admin");
+                return;
+            }
+            if (!FormEstaAbierto(typeof(FormPermisos)))
+            {
+                menu.MdiParent = this;
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
+            }
         }
 
         private void verBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,52 +116,9 @@ namespace UI
             {
                 MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
             }
-
         }
 
-
-        private void permisosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormPermisos menu = new FormPermisos();
-            if (!Session.tiene_permiso(1025))
-            {
-                MessageBox.Show("No sos admin");
-                return;
-            }
-            if (!FormEstaAbierto(typeof(FormPermisos)))
-            {
-                menu.MdiParent = this;
-                menu.Show();
-            }
-            else
-            {
-                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
-            }
-
-
-        }
-
-        private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAgregarIdioma menu = new FormAgregarIdioma();
-            if (!Session.tiene_permiso(1011))
-            {
-                MessageBox.Show("No tiene permisos adecuados");
-                return;
-            }
-            if (!FormEstaAbierto(typeof(FormAgregarIdioma)))
-            {
-                menu.MdiParent = this;
-                menu.Show();
-            }
-            else
-            {
-                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
-            }
-            
-        }
-
-        private void verHistorialDeCambiosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void verHistorialToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormHistorialCambios menu = new FormHistorialCambios();
             if (!Session.tiene_permiso(1033))
@@ -186,27 +137,7 @@ namespace UI
             }
         }
 
-        private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void administrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void registrarOrganizacionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void nuevaOrganizacionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gestionarOrganizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCrearOrg menu = new FormCrearOrg();
             /*if (!Session.tiene_permiso(1037))
@@ -244,9 +175,23 @@ namespace UI
             }
         }
 
-        private void gestionarUsuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void gestionarIdiomasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormAgregarIdioma menu = new FormAgregarIdioma();
+            if (!Session.tiene_permiso(1011))
+            {
+                MessageBox.Show("No tiene permisos adecuados");
+                return;
+            }
+            if (!FormEstaAbierto(typeof(FormAgregarIdioma)))
+            {
+                menu.MdiParent = this;
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
+            }
         }
     }
 }
