@@ -107,6 +107,7 @@
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(225, 56);
             this.btnHistorial.TabIndex = 2;
+            this.btnHistorial.Tag = "87";
             this.btnHistorial.Text = "Mi Desempeño";
             this.btnHistorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistorial.UseVisualStyleBackColor = true;
@@ -124,6 +125,7 @@
             this.btnBuscarEvento.Name = "btnBuscarEvento";
             this.btnBuscarEvento.Size = new System.Drawing.Size(225, 86);
             this.btnBuscarEvento.TabIndex = 1;
+            this.btnBuscarEvento.Tag = "86";
             this.btnBuscarEvento.Text = "Buscar Evento";
             this.btnBuscarEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarEvento.UseVisualStyleBackColor = true;

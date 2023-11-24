@@ -171,5 +171,11 @@ namespace UI.UI_Negocio
             Idioma idioma = (Idioma)cmbIdiomas.SelectedItem;
             TraducirForm(idioma);
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Restart();
+        }
     }
 }

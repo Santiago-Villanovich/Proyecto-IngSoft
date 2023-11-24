@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,13 @@ using System.Windows.Forms;
 
 namespace UI.UI_Negocio
 {
-    public partial class User_BuscarEvento : Form
+    public partial class User_BuscarEvento : Form, IObserver
     {
         public List<Evento> listEventos;
         public BLL_Evento bllEvento;
         private Evento eventoSeleccionado;
         private Natacion eventoDeporte;
+        BLL_Traductor traductor;
         
         public User_BuscarEvento()
         {
@@ -28,9 +30,47 @@ namespace UI.UI_Negocio
             flowLayoutPanel1.VerticalScroll.Visible = true;
             flowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight;
             flowLayoutPanel1.AutoScroll = true;
+            Session._publisherIdioma.Subscribe(this);
+            traductor = new BLL_Traductor();
 
         }
+        public void Notify(Idioma idioma)
+        {
+            TraducirForm(idioma);
+        }
 
+        private void TraducirForm(IIdioma idioma = null)
+        {
+            try
+            {
+                var traducciones = traductor.ObtenerTraducciones(idioma);
+
+                foreach (Control control in this.gboxEventos.Controls)
+                {
+
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                        control.Text = traducciones[control.Tag.ToString()].texto;
+
+                }
+                foreach (Control control in this.gboxInformacion.Controls)
+                {
+
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                        control.Text = traducciones[control.Tag.ToString()].texto;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void MostrarEvento(Evento evento)
         {
             eventoSeleccionado = evento;

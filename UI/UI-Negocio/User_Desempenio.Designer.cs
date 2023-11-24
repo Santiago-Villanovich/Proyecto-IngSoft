@@ -41,6 +41,7 @@
             this.lblDesempenio.Name = "lblDesempenio";
             this.lblDesempenio.Size = new System.Drawing.Size(188, 28);
             this.lblDesempenio.TabIndex = 2;
+            this.lblDesempenio.Tag = "87";
             this.lblDesempenio.Text = "Tu desempeño";
             this.lblDesempenio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -60,6 +61,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 40);
             this.button1.TabIndex = 4;
+            this.button1.Tag = "95";
             this.button1.Text = "Descargar desempeño";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

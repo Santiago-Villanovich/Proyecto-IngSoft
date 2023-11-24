@@ -50,6 +50,7 @@
             this.cmbIdiomas = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -286,12 +287,26 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(125)))), ((int)(((byte)(24)))));
+            this.label4.Location = new System.Drawing.Point(12, 656);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 18);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Iniciar sesion";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // User_SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(654, 691);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cmbIdiomas);
             this.Controls.Add(this.dtNacimiento);
@@ -347,5 +362,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbIdiomas;
+        private System.Windows.Forms.Label label4;
     }
 }

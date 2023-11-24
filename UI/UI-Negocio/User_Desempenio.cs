@@ -2,6 +2,7 @@
 using BLL;
 using Newtonsoft.Json;
 using Services;
+using Services.Multilanguage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +16,17 @@ using System.Windows.Forms;
 
 namespace UI.UI_Negocio
 {
-    public partial class User_Desempenio : Form
+    public partial class User_Desempenio : Form,IObserver
     {
         BLL_Equipo bllEquipo;
         List<Participante> participaciones;
+        BLL_Traductor traductor;
         public User_Desempenio()
         {
             InitializeComponent();
             bllEquipo = new BLL_Equipo();
+            Session._publisherIdioma.Subscribe(this);
+            traductor = new BLL_Traductor();
 
             flowLayoutPanel1.VerticalScroll.Visible = true;
             flowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight;
@@ -32,6 +36,36 @@ namespace UI.UI_Negocio
             button1.Visible = false;
         }
 
+        public void Notify(Idioma idioma)
+        {
+            TraducirForm(idioma);
+        }
+
+        private void TraducirForm(IIdioma idioma = null)
+        {
+            try
+            {
+                var traducciones = traductor.ObtenerTraducciones(idioma);
+
+                foreach (Control control in this.Controls)
+                {
+
+                    if (control.Tag != null && traducciones.ContainsKey(control.Tag.ToString()))
+                        control.Text = traducciones[control.Tag.ToString()].texto;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                var bitacora = new Bitacora();
+                bitacora.Detalle = ex.Message;
+                bitacora.Responsable = Session.GetInstance.Usuario;
+                bitacora.Tipo = Convert.ToInt32(BitacoraTipoEnum.Error);
+                new BLL_Bitacora().Insert(bitacora);
+
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void CargarDesempenio()
         {

@@ -73,6 +73,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 28);
             this.label1.TabIndex = 1;
+            this.label1.Tag = "88";
             this.label1.Text = "Eventos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -84,6 +85,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 18);
             this.label2.TabIndex = 2;
+            this.label2.Tag = "56";
             this.label2.Text = "Descripcion";
             // 
             // label3
@@ -94,6 +96,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 18);
             this.label3.TabIndex = 3;
+            this.label3.Tag = "89";
             this.label3.Text = "Organizacion";
             // 
             // label4
@@ -104,6 +107,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 18);
             this.label4.TabIndex = 4;
+            this.label4.Tag = "90";
             this.label4.Text = "Contacto";
             // 
             // label5
@@ -114,6 +118,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(152, 18);
             this.label5.TabIndex = 5;
+            this.label5.Tag = "55";
             this.label5.Text = "Coste inscripcion";
             // 
             // label6
@@ -124,6 +129,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(161, 18);
             this.label6.TabIndex = 6;
+            this.label6.Tag = "93";
             this.label6.Text = "Cupos disponibles";
             // 
             // lblTitulo
@@ -147,6 +153,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(214, 18);
             this.label7.TabIndex = 8;
+            this.label7.Tag = "63";
             this.label7.Text = "Participantes por equipo";
             // 
             // label8
@@ -157,6 +164,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 18);
             this.label8.TabIndex = 9;
+            this.label8.Tag = "91";
             this.label8.Text = "Direccion";
             // 
             // label9
@@ -167,6 +175,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(127, 18);
             this.label9.TabIndex = 10;
+            this.label9.Tag = "92";
             this.label9.Text = "Distancia total";
             // 
             // lblDesc
@@ -287,6 +296,7 @@
             this.btnInscribirse.Name = "btnInscribirse";
             this.btnInscribirse.Size = new System.Drawing.Size(257, 54);
             this.btnInscribirse.TabIndex = 19;
+            this.btnInscribirse.Tag = "94";
             this.btnInscribirse.Text = "Inscribirse";
             this.btnInscribirse.UseVisualStyleBackColor = true;
             this.btnInscribirse.Click += new System.EventHandler(this.button1_Click);
