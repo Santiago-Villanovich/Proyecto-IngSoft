@@ -45,6 +45,14 @@ namespace UI.UI_Negocio
             lblContactoOrg.Text = evento.Organizacion.Email;
             lblDireccion.Text = nata.Pileta.Direccion;
             lblEquipo.Text = nata.cantidad_integrantes_equipo.ToString();
+            if (!bllEvento.isCuposLlenos(eventoSeleccionado))
+            {
+                lblCupos.Text = "Sin cupos disponibles";
+            }
+            else
+            {
+                lblCupos.Text = "Hay cupos disponibles";
+            }
             if (nata.MetrosTotales != 0)
             {
                 lblDistancia.Text = nata.MetrosTotales.ToString() + " Mts";
@@ -172,6 +180,11 @@ namespace UI.UI_Negocio
                 MessageBox.Show( ex.Message);
             }
             
+
+        }
+
+        private void gboxEventos_Enter(object sender, EventArgs e)
+        {
 
         }
     }

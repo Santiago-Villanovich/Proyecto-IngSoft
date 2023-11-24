@@ -34,8 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCambiarClave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelContenedor = new System.Windows.Forms.Panel();
             this.btnSoporte = new System.Windows.Forms.Button();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,15 +134,6 @@
             this.panel1.Size = new System.Drawing.Size(323, 570);
             this.panel1.TabIndex = 8;
             // 
-            // panelContenedor
-            // 
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.ForeColor = System.Drawing.Color.Lavender;
-            this.panelContenedor.Location = new System.Drawing.Point(323, 0);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(439, 570);
-            this.panelContenedor.TabIndex = 9;
-            // 
             // btnSoporte
             // 
             this.btnSoporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -162,6 +153,16 @@
             this.btnSoporte.Text = "Soporte";
             this.btnSoporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSoporte.UseVisualStyleBackColor = true;
+            this.btnSoporte.Click += new System.EventHandler(this.btnSoporte_Click);
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.ForeColor = System.Drawing.Color.Lavender;
+            this.panelContenedor.Location = new System.Drawing.Point(323, 0);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(439, 570);
+            this.panelContenedor.TabIndex = 9;
             // 
             // FormConfiguracion
             // 

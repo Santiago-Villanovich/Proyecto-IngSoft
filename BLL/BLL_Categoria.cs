@@ -45,6 +45,7 @@ namespace BLL
                     }
                     else //POSTA POR TIEMPO
                     {
+                        bllEq.UpdateParticipantes(eq);
                         bllEq.InsertParticipantesTiempo(eq);
                     }
                 }

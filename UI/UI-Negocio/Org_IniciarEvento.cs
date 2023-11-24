@@ -65,6 +65,11 @@ namespace UI.UI_Negocio
             eventos = new BLL_Evento().GetAllByOrg_estado(4);
             hoy = DateTime.Now;
             groupBox1.Visible = false;
+
+            //flowLayoutPanel2.VerticalScroll.Visible = true;
+            flowLayoutPanel2.FlowDirection = FlowDirection.LeftToRight;
+            flowLayoutPanel2.AutoScroll = true;
+
             CargarEventos(hoy);
 
             TraducirForm(Session.IdiomaActual);

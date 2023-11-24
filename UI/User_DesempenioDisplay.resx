@@ -117,29 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CancelarIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CancelarIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_logout_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-logout-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_settings_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-settings-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LOGO_Blue_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO-Blue_Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Manual_de_Usuario___GoComp__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Manual de Usuario - GoComp (1).pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Ojo_Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ojo-Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PortadaDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PortadaDefault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

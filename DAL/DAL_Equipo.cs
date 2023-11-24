@@ -143,6 +143,93 @@ namespace DAL
             }
         }
 
+        public List<Participante> GetAllParticipanteByUser(int idUser)
+        {
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                List<Participante> list = new List<Participante>();
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetAllParticipanteByUser", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", idUser);
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var par = new Participante()
+                            {
+                                Id = Guid.Parse(reader["id"].ToString()),
+                                fecha = (DateTime)reader["fecha"]
+                            };
+
+                            if (reader["metros"] is DBNull)
+                            {
+                                par.MetrosLogrados = 0;
+                            }
+                            else
+                            {
+                                par.MetrosLogrados = Convert.ToInt32(reader["metros"]);
+                            }
+
+                            list.Add(par);
+                        }
+
+                    }
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public List<TimeSpan> GetAllTiemposByParticipante(Guid id)
+        {
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                List<TimeSpan> list = new List<TimeSpan>();
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_GetAllTiemposByParticipante", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(TimeSpan.Parse(reader["tiempo"].ToString()));
+                        }
+
+                    }
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         public bool Insert(Equipo obj, int idEvento)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -294,23 +381,25 @@ namespace DAL
             {
                 try
                 {
-                    if (obj.MetrosLogrados != 0) 
-                    {
+                    
                         SqlCommand cmd = new SqlCommand("sp_UpdateParticipante", conn);
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id", obj.Id);
-                        cmd.Parameters.AddWithValue("@metros", obj.MetrosLogrados);
+                        if (obj.MetrosLogrados != 0)
+                        {
+                            cmd.Parameters.AddWithValue("@metros", obj.MetrosLogrados);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@metros", DBNull.Value);
+                        }
+                        cmd.Parameters.AddWithValue("@fecha", obj.fecha);
 
                         conn.Open();
                         cmd.ExecuteNonQuery();
 
                         return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
                 }
                 catch (Exception)
                 {

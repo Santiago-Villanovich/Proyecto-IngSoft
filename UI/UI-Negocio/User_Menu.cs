@@ -46,7 +46,7 @@ namespace UI
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
-
+            CargarMenuContenedor(new User_Desempenio());
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

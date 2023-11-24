@@ -13,6 +13,7 @@ namespace BE
         public TimeSpan TiempoPromedio { get;set; }
         public List<TimeSpan> Tiempos { get; set; }
         public int MetrosLogrados { get; set; }
+        public DateTime fecha { get; set; }
 
         public Participante() { }
 

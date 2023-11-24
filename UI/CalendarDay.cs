@@ -141,5 +141,10 @@ namespace UI
             
         }
         #endregion
+
+        private void numberDisplay_Click(object sender, EventArgs e)
+        {
+            eventoClick?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

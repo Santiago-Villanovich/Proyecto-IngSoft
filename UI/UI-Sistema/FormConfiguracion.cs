@@ -11,6 +11,10 @@ using System.Windows.Forms;
 using BLL;
 using Services.Multilanguage;
 using BE;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
+using System.Diagnostics;
 
 namespace UI
 {
@@ -127,6 +131,23 @@ namespace UI
         private void btnCambiarClave_Click(object sender, EventArgs e)
         {
             CargarMenuContenedor(new FormActualizarInfo());
+        }
+
+        private void btnSoporte_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombreArchivo = "Manual_de_usuario_GoComp.pdf";
+
+                string directorioTemporal = Path.GetTempPath();
+                string rutaTempPDF = Path.Combine(directorioTemporal, nombreArchivo);
+                File.WriteAllBytes(rutaTempPDF, Properties.Resources.Manual_de_Usuario___GoComp__1_);
+                Process.Start(rutaTempPDF);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abrir el archivo PDF: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

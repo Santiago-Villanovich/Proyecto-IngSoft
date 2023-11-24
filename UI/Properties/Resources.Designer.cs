@@ -111,6 +111,16 @@ namespace UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Manual_de_Usuario___GoComp__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Manual_de_Usuario___GoComp__1_", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Ojo_Password {

@@ -32,7 +32,7 @@ namespace UI.UI_Negocio
             currentYear = currentDT.Year;
             gboxEventoHoy.Visible = false;
 
-            events = new BLL_Evento().GetAllByUser();
+            
         }
 
         public void MostrarEventoHoy(Evento ev)
@@ -66,7 +66,8 @@ namespace UI.UI_Negocio
         }
 
         private void User_Inicio_Load(object sender, EventArgs e)
-        { 
+        {
+            events = new BLL_Evento().GetAllByUser();
             MostrarDias();
         }
 

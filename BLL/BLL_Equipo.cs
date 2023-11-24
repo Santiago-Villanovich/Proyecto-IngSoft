@@ -83,6 +83,24 @@ namespace BLL
             }
         }
 
+        public List<Participante> GetAllParticipanteByUser(int IdUser)
+        {
+            try
+            {
+                List<Participante> partcipante = dal.GetAllParticipanteByUser(IdUser);
+                foreach (Participante p in partcipante)
+                {
+                    p.Tiempos = dal.GetAllTiemposByParticipante(p.Id);
+                }
+
+                return partcipante;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
         public bool Insert(Equipo obj)
         {
             throw new NotImplementedException();

@@ -86,6 +86,7 @@
             // 
             this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(31, 366);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(511, 457);

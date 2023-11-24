@@ -8,11 +8,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Properties;
 
 namespace UI.UI_Negocio
 {
@@ -329,7 +331,11 @@ namespace UI.UI_Negocio
                     }
                     else
                     {
-                        evento.portada = null;
+                        Image img = Properties.Resources.PortadaDefault;
+                        var ms = new MemoryStream();
+                        img.Save(ms, ImageFormat.Jpeg);
+                        var bytes = ms.ToArray();
+                        evento.portada = bytes;
                     }
                     
 

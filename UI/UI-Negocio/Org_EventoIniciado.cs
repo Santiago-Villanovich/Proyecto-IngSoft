@@ -242,7 +242,7 @@ namespace UI.UI_Negocio
 
                     iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8);
 
-                    int totalColum = 2 + EventoNatacion.cantidad_integrantes_equipo;
+                    int totalColum = 4;
 
                     PdfPTable tblPrueba = new PdfPTable(totalColum);
                     tblPrueba.WidthPercentage = 100;
@@ -261,7 +261,7 @@ namespace UI.UI_Negocio
                     clEquipo.BorderWidth = 0;
                     clEquipo.BorderWidthBottom = 0.75f;
 
-                    PdfPCell clLogrado = new PdfPCell(new Phrase("Rendimiento"));
+                    PdfPCell clLogrado = new PdfPCell(new Phrase("Desempeño"));
                     clLogrado.BorderWidth = 0;
                     clLogrado.BorderWidthBottom = 0.75f;
 
@@ -409,6 +409,7 @@ namespace UI.UI_Negocio
                                             if (p.Usuario.Id == idParticipante)
                                             {
                                                 p.MetrosLogrados = Convert.ToInt32(cellValue);
+                                                p.fecha = DateTime.Now.Date;
                                                 break;
                                             }
                                         }
@@ -423,15 +424,20 @@ namespace UI.UI_Negocio
                             }
                         }
 
-                        //AGREGO LOS TIEMPOS AL PARTICIPANTE DEL EQUIPOACTUAL
-                        foreach (var p in equipoActual.Participantes)
+                        if (EventoNatacion.MetrosTotales != 0)
                         {
-                            if (p.Usuario.Id == idParticipante)
+                            //AGREGO LOS TIEMPOS AL PARTICIPANTE DEL EQUIPOACTUAL
+                            foreach (var p in equipoActual.Participantes)
                             {
-                                p.Tiempos = timeList;
-                                break;
+                                if (p.Usuario.Id == idParticipante)
+                                {
+                                    p.Tiempos = timeList;
+                                    p.fecha = DateTime.Now.Date;
+                                    break;
+                                }
                             }
                         }
+                            
                     }
 
                     foreach (var equipo in categoriaActual.equipos)

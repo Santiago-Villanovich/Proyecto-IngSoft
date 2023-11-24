@@ -241,13 +241,10 @@ C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\M
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\QRCoder.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Services.dll
-C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Core.WinForms.dll
-C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Grid.Base.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Grid.Windows.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Licensing.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Shared.Base.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Shared.Windows.dll
-C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Tools.Base.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Buffers.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Memory.dll
@@ -271,12 +268,9 @@ C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\M
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Options.xml
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Microsoft.Extensions.Primitives.xml
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Newtonsoft.Json.xml
-C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Core.WinForms.xml
-C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Grid.Base.xml
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Grid.Windows.xml
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Shared.Base.xml
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Shared.Windows.xml
-C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\Syncfusion.Tools.Base.xml
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Buffers.xml
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\bin\Debug\System.Memory.xml
@@ -324,3 +318,4 @@ C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\U
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.Org_EventoDisplay_Cerrado.resources
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.Org_EventoIniciado.resources
 C:\Users\santi\source\repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.UI_Negocio.User_Desempenio.resources
+C:\Users\santi\source\repos\Santiago-Villanovich\Proyecto-IngSoft\UI\obj\Debug\UI.User_DesempenioDisplay.resources

@@ -301,6 +301,7 @@
             this.gboxEventos.Size = new System.Drawing.Size(748, 719);
             this.gboxEventos.TabIndex = 20;
             this.gboxEventos.TabStop = false;
+            this.gboxEventos.Enter += new System.EventHandler(this.gboxEventos_Enter);
             // 
             // User_BuscarEvento
             // 

@@ -42,6 +42,7 @@
             this.numberDisplay.Size = new System.Drawing.Size(55, 39);
             this.numberDisplay.TabIndex = 0;
             this.numberDisplay.Text = "00";
+            this.numberDisplay.Click += new System.EventHandler(this.numberDisplay_Click);
             this.numberDisplay.MouseLeave += new System.EventHandler(this.numberDisplay_MouseLeave);
             this.numberDisplay.MouseHover += new System.EventHandler(this.numberDisplay_MouseHover);
             this.numberDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numberDisplay_MouseMove);
