@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Menu));
             this.NavBar = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -144,6 +145,7 @@
             this.ClientSize = new System.Drawing.Size(1282, 753);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.NavBar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1300, 800);
             this.Name = "User_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

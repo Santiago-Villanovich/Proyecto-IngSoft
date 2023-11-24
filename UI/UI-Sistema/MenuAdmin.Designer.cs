@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionarOrganizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaOrganizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,10 +47,6 @@
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarOrganizacionToolStripMenuItem,
-            this.administrarToolStripMenuItem,
-            this.opcionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(913, 28);
@@ -137,7 +134,7 @@
             // configuracionToolStripMenuItem
             // 
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.configuracionToolStripMenuItem.Tag = "14";
             this.configuracionToolStripMenuItem.Text = "Gestionar idiomas";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
@@ -156,6 +153,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(913, 444);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);

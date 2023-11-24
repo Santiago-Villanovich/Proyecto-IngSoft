@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Org_Menu));
             this.panelNav = new System.Windows.Forms.Panel();
             this.btnEventosProgramados = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -168,6 +169,7 @@
             this.ClientSize = new System.Drawing.Size(1092, 673);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelNav);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1110, 720);
             this.Name = "Org_Menu";
             this.Text = "menuOrg";
