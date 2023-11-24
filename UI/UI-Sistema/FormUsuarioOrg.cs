@@ -96,10 +96,9 @@ namespace UI.UI_Sistema
                     
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
             }
             
         }

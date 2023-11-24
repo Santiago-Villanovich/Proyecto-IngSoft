@@ -154,33 +154,41 @@ namespace UI.UI_Sistema
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Organizacion = (Organizacion)dataGridView1.CurrentRow.DataBoundItem;
-            txtNombre.Text = Organizacion.Nombre;
-            txtEmail.Text = Organizacion.Email;
-            txtDireccionweb.Text = Organizacion.DireccionWeb;
-            txtCuit.Text = Organizacion.CUIT;
-            if (Organizacion.PiletaAsociada != null)
+            try
             {
-                checkboxPileta.Enabled = true;
-                checkboxPileta.Checked = true;
-                txtPiletaDir.Text = Organizacion.PiletaAsociada.Direccion;
-                numupPiletaCarril.Value = Convert.ToDecimal(Organizacion.PiletaAsociada.Carriles);
-                switch (Organizacion.PiletaAsociada.Metros)
+                Organizacion = (Organizacion)dataGridView1.CurrentRow.DataBoundItem;
+                txtNombre.Text = Organizacion.Nombre;
+                txtEmail.Text = Organizacion.Email;
+                txtDireccionweb.Text = Organizacion.DireccionWeb;
+                txtCuit.Text = Organizacion.CUIT;
+                if (Organizacion.PiletaAsociada != null)
                 {
-                    case 20: rb20mts.Checked = true; break;
-                    case 25: rb25mts.Checked = true; break;
-                    case 50: rb50mts.Checked = true; break;
-                    default:
-                        break;
-                }
+                    checkboxPileta.Enabled = true;
+                    checkboxPileta.Checked = true;
+                    txtPiletaDir.Text = Organizacion.PiletaAsociada.Direccion;
+                    numupPiletaCarril.Value = Convert.ToDecimal(Organizacion.PiletaAsociada.Carriles);
+                    switch (Organizacion.PiletaAsociada.Metros)
+                    {
+                        case 20: rb20mts.Checked = true; break;
+                        case 25: rb25mts.Checked = true; break;
+                        case 50: rb50mts.Checked = true; break;
+                        default:
+                            break;
+                    }
 
-                groupBox1.Enabled = false;
+                    groupBox1.Enabled = false;
+                }
+                else
+                {
+                    LimpiarGroupbox();
+                    checkboxPileta.Enabled = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                LimpiarGroupbox();
-                checkboxPileta.Enabled = false;
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -202,6 +210,11 @@ namespace UI.UI_Sistema
                 groupBox1.Visible = false;
                 groupBox1.Enabled = false;
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
