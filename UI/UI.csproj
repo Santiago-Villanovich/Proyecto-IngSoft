@@ -486,8 +486,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Manual de Usuario - GoComp %281%29.pdf" />
-    <None Include="Resources\Manual de Usuario - GoComp.docx" />
-    <None Include="Resources\Manual de Usuario - GoComp.pdf" />
     <None Include="Resources\PortadaDefault.jpg" />
   </ItemGroup>
   <ItemGroup>

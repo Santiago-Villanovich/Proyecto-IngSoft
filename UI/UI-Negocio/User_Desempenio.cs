@@ -27,6 +27,9 @@ namespace UI.UI_Negocio
             flowLayoutPanel1.VerticalScroll.Visible = true;
             flowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight;
             flowLayoutPanel1.AutoScroll = true;
+
+
+            button1.Visible = false;
         }
 
 
@@ -73,6 +76,10 @@ namespace UI.UI_Negocio
             try
             {
                 CargarDesempenio();
+                if (participaciones.Count > 0)
+                {
+                    button1.Visible = true;
+                }
             }
             catch (Exception ex)
             {
@@ -83,23 +90,31 @@ namespace UI.UI_Negocio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Archivos JSON|*.json";
-            saveFileDialog.Title = "Guardar archivo JSON";
-            saveFileDialog.FileName = "misParticipaciones.json";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                string rutaArchivo = saveFileDialog.FileName;
-
-                using (FileStream fs = new FileStream(rutaArchivo, FileMode.Append, FileAccess.Write))
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Archivos JSON|*.json";
+                saveFileDialog.Title = "Guardar archivo JSON";
+                saveFileDialog.FileName = "misParticipaciones.json";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    using (StreamWriter writer = new StreamWriter(fs))
+                    string rutaArchivo = saveFileDialog.FileName;
+
+                    using (FileStream fs = new FileStream(rutaArchivo, FileMode.Append, FileAccess.Write))
                     {
-                        JsonSerializer serializer = new JsonSerializer();
-                        serializer.Serialize(writer, participaciones);
+                        using (StreamWriter writer = new StreamWriter(fs))
+                        {
+                            JsonSerializer serializer = new JsonSerializer();
+                            serializer.Serialize(writer, participaciones);
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }
