@@ -95,6 +95,7 @@ namespace UI
                     Clave = userNew.Clave
                 };
 
+
                 if (RegexValidation.validarNombre(txtNombre.Text))
                 {
                     userNew.Nombre = txtNombre.Text;
@@ -103,17 +104,21 @@ namespace UI
                 {
                     userNew.Apellido = txtApellido.Text;
                 }
-                if (RegexValidation.validarPassword(txtClave.Text))
+                if (txtClave.Text != string.Empty)
                 {
-                    userNew.Clave = new HashCrypto().GenerarMD5(txtClave.Text);
+                    if (RegexValidation.validarPassword(txtClave.Text))
+                    {
+                        userNew.Clave = new HashCrypto().GenerarMD5(txtClave.Text);
+                    }
                 }
+                
                 if (RegexValidation.validarEmail(txtMail.Text))
                 {
                     userNew.Email = txtMail.Text;
                 }
                 if (RegexValidation.validarTelefono(txtTelefono.Text))
                 {
-                    userNew.Clave = txtTelefono.Text;
+                    userNew.Telefono = txtTelefono.Text;
                 }
                 
 

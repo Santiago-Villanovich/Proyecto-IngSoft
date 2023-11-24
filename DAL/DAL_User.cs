@@ -264,7 +264,15 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@Nom", obj.Nombre);
                     cmd.Parameters.AddWithValue("@Ape", obj.Apellido);
                     cmd.Parameters.AddWithValue("@DNI", obj.DNI);
-                    cmd.Parameters.AddWithValue("@Clave", obj.Clave);
+                    if (obj.Clave != null)
+                    {
+                        cmd.Parameters.AddWithValue("@Clave", obj.Clave);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Clave", DBNull.Value);
+                    }
+                    
                     cmd.Parameters.AddWithValue("@DV", obj.DV);
                     conn.Open();
 

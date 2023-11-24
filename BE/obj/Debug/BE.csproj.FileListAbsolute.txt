@@ -72,3 +72,4 @@ C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\B
 C:\Users\santi\source\repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.csproj.CopyComplete
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.dll
 C:\Users\santi\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\obj\Debug\BE.pdb
+C:\Users\Navegador\Source\Repos\Santiago-Villanovich\Proyecto-IngSoft\BE\bin\Debug\QRCoder.dll
