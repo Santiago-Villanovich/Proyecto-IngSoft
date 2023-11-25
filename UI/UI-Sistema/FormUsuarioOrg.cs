@@ -72,6 +72,7 @@ namespace UI.UI_Sistema
             {
                 if (org != null && usuario != null)
                 {
+                    
                     Familia componente = new Familia() { Id = 1039, Nombre = "Organizacion" };
                     Familia componente2 = new Familia() { Id = 1036, Nombre = "Usuario" };
 

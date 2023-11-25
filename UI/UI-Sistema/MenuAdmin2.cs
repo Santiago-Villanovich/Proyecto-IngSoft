@@ -193,5 +193,12 @@ namespace UI.UI_Sistema
                 MessageBox.Show("El formulario ya se encuentra abierto. Para abrir uno nuevo cierre el que esta en uso");
             }
         }
+
+        private void cerrarSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Session.Logout();
+            this.Close();
+            Application.Restart();
+        }
     }
 }
