@@ -23,26 +23,31 @@ namespace BLL
         {
             if (dal.UpdateEstado(obj,3))
             {
+                
                 List<Equipo> equips = new BLL_Equipo().GetAllEquiposEvento(obj.id);
-                List<string> to = new List<string>();
-
-                MailProvider mail = new MailProvider();
-                string body = $"Lamentamos informarle que el evento '{obj.nombre}' del {obj.Fecha} fue cancelado. " +
-                              $"Por lo que se le reintegrara el coste de la inscripcion ${obj.ValorInscripcion}";
-                
-
-                foreach (var e in equips)
+                if (equips.Count > 0)
                 {
-                    foreach (var p in e.Participantes)
+                    List<string> to = new List<string>();
+
+                    MailProvider mail = new MailProvider();
+                    string body = $"Lamentamos informarle que el evento '{obj.nombre}' del {obj.Fecha} fue cancelado. " +
+                                  $"Por lo que se le reintegrara el coste de la inscripcion ${obj.ValorInscripcion}";
+
+
+                    foreach (var e in equips)
                     {
-                        to.Add(p.Usuario.Email.Trim());
+                        foreach (var p in e.Participantes)
+                        {
+                            to.Add(p.Usuario.Email.Trim());
+                        }
                     }
+
+                    mail.sendMail(to, "Cancelacion de Competencia", body);
+
+
+                    return true;
                 }
-
-                mail.sendMail(to,"Cancelacion de Competencia",body);
                 
-
-                return true;
 
             }
             else { return false; }
