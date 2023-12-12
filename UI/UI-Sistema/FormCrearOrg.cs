@@ -203,7 +203,18 @@ namespace UI.UI_Sistema
             if (checkboxPileta.Checked)
             {
                 groupBox1.Visible = true;
-                groupBox1.Enabled = true;
+                if (Organizacion != null)
+                {
+                    if (Organizacion.PiletaAsociada != null)
+                    {
+                        groupBox1.Enabled = false;
+                    }
+                }
+                else
+                {
+                    groupBox1.Enabled = true;
+                }
+                
             }
             else
             {
