@@ -48,15 +48,18 @@ namespace BE
 
             }else 
             {
-                for (int i = 0; i < categoriasOrdenadas.Count; i++)
-                {
-                    if (EdadSum <= categoriasOrdenadas[i].EdadInicio)
-                    {
-                        c = categoriasOrdenadas[i];
-                    }
-                }
+                // Como la edad del grupo no coincide con las categorias lo asigno a la primera o ultima
 
-                return c;
+                if (EdadSum <= categoriasOrdenadas.FirstOrDefault().EdadInicio)
+                {
+                    c = categoriasOrdenadas.FirstOrDefault();
+                    return c;
+                }
+                else
+                {
+                    c = categoriasOrdenadas.Last();
+                    return c;
+                }
             }
         }
     }

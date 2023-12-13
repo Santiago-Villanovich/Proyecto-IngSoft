@@ -264,6 +264,8 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@Nom", obj.Nombre);
                     cmd.Parameters.AddWithValue("@Ape", obj.Apellido);
                     cmd.Parameters.AddWithValue("@DNI", obj.DNI);
+                    cmd.Parameters.AddWithValue("@Mail", obj.Email);
+                    cmd.Parameters.AddWithValue("@Tel", obj.Telefono);
                     if (obj.Clave != null)
                     {
                         cmd.Parameters.AddWithValue("@Clave", obj.Clave);

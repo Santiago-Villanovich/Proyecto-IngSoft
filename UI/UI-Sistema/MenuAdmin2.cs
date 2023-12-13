@@ -21,20 +21,21 @@ namespace UI.UI_Sistema
 
             var traducciones = traductor.ObtenerTraducciones(idioma);
 
-            if (administrarToolStripMenuItem.Tag != null && traducciones.ContainsKey(administrarToolStripMenuItem.Tag.ToString()))
-                administrarToolStripMenuItem.Text = traducciones[administrarToolStripMenuItem.Tag.ToString()].texto;
+            foreach (ToolStripItem item in menuStrip1.Items)
+            {
+                if (item is ToolStripMenuItem)
+                {
+                    ToolStripMenuItem menuItem = (ToolStripMenuItem)item;
+                    if (menuItem.Tag != null && traducciones.ContainsKey(menuItem.Tag.ToString()))
+                        menuItem.Text = traducciones[menuItem.Tag.ToString()].texto;
 
-            if (gestionarUsuariosToolStripMenuItem.Tag != null && traducciones.ContainsKey(gestionarUsuariosToolStripMenuItem.Tag.ToString()))
-                gestionarUsuariosToolStripMenuItem.Text = traducciones[gestionarUsuariosToolStripMenuItem.Tag.ToString()].texto;
-
-            if (verBitacoraToolStripMenuItem.Tag != null && traducciones.ContainsKey(verBitacoraToolStripMenuItem.Tag.ToString()))
-                verBitacoraToolStripMenuItem.Text = traducciones[verBitacoraToolStripMenuItem.Tag.ToString()].texto;
-
-            if (opcionesToolStripMenuItem.Tag != null && traducciones.ContainsKey(opcionesToolStripMenuItem.Tag.ToString()))
-                opcionesToolStripMenuItem.Text = traducciones[opcionesToolStripMenuItem.Tag.ToString()].texto;
-
-            if (gestionarPermisosToolStripMenuItem.Tag != null && traducciones.ContainsKey(gestionarPermisosToolStripMenuItem.Tag.ToString()))
-                gestionarPermisosToolStripMenuItem.Text = traducciones[gestionarPermisosToolStripMenuItem.Tag.ToString()].texto;
+                    foreach (ToolStripItem ts in menuItem.DropDownItems)
+                    {
+                        if (ts.Tag != null && traducciones.ContainsKey(ts.Tag.ToString()))
+                            ts.Text = traducciones[ts.Tag.ToString()].texto;
+                    }
+                }
+            }
         }
 
         public static bool FormEstaAbierto(Type Form)
