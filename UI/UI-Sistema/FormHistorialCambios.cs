@@ -160,12 +160,14 @@ namespace UI
                 if (dataGridView1.CurrentRow.DataBoundItem != null)
                 {
                     DTO_UserHistory dtoUser = (DTO_UserHistory)dataGridView1.CurrentRow.DataBoundItem;
-                    User user = bllUsr.Get(Session.GetInstance.Usuario.Id);
+                    User user = bllUsr.Get(dtoUser.Id);
 
                     user.Id = dtoUser.Id;
                     user.Nombre = dtoUser.Nombre;
-                    user.Apellido = HashCrypto.Encriptar(dtoUser.Apellido);
+                    user.Apellido = dtoUser.Apellido;
                     user.Clave = dtoUser.Clave;
+                    user.Email = dtoUser.Mail;
+                    user.Telefono = dtoUser.Telefono;
                     user.DNI = dtoUser.DNI;
                     user.DV = GestorDigitoVerificador.CalcularDV(user);
 
