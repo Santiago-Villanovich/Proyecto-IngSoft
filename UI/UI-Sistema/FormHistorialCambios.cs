@@ -171,7 +171,16 @@ namespace UI
                     user.DNI = dtoUser.DNI;
                     user.DV = GestorDigitoVerificador.CalcularDV(user);
 
-                    bllUsr.Update(user);
+                    if (bllUsr.Update(user))
+                    {
+                        cboxUsuario.SelectedItem = null;
+                        dtDesde.Checked = false;
+                        dtHasta.Checked = false;
+                        dataGridView1.DataSource = null;
+                        MessageBox.Show("Se ha restablecido el estado previo del usuario");
+                        
+                    }
+                    
                 }
                 else
                 {

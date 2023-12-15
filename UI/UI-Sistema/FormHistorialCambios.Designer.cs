@@ -52,7 +52,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.Location = new System.Drawing.Point(16, 113);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -64,7 +64,7 @@
             // 
             this.cboxUsuario.FormattingEnabled = true;
             this.cboxUsuario.Location = new System.Drawing.Point(12, 31);
-            this.cboxUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.cboxUsuario.Name = "cboxUsuario";
             this.cboxUsuario.Size = new System.Drawing.Size(160, 24);
             this.cboxUsuario.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             this.dtDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDesde.Location = new System.Drawing.Point(213, 31);
-            this.dtDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtDesde.Margin = new System.Windows.Forms.Padding(4);
             this.dtDesde.Name = "dtDesde";
             this.dtDesde.Size = new System.Drawing.Size(121, 22);
             this.dtDesde.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             this.dtHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtHasta.Location = new System.Drawing.Point(363, 31);
-            this.dtHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtHasta.Margin = new System.Windows.Forms.Padding(4);
             this.dtHasta.Name = "dtHasta";
             this.dtHasta.Size = new System.Drawing.Size(121, 22);
             this.dtHasta.TabIndex = 3;
@@ -90,7 +90,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.LightYellow;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -102,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.LightYellow;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.label2.Location = new System.Drawing.Point(79, 11);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -113,7 +113,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.LightYellow;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.label3.Location = new System.Drawing.Point(103, 11);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -125,7 +125,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.LightYellow;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.label4.Location = new System.Drawing.Point(209, 10);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -137,7 +137,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.LightYellow;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.label5.Location = new System.Drawing.Point(359, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -148,13 +148,13 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Khaki;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.btnBuscar.FlatAppearance.BorderSize = 2;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("MS Reference Sans Serif", 8F);
-            this.btnBuscar.ForeColor = System.Drawing.Color.Khaki;
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Location = new System.Drawing.Point(12, 64);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(560, 31);
             this.btnBuscar.TabIndex = 9;
@@ -166,13 +166,13 @@
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.DimGray;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Khaki;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.btnLimpiar.FlatAppearance.BorderSize = 2;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("MS Reference Sans Serif", 6F);
-            this.btnLimpiar.ForeColor = System.Drawing.Color.Khaki;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.btnLimpiar.Location = new System.Drawing.Point(507, 11);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(65, 46);
             this.btnLimpiar.TabIndex = 10;
@@ -183,13 +183,13 @@
             // 
             // btnRestablecer
             // 
+            this.btnRestablecer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestablecer.FlatAppearance.BorderColor = System.Drawing.Color.Khaki;
             this.btnRestablecer.FlatAppearance.BorderSize = 2;
-            this.btnRestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestablecer.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F);
-            this.btnRestablecer.ForeColor = System.Drawing.Color.Khaki;
+            this.btnRestablecer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRestablecer.Location = new System.Drawing.Point(16, 401);
-            this.btnRestablecer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRestablecer.Margin = new System.Windows.Forms.Padding(4);
             this.btnRestablecer.Name = "btnRestablecer";
             this.btnRestablecer.Size = new System.Drawing.Size(148, 41);
             this.btnRestablecer.TabIndex = 11;
@@ -202,8 +202,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(589, 479);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.ClientSize = new System.Drawing.Size(586, 479);
             this.Controls.Add(this.btnRestablecer);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBuscar);
@@ -216,7 +216,7 @@
             this.Controls.Add(this.dtDesde);
             this.Controls.Add(this.cboxUsuario);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormHistorialCambios";
             this.Text = "FormHistorialCambios";
             this.Load += new System.EventHandler(this.FormHistorialCambios_Load);
