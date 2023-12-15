@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_SignUp));
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtClaveSign = new System.Windows.Forms.TextBox();
             this.txtDniSign = new System.Windows.Forms.TextBox();
@@ -164,13 +165,16 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.label6.Location = new System.Drawing.Point(178, 130);
+            this.label6.Location = new System.Drawing.Point(75, 146);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.MaximumSize = new System.Drawing.Size(500, 0);
+            this.label6.MinimumSize = new System.Drawing.Size(500, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(302, 59);
+            this.label6.Size = new System.Drawing.Size(500, 59);
             this.label6.TabIndex = 1;
             this.label6.Tag = "6";
             this.label6.Text = "Registrarse";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // errorProvider1
             // 
@@ -328,6 +332,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "User_SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUp";

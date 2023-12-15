@@ -53,13 +53,16 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.label1.Location = new System.Drawing.Point(60, 158);
+            this.label1.Location = new System.Drawing.Point(16, 154);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.MaximumSize = new System.Drawing.Size(450, 0);
+            this.label1.MinimumSize = new System.Drawing.Size(450, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(361, 59);
+            this.label1.Size = new System.Drawing.Size(450, 59);
             this.label1.TabIndex = 0;
             this.label1.Tag = "1";
             this.label1.Text = "Iniciar Sesion";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -92,10 +95,12 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.label4.Location = new System.Drawing.Point(112, 592);
+            this.label4.Location = new System.Drawing.Point(16, 592);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.MaximumSize = new System.Drawing.Size(450, 0);
+            this.label4.MinimumSize = new System.Drawing.Size(450, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(246, 19);
+            this.label4.Size = new System.Drawing.Size(450, 19);
             this.label4.TabIndex = 3;
             this.label4.Tag = "5";
             this.label4.Text = "No se encuentra registrado?";
@@ -107,13 +112,16 @@
             this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(125)))), ((int)(((byte)(24)))));
-            this.label5.Location = new System.Drawing.Point(190, 621);
+            this.label5.Location = new System.Drawing.Point(13, 620);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.MaximumSize = new System.Drawing.Size(450, 0);
+            this.label5.MinimumSize = new System.Drawing.Size(450, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 18);
+            this.label5.Size = new System.Drawing.Size(450, 18);
             this.label5.TabIndex = 3;
             this.label5.Tag = "6";
             this.label5.Text = "Registrarse";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtDniLog
@@ -223,6 +231,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
